@@ -1,0 +1,19 @@
+columnSuffix: itoqovjy
+contentColumnType: text
+fieldGroup: 518e5c2e-1341-4b80-a65a-8512d938f820 # General
+handle: introduction
+instructions: ''
+name: introduction
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

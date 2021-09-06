@@ -1,0 +1,15 @@
+columnSuffix: ehemhfzb
+contentColumnType: string(255)
+fieldGroup: 417ad68e-f480-4c58-bc24-a31574f1c928 # blogpost
+handle: videolink
+instructions: ''
+name: videolink
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

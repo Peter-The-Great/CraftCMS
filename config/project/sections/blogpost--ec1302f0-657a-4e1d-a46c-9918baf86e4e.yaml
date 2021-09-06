@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: blogpost
+name: blogpost
+propagationMethod: all
+siteSettings:
+  1a7ded85-cd10-4685-8696-21042404ec46: # Blogsite
+    enabledByDefault: true
+    hasUrls: true
+    template: blogpost/_entry
+    uriFormat: 'blogpost/{slug}'
+type: channel

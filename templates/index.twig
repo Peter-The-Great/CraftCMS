@@ -1,0 +1,29 @@
+{% extends "_layouts/main" %}
+{% block main %}
+{% set thumb = {mode: 'crop', width: 400, height: 300, quality: 75 } %}
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% set items = craft.entries.section("blogpost").all() %}
+      {% for item in items %}
+        <div class="col">
+          <div class="card shadow-sm">
+            {% if item.headimage|length %}
+                <img src="{{ item.headimage.one().getUrl(thumb) }}">
+            {% endif %}
+            <div class="card-body">
+              <div class="card-text">{{ item.subtext }}</div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{ item.url }}"><button type="button" class="btn btn-sm btn-outline-secondary">Bekijk</button></a>
+                </div>
+                <small class="text-muted">Made By {{ item.author }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+       {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+handle: navbar
+name: navbar
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primaire invoer-pagina'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  1a7ded85-cd10-4685-8696-21042404ec46: # Blogsite
+    enabledByDefault: true
+    hasUrls: true
+    template: _layouts/main
+    uriFormat: _layouts/main
+type: single

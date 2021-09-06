@@ -1,0 +1,15 @@
+columnSuffix: zwjsxauz
+contentColumnType: mediumtext
+fieldGroup: 518e5c2e-1341-4b80-a65a-8512d938f820 # General
+handle: pagecopy
+instructions: ''
+name: PageCopy
+searchable: false
+settings:
+  columnType: mediumtext
+  initJs: null
+  purifierConfig: ''
+  purifyHtml: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

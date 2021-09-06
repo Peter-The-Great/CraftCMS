@@ -1,0 +1,42 @@
+dateModified: 1630939232
+email:
+  fromEmail: pjotr@pixeldeluxe.nl
+  fromName: Blogsite
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    1a7ded85-cd10-4685-8696-21042404ec46: Blogsite # Blogsite
+    3b49d805-1ae4-41ab-ad93-00de8e3a56c3: images # images
+    3b68da63-81e3-4d75-b78d-63e267cf49d7: Common # Common
+    4c7c41bd-271d-4790-aecd-3eafe71ca7c6: Standaard # Standaard
+    7ce16e90-1108-4637-ae34-135db25fef4e: Blogsite # Blogsite
+    364d4330-d412-40f3-99b9-8a3dd6a2d954: homepage # homepage
+    417ad68e-f480-4c58-bc24-a31574f1c928: blogpost # blogpost
+    518e5c2e-1341-4b80-a65a-8512d938f820: General # General
+    2650fd56-94c1-4d62-929b-998b54588b6d: 'Public Schema' # Public Schema
+    7382616d-769d-4f84-8b59-7245cd08ef20: videolink # videolink
+    b8b01c62-e65a-45ab-a41a-2880f6839689: navbar # navbar
+    b94e9ccf-1f7c-4952-87b0-2514213a3b78: navbar # navbar
+    bb77b1f3-1ccf-4257-af21-bb0d3e88362d: homepage # homepage
+    e3a74156-6e99-4310-8b92-cc9c1d33e616: PageCopy # PageCopy
+    e6e40127-efc5-4abd-b5ec-455c1a80fa0c: headimage # headimage
+    eac5e9e9-55ae-47bd-8d5c-4b674f1ff355: introduction # introduction
+    ec1302f0-657a-4e1d-a46c-9918baf86e4e: blogpost # blogpost
+    fdd41422-2f3c-4581-af2d-b4d3a271e183: subtext # subtext
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: pro
+  live: true
+  name: Blogsite
+  schemaVersion: 3.7.8
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

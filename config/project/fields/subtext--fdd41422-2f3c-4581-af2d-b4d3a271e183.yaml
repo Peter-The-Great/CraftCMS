@@ -1,0 +1,15 @@
+columnSuffix: huynruhi
+contentColumnType: text
+fieldGroup: 417ad68e-f480-4c58-bc24-a31574f1c928 # blogpost
+handle: subtext
+instructions: 'Een korte introductie voor de tekst die u wilt schrijven.'
+name: subtext
+searchable: false
+settings:
+  columnType: text
+  initJs: null
+  purifierConfig: ''
+  purifyHtml: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

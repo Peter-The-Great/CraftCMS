@@ -1,0 +1,74 @@
+fieldLayouts:
+  4bc63b8b-865d-427e-bedd-15c7f945691d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e6e40127-efc5-4abd-b5ec-455c1a80fa0c # headimage
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: fdd41422-2f3c-4581-af2d-b4d3a271e183 # subtext
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e3a74156-6e99-4310-8b92-cc9c1d33e616 # PageCopy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7382616d-769d-4f84-8b59-7245cd08ef20 # videolink
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhoud
+        sortOrder: 1
+handle: default
+hasTitleField: true
+name: Standaard
+section: ec1302f0-657a-4e1d-a46c-9918baf86e4e # blogpost
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
