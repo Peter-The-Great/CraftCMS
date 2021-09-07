@@ -1,0 +1,37 @@
+field: e3c14bdc-b578-4588-bce9-7dc0f8553072 # inhoudzelf
+fieldLayouts:
+  dd0fb9ac-e4fe-4014-ad10-0887926eaf73:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3b175535-87ad-4cb7-90d4-5e06d63658d6 # bodytext
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3b175535-87ad-4cb7-90d4-5e06d63658d6: # bodytext
+    columnSuffix: null
+    contentColumnType: mediumtext
+    fieldGroup: null
+    handle: bodytext
+    instructions: ''
+    name: bodytext
+    searchable: false
+    settings:
+      columnType: mediumtext
+      initJs: null
+      purifierConfig: ''
+      purifyHtml: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+handle: bodycopy
+name: bodycopy
+sortOrder: 1

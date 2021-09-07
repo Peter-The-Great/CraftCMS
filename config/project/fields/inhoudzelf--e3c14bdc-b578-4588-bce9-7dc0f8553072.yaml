@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 34ad3c2c-7a70-4054-91bb-90ada9475662 # inhoud
+handle: inhoudzelf
+instructions: ''
+name: inhoudzelf
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_inhoudzelf}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

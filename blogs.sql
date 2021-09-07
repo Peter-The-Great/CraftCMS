@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Gegenereerd op: 07 sep 2021 om 12:35
+-- Gegenereerd op: 07 sep 2021 om 15:05
 -- Serverversie: 5.7.34
 -- PHP-versie: 7.4.21
 
@@ -630,7 +630,9 @@ CREATE TABLE `fieldgroups` (
 INSERT INTO `fieldgroups` (`id`, `name`, `dateCreated`, `dateUpdated`, `dateDeleted`, `uid`) VALUES
 (1, 'Common', '2021-09-06 10:09:22', '2021-09-06 10:09:22', NULL, '3b68da63-81e3-4d75-b78d-63e267cf49d7'),
 (2, 'blogpost', '2021-09-06 11:34:51', '2021-09-06 11:34:51', NULL, '417ad68e-f480-4c58-bc24-a31574f1c928'),
-(3, 'General', '2021-09-06 11:39:39', '2021-09-06 11:39:39', NULL, '518e5c2e-1341-4b80-a65a-8512d938f820');
+(3, 'General', '2021-09-06 11:39:39', '2021-09-06 11:39:39', NULL, '518e5c2e-1341-4b80-a65a-8512d938f820'),
+(4, 'inhoud', '2021-09-07 11:39:10', '2021-09-07 11:39:10', '2021-09-07 11:39:21', '956c41e6-4c30-42f2-8584-077b63f6a4f0'),
+(5, 'inhoud', '2021-09-07 11:41:31', '2021-09-07 11:41:31', NULL, '34ad3c2c-7a70-4054-91bb-90ada9475662');
 
 -- --------------------------------------------------------
 
@@ -659,7 +661,9 @@ INSERT INTO `fieldlayoutfields` (`id`, `layoutId`, `tabId`, `fieldId`, `required
 (12, 2, 15, 3, 0, 0, '2021-09-07 08:47:40', '2021-09-07 08:47:40', '4bd9be8a-5842-438d-8834-c71beaa21545'),
 (13, 2, 15, 1, 0, 2, '2021-09-07 08:47:40', '2021-09-07 08:47:40', '3cb89753-430d-4c53-9c70-9932d0b65156'),
 (14, 2, 15, 4, 0, 3, '2021-09-07 08:47:40', '2021-09-07 08:47:40', '496db983-09d6-4912-a66c-2341bf5cd3a1'),
-(15, 2, 15, 2, 0, 4, '2021-09-07 08:47:40', '2021-09-07 08:47:40', 'a01ce670-5e2d-4e63-8678-45f918c8774d');
+(15, 2, 15, 2, 0, 4, '2021-09-07 08:47:40', '2021-09-07 08:47:40', 'a01ce670-5e2d-4e63-8678-45f918c8774d'),
+(18, 6, 18, 10, 0, 0, '2021-09-07 13:05:21', '2021-09-07 13:05:21', '954ae632-f6f4-4dd1-a049-1e1ba6097081'),
+(19, 7, 19, 11, 0, 0, '2021-09-07 13:05:21', '2021-09-07 13:05:21', '4acb1944-ff8c-4be6-a51b-5e5e7f7216a8');
 
 -- --------------------------------------------------------
 
@@ -685,7 +689,9 @@ INSERT INTO `fieldlayouts` (`id`, `type`, `dateCreated`, `dateUpdated`, `dateDel
 (2, 'craft\\elements\\Entry', '2021-09-06 11:24:27', '2021-09-06 11:24:27', NULL, '4bc63b8b-865d-427e-bedd-15c7f945691d'),
 (3, 'craft\\elements\\Entry', '2021-09-06 11:32:49', '2021-09-06 11:32:49', '2021-09-06 11:33:02', 'b4bc2889-3d78-492c-9ceb-702880e6a946'),
 (4, 'craft\\elements\\Entry', '2021-09-06 13:11:08', '2021-09-06 13:11:08', NULL, '410aa703-ed96-4586-a0be-75ced0eb977d'),
-(5, 'craft\\elements\\Entry', '2021-09-06 14:38:41', '2021-09-06 14:38:41', NULL, 'e16888a4-4dec-450f-a6c2-71c209fbc766');
+(5, 'craft\\elements\\Entry', '2021-09-06 14:38:41', '2021-09-06 14:38:41', NULL, 'e16888a4-4dec-450f-a6c2-71c209fbc766'),
+(6, 'craft\\elements\\MatrixBlock', '2021-09-07 12:58:22', '2021-09-07 12:58:22', NULL, 'dd0fb9ac-e4fe-4014-ad10-0887926eaf73'),
+(7, 'craft\\elements\\MatrixBlock', '2021-09-07 12:58:22', '2021-09-07 12:58:22', NULL, '1b01a206-5352-47d0-9da1-6a221026d0a6');
 
 -- --------------------------------------------------------
 
@@ -713,7 +719,9 @@ INSERT INTO `fieldlayouttabs` (`id`, `layoutId`, `name`, `elements`, `sortOrder`
 (8, 1, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\AssetTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-06 12:05:03', '2021-09-06 12:05:03', '3085166e-072d-4523-ad4b-b7045bfb8e55'),
 (11, 4, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-06 14:38:08', '2021-09-06 14:38:08', '165c35ac-6ce1-4608-a430-5092646d1de8'),
 (14, 5, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"eac5e9e9-55ae-47bd-8d5c-4b674f1ff355\"}]', 1, '2021-09-06 14:39:19', '2021-09-06 14:39:19', 'e32dc685-f7f2-4f19-8758-2bdee6dd406e'),
-(15, 2, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e6e40127-efc5-4abd-b5ec-455c1a80fa0c\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"fdd41422-2f3c-4581-af2d-b4d3a271e183\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"7382616d-769d-4f84-8b59-7245cd08ef20\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e3a74156-6e99-4310-8b92-cc9c1d33e616\"}]', 1, '2021-09-07 08:47:40', '2021-09-07 08:47:40', 'd7aa9f9a-ff4c-44d4-8f89-175da50e703c');
+(15, 2, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e6e40127-efc5-4abd-b5ec-455c1a80fa0c\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"fdd41422-2f3c-4581-af2d-b4d3a271e183\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"7382616d-769d-4f84-8b59-7245cd08ef20\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e3a74156-6e99-4310-8b92-cc9c1d33e616\"}]', 1, '2021-09-07 08:47:40', '2021-09-07 08:47:40', 'd7aa9f9a-ff4c-44d4-8f89-175da50e703c'),
+(18, 6, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"3b175535-87ad-4cb7-90d4-5e06d63658d6\"}]', 1, '2021-09-07 13:05:21', '2021-09-07 13:05:21', 'f3fd022f-b273-4fda-94fd-89c241be9a6e'),
+(19, 7, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"f45f3568-3d9c-4779-b17c-26458592de2f\"}]', 1, '2021-09-07 13:05:21', '2021-09-07 13:05:21', '40544d68-1ec7-42e3-b164-137761cb2f5f');
 
 -- --------------------------------------------------------
 
@@ -748,7 +756,10 @@ INSERT INTO `fields` (`id`, `groupId`, `name`, `handle`, `context`, `columnSuffi
 (2, 3, 'PageCopy', 'pagecopy', 'global', 'zwjsxauz', '', 0, 'none', NULL, 'craft\\ckeditor\\Field', '{\"columnType\":\"mediumtext\",\"initJs\":null,\"purifierConfig\":\"\",\"purifyHtml\":\"1\"}', '2021-09-06 11:46:08', '2021-09-06 11:46:08', 'e3a74156-6e99-4310-8b92-cc9c1d33e616'),
 (3, 2, 'headimage', 'headimage', 'global', NULL, '', 0, 'site', NULL, 'craft\\fields\\Assets', '{\"allowSelfRelations\":false,\"allowUploads\":true,\"allowedKinds\":null,\"defaultUploadLocationSource\":\"volume:3b49d805-1ae4-41ab-ad93-00de8e3a56c3\",\"defaultUploadLocationSubpath\":\"\",\"limit\":\"\",\"localizeRelations\":false,\"previewMode\":\"full\",\"restrictFiles\":\"\",\"selectionLabel\":\"\",\"showSiteMenu\":true,\"showUnpermittedFiles\":false,\"showUnpermittedVolumes\":false,\"singleUploadLocationSource\":\"volume:3b49d805-1ae4-41ab-ad93-00de8e3a56c3\",\"singleUploadLocationSubpath\":\"\",\"source\":null,\"sources\":\"*\",\"targetSiteId\":null,\"useSingleFolder\":false,\"validateRelatedElements\":false,\"viewMode\":\"list\"}', '2021-09-06 11:49:26', '2021-09-06 12:06:05', 'e6e40127-efc5-4abd-b5ec-455c1a80fa0c'),
 (4, 2, 'videolink', 'videolink', 'global', 'ehemhfzb', 'Doe hier een Youtube video in, via een embed link. Die kun je halen van de youtube video bij delen.', 0, 'none', NULL, 'craft\\fields\\Url', '{\"maxLength\":\"255\",\"placeholder\":null,\"types\":[\"url\"]}', '2021-09-06 11:50:08', '2021-09-07 09:10:53', '7382616d-769d-4f84-8b59-7245cd08ef20'),
-(8, 3, 'introduction', 'introduction', 'global', 'itoqovjy', '', 0, 'none', NULL, 'craft\\fields\\PlainText', '{\"byteLimit\":null,\"charLimit\":null,\"code\":\"\",\"columnType\":\"text\",\"initialRows\":\"4\",\"multiline\":\"\",\"placeholder\":null,\"uiMode\":\"normal\"}', '2021-09-06 14:08:11', '2021-09-06 14:08:11', 'eac5e9e9-55ae-47bd-8d5c-4b674f1ff355');
+(8, 3, 'introduction', 'introduction', 'global', 'itoqovjy', '', 0, 'none', NULL, 'craft\\fields\\PlainText', '{\"byteLimit\":null,\"charLimit\":null,\"code\":\"\",\"columnType\":\"text\",\"initialRows\":\"4\",\"multiline\":\"\",\"placeholder\":null,\"uiMode\":\"normal\"}', '2021-09-06 14:08:11', '2021-09-06 14:08:11', 'eac5e9e9-55ae-47bd-8d5c-4b674f1ff355'),
+(9, 5, 'inhoudzelf', 'inhoudzelf', 'global', NULL, '', 0, 'site', NULL, 'craft\\fields\\Matrix', '{\"contentTable\":\"{{%matrixcontent_inhoudzelf}}\",\"maxBlocks\":\"\",\"minBlocks\":\"\",\"propagationKeyFormat\":null,\"propagationMethod\":\"all\"}', '2021-09-07 12:58:21', '2021-09-07 12:58:21', 'e3c14bdc-b578-4588-bce9-7dc0f8553072'),
+(10, NULL, 'bodytext', 'bodytext', 'matrixBlockType:d6287000-aeb5-4ddf-aeeb-da48f9ed904f', NULL, '', 0, 'none', NULL, 'craft\\ckeditor\\Field', '{\"columnType\":\"mediumtext\",\"initJs\":null,\"purifierConfig\":\"\",\"purifyHtml\":\"1\"}', '2021-09-07 12:58:22', '2021-09-07 13:05:21', '3b175535-87ad-4cb7-90d4-5e06d63658d6'),
+(11, NULL, 'videolink', 'videolink', 'matrixBlockType:5d359804-dc3e-4485-8e71-f6d29868806e', NULL, 'Zet hier een video link in.', 0, 'none', NULL, 'craft\\fields\\Url', '{\"maxLength\":\"255\",\"placeholder\":null,\"types\":[\"url\"]}', '2021-09-07 12:58:22', '2021-09-07 13:05:21', 'f45f3568-3d9c-4779-b17c-26458592de2f');
 
 -- --------------------------------------------------------
 
@@ -839,7 +850,7 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `version`, `schemaVersion`, `maintenance`, `configVersion`, `fieldVersion`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, '3.7.11', '3.7.8', 0, 'tkfsnzyjfnrd', 'npfyspjalehe', '2021-09-06 10:09:22', '2021-09-07 09:10:53', 'bd374219-4f30-4743-b1dc-06c299bde1de');
+(1, '3.7.11', '3.7.8', 0, 'oiyzuuqtpnae', 'soxblstvbwmv', '2021-09-06 10:09:22', '2021-09-07 13:05:21', 'bd374219-4f30-4743-b1dc-06c299bde1de');
 
 -- --------------------------------------------------------
 
@@ -875,6 +886,31 @@ CREATE TABLE `matrixblocktypes` (
   `dateCreated` datetime NOT NULL,
   `dateUpdated` datetime NOT NULL,
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `matrixblocktypes`
+--
+
+INSERT INTO `matrixblocktypes` (`id`, `fieldId`, `fieldLayoutId`, `name`, `handle`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`) VALUES
+(1, 9, 6, 'bodycopy', 'bodycopy', 1, '2021-09-07 12:58:22', '2021-09-07 12:58:22', 'd6287000-aeb5-4ddf-aeeb-da48f9ed904f'),
+(2, 9, 7, 'videolink', 'videolink', 2, '2021-09-07 12:58:22', '2021-09-07 12:58:22', '5d359804-dc3e-4485-8e71-f6d29868806e');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `matrixcontent_inhoudzelf`
+--
+
+CREATE TABLE `matrixcontent_inhoudzelf` (
+  `id` int(11) NOT NULL,
+  `elementId` int(11) NOT NULL,
+  `siteId` int(11) NOT NULL,
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL,
+  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `field_bodycopy_bodytext` mediumtext COLLATE utf8_unicode_ci,
+  `field_videolink_videolink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1114,7 +1150,7 @@ CREATE TABLE `plugins` (
 --
 
 INSERT INTO `plugins` (`id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `licensedEdition`, `installDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'ckeditor', '1.1.2', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2021-09-07 09:17:23', '032a7d64-0762-4824-8f4b-0c7d4ea9143b');
+(1, 'ckeditor', '1.1.2', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2021-09-07 11:26:33', '032a7d64-0762-4824-8f4b-0c7d4ea9143b');
 
 -- --------------------------------------------------------
 
@@ -1132,7 +1168,7 @@ CREATE TABLE `projectconfig` (
 --
 
 INSERT INTO `projectconfig` (`path`, `value`) VALUES
-('dateModified', '1631005853'),
+('dateModified', '1631019921'),
 ('email.fromEmail', '\"pjotr@pixeldeluxe.nl\"'),
 ('email.fromName', '\"Blogsite\"'),
 ('email.transportType', '\"craft\\\\mail\\\\transportadapters\\\\Sendmail\"'),
@@ -1272,6 +1308,7 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.titleFormat', '\"{section.name|raw}\"'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.titleTranslationKeyFormat', 'null'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.titleTranslationMethod', '\"site\"'),
+('fieldGroups.34ad3c2c-7a70-4054-91bb-90ada9475662.name', '\"inhoud\"'),
 ('fieldGroups.3b68da63-81e3-4d75-b78d-63e267cf49d7.name', '\"Common\"'),
 ('fieldGroups.417ad68e-f480-4c58-bc24-a31574f1c928.name', '\"blogpost\"'),
 ('fieldGroups.518e5c2e-1341-4b80-a65a-8512d938f820.name', '\"General\"'),
@@ -1302,6 +1339,21 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.translationKeyFormat', 'null'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.translationMethod', '\"none\"'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.type', '\"craft\\\\ckeditor\\\\Field\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.columnSuffix', 'null'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.contentColumnType', '\"string\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.fieldGroup', '\"34ad3c2c-7a70-4054-91bb-90ada9475662\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.handle', '\"inhoudzelf\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.instructions', '\"\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.name', '\"inhoudzelf\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.searchable', 'false'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.settings.contentTable', '\"{{%matrixcontent_inhoudzelf}}\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.settings.maxBlocks', '\"\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.settings.minBlocks', '\"\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.settings.propagationKeyFormat', 'null'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.settings.propagationMethod', '\"all\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.translationKeyFormat', 'null'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.translationMethod', '\"site\"'),
+('fields.e3c14bdc-b578-4588-bce9-7dc0f8553072.type', '\"craft\\\\fields\\\\Matrix\"'),
 ('fields.e6e40127-efc5-4abd-b5ec-455c1a80fa0c.columnSuffix', 'null'),
 ('fields.e6e40127-efc5-4abd-b5ec-455c1a80fa0c.contentColumnType', '\"string\"'),
 ('fields.e6e40127-efc5-4abd-b5ec-455c1a80fa0c.fieldGroup', '\"417ad68e-f480-4c58-bc24-a31574f1c928\"'),
@@ -1369,23 +1421,84 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('graphql.publicToken.expiryDate', 'null'),
 ('graphql.schemas.2650fd56-94c1-4d62-929b-998b54588b6d.isPublic', 'true'),
 ('graphql.schemas.2650fd56-94c1-4d62-929b-998b54588b6d.name', '\"Public Schema\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.field', '\"e3c14bdc-b578-4588-bce9-7dc0f8553072\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.elements.0.fieldUid', '\"f45f3568-3d9c-4779-b17c-26458592de2f\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.elements.0.instructions', 'null'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.elements.0.label', 'null'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.elements.0.required', 'false'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.elements.0.tip', 'null'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.elements.0.warning', 'null'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.elements.0.width', '100'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.name', '\"Content\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fieldLayouts.1b01a206-5352-47d0-9da1-6a221026d0a6.tabs.0.sortOrder', '1'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.columnSuffix', 'null'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.contentColumnType', '\"string(255)\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.fieldGroup', 'null'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.handle', '\"videolink\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.instructions', '\"Zet hier een video link in.\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.name', '\"videolink\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.searchable', 'false'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.settings.maxLength', '\"255\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.settings.placeholder', 'null'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.settings.types.0', '\"url\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.translationKeyFormat', 'null'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.translationMethod', '\"none\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.fields.f45f3568-3d9c-4779-b17c-26458592de2f.type', '\"craft\\\\fields\\\\Url\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.handle', '\"videolink\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.name', '\"videolink\"'),
+('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.sortOrder', '2'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.field', '\"e3c14bdc-b578-4588-bce9-7dc0f8553072\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.fieldUid', '\"3b175535-87ad-4cb7-90d4-5e06d63658d6\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.instructions', 'null'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.label', 'null'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.required', 'false'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.tip', 'null'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.warning', 'null'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.width', '100'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.name', '\"Content\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.sortOrder', '1'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.columnSuffix', 'null'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.contentColumnType', '\"mediumtext\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.fieldGroup', 'null'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.handle', '\"bodytext\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.instructions', '\"\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.name', '\"bodytext\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.searchable', 'false'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.columnType', '\"mediumtext\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.initJs', 'null'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.purifierConfig', '\"\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.purifyHtml', '\"1\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.translationKeyFormat', 'null'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.translationMethod', '\"none\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.type', '\"craft\\\\ckeditor\\\\Field\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.handle', '\"bodycopy\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.name', '\"bodycopy\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.sortOrder', '1'),
 ('meta.__names__.1a7ded85-cd10-4685-8696-21042404ec46', '\"Blogsite\"'),
 ('meta.__names__.2650fd56-94c1-4d62-929b-998b54588b6d', '\"Public Schema\"'),
+('meta.__names__.34ad3c2c-7a70-4054-91bb-90ada9475662', '\"inhoud\"'),
 ('meta.__names__.364d4330-d412-40f3-99b9-8a3dd6a2d954', '\"homepage\"'),
+('meta.__names__.3b175535-87ad-4cb7-90d4-5e06d63658d6', '\"bodytext\"'),
 ('meta.__names__.3b49d805-1ae4-41ab-ad93-00de8e3a56c3', '\"images\"'),
 ('meta.__names__.3b68da63-81e3-4d75-b78d-63e267cf49d7', '\"Common\"'),
 ('meta.__names__.417ad68e-f480-4c58-bc24-a31574f1c928', '\"blogpost\"'),
 ('meta.__names__.4c7c41bd-271d-4790-aecd-3eafe71ca7c6', '\"Standaard\"'),
 ('meta.__names__.518e5c2e-1341-4b80-a65a-8512d938f820', '\"General\"'),
+('meta.__names__.5d359804-dc3e-4485-8e71-f6d29868806e', '\"videolink\"'),
 ('meta.__names__.7382616d-769d-4f84-8b59-7245cd08ef20', '\"videolink\"'),
 ('meta.__names__.7ce16e90-1108-4637-ae34-135db25fef4e', '\"Blogsite\"'),
 ('meta.__names__.b8b01c62-e65a-45ab-a41a-2880f6839689', '\"navbar\"'),
 ('meta.__names__.b94e9ccf-1f7c-4952-87b0-2514213a3b78', '\"navbar\"'),
 ('meta.__names__.bb77b1f3-1ccf-4257-af21-bb0d3e88362d', '\"homepage\"'),
+('meta.__names__.d6287000-aeb5-4ddf-aeeb-da48f9ed904f', '\"bodycopy\"'),
 ('meta.__names__.e3a74156-6e99-4310-8b92-cc9c1d33e616', '\"PageCopy\"'),
+('meta.__names__.e3c14bdc-b578-4588-bce9-7dc0f8553072', '\"inhoudzelf\"'),
 ('meta.__names__.e6e40127-efc5-4abd-b5ec-455c1a80fa0c', '\"headimage\"'),
 ('meta.__names__.eac5e9e9-55ae-47bd-8d5c-4b674f1ff355', '\"introduction\"'),
 ('meta.__names__.ec1302f0-657a-4e1d-a46c-9918baf86e4e', '\"blogpost\"'),
+('meta.__names__.f45f3568-3d9c-4779-b17c-26458592de2f', '\"videolink\"'),
 ('meta.__names__.fdd41422-2f3c-4581-af2d-b4d3a271e183', '\"subtext\"'),
 ('plugins.ckeditor.edition', '\"standard\"'),
 ('plugins.ckeditor.enabled', 'true'),
@@ -1570,6 +1683,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('2a69821a', '@craft/web/assets/feed/dist'),
 ('311425f7', '@craft/web/assets/editsection/dist'),
 ('37cd79e5', '@craft/web/assets/plugins/dist'),
+('4ce047bd', '@craft/web/assets/matrixsettings/dist'),
 ('532aa4d1', '@craft/web/assets/dashboard/dist'),
 ('59c50f79', '@lib/element-resize-detector'),
 ('67da53f1', '@lib/velocity'),
@@ -1787,7 +1901,7 @@ CREATE TABLE `sessions` (
 
 INSERT INTO `sessions` (`id`, `userId`, `token`, `dateCreated`, `dateUpdated`, `uid`) VALUES
 (1, 1, 'a5KmNJk4V0lXKv3fTaLc0Ew8fanOjmv7rv4jKX8FI66dOd7vlrF7tEe1NXEzpADN4tGmDjq7QjcwoD2gZc2xwd_evddMWgHeBHuk', '2021-09-06 10:09:24', '2021-09-06 15:24:16', 'd7ea78a3-fd13-4b5f-ad8a-1019e9a8bb82'),
-(2, 1, '-3bCwt9yyW04JYRv2y_8j6gSUxSuhi9dG_U0w8pJXcNKGExndk3bx-Ksz_y85Ri_7G8qygFduiyFtEgCYzOhDQCfb1bznUSRiQju', '2021-09-07 08:15:07', '2021-09-07 10:34:50', '2719a066-6821-4163-9d7b-41ac786c7544');
+(2, 1, '-3bCwt9yyW04JYRv2y_8j6gSUxSuhi9dG_U0w8pJXcNKGExndk3bx-Ksz_y85Ri_7G8qygFduiyFtEgCYzOhDQCfb1bznUSRiQju', '2021-09-07 08:15:07', '2021-09-07 13:05:26', '2719a066-6821-4163-9d7b-41ac786c7544');
 
 -- --------------------------------------------------------
 
@@ -2494,6 +2608,14 @@ ALTER TABLE `matrixblocktypes`
   ADD KEY `idx_owlkfqkzcusyjzvcwyppeurmiybzfqpwqmly` (`fieldLayoutId`);
 
 --
+-- Indexen voor tabel `matrixcontent_inhoudzelf`
+--
+ALTER TABLE `matrixcontent_inhoudzelf`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `idx_wlrssfybezzfsfjxhoutiikqnpremqwotbcj` (`elementId`,`siteId`),
+  ADD KEY `fk_vfhxeozebcyyxdwhapurpppwjbbcgbyvlhvp` (`siteId`);
+
+--
 -- Indexen voor tabel `migrations`
 --
 ALTER TABLE `migrations`
@@ -2831,7 +2953,7 @@ ALTER TABLE `deprecationerrors`
 -- AUTO_INCREMENT voor een tabel `drafts`
 --
 ALTER TABLE `drafts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `elementindexsettings`
@@ -2861,31 +2983,31 @@ ALTER TABLE `entrytypes`
 -- AUTO_INCREMENT voor een tabel `fieldgroups`
 --
 ALTER TABLE `fieldgroups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `fieldlayoutfields`
 --
 ALTER TABLE `fieldlayoutfields`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT voor een tabel `fieldlayouts`
 --
 ALTER TABLE `fieldlayouts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT voor een tabel `fieldlayouttabs`
 --
 ALTER TABLE `fieldlayouttabs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT voor een tabel `fields`
 --
 ALTER TABLE `fields`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT voor een tabel `globalsets`
@@ -2915,6 +3037,12 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT voor een tabel `matrixblocktypes`
 --
 ALTER TABLE `matrixblocktypes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT voor een tabel `matrixcontent_inhoudzelf`
+--
+ALTER TABLE `matrixcontent_inhoudzelf`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -2933,7 +3061,7 @@ ALTER TABLE `plugins`
 -- AUTO_INCREMENT voor een tabel `queue`
 --
 ALTER TABLE `queue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `relations`
@@ -3251,6 +3379,13 @@ ALTER TABLE `matrixblocks`
 ALTER TABLE `matrixblocktypes`
   ADD CONSTRAINT `fk_dyktadpnhoczrwzvergcftvvtdiqgmgbycwb` FOREIGN KEY (`fieldLayoutId`) REFERENCES `fieldlayouts` (`id`) ON DELETE SET NULL,
   ADD CONSTRAINT `fk_tdocjqnrymewtgmetscvqsotxjuxdfcogbjn` FOREIGN KEY (`fieldId`) REFERENCES `fields` (`id`) ON DELETE CASCADE;
+
+--
+-- Beperkingen voor tabel `matrixcontent_inhoudzelf`
+--
+ALTER TABLE `matrixcontent_inhoudzelf`
+  ADD CONSTRAINT `fk_qcobjnsxqogsxhptydpzgohnyxlofmsciqas` FOREIGN KEY (`elementId`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_vfhxeozebcyyxdwhapurpppwjbbcgbyvlhvp` FOREIGN KEY (`siteId`) REFERENCES `sites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Beperkingen voor tabel `relations`
