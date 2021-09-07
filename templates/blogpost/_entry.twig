@@ -1,9 +1,16 @@
 {% extends "_layouts/main" %}
 {% block main %}
-<section id="imgsection" style="background-image: url('{{ entry.headimage.one().getUrl() }}');">
-	
+<section id="imgsection" alt="{{ entry.title }}" style="background-image: url('{{ entry.headimage.one().getUrl() }}');">
+	<div class="container text-center">
+		<h1 class="pt-5 text-white">{{ entry.title }}</h1>
+	</div>
 </section>
-<section class="bg-dark">
-	<p>fewfewfewf</p>
+<section class="bg-dark text-white mt-4 container">
+	<div class="row">
+	{% if entry.videolink|length %}
+	<iframe src="{{ entry.videolink }}" width="560" height="315" allowfullscreen></iframe>
+  {% endif %}
+	{{ entry.pagecopy }}
+	</div>
 </section>
 {% endblock %}

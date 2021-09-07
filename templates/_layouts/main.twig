@@ -3,10 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="alternate" href="https://blogsite.local" hreflang="nl-nl">
+    <meta content="Pjotr" property="og:site_name">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://blogsite.local" rel="home">
     <link rel="stylesheet" type="text/css" href="/css/all.min.css">
+    <meta name="robots" content="index, nofollow">
+    <meta name="AdsBot-Google" content="index">
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -29,6 +35,8 @@
         color: white;
       }
     </style>
+    <meta content="Pjotr Wisse Blog Website" property="og:title">
+    <meta name="description" property="og:description" content="Pjotr Wisse is de naam en ik post videos hier over verschillende onderwerpen die ik leuk vind.">
     <title>Pjotr</title>
   </head>
   <body>
@@ -51,9 +59,9 @@
       </div>
     </div>
   </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
+  <div class="navbar navbar-dark bg-dark shadow-sm border-bottom">
     <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
+      <a href="http://blogsite.local" class="navbar-brand d-flex align-items-center">
         <i class="fab fa-blogger"></i><strong> Pjotr</strong>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,13 +70,24 @@
     </div>
   </div>
 </header>
-<main class="bg-light">
+<main class="bg-dark pt-4 pb-4">
     {% block main %}
 
     {% endblock %}
 </main>
+<footer class="footer mt-auto py-3 bg-dark border-top">
+  <div class="container">
+    <p class="text-muted"> <mm id="copy"></mm> Pjotr Wisse</p>
+  </div>
+</footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="/js/all.min.js"></script>
+    <script>
+    //get a new date
+    var date = new Date();
+    //Get Copyright just for the website footer
+    document.getElementById("copy").innerHTML = "Copyright © " + date.getFullYear() + " ";
+    </script>
   </body>
 </html>

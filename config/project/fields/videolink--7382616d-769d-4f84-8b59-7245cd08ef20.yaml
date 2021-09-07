@@ -2,7 +2,7 @@ columnSuffix: ehemhfzb
 contentColumnType: string(255)
 fieldGroup: 417ad68e-f480-4c58-bc24-a31574f1c928 # blogpost
 handle: videolink
-instructions: ''
+instructions: 'Doe hier een Youtube video in, via een embed link. Die kun je halen van de youtube video bij delen.'
 name: videolink
 searchable: false
 settings:

@@ -1,15 +1,15 @@
 {% extends "_layouts/main" %}
 {% block main %}
 {% set thumb = {mode: 'crop', width: 400, height: 300, quality: 75 } %}
-  <div class="album py-5 bg-light">
+  <div class="album py-5">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       {% set items = craft.entries.section("blogpost").all() %}
       {% for item in items %}
         <div class="col">
-          <div class="card shadow-sm">
+          <div class="card ">
             {% if item.headimage|length %}
-                <img src="{{ item.headimage.one().getUrl(thumb) }}">
+                <img src="{{ item.headimage.one().getUrl(thumb) }}" alt="{{ item.title }}">
             {% endif %}
             <div class="card-body">
               <div class="card-text">{{ item.subtext }}</div>

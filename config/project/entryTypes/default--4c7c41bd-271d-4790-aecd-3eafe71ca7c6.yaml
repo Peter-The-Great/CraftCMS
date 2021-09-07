@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e3a74156-6e99-4310-8b92-cc9c1d33e616 # PageCopy
+            fieldUid: 7382616d-769d-4f84-8b59-7245cd08ef20 # videolink
             instructions: null
             label: null
             required: false
@@ -54,7 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7382616d-769d-4f84-8b59-7245cd08ef20 # videolink
+            fieldUid: e3a74156-6e99-4310-8b92-cc9c1d33e616 # PageCopy
             instructions: null
             label: null
             required: false
