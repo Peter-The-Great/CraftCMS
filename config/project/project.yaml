@@ -1,4 +1,4 @@
-dateModified: 1631019921
+dateModified: 1631025663
 email:
   fromEmail: pjotr@pixeldeluxe.nl
   fromName: Blogsite
@@ -34,12 +34,17 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
 system:
   edition: pro
   live: true
   name: Blogsite
+  retryDuration: null
   schemaVersion: 3.7.8
-  timeZone: America/Los_Angeles
+  timeZone: Europe/Amsterdam
 users:
   allowPublicRegistration: false
   defaultGroup: null

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Gegenereerd op: 07 sep 2021 om 15:05
+-- Gegenereerd op: 07 sep 2021 om 16:41
 -- Serverversie: 5.7.34
 -- PHP-versie: 7.4.21
 
@@ -89,7 +89,8 @@ CREATE TABLE `assets` (
 --
 
 INSERT INTO `assets` (`id`, `volumeId`, `folderId`, `uploaderId`, `filename`, `kind`, `width`, `height`, `size`, `focalPoint`, `deletedWithVolume`, `keptFile`, `dateModified`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(6, 1, 1, 1, 'thumnail.jpeg', 'image', 1280, 720, 106060, NULL, NULL, NULL, '2021-09-06 12:05:19', '2021-09-06 12:05:19', '2021-09-06 12:05:19', 'e0642e9c-dd28-42e3-8b44-7592675cb1c1');
+(6, 1, 1, 1, 'thumnail.jpeg', 'image', 1280, 720, 106060, NULL, NULL, NULL, '2021-09-06 12:05:19', '2021-09-06 12:05:19', '2021-09-06 12:05:19', 'e0642e9c-dd28-42e3-8b44-7592675cb1c1'),
+(89, 1, 1, 1, 'sddefault.jpeg', 'image', 640, 480, 71060, NULL, NULL, NULL, '2021-09-07 13:18:58', '2021-09-07 13:18:58', '2021-09-07 13:18:58', '84029411-a4f6-4d41-81e7-3f089e7bf9d3');
 
 -- --------------------------------------------------------
 
@@ -124,7 +125,8 @@ INSERT INTO `assettransformindex` (`id`, `assetId`, `filename`, `format`, `locat
 (4, 6, 'thumnail.jpeg', NULL, '_200x100_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:03:18', '2021-09-06 13:03:18', '2021-09-06 13:03:18', 'fbed757a-6a35-4779-9573-67999bca09f6'),
 (5, 6, 'thumnail.jpeg', NULL, '_200x200_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:03:23', '2021-09-06 13:03:23', '2021-09-06 13:03:24', '3e086016-8943-48e0-9680-28ea0211c3bf'),
 (6, 6, 'thumnail.jpeg', NULL, '_300x200_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:03:28', '2021-09-06 13:03:28', '2021-09-06 13:03:29', '47ee692b-2e4b-46a3-a4df-d577ddbc79c8'),
-(7, 6, 'thumnail.jpeg', NULL, '_400x400_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:03:35', '2021-09-06 13:03:35', '2021-09-06 13:03:36', '4dc4126c-7ed6-42a2-beb4-a28dde8eab57');
+(7, 6, 'thumnail.jpeg', NULL, '_400x400_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:03:35', '2021-09-06 13:03:35', '2021-09-06 13:03:36', '4dc4126c-7ed6-42a2-beb4-a28dde8eab57'),
+(8, 89, 'sddefault.jpeg', NULL, '_400x300_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-07 13:22:04', '2021-09-07 13:22:04', '2021-09-07 13:22:04', '2ace41b9-1f6d-4497-8d28-7ff3fd7827b1');
 
 -- --------------------------------------------------------
 
@@ -228,7 +230,10 @@ INSERT INTO `changedattributes` (`elementId`, `siteId`, `attribute`, `dateUpdate
 (22, 1, 'uri', '2021-09-06 14:40:32', 0, 1),
 (30, 1, 'title', '2021-09-07 10:08:50', 0, 1),
 (32, 1, 'title', '2021-09-07 10:09:00', 0, 1),
-(34, 1, 'title', '2021-09-07 10:09:06', 0, 1);
+(34, 1, 'title', '2021-09-07 10:09:06', 0, 1),
+(42, 1, 'slug', '2021-09-07 13:15:35', 0, 1),
+(42, 1, 'title', '2021-09-07 13:15:35', 0, 1),
+(42, 1, 'uri', '2021-09-07 13:15:35', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -261,7 +266,19 @@ INSERT INTO `changedfields` (`elementId`, `siteId`, `fieldId`, `dateUpdated`, `p
 (30, 1, 3, '2021-09-07 10:08:50', 0, 1),
 (30, 1, 4, '2021-09-07 10:08:50', 0, 1),
 (32, 1, 4, '2021-09-07 10:09:00', 0, 1),
-(34, 1, 4, '2021-09-07 10:09:06', 0, 1);
+(34, 1, 4, '2021-09-07 10:09:06', 0, 1),
+(42, 1, 1, '2021-09-07 14:36:15', 0, 1),
+(42, 1, 3, '2021-09-07 14:36:15', 0, 1),
+(42, 1, 4, '2021-09-07 14:36:15', 0, 1),
+(42, 1, 9, '2021-09-07 14:36:15', 0, 1),
+(87, 1, 11, '2021-09-07 14:36:15', 0, 1),
+(88, 1, 10, '2021-09-07 14:36:15', 0, 1),
+(156, 1, 1, '2021-09-07 14:36:40', 0, 1),
+(156, 1, 3, '2021-09-07 14:36:40', 0, 1),
+(156, 1, 4, '2021-09-07 14:36:40', 0, 1),
+(156, 1, 9, '2021-09-07 14:36:54', 0, 1),
+(157, 1, 10, '2021-09-07 14:36:54', 0, 1),
+(158, 1, 11, '2021-09-07 14:36:39', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -321,7 +338,22 @@ INSERT INTO `content` (`id`, `elementId`, `siteId`, `title`, `dateCreated`, `dat
 (35, 35, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture - kopie - kopie', '2021-09-07 10:07:41', '2021-09-07 10:07:41', '09e0d706-9156-4a5b-a9a5-f48be90db218', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/embed/094y1Z2wpJg', NULL),
 (37, 37, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture', '2021-09-07 10:08:51', '2021-09-07 10:08:51', '4b1c6291-df7a-4755-a1d5-416a1d5ad6d4', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/embed/094y1Z2wpJg', NULL),
 (39, 39, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture', '2021-09-07 10:09:00', '2021-09-07 10:09:00', 'e28bb0ab-17d0-4326-9a35-281d08bd6da2', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/embed/094y1Z2wpJg', NULL),
-(41, 41, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture', '2021-09-07 10:09:06', '2021-09-07 10:09:06', 'e7233966-51ba-42e9-8301-b1742405f3f7', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/embed/094y1Z2wpJg', NULL);
+(41, 41, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture', '2021-09-07 10:09:06', '2021-09-07 10:09:06', 'e7233966-51ba-42e9-8301-b1742405f3f7', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/embed/094y1Z2wpJg', NULL),
+(42, 42, 1, 'What is not Random', '2021-09-07 13:09:13', '2021-09-07 14:36:15', '7c22a954-a697-455e-a0b3-bc17f5e5c7f7', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(43, 89, 1, 'Sddefault', '2021-09-07 13:18:57', '2021-09-07 13:18:57', '6f3a26bb-5e1a-4d0e-b7fa-85e244c93ad2', NULL, NULL, NULL, NULL),
+(44, 90, 1, 'What is not Random', '2021-09-07 13:20:19', '2021-09-07 13:20:19', '83a67c7d-f7ab-49b0-ad31-3e219be8d037', NULL, NULL, NULL, NULL),
+(46, 96, 1, 'What is not Random', '2021-09-07 13:22:45', '2021-09-07 13:22:45', 'e016f37a-3caa-44e7-8ebc-b7a856c270f3', '<p>Ligt de toekomst van het universum al vast? Vsauce pakt de vraag aan \" Wat Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(48, 102, 1, 'What is not Random', '2021-09-07 13:23:47', '2021-09-07 13:23:47', '1c2ca194-92a2-4e99-8634-89bf6e290ff6', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(49, 105, 1, 'What is not Random', '2021-09-07 13:42:02', '2021-09-07 13:42:02', '233b5ffa-a18a-4678-91c6-6c7919b3615c', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(51, 111, 1, 'What is not Random', '2021-09-07 13:44:37', '2021-09-07 13:44:37', '44101b14-bee8-4110-acfc-549e992234e6', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(53, 117, 1, 'What is not Random', '2021-09-07 14:10:50', '2021-09-07 14:10:50', '24874be7-3148-421e-9061-60d2c2860f4c', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(55, 123, 1, 'What is not Random', '2021-09-07 14:11:22', '2021-09-07 14:11:22', 'bc718f52-dae8-48e2-aa3b-d489f387365e', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(57, 129, 1, 'What is not Random', '2021-09-07 14:32:19', '2021-09-07 14:32:19', '7371c0ae-5643-4c51-9616-a2ecfdf2bcfb', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(59, 135, 1, 'What is not Random', '2021-09-07 14:32:34', '2021-09-07 14:32:34', '5a200724-e116-45e6-959c-57b63c486987', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(61, 141, 1, 'What is not Random', '2021-09-07 14:33:52', '2021-09-07 14:33:52', '716bea11-f0e8-4f86-9e6a-7e21c786a209', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(63, 147, 1, 'What is not Random', '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'd17d104d-030b-473e-87d6-d6e473e425fc', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(65, 153, 1, 'What is not Random', '2021-09-07 14:36:15', '2021-09-07 14:36:15', 'cf3b5555-64a3-4fa0-b71e-7259a460efb2', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(66, 156, 1, 'What is not Random', '2021-09-07 14:36:39', '2021-09-07 14:36:54', 'b6baa657-ab79-4d2a-a3b4-9a933f821e40', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -383,7 +415,8 @@ CREATE TABLE `drafts` (
 
 INSERT INTO `drafts` (`id`, `sourceId`, `creatorId`, `provisional`, `name`, `notes`, `trackChanges`, `dateLastMerged`, `saved`) VALUES
 (1, NULL, 1, 0, 'Eerste concept', NULL, 0, NULL, 0),
-(2, NULL, 1, 0, 'Eerste concept', NULL, 0, NULL, 0);
+(2, NULL, 1, 0, 'Eerste concept', NULL, 0, NULL, 0),
+(14, 42, 1, 1, 'Concept 1', '', 1, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -459,7 +492,94 @@ INSERT INTO `elements` (`id`, `canonicalId`, `draftId`, `revisionId`, `fieldLayo
 (35, 34, NULL, 20, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 10:07:41', '2021-09-07 10:07:41', NULL, NULL, '98fee071-eab2-4b83-ae60-6886afa309ff'),
 (37, 30, NULL, 21, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 10:08:50', '2021-09-07 10:08:51', NULL, NULL, 'f8028f1f-1277-4b6c-a9d4-388485671ee4'),
 (39, 32, NULL, 22, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 10:09:00', '2021-09-07 10:09:00', NULL, NULL, '6beccdcd-7db6-4a54-8b1a-e1fbe34ab383'),
-(41, 34, NULL, 23, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 10:09:06', '2021-09-07 10:09:06', NULL, NULL, 'fe4cdbcd-4193-4d17-90e8-dd8c01d58d2d');
+(41, 34, NULL, 23, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 10:09:06', '2021-09-07 10:09:06', NULL, NULL, 'fe4cdbcd-4193-4d17-90e8-dd8c01d58d2d'),
+(42, NULL, NULL, NULL, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 13:09:13', '2021-09-07 14:36:15', NULL, NULL, '81b0535b-b8cb-46be-a7b9-db15175b35d8'),
+(43, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:09:16', '2021-09-07 13:09:16', NULL, '2021-09-07 13:09:43', '70ee2a5f-48b7-4e49-b8d3-33415fe0461a'),
+(44, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:09:43', '2021-09-07 13:09:43', NULL, '2021-09-07 13:09:45', '0cdc7657-e904-4a2e-8162-9b53646b1512'),
+(45, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:09:45', '2021-09-07 13:09:45', NULL, '2021-09-07 13:09:49', '1f9e312e-32ed-4095-923f-fd0d6787c9ff'),
+(46, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:09:48', '2021-09-07 13:09:48', NULL, '2021-09-07 13:09:55', '16403eef-97d3-4308-98b0-608402f5d502'),
+(47, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:09:55', '2021-09-07 13:09:55', NULL, '2021-09-07 13:09:59', '6239e1f3-f4c4-4a08-9ffe-33135fbb89ff'),
+(48, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:09:59', '2021-09-07 13:09:59', NULL, '2021-09-07 13:10:10', 'c7ceb325-245d-4e25-8c29-5d829aba4200'),
+(49, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:10:10', '2021-09-07 13:10:10', NULL, '2021-09-07 13:10:13', 'a96ac334-9dd0-4b66-9cf6-6507a97a7bfa'),
+(50, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:10:13', '2021-09-07 13:10:13', NULL, '2021-09-07 13:10:14', '2e80f5bf-bf65-401d-95e8-39e96bb8955e'),
+(51, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:10:14', '2021-09-07 13:10:14', NULL, '2021-09-07 13:10:16', 'd0da465a-6d4d-4981-9422-a27f4bb7bb98'),
+(52, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:10:16', '2021-09-07 13:10:16', NULL, '2021-09-07 13:10:44', '64db6716-6749-4a81-a7ac-9c55e57f9589'),
+(53, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:10:44', '2021-09-07 13:10:44', NULL, '2021-09-07 13:11:31', '67b8af87-6eea-4719-a671-d9bb8875f6b0'),
+(54, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:11:31', '2021-09-07 13:11:31', NULL, '2021-09-07 13:11:41', 'd2e60f18-54e1-4c56-9c71-26f839651af6'),
+(55, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:11:41', '2021-09-07 13:11:41', NULL, '2021-09-07 13:11:44', '1a0affca-ad2b-45f8-bdb5-6872038bc6cd'),
+(56, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:11:44', '2021-09-07 13:11:44', NULL, '2021-09-07 13:11:59', 'b6ae3a1b-d7ff-4516-9bb4-b46155909722'),
+(57, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:11:59', '2021-09-07 13:11:59', NULL, '2021-09-07 13:12:11', '2fb878c0-4dac-4baf-9207-9b6bf9b75e2c'),
+(58, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:11', '2021-09-07 13:12:11', NULL, '2021-09-07 13:12:11', 'bbfb9534-ba95-49e1-a5c3-dee08b3ae997'),
+(59, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:11', '2021-09-07 13:12:11', NULL, '2021-09-07 13:12:12', '37ffd11e-2080-41da-ab40-8fdb4a41c34e'),
+(60, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:12', '2021-09-07 13:12:12', NULL, '2021-09-07 13:12:12', '69d0c1f4-2cea-4ccc-bb1b-3b9defc8e523'),
+(61, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:12', '2021-09-07 13:12:12', NULL, '2021-09-07 13:12:16', '41fe52a0-41c5-4c0d-aaba-6e4aea25a379'),
+(62, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:16', '2021-09-07 13:12:16', NULL, '2021-09-07 13:12:26', '3975facd-87fe-4d9a-82c4-730d78f80e34'),
+(63, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:26', '2021-09-07 13:12:26', NULL, '2021-09-07 13:12:28', '053510bd-bc95-4e52-82df-36438cd5ff01'),
+(64, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:27', '2021-09-07 13:12:27', NULL, '2021-09-07 13:12:34', '747e0454-e1c9-404a-9898-3cf91f2e9e31'),
+(65, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:34', '2021-09-07 13:12:34', NULL, '2021-09-07 13:12:36', '4711ca17-bb57-4126-889c-9eae85a43731'),
+(66, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:36', '2021-09-07 13:12:36', NULL, '2021-09-07 13:12:39', '155b6a77-8ed0-4e8e-9eaa-4f110ad9dda1'),
+(67, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:39', '2021-09-07 13:12:39', NULL, '2021-09-07 13:12:43', '20539b67-9460-42c3-9c0b-69c783fba44e'),
+(68, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:43', '2021-09-07 13:12:43', NULL, '2021-09-07 13:12:43', '0b379253-2e85-4697-b587-3fd09a0e06e8'),
+(69, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:12:43', '2021-09-07 13:12:43', NULL, '2021-09-07 13:13:01', 'fe06e4ae-2cc9-4e96-8487-469cb99b9ee5'),
+(70, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:00', '2021-09-07 13:13:00', NULL, '2021-09-07 13:13:07', '750a144b-a837-47d5-9564-030ccc584cba'),
+(71, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:07', '2021-09-07 13:13:07', NULL, '2021-09-07 13:13:09', '694d81d1-b204-4349-a4b3-6f559ae2a68f'),
+(72, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:09', '2021-09-07 13:13:09', NULL, '2021-09-07 13:13:20', 'e97f90ee-c46d-42f9-8ec4-9fbd11f03cab'),
+(73, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:20', '2021-09-07 13:13:20', NULL, '2021-09-07 13:13:21', '469f7e00-a4dc-466b-94c6-6f3b7b3fd418'),
+(74, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:21', '2021-09-07 13:13:21', NULL, '2021-09-07 13:13:23', '6630b6ff-59a5-462c-8444-f3d9b78de49c'),
+(75, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:23', '2021-09-07 13:13:23', NULL, '2021-09-07 13:13:24', 'ac8c9f3f-3f45-48bb-b209-b100e8b66190'),
+(76, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:24', '2021-09-07 13:13:24', NULL, '2021-09-07 13:13:35', '27a0305f-74f0-41d3-9f55-f244e739bcfd'),
+(77, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:35', '2021-09-07 13:13:35', NULL, '2021-09-07 13:13:40', 'c6e63943-c898-4b9f-acae-b6fd3f70ca44'),
+(78, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:40', '2021-09-07 13:13:40', NULL, '2021-09-07 13:13:41', 'da03eb57-4feb-471c-aca4-1c257e539f5f'),
+(79, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:13:41', '2021-09-07 13:13:41', NULL, '2021-09-07 13:14:02', 'a124cc0a-dd59-4de1-8e8c-cbd305614154'),
+(80, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:02', '2021-09-07 13:14:02', NULL, '2021-09-07 13:14:04', '54b2c3c6-e82b-4006-ada1-b09c6c28b3c4'),
+(81, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:04', '2021-09-07 13:14:04', NULL, '2021-09-07 13:14:15', '06255c63-0a57-49ba-bdd0-d902b15a6eb6'),
+(82, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:15', '2021-09-07 13:14:15', NULL, '2021-09-07 13:14:36', '9a389b16-23f6-414a-9e6a-51e2ae1e1c7f'),
+(83, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36', NULL, '2021-09-07 13:14:41', 'f210bb29-8d15-4065-94ad-da620e7d9e62'),
+(84, NULL, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36', NULL, '2021-09-07 13:14:41', '83b0890a-bc19-4047-972a-4c7f54686502'),
+(85, NULL, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', NULL, '2021-09-07 13:14:55', '2f0e3433-10c1-468b-9f37-c203b96dd1c1'),
+(86, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', NULL, '2021-09-07 13:14:55', '6da078f1-bf0f-4264-a87f-c0acf4cebddc'),
+(87, NULL, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:55', '2021-09-07 14:36:15', NULL, NULL, '9457bc33-6958-4baa-91d4-e71af1be0a89'),
+(88, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:55', '2021-09-07 14:36:15', NULL, NULL, '7189045a-b973-4687-9101-6301c39519e6'),
+(89, NULL, NULL, NULL, 1, 'craft\\elements\\Asset', 1, 0, '2021-09-07 13:18:57', '2021-09-07 13:18:57', NULL, NULL, '65e6d236-81a1-448a-9e94-a5fbf6b0d32a'),
+(90, 42, NULL, 24, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 13:20:19', '2021-09-07 13:20:19', NULL, NULL, '10c78fac-6bfa-4049-b19a-9207c560fba6'),
+(91, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:20:19', '2021-09-07 13:20:19', NULL, NULL, 'f153e135-b269-43a5-ab34-894f7c4edaa3'),
+(92, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:20:19', '2021-09-07 13:20:19', NULL, NULL, '9e81114a-e9cc-4145-b217-f35f2587586d'),
+(96, 42, NULL, 25, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 13:22:45', '2021-09-07 13:22:45', NULL, NULL, '0923f804-2017-4911-ab6b-e3a93c7e2da0'),
+(97, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:22:45', '2021-09-07 13:22:45', NULL, NULL, 'f68d6def-be78-4d33-975d-001b891b6d22'),
+(98, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:22:45', '2021-09-07 13:22:45', NULL, NULL, '3ad3054b-f381-4d49-8d9a-43ab512108fd'),
+(102, 42, NULL, 26, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 13:23:47', '2021-09-07 13:23:47', NULL, NULL, '79fa6c01-c1c6-42ed-95ca-9343d9edbfd9'),
+(103, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:23:47', '2021-09-07 13:23:47', NULL, NULL, 'a5e91c77-5b23-4ac4-b54a-3207fb929819'),
+(104, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:23:47', '2021-09-07 13:23:47', NULL, NULL, '9ed667b0-dcf6-4db1-8fc3-8905044363c0'),
+(105, 42, NULL, 27, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 13:42:02', '2021-09-07 13:42:02', NULL, NULL, 'd5594ebd-7d09-4872-bde3-792c456fd799'),
+(106, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:42:02', '2021-09-07 13:42:02', NULL, NULL, '1c987dba-ab81-4e44-955b-de757f76b489'),
+(107, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:42:02', '2021-09-07 13:42:02', NULL, NULL, '40eaa81a-1a7f-4b89-b776-fc3ac75248b3'),
+(111, 42, NULL, 28, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 13:44:37', '2021-09-07 13:44:37', NULL, NULL, 'cc468c39-ac34-4bdb-998d-1cfe2349d5d5'),
+(112, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:44:37', '2021-09-07 13:44:37', NULL, NULL, '6134caf9-c841-4d2a-a414-abaab4b16e8c'),
+(113, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:44:37', '2021-09-07 13:44:37', NULL, NULL, '2d871cc8-b7b0-4116-881a-598dc937e2a1'),
+(117, 42, NULL, 29, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:10:50', '2021-09-07 14:10:50', NULL, NULL, 'a93ccfa0-228f-4342-99e8-5416f735f829'),
+(118, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:10:50', '2021-09-07 14:10:50', NULL, NULL, '9931c137-e109-4bd0-9eb0-e695cbcc4bc2'),
+(119, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:10:50', '2021-09-07 14:10:50', NULL, NULL, 'df35313a-b2e8-4621-b06a-1a4c681d9d1b'),
+(123, 42, NULL, 30, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:11:22', '2021-09-07 14:11:22', NULL, NULL, '6bc50f9c-f63a-4031-ba24-b0615ad148ca'),
+(124, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:11:23', '2021-09-07 14:11:23', NULL, NULL, 'e0af431e-b7f5-4292-93c8-1bd7c4d7faf0'),
+(125, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:11:23', '2021-09-07 14:11:23', NULL, NULL, '073ba025-f7c7-4db7-9de1-c23964e5212d'),
+(129, 42, NULL, 31, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:32:19', '2021-09-07 14:32:19', NULL, NULL, '88b0205a-6ed7-4344-a2e0-3d9cde49a420'),
+(130, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:32:19', '2021-09-07 14:32:19', NULL, NULL, 'e99d6c5a-ffca-4570-ad8d-3a406911d41a'),
+(131, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:32:19', '2021-09-07 14:32:19', NULL, NULL, 'f1f54f62-3903-4667-a732-9085a12826ec'),
+(135, 42, NULL, 32, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:32:33', '2021-09-07 14:32:33', NULL, NULL, '03481944-6736-40cd-8f6a-ea259c14c159'),
+(136, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:32:34', '2021-09-07 14:32:34', NULL, NULL, '6aa11a22-c53d-4b7c-a295-4036568fe5e9'),
+(137, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:32:34', '2021-09-07 14:32:34', NULL, NULL, '678a9af5-19ef-48c2-b3c6-661c18bb46a2'),
+(141, 42, NULL, 33, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:33:51', '2021-09-07 14:33:52', NULL, NULL, 'ddedf5eb-fb60-4537-a346-89c96380e53c'),
+(142, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:33:52', '2021-09-07 14:33:52', NULL, NULL, '290462af-64fb-439b-b96e-cbe63a718c77'),
+(143, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:33:52', '2021-09-07 14:33:52', NULL, NULL, 'c66a2407-9c55-46a0-ae08-b634d820bf77'),
+(147, 42, NULL, 34, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:35:35', '2021-09-07 14:35:36', NULL, NULL, 'fc4dccba-547c-404f-b108-541d7c20ee1d'),
+(148, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:35:36', '2021-09-07 14:35:36', NULL, NULL, '430ec3d2-0b3a-42fe-81e9-59567f1d8af6'),
+(149, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:35:36', '2021-09-07 14:35:36', NULL, NULL, '104ae02a-4ede-4a8e-acaa-e58a16c7199e'),
+(153, 42, NULL, 35, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:36:15', '2021-09-07 14:36:15', NULL, NULL, '18b3560c-7d04-4b2e-a6f2-ddd9391bd5f6'),
+(154, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:36:15', '2021-09-07 14:36:15', NULL, NULL, '1e469287-68e7-4cf4-9938-bdf26b3e3d9c'),
+(155, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:36:15', '2021-09-07 14:36:15', NULL, NULL, 'a9265138-8cbe-441b-b6f2-000297bdd2dc'),
+(156, 42, 14, NULL, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:36:39', '2021-09-07 14:36:54', NULL, NULL, '98a5b654-b933-4ebe-a2b6-a9ad95931260'),
+(157, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:36:39', '2021-09-07 14:36:54', NULL, NULL, '75d60474-729a-4251-b7ce-f53db7fb5724'),
+(158, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:36:39', '2021-09-07 14:36:39', NULL, NULL, '9cc41ebe-7082-45c1-9e6a-fcf4a6a0e9c0');
 
 -- --------------------------------------------------------
 
@@ -516,7 +636,94 @@ INSERT INTO `elements_sites` (`id`, `elementId`, `siteId`, `slug`, `uri`, `enabl
 (35, 35, 1, 'the-simplest-math-problem-no-one-can-solve-collatz-conjecture-2-2', 'blogpost/the-simplest-math-problem-no-one-can-solve-collatz-conjecture-2-2', 1, '2021-09-07 10:07:41', '2021-09-07 10:07:41', '899a2584-41f2-4b63-898b-969acd6c763e'),
 (37, 37, 1, 'the-simplest-math-problem-no-one-can-solve-collatz-conjecture-2', 'blogpost/the-simplest-math-problem-no-one-can-solve-collatz-conjecture-2', 1, '2021-09-07 10:08:51', '2021-09-07 10:08:51', 'f717eacb-5c90-4267-97d8-01b872b4964a'),
 (39, 39, 1, 'the-simplest-math-problem-no-one-can-solve-collatz-conjecture-3', 'blogpost/the-simplest-math-problem-no-one-can-solve-collatz-conjecture-3', 1, '2021-09-07 10:09:00', '2021-09-07 10:09:00', 'ea52b9ea-cab6-4a48-8c09-04f99214d46b'),
-(41, 41, 1, 'the-simplest-math-problem-no-one-can-solve-collatz-conjecture-2-2', 'blogpost/the-simplest-math-problem-no-one-can-solve-collatz-conjecture-2-2', 1, '2021-09-07 10:09:06', '2021-09-07 10:09:06', '7e68dc74-6b72-42a5-bbb1-01f4b8065e4d');
+(41, 41, 1, 'the-simplest-math-problem-no-one-can-solve-collatz-conjecture-2-2', 'blogpost/the-simplest-math-problem-no-one-can-solve-collatz-conjecture-2-2', 1, '2021-09-07 10:09:06', '2021-09-07 10:09:06', '7e68dc74-6b72-42a5-bbb1-01f4b8065e4d'),
+(42, 42, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 13:09:13', '2021-09-07 13:15:34', '4d191fc9-aa27-4a3b-94bc-1c5f0b12d3ef'),
+(43, 43, 1, NULL, NULL, 1, '2021-09-07 13:09:16', '2021-09-07 13:09:16', 'cf304937-53f5-4b93-953e-a7c788e3d4c4'),
+(44, 44, 1, NULL, NULL, 1, '2021-09-07 13:09:43', '2021-09-07 13:09:43', '212b627d-4682-4378-bad2-9c9b9be40f21'),
+(45, 45, 1, NULL, NULL, 1, '2021-09-07 13:09:45', '2021-09-07 13:09:45', '3addbc2e-252f-43ae-96f0-88fd7d5bdfe8'),
+(46, 46, 1, NULL, NULL, 1, '2021-09-07 13:09:49', '2021-09-07 13:09:49', 'b37a386d-41a2-4c89-9902-aede6877e6f6'),
+(47, 47, 1, NULL, NULL, 1, '2021-09-07 13:09:55', '2021-09-07 13:09:55', '0039a916-3d48-42fe-9a4d-a0f05a50594b'),
+(48, 48, 1, NULL, NULL, 1, '2021-09-07 13:09:59', '2021-09-07 13:09:59', 'bba75b7c-3dc7-428f-83dc-3cdcf6f3103d'),
+(49, 49, 1, NULL, NULL, 1, '2021-09-07 13:10:10', '2021-09-07 13:10:10', '9028b7c5-7ee7-47ca-92b3-1da8c29b90f8'),
+(50, 50, 1, NULL, NULL, 1, '2021-09-07 13:10:13', '2021-09-07 13:10:13', '33775563-a23e-442e-bf09-b8f9a0298625'),
+(51, 51, 1, NULL, NULL, 1, '2021-09-07 13:10:14', '2021-09-07 13:10:14', '977d214f-2a12-4a65-81c3-f14f7778bb80'),
+(52, 52, 1, NULL, NULL, 1, '2021-09-07 13:10:16', '2021-09-07 13:10:16', '1c72c97b-5000-41a4-b422-a9d6d7544b11'),
+(53, 53, 1, NULL, NULL, 1, '2021-09-07 13:10:44', '2021-09-07 13:10:44', 'b8d4cd5f-6f0b-4361-9ec6-fe085f65d15a'),
+(54, 54, 1, NULL, NULL, 1, '2021-09-07 13:11:31', '2021-09-07 13:11:31', '55036c3b-8976-4d1c-bc88-525e10734c6c'),
+(55, 55, 1, NULL, NULL, 1, '2021-09-07 13:11:41', '2021-09-07 13:11:41', 'f76396d7-6873-4240-bf91-e42242e4f4d0'),
+(56, 56, 1, NULL, NULL, 1, '2021-09-07 13:11:44', '2021-09-07 13:11:44', '96b3cade-e2ca-456f-a02c-fd1ce20fafdb'),
+(57, 57, 1, NULL, NULL, 1, '2021-09-07 13:11:59', '2021-09-07 13:11:59', '6f3d0b81-9698-4d5e-a842-77fc70e65eeb'),
+(58, 58, 1, NULL, NULL, 1, '2021-09-07 13:12:11', '2021-09-07 13:12:11', '7c64360f-0353-444a-b55c-0a3f561b6166'),
+(59, 59, 1, NULL, NULL, 1, '2021-09-07 13:12:11', '2021-09-07 13:12:11', '4e93ff94-dd8f-4038-a189-862e2bfd9b41'),
+(60, 60, 1, NULL, NULL, 1, '2021-09-07 13:12:12', '2021-09-07 13:12:12', '1fda745a-ccdd-476c-97ca-cd7248ebf842'),
+(61, 61, 1, NULL, NULL, 1, '2021-09-07 13:12:12', '2021-09-07 13:12:12', '7a9928a5-f234-4091-ba9c-f4b4034354a0'),
+(62, 62, 1, NULL, NULL, 1, '2021-09-07 13:12:16', '2021-09-07 13:12:16', 'db8d67e5-a898-4007-aced-83c47d567e19'),
+(63, 63, 1, NULL, NULL, 1, '2021-09-07 13:12:26', '2021-09-07 13:12:26', 'd185ff2e-7e11-4200-b844-2fbed47a0f9b'),
+(64, 64, 1, NULL, NULL, 1, '2021-09-07 13:12:27', '2021-09-07 13:12:27', '4d37fe9a-e500-48a0-8917-bd3cced7546b'),
+(65, 65, 1, NULL, NULL, 1, '2021-09-07 13:12:34', '2021-09-07 13:12:34', '512ed9f5-3ad5-469d-b647-ee48ce12029c'),
+(66, 66, 1, NULL, NULL, 1, '2021-09-07 13:12:36', '2021-09-07 13:12:36', '870b0a13-3f95-400f-950d-6e5828394b95'),
+(67, 67, 1, NULL, NULL, 1, '2021-09-07 13:12:39', '2021-09-07 13:12:39', 'a9128de9-5f34-44ce-b76d-409040f9a828'),
+(68, 68, 1, NULL, NULL, 1, '2021-09-07 13:12:43', '2021-09-07 13:12:43', 'a16270bc-3c42-4f5c-88bc-b68d31d5ad32'),
+(69, 69, 1, NULL, NULL, 1, '2021-09-07 13:12:43', '2021-09-07 13:12:43', '70344019-9ccf-469b-bcd4-0f71f3f2bd5c'),
+(70, 70, 1, NULL, NULL, 1, '2021-09-07 13:13:00', '2021-09-07 13:13:00', 'a076195d-7619-4de0-90d7-e634aafb55cb'),
+(71, 71, 1, NULL, NULL, 1, '2021-09-07 13:13:07', '2021-09-07 13:13:07', '40d5e1d9-c984-425d-8e1c-34bfac659833'),
+(72, 72, 1, NULL, NULL, 1, '2021-09-07 13:13:09', '2021-09-07 13:13:09', '9c325d8a-6ef0-4151-a3ea-c49161a51436'),
+(73, 73, 1, NULL, NULL, 1, '2021-09-07 13:13:20', '2021-09-07 13:13:20', 'bde807e4-bba7-4f3e-a730-6f3d8fa4a5d3'),
+(74, 74, 1, NULL, NULL, 1, '2021-09-07 13:13:21', '2021-09-07 13:13:21', '61f5cf80-bdb9-427f-b724-e725d2a7648a'),
+(75, 75, 1, NULL, NULL, 1, '2021-09-07 13:13:23', '2021-09-07 13:13:23', '78acce40-dc74-4a86-b6ae-a70de0ea0ed3'),
+(76, 76, 1, NULL, NULL, 1, '2021-09-07 13:13:24', '2021-09-07 13:13:24', 'e1d2876a-b598-41d7-b493-2d88fe3d1a80'),
+(77, 77, 1, NULL, NULL, 1, '2021-09-07 13:13:35', '2021-09-07 13:13:35', 'fbb2f384-b3af-42e3-a24e-186e215524bf'),
+(78, 78, 1, NULL, NULL, 1, '2021-09-07 13:13:40', '2021-09-07 13:13:40', 'c3fd7076-108d-4190-89b0-50c10eb5b8e2'),
+(79, 79, 1, NULL, NULL, 1, '2021-09-07 13:13:41', '2021-09-07 13:13:41', '7f532914-8603-4958-9cc2-d5afd952d2d7'),
+(80, 80, 1, NULL, NULL, 1, '2021-09-07 13:14:02', '2021-09-07 13:14:02', 'db2db407-7422-4ba9-ae74-10361b527117'),
+(81, 81, 1, NULL, NULL, 1, '2021-09-07 13:14:04', '2021-09-07 13:14:04', '5b71db0d-a2bb-485b-8c56-f717737affdf'),
+(82, 82, 1, NULL, NULL, 1, '2021-09-07 13:14:15', '2021-09-07 13:14:15', 'e2c0b056-34fd-4c56-b024-183b87f27c39'),
+(83, 83, 1, NULL, NULL, 1, '2021-09-07 13:14:36', '2021-09-07 13:14:36', 'e7140c5d-f1b4-4d18-ab25-06eec103b999'),
+(84, 84, 1, NULL, NULL, 1, '2021-09-07 13:14:36', '2021-09-07 13:14:36', '35182b4a-b1c9-451c-8452-6ed66990b5f4'),
+(85, 85, 1, NULL, NULL, 1, '2021-09-07 13:14:41', '2021-09-07 13:14:41', 'beabebec-3a86-4bb2-ace6-7290608080da'),
+(86, 86, 1, NULL, NULL, 1, '2021-09-07 13:14:41', '2021-09-07 13:14:41', 'c46bb61d-4b2f-4413-987e-fd388adaf3d4'),
+(87, 87, 1, NULL, NULL, 1, '2021-09-07 13:14:55', '2021-09-07 13:14:55', '61328cc1-104d-462e-919b-31c2374b3ca0'),
+(88, 88, 1, NULL, NULL, 1, '2021-09-07 13:14:55', '2021-09-07 13:14:55', 'fcc3ca42-ecff-4947-b827-d62648e17adb'),
+(89, 89, 1, NULL, NULL, 1, '2021-09-07 13:18:57', '2021-09-07 13:18:57', '14a0ee23-9a55-4906-877b-f6ab56efd5ff'),
+(90, 90, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 13:20:19', '2021-09-07 13:20:19', 'f9ae7b9a-cc00-4319-9bfa-920b35b51936'),
+(91, 91, 1, NULL, NULL, 1, '2021-09-07 13:20:19', '2021-09-07 13:20:19', 'c86cb147-e235-4b10-97b5-440404b63ce2'),
+(92, 92, 1, NULL, NULL, 1, '2021-09-07 13:20:19', '2021-09-07 13:20:19', 'd13e0c7b-585a-4db6-9a3e-55cb021784b4'),
+(96, 96, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 13:22:45', '2021-09-07 13:22:45', 'ed04415e-78b9-4c8a-947f-76cf85189412'),
+(97, 97, 1, NULL, NULL, 1, '2021-09-07 13:22:45', '2021-09-07 13:22:45', 'df44ca92-7610-4431-a1b5-77e07b624508'),
+(98, 98, 1, NULL, NULL, 1, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '348c8e5c-56c3-4543-b05f-7a092762c37a'),
+(102, 102, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 13:23:47', '2021-09-07 13:23:47', '64041624-5f7e-454f-84ff-d2f8e8f2ce08'),
+(103, 103, 1, NULL, NULL, 1, '2021-09-07 13:23:47', '2021-09-07 13:23:47', 'b84333b8-0c14-436e-bda0-1680a85cc973'),
+(104, 104, 1, NULL, NULL, 1, '2021-09-07 13:23:47', '2021-09-07 13:23:47', 'bc05ce99-8753-42ea-8df0-a6ad4fb3adf8'),
+(105, 105, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 13:42:02', '2021-09-07 13:42:02', '94e1e2f8-beb7-4b2f-97ff-b37d7b8ed6a4'),
+(106, 106, 1, NULL, NULL, 1, '2021-09-07 13:42:02', '2021-09-07 13:42:02', 'd29c5ed6-81d2-4274-b4d5-1caefa33d6b9'),
+(107, 107, 1, NULL, NULL, 1, '2021-09-07 13:42:02', '2021-09-07 13:42:02', '30f36b1e-dd04-4604-b4c0-0ff4f03e6ed0'),
+(111, 111, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 13:44:37', '2021-09-07 13:44:37', '896a903c-a7df-40d4-bb90-2e543949dbce'),
+(112, 112, 1, NULL, NULL, 1, '2021-09-07 13:44:37', '2021-09-07 13:44:37', 'def6a84c-8534-4496-97ab-336507df2b5f'),
+(113, 113, 1, NULL, NULL, 1, '2021-09-07 13:44:37', '2021-09-07 13:44:37', 'df9f38b9-2c55-465c-9a3d-277f7282ca2f'),
+(117, 117, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:10:50', '2021-09-07 14:10:50', 'd1fc4211-b70f-48af-aad4-47108aedfc41'),
+(118, 118, 1, NULL, NULL, 1, '2021-09-07 14:10:50', '2021-09-07 14:10:50', 'cd7ae2e5-4f67-4246-a740-3466dd3f85b9'),
+(119, 119, 1, NULL, NULL, 1, '2021-09-07 14:10:50', '2021-09-07 14:10:50', '40924b46-e289-4f72-83db-4d270032314e'),
+(123, 123, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:11:22', '2021-09-07 14:11:22', '5f821adc-a3b7-411d-b04d-09ce2d6a71cc'),
+(124, 124, 1, NULL, NULL, 1, '2021-09-07 14:11:23', '2021-09-07 14:11:23', 'd2100f2f-6065-4511-9ddd-103f2e6aad6e'),
+(125, 125, 1, NULL, NULL, 1, '2021-09-07 14:11:23', '2021-09-07 14:11:23', '27472b3c-58ae-4d6a-aa40-769ac27d4405'),
+(129, 129, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '7d670e54-2811-426c-8928-7f0ba242f6ef'),
+(130, 130, 1, NULL, NULL, 1, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '2dc82eaa-9514-4315-9738-8d0fd25f1273'),
+(131, 131, 1, NULL, NULL, 1, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '0c0e9c80-2df3-45c1-a424-a434163f3720'),
+(135, 135, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:32:33', '2021-09-07 14:32:33', 'd82fb384-f111-4eb1-8da0-04b9b0b12913'),
+(136, 136, 1, NULL, NULL, 1, '2021-09-07 14:32:34', '2021-09-07 14:32:34', 'b2adec24-2015-482d-8768-1a2bad86b7cb'),
+(137, 137, 1, NULL, NULL, 1, '2021-09-07 14:32:34', '2021-09-07 14:32:34', '2e2d2da7-a172-4cf8-b1a6-2bf8fdd7cf11'),
+(141, 141, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:33:52', '2021-09-07 14:33:52', '88c26056-7e58-4ce2-bdc4-ecd8c464fcda'),
+(142, 142, 1, NULL, NULL, 1, '2021-09-07 14:33:52', '2021-09-07 14:33:52', '8ac4e64b-e1ac-40ab-b0bb-d14d12e84c1b'),
+(143, 143, 1, NULL, NULL, 1, '2021-09-07 14:33:52', '2021-09-07 14:33:52', '5dc14316-9ec3-41ba-869a-8a6387bddb2d'),
+(147, 147, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'fb782921-b486-4964-8e38-ca8c5c72d588'),
+(148, 148, 1, NULL, NULL, 1, '2021-09-07 14:35:36', '2021-09-07 14:35:36', '6bd719b8-672b-4b3c-bd6a-9c71c075db0a'),
+(149, 149, 1, NULL, NULL, 1, '2021-09-07 14:35:36', '2021-09-07 14:35:36', '76b6a811-0ffb-4e86-be20-458093300e79'),
+(153, 153, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', 'fbc40bef-ae38-4543-8e4a-3e345b179cfe'),
+(154, 154, 1, NULL, NULL, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '784ad7bd-1f80-4fa2-a3f6-d15e31aca8cb'),
+(155, 155, 1, NULL, NULL, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', 'f8597de6-80df-4ce7-9e9e-727e47bcc27d'),
+(156, 156, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '2ec7873a-b47f-47dd-b1c8-b76bbb363029'),
+(157, 157, 1, NULL, NULL, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '68acce2b-5568-4aee-8c98-934e4ad6b660'),
+(158, 158, 1, NULL, NULL, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '25761aed-a410-4353-88c9-57217604db8f');
 
 -- --------------------------------------------------------
 
@@ -573,7 +780,21 @@ INSERT INTO `entries` (`id`, `sectionId`, `parentId`, `typeId`, `authorId`, `pos
 (35, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:41', '2021-09-07 10:07:41', 'f9ed50c2-30d2-487a-95c4-a9bca4a0f766'),
 (37, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:08:51', '2021-09-07 10:08:51', '289e3431-e23a-4977-be18-b49105b1ac93'),
 (39, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:09:00', '2021-09-07 10:09:00', '74f2fc21-ca59-477f-a178-c805a102a935'),
-(41, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:09:06', '2021-09-07 10:09:06', '97eac275-29a6-40a7-9b32-13ce30444668');
+(41, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:09:06', '2021-09-07 10:09:06', '97eac275-29a6-40a7-9b32-13ce30444668'),
+(42, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:09:13', '2021-09-07 13:09:13', '8c3cce41-3623-4c57-8f45-41c9949f4818'),
+(90, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19', '82bacb03-8630-482a-919f-08ce53d54bef'),
+(96, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '177b8230-f454-4401-a055-6bea8b67df42'),
+(102, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:23:47', '2021-09-07 13:23:47', '3131140d-3279-4e84-8702-b165266ab7d7'),
+(105, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:42:02', '2021-09-07 13:42:02', '7fa2cfd8-767f-4c67-b441-8ae5065ba63e'),
+(111, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:44:37', '2021-09-07 13:44:37', '4e219f39-4f84-4887-b022-e016aa7a2da7'),
+(117, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:10:50', '2021-09-07 14:10:50', '201ff78e-fe20-4d9c-9b8c-e8382a6e8b7e'),
+(123, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:11:22', '2021-09-07 14:11:22', '7bc9c691-8996-4af0-a954-b31cfaea5648'),
+(129, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '823d4d64-f1eb-4bbf-bcf7-7d0be1f91802'),
+(135, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:32:34', '2021-09-07 14:32:34', 'f355afea-b10a-46dc-b9dd-31026ad6bfb1'),
+(141, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52', 'b17dc3fd-bd88-4dbd-9608-4030cd0e31d4'),
+(147, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36', '83f3e719-10d1-4a0c-92fd-cb3ba9808aaa'),
+(153, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '4b8555c4-25d8-4358-9220-1c74fec7ce7d'),
+(156, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '5d42526a-7c32-4c46-aba7-3416e4ee6451');
 
 -- --------------------------------------------------------
 
@@ -658,12 +879,13 @@ CREATE TABLE `fieldlayoutfields` (
 
 INSERT INTO `fieldlayoutfields` (`id`, `layoutId`, `tabId`, `fieldId`, `required`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`) VALUES
 (11, 5, 14, 8, 0, 1, '2021-09-06 14:39:19', '2021-09-06 14:39:19', '1821e82e-59a6-4c0d-b78f-665250994145'),
-(12, 2, 15, 3, 0, 0, '2021-09-07 08:47:40', '2021-09-07 08:47:40', '4bd9be8a-5842-438d-8834-c71beaa21545'),
-(13, 2, 15, 1, 0, 2, '2021-09-07 08:47:40', '2021-09-07 08:47:40', '3cb89753-430d-4c53-9c70-9932d0b65156'),
-(14, 2, 15, 4, 0, 3, '2021-09-07 08:47:40', '2021-09-07 08:47:40', '496db983-09d6-4912-a66c-2341bf5cd3a1'),
-(15, 2, 15, 2, 0, 4, '2021-09-07 08:47:40', '2021-09-07 08:47:40', 'a01ce670-5e2d-4e63-8678-45f918c8774d'),
-(18, 6, 18, 10, 0, 0, '2021-09-07 13:05:21', '2021-09-07 13:05:21', '954ae632-f6f4-4dd1-a049-1e1ba6097081'),
-(19, 7, 19, 11, 0, 0, '2021-09-07 13:05:21', '2021-09-07 13:05:21', '4acb1944-ff8c-4be6-a51b-5e5e7f7216a8');
+(30, 2, 24, 3, 1, 0, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '0b936414-fc9a-4ebe-8855-14baa1255240'),
+(31, 2, 24, 1, 1, 2, '2021-09-07 13:38:51', '2021-09-07 13:38:51', 'fcadbf85-100a-4dd2-8a26-8a53cbb97e25'),
+(32, 2, 24, 4, 0, 3, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '28b41f65-abf7-44f4-8de4-53d1cb7ea398'),
+(33, 2, 24, 2, 0, 4, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '87986b27-3b01-41df-8f40-33cb9d980fdc'),
+(34, 2, 25, 9, 0, 0, '2021-09-07 13:38:51', '2021-09-07 13:38:51', 'aab305e5-f6af-478f-b4ed-9c683b816f36'),
+(37, 6, 28, 10, 0, 0, '2021-09-07 14:23:03', '2021-09-07 14:23:03', '85980429-f2d5-4ea3-8e8d-b1cfcb0a80d8'),
+(38, 7, 29, 11, 0, 0, '2021-09-07 14:23:03', '2021-09-07 14:23:03', 'd9007d6e-bed2-4a0e-941c-b2362e31ea95');
 
 -- --------------------------------------------------------
 
@@ -719,9 +941,10 @@ INSERT INTO `fieldlayouttabs` (`id`, `layoutId`, `name`, `elements`, `sortOrder`
 (8, 1, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\AssetTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-06 12:05:03', '2021-09-06 12:05:03', '3085166e-072d-4523-ad4b-b7045bfb8e55'),
 (11, 4, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-06 14:38:08', '2021-09-06 14:38:08', '165c35ac-6ce1-4608-a430-5092646d1de8'),
 (14, 5, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"eac5e9e9-55ae-47bd-8d5c-4b674f1ff355\"}]', 1, '2021-09-06 14:39:19', '2021-09-06 14:39:19', 'e32dc685-f7f2-4f19-8758-2bdee6dd406e'),
-(15, 2, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e6e40127-efc5-4abd-b5ec-455c1a80fa0c\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"fdd41422-2f3c-4581-af2d-b4d3a271e183\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"7382616d-769d-4f84-8b59-7245cd08ef20\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e3a74156-6e99-4310-8b92-cc9c1d33e616\"}]', 1, '2021-09-07 08:47:40', '2021-09-07 08:47:40', 'd7aa9f9a-ff4c-44d4-8f89-175da50e703c'),
-(18, 6, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"3b175535-87ad-4cb7-90d4-5e06d63658d6\"}]', 1, '2021-09-07 13:05:21', '2021-09-07 13:05:21', 'f3fd022f-b273-4fda-94fd-89c241be9a6e'),
-(19, 7, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"f45f3568-3d9c-4779-b17c-26458592de2f\"}]', 1, '2021-09-07 13:05:21', '2021-09-07 13:05:21', '40544d68-1ec7-42e3-b164-137761cb2f5f');
+(24, 2, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":\"\",\"instructions\":\"\",\"tip\":null,\"warning\":null,\"required\":\"1\",\"width\":100,\"fieldUid\":\"e6e40127-efc5-4abd-b5ec-455c1a80fa0c\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":\"\",\"instructions\":\"\",\"tip\":null,\"warning\":null,\"required\":\"1\",\"width\":100,\"fieldUid\":\"fdd41422-2f3c-4581-af2d-b4d3a271e183\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"7382616d-769d-4f84-8b59-7245cd08ef20\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e3a74156-6e99-4310-8b92-cc9c1d33e616\"}]', 1, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '54febf38-756f-463e-97f1-ba81e990f243'),
+(25, 2, 'matrixinhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e3c14bdc-b578-4588-bce9-7dc0f8553072\"}]', 2, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '31c398d9-1a81-4f36-a732-4a92a201a5df'),
+(28, 6, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"3b175535-87ad-4cb7-90d4-5e06d63658d6\"}]', 1, '2021-09-07 14:23:03', '2021-09-07 14:23:03', 'bc34962e-0fa3-4f86-ba4c-8e64b6d000c1'),
+(29, 7, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"f45f3568-3d9c-4779-b17c-26458592de2f\"}]', 1, '2021-09-07 14:23:03', '2021-09-07 14:23:03', 'a4eab44a-347b-458a-a53c-b0b7004275ea');
 
 -- --------------------------------------------------------
 
@@ -759,7 +982,7 @@ INSERT INTO `fields` (`id`, `groupId`, `name`, `handle`, `context`, `columnSuffi
 (8, 3, 'introduction', 'introduction', 'global', 'itoqovjy', '', 0, 'none', NULL, 'craft\\fields\\PlainText', '{\"byteLimit\":null,\"charLimit\":null,\"code\":\"\",\"columnType\":\"text\",\"initialRows\":\"4\",\"multiline\":\"\",\"placeholder\":null,\"uiMode\":\"normal\"}', '2021-09-06 14:08:11', '2021-09-06 14:08:11', 'eac5e9e9-55ae-47bd-8d5c-4b674f1ff355'),
 (9, 5, 'inhoudzelf', 'inhoudzelf', 'global', NULL, '', 0, 'site', NULL, 'craft\\fields\\Matrix', '{\"contentTable\":\"{{%matrixcontent_inhoudzelf}}\",\"maxBlocks\":\"\",\"minBlocks\":\"\",\"propagationKeyFormat\":null,\"propagationMethod\":\"all\"}', '2021-09-07 12:58:21', '2021-09-07 12:58:21', 'e3c14bdc-b578-4588-bce9-7dc0f8553072'),
 (10, NULL, 'bodytext', 'bodytext', 'matrixBlockType:d6287000-aeb5-4ddf-aeeb-da48f9ed904f', NULL, '', 0, 'none', NULL, 'craft\\ckeditor\\Field', '{\"columnType\":\"mediumtext\",\"initJs\":null,\"purifierConfig\":\"\",\"purifyHtml\":\"1\"}', '2021-09-07 12:58:22', '2021-09-07 13:05:21', '3b175535-87ad-4cb7-90d4-5e06d63658d6'),
-(11, NULL, 'videolink', 'videolink', 'matrixBlockType:5d359804-dc3e-4485-8e71-f6d29868806e', NULL, 'Zet hier een video link in.', 0, 'none', NULL, 'craft\\fields\\Url', '{\"maxLength\":\"255\",\"placeholder\":null,\"types\":[\"url\"]}', '2021-09-07 12:58:22', '2021-09-07 13:05:21', 'f45f3568-3d9c-4779-b17c-26458592de2f');
+(11, NULL, 'videolink', 'videolink', 'matrixBlockType:5d359804-dc3e-4485-8e71-f6d29868806e', NULL, 'Zet hier een video link in.', 0, 'none', NULL, 'craft\\fields\\Url', '{\"maxLength\":\"255\",\"placeholder\":null,\"types\":[\"url\"]}', '2021-09-07 12:58:22', '2021-09-07 14:23:03', 'f45f3568-3d9c-4779-b17c-26458592de2f');
 
 -- --------------------------------------------------------
 
@@ -850,7 +1073,7 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `version`, `schemaVersion`, `maintenance`, `configVersion`, `fieldVersion`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, '3.7.11', '3.7.8', 0, 'oiyzuuqtpnae', 'soxblstvbwmv', '2021-09-06 10:09:22', '2021-09-07 13:05:21', 'bd374219-4f30-4743-b1dc-06c299bde1de');
+(1, '3.7.11', '3.7.8', 0, 'twjygablrfsw', 'zccypqfubumn', '2021-09-06 10:09:22', '2021-09-07 14:41:03', 'bd374219-4f30-4743-b1dc-06c299bde1de');
 
 -- --------------------------------------------------------
 
@@ -869,6 +1092,84 @@ CREATE TABLE `matrixblocks` (
   `dateUpdated` datetime NOT NULL,
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `matrixblocks`
+--
+
+INSERT INTO `matrixblocks` (`id`, `ownerId`, `fieldId`, `typeId`, `sortOrder`, `deletedWithOwner`, `dateCreated`, `dateUpdated`, `uid`) VALUES
+(43, 42, 9, 1, 1, 0, '2021-09-07 13:09:16', '2021-09-07 13:09:16', '6f5447ca-3f5e-46bc-ba01-0967b43f4df2'),
+(44, 42, 9, 1, 1, 0, '2021-09-07 13:09:43', '2021-09-07 13:09:43', '27e3580c-071e-4d9f-a5e4-54220f08e70f'),
+(45, 42, 9, 1, 1, 0, '2021-09-07 13:09:45', '2021-09-07 13:09:45', 'c4b50a34-6d78-4132-b68e-ebddfb477ce4'),
+(46, 42, 9, 1, 1, 0, '2021-09-07 13:09:49', '2021-09-07 13:09:49', '7a39d788-ba34-4409-81cc-0b6b7f906400'),
+(47, 42, 9, 1, 1, 0, '2021-09-07 13:09:55', '2021-09-07 13:09:55', '860ca5e4-9bf2-45cc-874d-80bf50b254d2'),
+(48, 42, 9, 1, 1, 0, '2021-09-07 13:09:59', '2021-09-07 13:09:59', 'e6f3d8e1-9d94-4f17-8a8e-4be98f163f58'),
+(49, 42, 9, 1, 1, 0, '2021-09-07 13:10:10', '2021-09-07 13:10:10', '78bf5db8-9f36-4fad-b596-1d6c4d74be28'),
+(50, 42, 9, 1, 1, 0, '2021-09-07 13:10:13', '2021-09-07 13:10:13', '602c6a09-900a-4709-9cb5-c13d55cc382b'),
+(51, 42, 9, 1, 1, 0, '2021-09-07 13:10:14', '2021-09-07 13:10:14', 'e62ebeb6-1b69-4640-83cf-c841d2dfbf70'),
+(52, 42, 9, 1, 1, 0, '2021-09-07 13:10:16', '2021-09-07 13:10:16', 'bbf458a0-2d24-4b8d-88e7-c82afda36ea7'),
+(53, 42, 9, 1, 1, 0, '2021-09-07 13:10:44', '2021-09-07 13:10:44', 'cda6d634-2f73-4d1c-9442-6266b63d8c42'),
+(54, 42, 9, 1, 1, 0, '2021-09-07 13:11:31', '2021-09-07 13:11:31', '509b87fd-3ca2-44b8-b10f-53644fd08f7b'),
+(55, 42, 9, 1, 1, 0, '2021-09-07 13:11:41', '2021-09-07 13:11:41', 'e970c1c6-dbef-4d9b-a003-40e4fc2b6935'),
+(56, 42, 9, 1, 1, 0, '2021-09-07 13:11:44', '2021-09-07 13:11:44', 'c37a90d3-a6c2-4d3d-94e4-e41894b83c37'),
+(57, 42, 9, 1, 1, 0, '2021-09-07 13:11:59', '2021-09-07 13:11:59', 'e48b07a1-945e-47a7-af94-994e1a7e32e4'),
+(58, 42, 9, 1, 1, 0, '2021-09-07 13:12:11', '2021-09-07 13:12:11', '5e769cca-dfc1-477f-b134-317416e13581'),
+(59, 42, 9, 1, 1, 0, '2021-09-07 13:12:11', '2021-09-07 13:12:11', '3d9d7a44-c935-4f8b-b996-e27c9427b6d1'),
+(60, 42, 9, 1, 1, 0, '2021-09-07 13:12:12', '2021-09-07 13:12:12', 'e9886cbc-a0ae-44f3-91a1-18e21b28c8b1'),
+(61, 42, 9, 1, 1, 0, '2021-09-07 13:12:12', '2021-09-07 13:12:12', '750d18db-959a-462e-ae1b-33d1528a8988'),
+(62, 42, 9, 1, 1, 0, '2021-09-07 13:12:16', '2021-09-07 13:12:16', 'afc017c9-3e24-4d34-91b3-8778fa32d6a6'),
+(63, 42, 9, 1, 1, 0, '2021-09-07 13:12:26', '2021-09-07 13:12:26', '92815c8f-51e6-457e-8ad9-9f90279ef344'),
+(64, 42, 9, 1, 1, 0, '2021-09-07 13:12:27', '2021-09-07 13:12:27', '19a4d385-ad20-4be4-8198-d8cc33c5a6ba'),
+(65, 42, 9, 1, 1, 0, '2021-09-07 13:12:34', '2021-09-07 13:12:34', '371842e0-6d1f-4f12-ac6e-cec2730b5671'),
+(66, 42, 9, 1, 1, 0, '2021-09-07 13:12:36', '2021-09-07 13:12:36', 'aed725af-3e1f-4a2b-a4f6-26f09c0f62ec'),
+(67, 42, 9, 1, 1, 0, '2021-09-07 13:12:39', '2021-09-07 13:12:39', 'e8c845f0-80ec-41f3-9c13-942ccd3e5313'),
+(68, 42, 9, 1, 1, 0, '2021-09-07 13:12:43', '2021-09-07 13:12:43', 'fe21c5bd-c1ad-41bf-bb39-f4cdb93ac5cb'),
+(69, 42, 9, 1, 1, 0, '2021-09-07 13:12:43', '2021-09-07 13:12:43', 'e8eb2a2e-9f89-4f3b-9a72-09f3734a61ba'),
+(70, 42, 9, 1, 1, 0, '2021-09-07 13:13:00', '2021-09-07 13:13:00', '9bc8a3fa-00c2-451f-b966-5215ffd89292'),
+(71, 42, 9, 1, 1, 0, '2021-09-07 13:13:07', '2021-09-07 13:13:07', '836f363b-7cca-4c37-8069-49021f6237e0'),
+(72, 42, 9, 1, 1, 0, '2021-09-07 13:13:09', '2021-09-07 13:13:09', 'aef3d724-84a4-4e17-b16c-aeeabb13b8cc'),
+(73, 42, 9, 1, 1, 0, '2021-09-07 13:13:20', '2021-09-07 13:13:20', 'b33a22b8-edec-4b83-9ccc-4da3e28900eb'),
+(74, 42, 9, 1, 1, 0, '2021-09-07 13:13:21', '2021-09-07 13:13:21', '50942270-50d6-427e-89cc-d289120da3ce'),
+(75, 42, 9, 1, 1, 0, '2021-09-07 13:13:23', '2021-09-07 13:13:23', 'ae8d395f-afb1-4f95-b611-b4c4542bf335'),
+(76, 42, 9, 1, 1, 0, '2021-09-07 13:13:24', '2021-09-07 13:13:24', 'a12832cb-6c87-42b4-b6ee-e3a1466eaf79'),
+(77, 42, 9, 1, 1, 0, '2021-09-07 13:13:35', '2021-09-07 13:13:35', '3996248a-99cc-41cd-bd95-09eb165dce91'),
+(78, 42, 9, 1, 1, 0, '2021-09-07 13:13:40', '2021-09-07 13:13:40', '2018dfcb-b446-43b6-afde-23312a71ba1a'),
+(79, 42, 9, 1, 1, 0, '2021-09-07 13:13:41', '2021-09-07 13:13:41', '64613038-a78e-4f75-b98b-39b8f9f04398'),
+(80, 42, 9, 1, 1, 0, '2021-09-07 13:14:02', '2021-09-07 13:14:02', '147b558b-e195-49f1-85bc-0ee1a984b68a'),
+(81, 42, 9, 1, 1, 0, '2021-09-07 13:14:04', '2021-09-07 13:14:04', 'a1aa71f3-955b-45a3-b2b2-d12476f2aae5'),
+(82, 42, 9, 1, 1, 0, '2021-09-07 13:14:15', '2021-09-07 13:14:15', '2d49ccd3-795c-4f27-af14-87bedcf42b38'),
+(83, 42, 9, 1, 1, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36', 'e5982866-8770-4f28-88c4-1ac653d4625e'),
+(84, 42, 9, 2, 2, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36', '98d6e848-db17-4494-868c-03db201d6038'),
+(85, 42, 9, 2, 1, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', 'db28867f-d98e-4553-8146-183d96465684'),
+(86, 42, 9, 1, 2, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', '02f45d29-af16-4574-a302-5eb2dd488d50'),
+(87, 42, 9, 2, 2, NULL, '2021-09-07 13:14:55', '2021-09-07 14:35:36', '76d613eb-d903-42b0-8ca7-f1cf3d0997a4'),
+(88, 42, 9, 1, 1, NULL, '2021-09-07 13:14:55', '2021-09-07 14:35:35', '225c71ef-97e8-44c9-b62e-15634815275c'),
+(91, 90, 9, 2, 1, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19', 'f1f3a64f-f359-4bce-8716-ec0375b69217'),
+(92, 90, 9, 1, 2, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19', '71f2ceea-c822-4eda-9aef-1ebeedd40612'),
+(97, 96, 9, 2, 1, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '8b9fe901-c270-41d6-897a-73453a3a7f0b'),
+(98, 96, 9, 1, 2, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '4797d98d-3ce8-4c6b-bea3-36a04a00bccd'),
+(103, 102, 9, 2, 1, NULL, '2021-09-07 13:23:47', '2021-09-07 13:23:47', '696a379e-dafa-4391-8f5e-e660fd17694b'),
+(104, 102, 9, 1, 2, NULL, '2021-09-07 13:23:47', '2021-09-07 13:23:47', 'ff6a9b6f-e3e0-45ff-8df1-5d55bba9e04d'),
+(106, 105, 9, 2, 1, NULL, '2021-09-07 13:42:02', '2021-09-07 13:42:02', '41763083-842d-41de-ac6e-c7e0244f99c3'),
+(107, 105, 9, 1, 2, NULL, '2021-09-07 13:42:02', '2021-09-07 13:42:02', '0cd3fd41-46d6-4492-b0bf-10c69c92b8c2'),
+(112, 111, 9, 2, 1, NULL, '2021-09-07 13:44:37', '2021-09-07 13:44:37', 'a88f8019-bc4a-4633-bcf9-e5afd3cdeeaf'),
+(113, 111, 9, 1, 2, NULL, '2021-09-07 13:44:37', '2021-09-07 13:44:37', 'f2e78bdc-144b-48c1-a607-cdc87eef84ac'),
+(118, 117, 9, 2, 1, NULL, '2021-09-07 14:10:50', '2021-09-07 14:10:50', '8f63f226-e0f5-406e-84b9-6eb7d094bff2'),
+(119, 117, 9, 1, 2, NULL, '2021-09-07 14:10:50', '2021-09-07 14:10:50', '5a4c6535-c15c-4ef5-9170-a707b7cd87db'),
+(124, 123, 9, 2, 1, NULL, '2021-09-07 14:11:23', '2021-09-07 14:11:23', 'a0763c45-6e18-4392-a284-4cdeb661bb7b'),
+(125, 123, 9, 1, 2, NULL, '2021-09-07 14:11:23', '2021-09-07 14:11:23', '0156c63f-b06a-4c90-bafa-b06ff39eb99f'),
+(130, 129, 9, 2, 1, NULL, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '63773748-7c50-4992-855e-1f47470fe73b'),
+(131, 129, 9, 1, 2, NULL, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '1055848b-54fb-433e-bff5-284aa862cd44'),
+(136, 135, 9, 2, 1, NULL, '2021-09-07 14:32:34', '2021-09-07 14:32:34', '8cd77dd1-241f-447c-a39c-e63d221f0ef4'),
+(137, 135, 9, 1, 2, NULL, '2021-09-07 14:32:34', '2021-09-07 14:32:34', 'fcddd167-e4b2-4f68-8980-80c11ab8c1c6'),
+(142, 141, 9, 2, 1, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52', 'd997591a-7de5-4757-8069-4ab73d09d2a0'),
+(143, 141, 9, 1, 2, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52', 'bf593c80-c8fe-4054-a2af-c97b15a26ecb'),
+(148, 147, 9, 1, 1, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'd69caba3-b35d-4322-a416-49e0c0a01384'),
+(149, 147, 9, 2, 2, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'a778f9de-43b7-473f-8f15-875f4a3f97ad'),
+(154, 153, 9, 1, 1, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '815c0e98-defb-48a0-bb65-843e4c45ebf1'),
+(155, 153, 9, 2, 2, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '060689f2-c1e7-44ae-8ff7-3d552e4ea049'),
+(157, 156, 9, 1, 1, NULL, '2021-09-07 14:36:39', '2021-09-07 14:36:39', 'be23a36b-98f7-401a-9505-8971510a631e'),
+(158, 156, 9, 2, 2, NULL, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '726f4e3e-0887-4b40-9ec0-b0dede6d4e9c');
 
 -- --------------------------------------------------------
 
@@ -912,6 +1213,84 @@ CREATE TABLE `matrixcontent_inhoudzelf` (
   `field_bodycopy_bodytext` mediumtext COLLATE utf8_unicode_ci,
   `field_videolink_videolink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `matrixcontent_inhoudzelf`
+--
+
+INSERT INTO `matrixcontent_inhoudzelf` (`id`, `elementId`, `siteId`, `dateCreated`, `dateUpdated`, `uid`, `field_bodycopy_bodytext`, `field_videolink_videolink`) VALUES
+(1, 43, 1, '2021-09-07 13:09:16', '2021-09-07 13:09:16', '0d0cd065-fda4-499c-892e-29d7d53eeb8a', NULL, NULL),
+(2, 44, 1, '2021-09-07 13:09:43', '2021-09-07 13:09:43', 'a12ca1cf-5811-4788-b188-4fb823dabee4', '<p>Dit is martijn </p>', NULL),
+(3, 45, 1, '2021-09-07 13:09:45', '2021-09-07 13:09:45', 'f89b0d16-40df-4ccc-8459-900a6d76c4d2', '<p>Dit is martijn, </p>', NULL),
+(4, 46, 1, '2021-09-07 13:09:49', '2021-09-07 13:09:49', 'a0d5b671-018d-48e6-8a89-e16cc341c4b0', '<p>Dit is Martijn</p>', NULL),
+(5, 47, 1, '2021-09-07 13:09:55', '2021-09-07 13:09:55', '63c96f67-c74a-45c4-b762-9a6c59a61c6d', '<p>Dit is Martijn, hij is de eigen</p>', NULL),
+(6, 48, 1, '2021-09-07 13:09:59', '2021-09-07 13:09:59', '86e04444-99ea-4a43-932c-ab98e8e0c2af', '<p>Dit is Martijn, hij is de eigenaar van pixeldeluxe</p>', NULL),
+(7, 49, 1, '2021-09-07 13:10:10', '2021-09-07 13:10:10', 'c274b315-fa84-465d-83ad-1b45e5256683', '<p>Dit is Martijn, hij is de eigenaar van pixeldeluxe.</p>', NULL),
+(8, 50, 1, '2021-09-07 13:10:13', '2021-09-07 13:10:13', 'e15731d2-3446-4aab-8b33-402ef5ab6909', '<p>Dit is Martijn, hij is de eigenaar van ixeldeluxe.</p>', NULL),
+(9, 51, 1, '2021-09-07 13:10:14', '2021-09-07 13:10:14', '51baac56-7b93-4e32-8b91-09baebe0546d', '<p>Dit is Martijn, hij is de eigenaar van Pixeldeluxe.</p>', NULL),
+(10, 52, 1, '2021-09-07 13:10:16', '2021-09-07 13:10:16', 'f98c19e8-3b83-45c0-8286-d2a396920723', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(11, 53, 1, '2021-09-07 13:10:44', '2021-09-07 13:10:44', '8d88095f-978d-4b69-8734-471a7b7c8bd0', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><p> </p>', NULL),
+(12, 54, 1, '2021-09-07 13:11:31', '2021-09-07 13:11:31', '80ef4ac8-8950-4c59-8ea0-3cdfb935d99e', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(13, 55, 1, '2021-09-07 13:11:41', '2021-09-07 13:11:41', '6c5e46a4-1383-4ba3-a713-6791e7eac91a', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><p> </p>', NULL),
+(14, 56, 1, '2021-09-07 13:11:44', '2021-09-07 13:11:44', '7df5b15f-d018-49f8-929e-ca146921932a', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(15, 57, 1, '2021-09-07 13:11:59', '2021-09-07 13:11:59', '99b50188-4c73-4c3d-a6cc-25f65f2c919a', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><figure class=\"media\"></figure><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(16, 58, 1, '2021-09-07 13:12:11', '2021-09-07 13:12:11', '7408c7e5-2de2-4ec8-bd64-b42021737734', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><figure class=\"media\"></figure><p> </p><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(17, 59, 1, '2021-09-07 13:12:11', '2021-09-07 13:12:11', '08c10b09-5e15-4265-8c2a-ff80383cabf2', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><figure class=\"media\"></figure><p> </p><p> </p><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(18, 60, 1, '2021-09-07 13:12:12', '2021-09-07 13:12:12', 'e2cfa24f-50ae-4229-8695-3cc5e26fdd36', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><figure class=\"media\"></figure><p> </p><p> </p><p> </p><p> </p><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(19, 61, 1, '2021-09-07 13:12:12', '2021-09-07 13:12:12', '38e6a774-5fac-4a27-ac4e-da6587f79139', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><figure class=\"media\"></figure><p> </p><p> </p><p> </p><p> </p><p> </p><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(20, 62, 1, '2021-09-07 13:12:16', '2021-09-07 13:12:16', '3771e7cf-b354-468c-979e-d58596745b9c', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><figure class=\"media\"></figure><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(21, 63, 1, '2021-09-07 13:12:26', '2021-09-07 13:12:26', '949259a3-f111-48e7-a8df-c3d636a651ba', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><p> </p><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(22, 64, 1, '2021-09-07 13:12:27', '2021-09-07 13:12:27', '06e201ad-dd3a-4618-b517-a305ff61aa2f', '<p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(23, 65, 1, '2021-09-07 13:12:34', '2021-09-07 13:12:34', '6d2b3f32-cdfb-4f2f-8710-f1d998396d86', '<p> </p><figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(24, 66, 1, '2021-09-07 13:12:36', '2021-09-07 13:12:36', 'a2537173-b257-49d4-af34-a3ff90fe1c68', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(25, 67, 1, '2021-09-07 13:12:39', '2021-09-07 13:12:39', 'ccceb293-6f0f-4281-aa5e-a70658398ec7', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(26, 68, 1, '2021-09-07 13:12:43', '2021-09-07 13:12:43', '524d6d92-61e3-447d-bedd-15620d17f1cc', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure><ul><li>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</li></ul>', NULL),
+(27, 69, 1, '2021-09-07 13:12:43', '2021-09-07 13:12:43', '1ee622f9-17ad-4cef-9bb6-e019096df7e3', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(28, 70, 1, '2021-09-07 13:13:00', '2021-09-07 13:13:00', '5990b9ce-66d3-4219-9bac-05137973694b', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure><p> </p><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(29, 71, 1, '2021-09-07 13:13:07', '2021-09-07 13:13:07', '3c4465f9-78e0-4c6a-8de1-8010e9c82abc', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure>', NULL),
+(30, 72, 1, '2021-09-07 13:13:09', '2021-09-07 13:13:09', '660328ee-03c2-49ca-9805-51c2113c5a3d', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /><figcaption>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</figcaption></figure>', NULL),
+(31, 73, 1, '2021-09-07 13:13:20', '2021-09-07 13:13:20', '6dcfc337-b62a-4dff-9986-d5d5be2d8834', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /><figcaption>Dit is Martijn, hij is de eigenaar van PixelDeluxe.ffwefewfewfewfewfewfew</figcaption></figure>', NULL),
+(32, 74, 1, '2021-09-07 13:13:21', '2021-09-07 13:13:21', '5ea265ad-2601-45e7-aea0-98819c0f0c76', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(33, 75, 1, '2021-09-07 13:13:23', '2021-09-07 13:13:23', '9fcf3db8-8789-4336-ad63-7f71fb431d50', '<figure class=\"image image-style-side\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(34, 76, 1, '2021-09-07 13:13:24', '2021-09-07 13:13:24', 'cd6e05e1-62dd-4762-bea0-1d226470d616', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"\" /></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(35, 77, 1, '2021-09-07 13:13:35', '2021-09-07 13:13:35', '677f1c46-6881-40d1-a1f5-958f4c23a1ab', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(36, 78, 1, '2021-09-07 13:13:40', '2021-09-07 13:13:40', '20930168-dd8e-4c04-ab0a-7471a0ae8847', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le </figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(37, 79, 1, '2021-09-07 13:13:41', '2021-09-07 13:13:41', '4ff94ab8-6d38-46d1-b8e4-1d61ee53aa69', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(38, 80, 1, '2021-09-07 13:14:02', '2021-09-07 13:14:02', '1e554898-9540-47c0-9a70-c23fd87a2926', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure>', NULL),
+(39, 81, 1, '2021-09-07 13:14:04', '2021-09-07 13:14:04', '206cc3bb-ffc2-4154-872a-aef303a4c0ec', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p> </p>', NULL),
+(40, 82, 1, '2021-09-07 13:14:15', '2021-09-07 13:14:15', 'aed87c97-ec82-4f6b-860c-d771041b149a', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(41, 83, 1, '2021-09-07 13:14:36', '2021-09-07 13:14:36', '8d7d3176-ff71-4b53-a820-0a3330bbbf24', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(42, 84, 1, '2021-09-07 13:14:36', '2021-09-07 13:14:36', '44d1c4b3-ab45-4ab8-830a-1b0e174a1ba9', NULL, NULL),
+(43, 85, 1, '2021-09-07 13:14:41', '2021-09-07 13:14:41', '9d75bf99-abc4-4bca-9018-3d93c6e5b740', NULL, NULL),
+(44, 86, 1, '2021-09-07 13:14:41', '2021-09-07 13:14:41', 'e35ad3ce-d7ec-4f1e-aec0-1f80fb648365', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(45, 87, 1, '2021-09-07 13:14:55', '2021-09-07 14:36:15', '0f244adb-a7e6-4b4f-80fb-ce0614b9abb1', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(46, 88, 1, '2021-09-07 13:14:55', '2021-09-07 14:36:15', 'dbfc8970-6032-47f1-a2a6-3f298b4026e2', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(47, 91, 1, '2021-09-07 13:20:19', '2021-09-07 13:20:19', '5f07873f-1842-4fdf-85cb-24e409d65f43', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(48, 92, 1, '2021-09-07 13:20:19', '2021-09-07 13:20:19', 'c5332dee-f6af-4435-8488-0493b91fa1c1', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(51, 97, 1, '2021-09-07 13:22:45', '2021-09-07 13:22:45', 'b4a8e2f5-c6e5-4188-8c63-6faacb314355', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(52, 98, 1, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '706c9f60-456e-4b8e-b6a7-15d570772e92', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(55, 103, 1, '2021-09-07 13:23:47', '2021-09-07 13:23:47', 'dc19ac0e-021b-4851-8242-423b91eb0a7e', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(56, 104, 1, '2021-09-07 13:23:47', '2021-09-07 13:23:47', '1416f180-9c01-4731-81fd-06aab9d42c8a', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(57, 106, 1, '2021-09-07 13:42:02', '2021-09-07 13:42:02', 'fcd8b3b4-515a-4ec3-b131-5e097fc29ae3', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(58, 107, 1, '2021-09-07 13:42:02', '2021-09-07 13:42:02', '9c310e3a-909c-4b32-abfe-1ece9f87fbca', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(61, 112, 1, '2021-09-07 13:44:37', '2021-09-07 13:44:37', '5d406d87-b41d-4593-82bb-6c423995fadc', NULL, '<figure class=\"media\"></figure>'),
+(62, 113, 1, '2021-09-07 13:44:37', '2021-09-07 13:44:37', '8bd8c558-b678-4bf8-952f-a49d280692d9', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(65, 118, 1, '2021-09-07 14:10:50', '2021-09-07 14:10:50', '1069952a-cee8-4d19-bbc0-9d6822df7a6f', NULL, '<figure class=\"media\"></figure>'),
+(66, 119, 1, '2021-09-07 14:10:50', '2021-09-07 14:10:50', 'fe83f933-3ea3-4347-bd2c-ed14f1640999', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(69, 124, 1, '2021-09-07 14:11:23', '2021-09-07 14:11:23', '4cf8575c-5141-4327-90a7-fc147031f12d', NULL, '<figure class=\"media\"></figure><p>Video</p>'),
+(70, 125, 1, '2021-09-07 14:11:23', '2021-09-07 14:11:23', 'b9bf6de9-b05e-4be9-a304-3e8bcba87c17', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(73, 130, 1, '2021-09-07 14:32:19', '2021-09-07 14:32:19', 'f785fd03-1860-4437-b47d-9166cf54bcac', NULL, 'https://www.youtube.com/watch?v=sMb00lz-IfE&t=155s'),
+(74, 131, 1, '2021-09-07 14:32:19', '2021-09-07 14:32:19', 'cf1da844-d297-4315-987d-34fba61b18e0', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(77, 136, 1, '2021-09-07 14:32:34', '2021-09-07 14:32:34', 'c205c4ef-bb7e-4b72-9174-6d496429ed13', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE&t=155s'),
+(78, 137, 1, '2021-09-07 14:32:34', '2021-09-07 14:32:34', '059e3bf5-60ea-47c8-a8a1-29bbdebb6e1e', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(81, 142, 1, '2021-09-07 14:33:52', '2021-09-07 14:33:52', 'd930d328-7782-4e94-b5af-b435aa4d52b7', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(82, 143, 1, '2021-09-07 14:33:52', '2021-09-07 14:33:52', '114a6dd7-fe19-4b92-b52c-05a008a41544', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(85, 148, 1, '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'cf952875-3399-4898-b3f5-2da6dacd783d', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(86, 149, 1, '2021-09-07 14:35:36', '2021-09-07 14:35:36', '5499a190-403e-4a34-a47d-08c27662cde3', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(89, 154, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '704ec09d-d399-4d21-b0d7-ea5142ce64cf', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(90, 155, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '824c62e7-ef30-463d-95ff-fb7bdaa04e54', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(91, 157, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:54', '4ca08b20-a4e6-492c-acef-75918a45921a', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(92, 158, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', 'acc1d5dd-50b9-4a8c-ac52-e743bba7d4d1', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE');
 
 -- --------------------------------------------------------
 
@@ -1124,7 +1503,10 @@ INSERT INTO `migrations` (`id`, `track`, `name`, `applyTime`, `dateCreated`, `da
 (188, 'craft', 'm210611_233510_default_placement_settings', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '3a44fb49-039d-483c-8e85-8f9c32332247'),
 (189, 'craft', 'm210613_145522_sortable_global_sets', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '2021-09-06 10:09:25', 'c2ebe2ee-c949-48b2-a35c-4b7adf449ca7'),
 (190, 'craft', 'm210613_184103_announcements', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '445cfd13-6ffc-4b73-8d17-dea724e58835'),
-(191, 'craft', 'm210829_000000_element_index_tweak', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '66524cda-ae66-43f2-843f-e68b533cc9aa');
+(191, 'craft', 'm210829_000000_element_index_tweak', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '66524cda-ae66-43f2-843f-e68b533cc9aa'),
+(192, 'plugin:redactor', 'm180430_204710_remove_old_plugins', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '553dabb1-d96c-4483-899e-e7b3642f8ba9'),
+(193, 'plugin:redactor', 'Install', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-07 14:38:20', 'c5b56d77-e2c5-4cb9-b781-841df4e00895'),
+(194, 'plugin:redactor', 'm190225_003922_split_cleanup_html_settings', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '89bd6a39-c29d-4197-bb8c-6bbf21c0e60f');
 
 -- --------------------------------------------------------
 
@@ -1150,7 +1532,8 @@ CREATE TABLE `plugins` (
 --
 
 INSERT INTO `plugins` (`id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `licensedEdition`, `installDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'ckeditor', '1.1.2', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2021-09-07 11:26:33', '032a7d64-0762-4824-8f4b-0c7d4ea9143b');
+(1, 'ckeditor', '1.1.2', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2021-09-07 14:38:26', '032a7d64-0762-4824-8f4b-0c7d4ea9143b'),
+(2, 'redactor', '2.8.8', '2.3.0', 'unknown', NULL, '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-07 14:38:26', 'd08ef1d0-3480-4156-a250-5bda6017a5fe');
 
 -- --------------------------------------------------------
 
@@ -1168,14 +1551,14 @@ CREATE TABLE `projectconfig` (
 --
 
 INSERT INTO `projectconfig` (`path`, `value`) VALUES
-('dateModified', '1631019921'),
+('dateModified', '1631025663'),
 ('email.fromEmail', '\"pjotr@pixeldeluxe.nl\"'),
 ('email.fromName', '\"Blogsite\"'),
 ('email.transportType', '\"craft\\\\mail\\\\transportadapters\\\\Sendmail\"'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.fieldUid', '\"e6e40127-efc5-4abd-b5ec-455c1a80fa0c\"'),
-('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.instructions', 'null'),
-('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.label', 'null'),
-('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.required', 'false'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.instructions', '\"\"'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.label', '\"\"'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.required', '\"1\"'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.tip', 'null'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.0.warning', 'null'),
@@ -1203,9 +1586,9 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.1.warning', 'null'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.1.width', '100'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.fieldUid', '\"fdd41422-2f3c-4581-af2d-b4d3a271e183\"'),
-('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.instructions', 'null'),
-('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.label', 'null'),
-('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.required', 'false'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.instructions', '\"\"'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.label', '\"\"'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.required', '\"1\"'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.tip', 'null'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.warning', 'null'),
@@ -1228,6 +1611,16 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.4.width', '100'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.name', '\"Inhoud\"'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.sortOrder', '1'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.elements.0.fieldUid', '\"e3c14bdc-b578-4588-bce9-7dc0f8553072\"'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.elements.0.instructions', 'null'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.elements.0.label', 'null'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.elements.0.required', 'false'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.elements.0.tip', 'null'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.elements.0.warning', 'null'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.elements.0.width', '100'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.name', '\"matrixinhoud\"'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.1.sortOrder', '2'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.handle', '\"default\"'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.hasTitleField', 'true'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.name', '\"Standaard\"'),
@@ -1503,6 +1896,9 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('plugins.ckeditor.edition', '\"standard\"'),
 ('plugins.ckeditor.enabled', 'true'),
 ('plugins.ckeditor.schemaVersion', '\"1.0.0\"'),
+('plugins.redactor.edition', '\"standard\"'),
+('plugins.redactor.enabled', 'true'),
+('plugins.redactor.schemaVersion', '\"2.3.0\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.defaultPlacement', '\"end\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.enableVersioning', 'true'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.handle', '\"homepage\"'),
@@ -1557,8 +1953,9 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('system.edition', '\"pro\"'),
 ('system.live', 'true'),
 ('system.name', '\"Blogsite\"'),
+('system.retryDuration', 'null'),
 ('system.schemaVersion', '\"3.7.8\"'),
-('system.timeZone', '\"America/Los_Angeles\"'),
+('system.timeZone', '\"Europe/Amsterdam\"'),
 ('users.allowPublicRegistration', 'false'),
 ('users.defaultGroup', 'null'),
 ('users.photoSubpath', 'null'),
@@ -1658,7 +2055,21 @@ INSERT INTO `relations` (`id`, `fieldId`, `sourceId`, `sourceSiteId`, `targetId`
 (12, 3, 35, NULL, 6, 1, '2021-09-07 10:07:41', '2021-09-07 10:07:41', '499bb999-78b5-49fd-b8d2-09cfd7b16813'),
 (14, 3, 37, NULL, 6, 1, '2021-09-07 10:08:51', '2021-09-07 10:08:51', 'c0734748-6522-499d-b705-53eebb51e492'),
 (16, 3, 39, NULL, 6, 1, '2021-09-07 10:09:00', '2021-09-07 10:09:00', '8bcf6f06-a8fd-40e1-b655-28cb1658bda4'),
-(18, 3, 41, NULL, 6, 1, '2021-09-07 10:09:06', '2021-09-07 10:09:06', 'cc159c19-1d8f-4a78-93dc-75347dc1345f');
+(18, 3, 41, NULL, 6, 1, '2021-09-07 10:09:06', '2021-09-07 10:09:06', 'cc159c19-1d8f-4a78-93dc-75347dc1345f'),
+(19, 3, 42, NULL, 89, 1, '2021-09-07 13:19:07', '2021-09-07 13:19:07', 'e26982e4-a6aa-4384-b7cd-74a4a940fbc3'),
+(20, 3, 90, NULL, 89, 1, '2021-09-07 13:20:19', '2021-09-07 13:20:19', '37f1f5f8-f679-4921-9e08-d0ce12473d30'),
+(22, 3, 96, NULL, 89, 1, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '32b380f8-fce1-4800-8dbd-941c4a7e3d9d'),
+(24, 3, 102, NULL, 89, 1, '2021-09-07 13:23:47', '2021-09-07 13:23:47', 'c9774e47-42bd-4299-8314-c1aebe4af371'),
+(25, 3, 105, NULL, 89, 1, '2021-09-07 13:42:02', '2021-09-07 13:42:02', 'f682966f-9406-4fe1-b397-ffaf03d903c0'),
+(27, 3, 111, NULL, 89, 1, '2021-09-07 13:44:37', '2021-09-07 13:44:37', '0aed9b8e-778d-4dac-9614-b2694929c2ea'),
+(29, 3, 117, NULL, 89, 1, '2021-09-07 14:10:50', '2021-09-07 14:10:50', 'b5bde6ff-950b-472e-a633-71557ab4f534'),
+(31, 3, 123, NULL, 89, 1, '2021-09-07 14:11:22', '2021-09-07 14:11:22', '331047a6-4b73-439c-83a6-a66d79822455'),
+(33, 3, 129, NULL, 89, 1, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '06fef210-952e-4e82-9dc0-e5b64f343f0e'),
+(35, 3, 135, NULL, 89, 1, '2021-09-07 14:32:34', '2021-09-07 14:32:34', '839038f7-7dc3-4776-b41e-fa64fea8cb2f'),
+(37, 3, 141, NULL, 89, 1, '2021-09-07 14:33:52', '2021-09-07 14:33:52', '2da243aa-daca-4658-ac09-8e393009c4ec'),
+(39, 3, 147, NULL, 89, 1, '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'eb566a34-99f8-4a85-8a3a-595e910d973a'),
+(41, 3, 153, NULL, 89, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '1076a11d-f8d0-4020-98a8-c237b3ee9dbe'),
+(42, 3, 156, NULL, 89, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', 'c3695462-7ae9-4438-b296-7f724a3312bc');
 
 -- --------------------------------------------------------
 
@@ -1676,24 +2087,30 @@ CREATE TABLE `resourcepaths` (
 --
 
 INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
+('12de6e6b', '@app/web/assets/cp/dist'),
 ('157cbf5e', '@craft/web/assets/craftsupport/dist'),
 ('1d7a0893', '@craft/web/assets/login/dist'),
 ('23a4881d', '@lib/axios'),
+('258d6799', '@app/web/assets/generalsettings/dist'),
 ('2973c854', '@lib/jquery-ui'),
 ('2a69821a', '@craft/web/assets/feed/dist'),
 ('311425f7', '@craft/web/assets/editsection/dist'),
+('31290b88', '@app/web/assets/updateswidget/dist'),
 ('37cd79e5', '@craft/web/assets/plugins/dist'),
+('3fbba749', '@app/web/assets/craftsupport/dist'),
 ('4ce047bd', '@craft/web/assets/matrixsettings/dist'),
 ('532aa4d1', '@craft/web/assets/dashboard/dist'),
 ('59c50f79', '@lib/element-resize-detector'),
 ('67da53f1', '@lib/velocity'),
 ('6ca94a2d', '@craft/web/assets/deprecationerrors/dist'),
+('70a52cfa', '@app/web/assets/utilities/dist'),
 ('738c66d1', '@craft/web/assets/editentry/dist'),
 ('7655a48c', '@bower/jquery/dist'),
 ('7bfdfc19', '@lib/jquery.payment'),
 ('85a94d66', '@craft/web/assets/updater/dist'),
 ('8c6a0b39', '@craft/web/assets/recententries/dist'),
 ('9b12a970', '@lib/timepicker'),
+('9e62340', '@app/web/assets/pluginstore/dist'),
 ('a1d5a0bb', '@craft/web/assets/pluginstore/dist'),
 ('a4edf105', '@lib/xregexp'),
 ('a5d2cb10', '@craft/web/assets/installer/dist'),
@@ -1704,6 +2121,8 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('bbff1d0c', '@craft/web/assets/generalsettings/dist'),
 ('bf936a0e', '@craft/web/assets/fieldsettings/dist'),
 ('c7e7afdc', '@lib/garnishjs'),
+('d04f3222', '@app/web/assets/deprecationerrors/dist'),
+('d1d32027', '@app/web/assets/dashboard/dist'),
 ('d264b20f', '@craft/web/assets/fields/dist'),
 ('d2a17be2', '@lib/fabric'),
 ('d9ff6a97', '@craft/ckeditor/assets/field/dist'),
@@ -1715,7 +2134,9 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('f25ca80c', '@craft/web/assets/utilities/dist'),
 ('f45ab85a', '@lib/d3'),
 ('f5bf522c', '@craft/web/assets/queuemanager/dist'),
+('f9349e6', '@app/web/assets/recententries/dist'),
 ('fa76007a', '@craft/web/assets/tablesettings/dist'),
+('fa877c75', '@craft/web/assets/matrix/dist'),
 ('faff980b', '@lib/picturefill'),
 ('fd5ba4c9', '@lib/jquery-touch-events'),
 ('ffddae40', '@lib/prismjs');
@@ -1761,7 +2182,19 @@ INSERT INTO `revisions` (`id`, `sourceId`, `creatorId`, `num`, `notes`) VALUES
 (20, 34, 1, 1, NULL),
 (21, 30, 1, 2, '“Concept 1” toegepast'),
 (22, 32, 1, 2, '“Concept 1” toegepast'),
-(23, 34, 1, 2, '“Concept 1” toegepast');
+(23, 34, 1, 2, '“Concept 1” toegepast'),
+(24, 42, 1, 1, ''),
+(25, 42, 1, 2, '“Concept 1” toegepast'),
+(26, 42, 1, 3, '“Concept 1” toegepast'),
+(27, 42, 1, 4, ''),
+(28, 42, 1, 5, '“Concept 1” toegepast'),
+(29, 42, 1, 6, '“Concept 1” toegepast'),
+(30, 42, 1, 7, '“Concept 1” toegepast'),
+(31, 42, 1, 8, '“Concept 1” toegepast'),
+(32, 42, 1, 9, '“Concept 1” toegepast'),
+(33, 42, 1, 10, '“Concept 1” toegepast'),
+(34, 42, 1, 11, '“Concept 1” toegepast'),
+(35, 42, 1, 12, '“Concept 1” toegepast');
 
 -- --------------------------------------------------------
 
@@ -1808,7 +2241,44 @@ INSERT INTO `searchindex` (`elementId`, `attribute`, `fieldId`, `siteId`, `keywo
 (32, 'title', 0, 1, ' the simplest math problem no one can solve collatz conjecture '),
 (32, 'slug', 0, 1, ' the simplest math problem no one can solve collatz conjecture 3 '),
 (34, 'title', 0, 1, ' the simplest math problem no one can solve collatz conjecture '),
-(34, 'slug', 0, 1, ' the simplest math problem no one can solve collatz conjecture 2 2 ');
+(34, 'slug', 0, 1, ' the simplest math problem no one can solve collatz conjecture 2 2 '),
+(42, 'title', 0, 1, ' what is not random '),
+(42, 'slug', 0, 1, ' what is not random '),
+(87, 'slug', 0, 1, ''),
+(88, 'slug', 0, 1, ''),
+(89, 'filename', 0, 1, ' sddefault jpeg '),
+(89, 'extension', 0, 1, ' jpeg '),
+(89, 'kind', 0, 1, ' image '),
+(89, 'slug', 0, 1, ''),
+(89, 'title', 0, 1, ' sddefault '),
+(91, 'slug', 0, 1, ''),
+(92, 'slug', 0, 1, ''),
+(97, 'slug', 0, 1, ''),
+(98, 'slug', 0, 1, ''),
+(103, 'slug', 0, 1, ''),
+(104, 'slug', 0, 1, ''),
+(106, 'slug', 0, 1, ''),
+(107, 'slug', 0, 1, ''),
+(112, 'slug', 0, 1, ''),
+(113, 'slug', 0, 1, ''),
+(118, 'slug', 0, 1, ''),
+(119, 'slug', 0, 1, ''),
+(124, 'slug', 0, 1, ''),
+(125, 'slug', 0, 1, ''),
+(130, 'slug', 0, 1, ''),
+(131, 'slug', 0, 1, ''),
+(136, 'slug', 0, 1, ''),
+(137, 'slug', 0, 1, ''),
+(142, 'slug', 0, 1, ''),
+(143, 'slug', 0, 1, ''),
+(148, 'slug', 0, 1, ''),
+(149, 'slug', 0, 1, ''),
+(154, 'slug', 0, 1, ''),
+(155, 'slug', 0, 1, ''),
+(156, 'slug', 0, 1, ' what is not random '),
+(157, 'slug', 0, 1, ''),
+(158, 'slug', 0, 1, ''),
+(156, 'title', 0, 1, ' what is not random ');
 
 -- --------------------------------------------------------
 
@@ -1901,7 +2371,7 @@ CREATE TABLE `sessions` (
 
 INSERT INTO `sessions` (`id`, `userId`, `token`, `dateCreated`, `dateUpdated`, `uid`) VALUES
 (1, 1, 'a5KmNJk4V0lXKv3fTaLc0Ew8fanOjmv7rv4jKX8FI66dOd7vlrF7tEe1NXEzpADN4tGmDjq7QjcwoD2gZc2xwd_evddMWgHeBHuk', '2021-09-06 10:09:24', '2021-09-06 15:24:16', 'd7ea78a3-fd13-4b5f-ad8a-1019e9a8bb82'),
-(2, 1, '-3bCwt9yyW04JYRv2y_8j6gSUxSuhi9dG_U0w8pJXcNKGExndk3bx-Ksz_y85Ri_7G8qygFduiyFtEgCYzOhDQCfb1bznUSRiQju', '2021-09-07 08:15:07', '2021-09-07 13:05:26', '2719a066-6821-4163-9d7b-41ac786c7544');
+(2, 1, '-3bCwt9yyW04JYRv2y_8j6gSUxSuhi9dG_U0w8pJXcNKGExndk3bx-Ksz_y85Ri_7G8qygFduiyFtEgCYzOhDQCfb1bznUSRiQju', '2021-09-07 08:15:07', '2021-09-07 14:41:08', '2719a066-6821-4163-9d7b-41ac786c7544');
 
 -- --------------------------------------------------------
 
@@ -2911,7 +3381,7 @@ ALTER TABLE `assetindexdata`
 -- AUTO_INCREMENT voor een tabel `assettransformindex`
 --
 ALTER TABLE `assettransformindex`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT voor een tabel `assettransforms`
@@ -2935,7 +3405,7 @@ ALTER TABLE `categorygroups_sites`
 -- AUTO_INCREMENT voor een tabel `content`
 --
 ALTER TABLE `content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT voor een tabel `craftidtokens`
@@ -2947,13 +3417,13 @@ ALTER TABLE `craftidtokens`
 -- AUTO_INCREMENT voor een tabel `deprecationerrors`
 --
 ALTER TABLE `deprecationerrors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT voor een tabel `drafts`
 --
 ALTER TABLE `drafts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT voor een tabel `elementindexsettings`
@@ -2965,13 +3435,13 @@ ALTER TABLE `elementindexsettings`
 -- AUTO_INCREMENT voor een tabel `elements`
 --
 ALTER TABLE `elements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
 -- AUTO_INCREMENT voor een tabel `elements_sites`
 --
 ALTER TABLE `elements_sites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
 -- AUTO_INCREMENT voor een tabel `entrytypes`
@@ -2989,7 +3459,7 @@ ALTER TABLE `fieldgroups`
 -- AUTO_INCREMENT voor een tabel `fieldlayoutfields`
 --
 ALTER TABLE `fieldlayoutfields`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT voor een tabel `fieldlayouts`
@@ -3001,7 +3471,7 @@ ALTER TABLE `fieldlayouts`
 -- AUTO_INCREMENT voor een tabel `fieldlayouttabs`
 --
 ALTER TABLE `fieldlayouttabs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT voor een tabel `fields`
@@ -3043,37 +3513,37 @@ ALTER TABLE `matrixblocktypes`
 -- AUTO_INCREMENT voor een tabel `matrixcontent_inhoudzelf`
 --
 ALTER TABLE `matrixcontent_inhoudzelf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT voor een tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=192;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
 
 --
 -- AUTO_INCREMENT voor een tabel `plugins`
 --
 ALTER TABLE `plugins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `queue`
 --
 ALTER TABLE `queue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=338;
 
 --
 -- AUTO_INCREMENT voor een tabel `relations`
 --
 ALTER TABLE `relations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT voor een tabel `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT voor een tabel `sections`
