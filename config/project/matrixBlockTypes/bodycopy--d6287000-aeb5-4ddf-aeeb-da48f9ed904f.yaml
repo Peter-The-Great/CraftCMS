@@ -18,20 +18,33 @@ fieldLayouts:
 fields:
   3b175535-87ad-4cb7-90d4-5e06d63658d6: # bodytext
     columnSuffix: null
-    contentColumnType: mediumtext
+    contentColumnType: text
     fieldGroup: null
     handle: bodytext
     instructions: ''
     name: bodytext
     searchable: false
     settings:
-      columnType: mediumtext
-      initJs: null
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: ''
       purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
-    type: craft\ckeditor\Field
+    type: craft\redactor\Field
 handle: bodycopy
 name: bodycopy
 sortOrder: 1
