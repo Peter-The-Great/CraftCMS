@@ -26,6 +26,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
+          -
+            fieldUid: 639db3fc-cfd4-4523-a2e8-2ac5effb3522 # about
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Inhoud
         sortOrder: 1
 handle: default

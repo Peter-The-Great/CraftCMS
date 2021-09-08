@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Gegenereerd op: 07 sep 2021 om 16:41
+-- Gegenereerd op: 08 sep 2021 om 17:25
 -- Serverversie: 5.7.34
 -- PHP-versie: 7.4.21
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `blogs`
 --
+CREATE DATABASE IF NOT EXISTS `blogs` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `blogs`;
 
 -- --------------------------------------------------------
 
@@ -227,13 +229,22 @@ INSERT INTO `changedattributes` (`elementId`, `siteId`, `attribute`, `dateUpdate
 (4, 1, 'slug', '2021-09-06 12:02:14', 0, 1),
 (4, 1, 'title', '2021-09-06 12:02:14', 0, 1),
 (4, 1, 'uri', '2021-09-06 12:02:14', 0, 1),
-(22, 1, 'uri', '2021-09-06 14:40:32', 0, 1),
+(10, 1, 'title', '2021-09-08 07:16:03', 0, 1),
+(22, 1, 'authorId', '2021-09-08 10:06:51', 0, 1),
+(22, 1, 'slug', '2021-09-08 10:07:03', 0, 1),
+(22, 1, 'uri', '2021-09-08 10:12:10', 0, 1),
 (30, 1, 'title', '2021-09-07 10:08:50', 0, 1),
 (32, 1, 'title', '2021-09-07 10:09:00', 0, 1),
 (34, 1, 'title', '2021-09-07 10:09:06', 0, 1),
 (42, 1, 'slug', '2021-09-07 13:15:35', 0, 1),
 (42, 1, 'title', '2021-09-07 13:15:35', 0, 1),
-(42, 1, 'uri', '2021-09-07 13:15:35', 0, 1);
+(42, 1, 'uri', '2021-09-07 13:15:35', 0, 1),
+(170, 1, 'slug', '2021-09-08 10:00:44', 0, 1),
+(170, 1, 'title', '2021-09-08 10:02:49', 0, 1),
+(170, 1, 'uri', '2021-09-08 09:24:14', 0, 1),
+(172, 1, 'slug', '2021-09-08 09:03:14', 0, 1),
+(172, 1, 'title', '2021-09-08 09:03:14', 0, 1),
+(172, 1, 'uri', '2021-09-08 09:25:52', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -260,25 +271,29 @@ INSERT INTO `changedfields` (`elementId`, `siteId`, `fieldId`, `dateUpdated`, `p
 (4, 1, 3, '2021-09-06 12:07:09', 0, 1),
 (4, 1, 4, '2021-09-07 09:02:46', 0, 1),
 (10, 1, 8, '2021-09-06 14:12:51', 0, 1),
-(22, 1, 8, '2021-09-06 14:40:33', 0, 1),
+(22, 1, 8, '2021-09-08 10:12:11', 0, 1),
 (30, 1, 1, '2021-09-07 10:08:50', 0, 1),
 (30, 1, 2, '2021-09-07 10:08:50', 0, 1),
 (30, 1, 3, '2021-09-07 10:08:50', 0, 1),
 (30, 1, 4, '2021-09-07 10:08:50', 0, 1),
 (32, 1, 4, '2021-09-07 10:09:00', 0, 1),
 (34, 1, 4, '2021-09-07 10:09:06', 0, 1),
-(42, 1, 1, '2021-09-07 14:36:15', 0, 1),
-(42, 1, 3, '2021-09-07 14:36:15', 0, 1),
-(42, 1, 4, '2021-09-07 14:36:15', 0, 1),
-(42, 1, 9, '2021-09-07 14:36:15', 0, 1),
-(87, 1, 11, '2021-09-07 14:36:15', 0, 1),
-(88, 1, 10, '2021-09-07 14:36:15', 0, 1),
-(156, 1, 1, '2021-09-07 14:36:40', 0, 1),
-(156, 1, 3, '2021-09-07 14:36:40', 0, 1),
-(156, 1, 4, '2021-09-07 14:36:40', 0, 1),
-(156, 1, 9, '2021-09-07 14:36:54', 0, 1),
-(157, 1, 10, '2021-09-07 14:36:54', 0, 1),
-(158, 1, 11, '2021-09-07 14:36:39', 0, 1);
+(42, 1, 1, '2021-09-07 14:53:45', 0, 1),
+(42, 1, 3, '2021-09-07 14:53:45', 0, 1),
+(42, 1, 4, '2021-09-07 14:57:30', 0, 1),
+(42, 1, 9, '2021-09-07 14:57:30', 0, 1),
+(87, 1, 11, '2021-09-07 14:53:45', 0, 1),
+(88, 1, 10, '2021-09-07 14:57:31', 0, 1),
+(170, 1, 12, '2021-09-08 14:58:53', 0, 1),
+(211, 1, 13, '2021-09-08 14:58:53', 0, 1),
+(212, 1, 14, '2021-09-08 14:58:53', 0, 1),
+(212, 1, 15, '2021-09-08 14:58:53', 0, 1),
+(222, 1, 1, '2021-09-08 14:56:26', 0, 1),
+(222, 1, 3, '2021-09-08 14:56:26', 0, 1),
+(222, 1, 4, '2021-09-08 14:56:26', 0, 1),
+(222, 1, 9, '2021-09-08 14:56:26', 0, 1),
+(223, 1, 11, '2021-09-08 14:56:26', 0, 1),
+(224, 1, 10, '2021-09-08 14:56:26', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -313,7 +328,7 @@ INSERT INTO `content` (`id`, `elementId`, `siteId`, `title`, `dateCreated`, `dat
 (6, 6, 1, 'Thumnail', '2021-09-06 12:05:18', '2021-09-06 12:05:18', 'a176302d-d4b3-42c0-8cac-f0946cc421f0', NULL, NULL, NULL, NULL),
 (8, 8, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture', '2021-09-06 12:07:09', '2021-09-06 12:07:09', 'ba9a0537-65bc-4508-87e9-9026b80b8f9b', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/watch?v=094y1Z2wpJg', NULL),
 (9, 9, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture', '2021-09-06 12:07:16', '2021-09-06 12:07:16', '986e92d6-96c1-480f-b90b-34d7f25697f5', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/watch?v=094y1Z2wpJg', NULL),
-(10, 10, 1, 'homepage', '2021-09-06 13:11:08', '2021-09-06 14:38:08', 'd7289ea7-0d83-424b-8fba-f51ff009d65d', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post videos.'),
+(10, 10, 1, 'Homepage', '2021-09-06 13:11:08', '2021-09-08 07:16:04', 'd7289ea7-0d83-424b-8fba-f51ff009d65d', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post videos.'),
 (11, 11, 1, 'homepage', '2021-09-06 13:11:08', '2021-09-06 13:11:08', '9c0065cf-0ce6-49ba-8a54-78c24e30ac9e', NULL, NULL, NULL, NULL),
 (12, 12, 1, 'homepage', '2021-09-06 14:08:35', '2021-09-06 14:08:35', '16721323-b5ed-48f3-892e-f31140c55f73', NULL, NULL, NULL, NULL),
 (14, 14, 1, 'homepage', '2021-09-06 14:12:45', '2021-09-06 14:12:45', 'd9ac5153-eba0-4f3f-a068-a95a2e652af8', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik maak videos.'),
@@ -323,7 +338,7 @@ INSERT INTO `content` (`id`, `elementId`, `siteId`, `title`, `dateCreated`, `dat
 (19, 19, 1, 'homepage', '2021-09-06 14:36:00', '2021-09-06 14:36:00', 'f254f0ac-694c-40df-aedd-90a4e52ec0cb', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post videos.'),
 (20, 20, 1, 'homepage', '2021-09-06 14:37:12', '2021-09-06 14:37:12', '73665f51-50c7-41a0-8873-fd1582814029', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post videos.'),
 (21, 21, 1, 'homepage', '2021-09-06 14:38:08', '2021-09-06 14:38:08', 'c4d97af2-3689-43bb-82c8-234de834df41', NULL, NULL, NULL, NULL),
-(22, 22, 1, 'navbar', '2021-09-06 14:39:19', '2021-09-06 14:40:33', '75583f3c-1127-4b6a-b385-72b956bf90d8', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
+(22, 22, 1, 'navbar', '2021-09-06 14:39:19', '2021-09-08 10:14:18', '75583f3c-1127-4b6a-b385-72b956bf90d8', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
 (23, 23, 1, 'navbar', '2021-09-06 14:39:19', '2021-09-06 14:39:19', '334b5d94-05f4-47d9-9037-3f1ef41709b3', NULL, NULL, NULL, NULL),
 (25, 25, 1, 'navbar', '2021-09-06 14:39:59', '2021-09-06 14:39:59', 'c9ea51ee-b920-473e-a25e-f50e67444ed2', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
 (26, 26, 1, 'navbar', '2021-09-06 14:40:13', '2021-09-06 14:40:13', '5c8d9c81-5e75-43d2-80c5-d8dc1f821c31', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
@@ -339,7 +354,7 @@ INSERT INTO `content` (`id`, `elementId`, `siteId`, `title`, `dateCreated`, `dat
 (37, 37, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture', '2021-09-07 10:08:51', '2021-09-07 10:08:51', '4b1c6291-df7a-4755-a1d5-416a1d5ad6d4', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/embed/094y1Z2wpJg', NULL),
 (39, 39, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture', '2021-09-07 10:09:00', '2021-09-07 10:09:00', 'e28bb0ab-17d0-4326-9a35-281d08bd6da2', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/embed/094y1Z2wpJg', NULL),
 (41, 41, 1, 'The Simplest Math Problem No One Can Solve - Collatz Conjecture', '2021-09-07 10:09:06', '2021-09-07 10:09:06', 'e7233966-51ba-42e9-8301-b1742405f3f7', '<p>The Collatz Conjecture is the simplest math problem no one can solve — it is easy enough for almost anyone to understand but notoriously difficult to solve.</p>', '<p>This video is sponsored by Brilliant. The first 200 people to sign up via <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbE5HdVhjUUNPVjZEMWVycHZfQ1pzQTZiLWhud3xBQ3Jtc0tua0NIcm93TUFzaEt6ajZtN2ZGWWVsQUVJUGxGc3h3T1Q5clJSWTFwMDdvNm1mNEJ4X0NHOEFNS0dzbFJIY3MzR2Y2N1NKWll6eWtnWHMyV1hsaUpmQUVPNV9oazJUd2NVNHpMcmlQbHJFVnhubGt2aw&amp;q=https%3A%2F%2Fbrilliant.org%2Fveritasium\">https://brilliant.org/veritasium</a> get 20% off a yearly subscription.</p><p>Special thanks to Prof. Alex Kontorovich for introducing us to this topic, filming the interview, and consulting on the script and earlier drafts of this video.</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>References:</p><p>Lagarias, J. C. (2006). The 3x+ 1 problem: An annotated bibliography, II (2000-2009). arXiv preprint math/0608208. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbF9seXBzbURnTXVkZEJVR29EU0VaU1ZBQkx0d3xBQ3Jtc0tudXRuYi04NG1yMzk0WVd0U25zX0lMWDI1UVlTQ0VkNzBkSUd4WUJDNVNaeEJtSEpPRTh3SlBhRm5tT2pxYlNxZUhucDgzaEZsalBvWnBoNF9pQ0JsR1NoQktjb01ET0syUnBGTlJqWk1yZFQ3VjBfdw&amp;q=https%3A%2F%2Fve42.co%2FLagarias2006\">https://ve42.co/Lagarias2006</a></p><p>Lagarias, J. C. (2003). The 3x+ 1 problem: An annotated bibliography (1963–1999). The ultimate challenge: the 3x, 1, 267-341. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbDdLODVpWnQ5VVQ1S1VMcUs4aHJFb1Ftdmt1UXxBQ3Jtc0ttTlU2YWQtOVZXMWtsUm1wV0dPTlJDa1FhRmtPQmZieGZnQVlmTHNFTFRIVFpRZTZiTm5vLXBTanc3V080dGZpQWFYcW91R3ExNFJ1bVpEcnNfUEV5OUQ5UmhKVTRCOEJPS1R6NzdCdlVIQkdxU3J1QQ&amp;q=https%3A%2F%2Fve42.co%2FLagarias2003\">https://ve42.co/Lagarias2003</a></p><p>Tao, T (2020). The Notorious Collatz Conjecture — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbEdrcGxidDY4TklUYzhTQ2RES1dqSHd0TEV4QXxBQ3Jtc0ttX3FZSUdmU1RzZlMtMndRbVdpYnVRcURNQzVjM3ZSOHBOaDFTX0dDMk1SbDdGWW9aX2JBVE5aQ19veHN3SEhYTE0zNFZ1eDJNeWE0MzJhY296OW9DN2w0cE9PMFRLcnRKOEFfX0Y0UFdoWVFuRVBJaw&amp;q=https%3A%2F%2Fve42.co%2FTao2020\">https://ve42.co/Tao2020</a></p><p>A. Kontorovich and Y. Sinai, Structure Theorem for (d,g,h)-Maps, Bulletin of the Brazilian Mathematical Society, New Series 33(2), 2002, pp. 213-224.</p><p><br />A. Kontorovich and S. Miller Benford\'s Law, values of L-functions and the 3x+1 Problem, Acta Arithmetica 120 (2005), 269-297.</p><p>A. Kontorovich and J. Lagarias Stochastic Models for the 3x + 1 and 5x + 1 Problems, in \"The Ultimate Challenge: The 3x+1 Problem,\" AMS 2010.</p><p>Tao, T. (2019). Almost all orbits of the Collatz map attain almost bounded values. arXiv preprint arXiv:1909.03562. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa3JrVEx2dVU4N0VRcVlHSTlYVDRidHRUeUFvQXxBQ3Jtc0ttNzFtWU5wUEZpdk9oaE5qTXhQSlB2Wm0tYzI3eWJfenV2MEZNdC1PWURTYmJKSVlGS0VXUVZib1NjcUVlcGZFeTI5c1V6bGFRM3Nmc2NXcUtfdlBLRVk4eFBKRy1jaVNzMkNlLUhlbTZROU9YTUZCZw&amp;q=https%3A%2F%2Fve42.co%2FTao2019\">https://ve42.co/Tao2019</a></p><p>Conway, J. H. (1987). Fractran: A simple universal programming language for arithmetic. In Open problems in Communication and Computation (pp. 4-26). Springer, New York, NY. — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqa1l5RzNDaGhDT3Z0WXpGTVJ2bmRSRUhhUjV1UXxBQ3Jtc0tuOVNNWFdXY3hwa2JnOFRLNmZ0UFFyOTNrWFpVTXEtd2pSQTVpNzFURU5WNG1Ma0FUdkYtR0hxWTdHd244MDVocWh2cTN3U1BnSkpLZnROU2VpNDVfN2RibFZ0cEZXek5BdGhIYlVVc0RnaVVHbnhFRQ&amp;q=https%3A%2F%2Fve42.co%2FConway1987\">https://ve42.co/Conway1987</a></p><p> </p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Special thanks to Patreon supporters: Alvaro Naranjo, Burt Humburg, Blake Byers, Dumky, Mike Tung, Evgeny Skvortsov, Meekay, Ismail Öncü Usta, Paul Peijzel, Crated Comments, Anna, Mac Malkawi, Michael Schneider, Oleksii Leonov, Jim Osmun, Tyson McDowell, Ludovic Robillard, Jim buckmaster, fanime96, Juan Benet, Ruslan Khroma, Robert Blum, Richard Sundvall, Lee Redden, Vincent, Marinus Kuivenhoven, Alfred Wallace, Arjun Chakroborty, Joar Wandborg, Clayton Greenwell, Pindex, Michael Krugman, Cy \'kkm\' K\'Nelson, Sam Lutfi, Ron Neal</p><p>▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</p><p>Written by Derek Muller, Alex Kontorovich and Petr Lebedev</p><p>Animation by Iván Tello, Jonny Hyman, Jesús Enrique Rascón and Mike Radjabov</p><p>Filmed by Derek Muller and Emily Zhang</p><p>Edited by Derek Muller</p><p>SFX by Shaun Clifford</p><p>Additional video supplied by Getty Images</p><p>Produced by Derek Muller, Petr Lebedev and Emily Zhang</p><p><br /> </p><p>3d Coral by Vasilis Triantafyllou and Niklas Rosenstein — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqbUg4cndMbnpObzhUOWVmUDd2M1FFUmJocXZxZ3xBQ3Jtc0trNnFnWlFYdEVXeXY2M2oxaUh3SERRSDNMTXZxamJTWkxRdGsxc2ZkQXRTaHFzN21jN0tCbE1RUkdxaTZKc1Z0UXFHcmdndFFJNk1yTi1wOG9DTFkxQnQ2YUM1TkpBOHA3YXhmSUdMdXhOTDk4TEExSQ&amp;q=https%3A%2F%2Fve42.co%2F3DCoral\">https://ve42.co/3DCoral</a></p><p>Coral visualisation by Algoritmarte — <a href=\"https://www.youtube.com/redirect?event=video_description&amp;redir_token=QUFFLUhqazlfb0FSbEE4RGtJYkE3V2F6NmtoUGg1bEkyQXxBQ3Jtc0ttX3dnbHVvX3NTRzNQbndkY3VYN04zdmNieF9nVFhTMkhSZ1JieXpHUmhPTmdjSDZLTEhuTktzSVU1MWMwa1dTNmF2VVR3aWxDaGNITDd0WVhrVzhSZ2pUVzFKRlRNMm5NWE53Z1JBdS1oVmhLMV9TWQ&amp;q=https%3A%2F%2Fve42.co%2FCoral\">https://ve42.co/Coral</a></p>', 'https://www.youtube.com/embed/094y1Z2wpJg', NULL),
-(42, 42, 1, 'What is not Random', '2021-09-07 13:09:13', '2021-09-07 14:36:15', '7c22a954-a697-455e-a0b3-bc17f5e5c7f7', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(42, 42, 1, 'What is not Random', '2021-09-07 13:09:13', '2021-09-07 14:57:30', '7c22a954-a697-455e-a0b3-bc17f5e5c7f7', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
 (43, 89, 1, 'Sddefault', '2021-09-07 13:18:57', '2021-09-07 13:18:57', '6f3a26bb-5e1a-4d0e-b7fa-85e244c93ad2', NULL, NULL, NULL, NULL),
 (44, 90, 1, 'What is not Random', '2021-09-07 13:20:19', '2021-09-07 13:20:19', '83a67c7d-f7ab-49b0-ad31-3e219be8d037', NULL, NULL, NULL, NULL),
 (46, 96, 1, 'What is not Random', '2021-09-07 13:22:45', '2021-09-07 13:22:45', 'e016f37a-3caa-44e7-8ebc-b7a856c270f3', '<p>Ligt de toekomst van het universum al vast? Vsauce pakt de vraag aan \" Wat Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
@@ -353,7 +368,29 @@ INSERT INTO `content` (`id`, `elementId`, `siteId`, `title`, `dateCreated`, `dat
 (61, 141, 1, 'What is not Random', '2021-09-07 14:33:52', '2021-09-07 14:33:52', '716bea11-f0e8-4f86-9e6a-7e21c786a209', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
 (63, 147, 1, 'What is not Random', '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'd17d104d-030b-473e-87d6-d6e473e425fc', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
 (65, 153, 1, 'What is not Random', '2021-09-07 14:36:15', '2021-09-07 14:36:15', 'cf3b5555-64a3-4fa0-b71e-7259a460efb2', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
-(66, 156, 1, 'What is not Random', '2021-09-07 14:36:39', '2021-09-07 14:36:54', 'b6baa657-ab79-4d2a-a3b4-9a933f821e40', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL);
+(67, 159, 1, 'What is not Random', '2021-09-07 14:53:46', '2021-09-07 14:53:46', '660995b8-becc-4d36-bd0c-57861b008ac8', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(69, 165, 1, 'What is not Random', '2021-09-07 14:57:31', '2021-09-07 14:57:31', '21700a2e-7900-47e5-9d33-7c99275e1db1', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(70, 168, 1, 'Homepage', '2021-09-08 07:16:03', '2021-09-08 07:16:03', 'd9a14d5d-1046-4fa6-86e6-88d7c3fc718f', NULL, NULL, NULL, NULL),
+(71, 169, 1, 'Homepage', '2021-09-08 07:16:04', '2021-09-08 07:16:04', 'ed38e2c2-e68a-460d-abce-cd33eafc9a42', NULL, NULL, NULL, NULL),
+(72, 170, 1, 'About', '2021-09-08 09:02:45', '2021-09-08 15:25:14', '8e216746-abfe-43b6-8a3e-8e1e80277d3d', NULL, NULL, NULL, NULL),
+(73, 171, 1, 'About Me', '2021-09-08 09:02:58', '2021-09-08 09:02:58', '362afc23-fbf1-49ab-9b9c-d64d87ab83cb', NULL, NULL, NULL, NULL),
+(74, 172, 1, 'Contact', '2021-09-08 09:03:03', '2021-09-08 09:25:52', 'a23b2345-9f7e-4779-af02-183794700c06', NULL, NULL, NULL, NULL),
+(75, 173, 1, 'Contact', '2021-09-08 09:17:39', '2021-09-08 09:17:39', 'c63afe81-33e2-4670-b3a8-d1b0bdc80503', NULL, NULL, NULL, NULL),
+(77, 175, 1, 'About', '2021-09-08 09:23:36', '2021-09-08 09:23:36', '48fd4c1a-1714-4eb3-8767-f5f44f80711c', NULL, NULL, NULL, NULL),
+(79, 177, 1, 'About', '2021-09-08 10:00:44', '2021-09-08 10:00:44', '0dccb2c0-ad0d-42d3-bc66-3211cf417a9c', NULL, NULL, NULL, NULL),
+(81, 179, 1, 'about', '2021-09-08 10:02:20', '2021-09-08 10:02:20', 'd626bb91-ab73-4b6c-83e9-d5233121875a', NULL, NULL, NULL, NULL),
+(83, 181, 1, 'About', '2021-09-08 10:02:49', '2021-09-08 10:02:49', '672101c6-6b73-4f2e-94b8-c8a35c70ad0e', NULL, NULL, NULL, NULL),
+(84, 182, 1, 'navbar', '2021-09-08 10:06:21', '2021-09-08 10:06:21', 'c7d7b9e8-be3d-4023-82da-ef6131af4cdb', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
+(85, 183, 1, 'navbar', '2021-09-08 10:06:50', '2021-09-08 10:06:50', '2aecae7c-22ac-4e1b-a091-7d3154551532', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
+(86, 184, 1, 'navbar', '2021-09-08 10:06:51', '2021-09-08 10:06:51', '541f811f-be26-424b-a216-0cc3a06f8f9d', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
+(88, 186, 1, 'navbar', '2021-09-08 10:07:03', '2021-09-08 10:07:03', '2c2108e2-b2da-4af3-be17-5d22e1c0f3a9', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
+(89, 187, 1, 'navbar', '2021-09-08 10:12:10', '2021-09-08 10:12:10', '1f70dce0-7465-4b13-a55f-044f91d9f86a', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
+(90, 188, 1, 'navbar', '2021-09-08 10:14:18', '2021-09-08 10:14:18', 'a6cd815e-5012-468b-9967-78cad74a4d2b', NULL, NULL, NULL, 'Mijn naam is Pjotr Wisse en ik post video\'s.'),
+(92, 213, 1, 'About', '2021-09-08 14:53:31', '2021-09-08 14:53:31', '1e2e0aaf-2011-43dc-a599-5706aa8b00f3', NULL, NULL, NULL, NULL),
+(94, 219, 1, 'About', '2021-09-08 14:54:55', '2021-09-08 14:54:55', '5dfe96ca-0cca-4468-853a-a143f3dfda8d', NULL, NULL, NULL, NULL),
+(95, 222, 1, 'What is not Random', '2021-09-08 14:56:26', '2021-09-08 14:56:26', 'da6af90a-3e93-4587-b288-f6a3539bbb00', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
+(97, 228, 1, 'About', '2021-09-08 14:58:53', '2021-09-08 14:58:53', 'c156503d-e80e-47d9-b468-c0ed83f3be44', NULL, NULL, NULL, NULL),
+(98, 231, 1, 'About', '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'a1e117f8-6a19-494b-a27b-992283c826ac', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -416,7 +453,7 @@ CREATE TABLE `drafts` (
 INSERT INTO `drafts` (`id`, `sourceId`, `creatorId`, `provisional`, `name`, `notes`, `trackChanges`, `dateLastMerged`, `saved`) VALUES
 (1, NULL, 1, 0, 'Eerste concept', NULL, 0, NULL, 0),
 (2, NULL, 1, 0, 'Eerste concept', NULL, 0, NULL, 0),
-(14, 42, 1, 1, 'Concept 1', '', 1, NULL, 1);
+(5, 42, 1, 1, 'Concept 1', '', 1, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -432,6 +469,13 @@ CREATE TABLE `elementindexsettings` (
   `dateUpdated` datetime NOT NULL,
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `elementindexsettings`
+--
+
+INSERT INTO `elementindexsettings` (`id`, `type`, `settings`, `dateCreated`, `dateUpdated`, `uid`) VALUES
+(1, 'craft\\elements\\Entry', '{\"sources\":{\"section:ec1302f0-657a-4e1d-a46c-9918baf86e4e\":{\"tableAttributes\":{\"1\":\"postDate\",\"2\":\"author\",\"3\":\"link\",\"4\":\"dateCreated\",\"5\":\"field:3\"}}}}', '2021-09-08 10:08:20', '2021-09-08 10:08:20', '2ea2102b-d96c-4821-94a5-0218fd136583');
 
 -- --------------------------------------------------------
 
@@ -468,7 +512,7 @@ INSERT INTO `elements` (`id`, `canonicalId`, `draftId`, `revisionId`, `fieldLayo
 (6, NULL, NULL, NULL, 1, 'craft\\elements\\Asset', 1, 0, '2021-09-06 12:05:18', '2021-09-06 12:05:18', NULL, NULL, 'ce23d531-c393-4f27-95cb-3f651cc6cea0'),
 (8, 4, NULL, 2, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-06 12:07:09', '2021-09-06 12:07:09', NULL, NULL, 'd1f5a46a-3afb-428d-9efa-ec0837f490bb'),
 (9, 4, NULL, 3, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-06 12:07:16', '2021-09-06 12:07:16', NULL, NULL, 'ebe5cfb1-6f37-4e76-8a92-8aa0ea846653'),
-(10, NULL, NULL, NULL, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-06 13:11:08', '2021-09-06 14:38:08', NULL, NULL, '3f240bb6-d084-4943-ab98-c4c84b28bae1'),
+(10, NULL, NULL, NULL, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-06 13:11:08', '2021-09-08 07:16:04', NULL, NULL, '3f240bb6-d084-4943-ab98-c4c84b28bae1'),
 (11, 10, NULL, 4, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-06 13:11:08', '2021-09-06 13:11:08', NULL, NULL, '453c114f-9fdc-4755-9e02-6e878b5d511c'),
 (12, 10, NULL, 5, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:08:35', '2021-09-06 14:08:35', NULL, NULL, '5ec31f53-7971-4d24-b8e7-375947e60660'),
 (14, 10, NULL, 6, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:12:45', '2021-09-06 14:12:45', NULL, NULL, 'cc939d5a-6eda-485c-8904-aa27b7275913'),
@@ -478,7 +522,7 @@ INSERT INTO `elements` (`id`, `canonicalId`, `draftId`, `revisionId`, `fieldLayo
 (19, 10, NULL, 10, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:36:00', '2021-09-06 14:36:00', NULL, NULL, '11e77879-c35a-46a9-82af-4f7795338c85'),
 (20, 10, NULL, 11, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:37:12', '2021-09-06 14:37:12', NULL, NULL, 'f252297a-a09a-4260-83e6-2596c628795d'),
 (21, 10, NULL, 12, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:38:08', '2021-09-06 14:38:08', NULL, NULL, '77953dd3-397d-46ec-b733-cb5b2851be8a'),
-(22, NULL, NULL, NULL, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:39:19', '2021-09-06 14:40:32', NULL, NULL, 'a3ac5ca7-89a0-4760-809a-747c8ebbee5b'),
+(22, NULL, NULL, NULL, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:39:19', '2021-09-08 10:14:18', NULL, NULL, 'a3ac5ca7-89a0-4760-809a-747c8ebbee5b'),
 (23, 22, NULL, 13, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:39:19', '2021-09-06 14:39:19', NULL, NULL, '36edf872-e70b-46c8-9b63-674c52bdf3a0'),
 (25, 22, NULL, 14, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:39:59', '2021-09-06 14:39:59', NULL, NULL, '46d51003-0073-480c-a2ff-29dd6912e626'),
 (26, 22, NULL, 15, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-06 14:40:13', '2021-09-06 14:40:13', NULL, NULL, '71ebc7e9-a104-4c44-b3f5-1dfbdbed15fd'),
@@ -493,7 +537,7 @@ INSERT INTO `elements` (`id`, `canonicalId`, `draftId`, `revisionId`, `fieldLayo
 (37, 30, NULL, 21, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 10:08:50', '2021-09-07 10:08:51', NULL, NULL, 'f8028f1f-1277-4b6c-a9d4-388485671ee4'),
 (39, 32, NULL, 22, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 10:09:00', '2021-09-07 10:09:00', NULL, NULL, '6beccdcd-7db6-4a54-8b1a-e1fbe34ab383'),
 (41, 34, NULL, 23, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 10:09:06', '2021-09-07 10:09:06', NULL, NULL, 'fe4cdbcd-4193-4d17-90e8-dd8c01d58d2d'),
-(42, NULL, NULL, NULL, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 13:09:13', '2021-09-07 14:36:15', NULL, NULL, '81b0535b-b8cb-46be-a7b9-db15175b35d8'),
+(42, NULL, NULL, NULL, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 13:09:13', '2021-09-07 14:57:30', NULL, NULL, '81b0535b-b8cb-46be-a7b9-db15175b35d8'),
 (43, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:09:16', '2021-09-07 13:09:16', NULL, '2021-09-07 13:09:43', '70ee2a5f-48b7-4e49-b8d3-33415fe0461a'),
 (44, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:09:43', '2021-09-07 13:09:43', NULL, '2021-09-07 13:09:45', '0cdc7657-e904-4a2e-8162-9b53646b1512'),
 (45, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:09:45', '2021-09-07 13:09:45', NULL, '2021-09-07 13:09:49', '1f9e312e-32ed-4095-923f-fd0d6787c9ff'),
@@ -538,8 +582,8 @@ INSERT INTO `elements` (`id`, `canonicalId`, `draftId`, `revisionId`, `fieldLayo
 (84, NULL, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36', NULL, '2021-09-07 13:14:41', '83b0890a-bc19-4047-972a-4c7f54686502'),
 (85, NULL, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', NULL, '2021-09-07 13:14:55', '2f0e3433-10c1-468b-9f37-c203b96dd1c1'),
 (86, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', NULL, '2021-09-07 13:14:55', '6da078f1-bf0f-4264-a87f-c0acf4cebddc'),
-(87, NULL, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:55', '2021-09-07 14:36:15', NULL, NULL, '9457bc33-6958-4baa-91d4-e71af1be0a89'),
-(88, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:55', '2021-09-07 14:36:15', NULL, NULL, '7189045a-b973-4687-9101-6301c39519e6'),
+(87, NULL, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:55', '2021-09-07 14:57:31', NULL, NULL, '9457bc33-6958-4baa-91d4-e71af1be0a89'),
+(88, NULL, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:14:55', '2021-09-07 14:57:31', NULL, NULL, '7189045a-b973-4687-9101-6301c39519e6'),
 (89, NULL, NULL, NULL, 1, 'craft\\elements\\Asset', 1, 0, '2021-09-07 13:18:57', '2021-09-07 13:18:57', NULL, NULL, '65e6d236-81a1-448a-9e94-a5fbf6b0d32a'),
 (90, 42, NULL, 24, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 13:20:19', '2021-09-07 13:20:19', NULL, NULL, '10c78fac-6bfa-4049-b19a-9207c560fba6'),
 (91, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 13:20:19', '2021-09-07 13:20:19', NULL, NULL, 'f153e135-b269-43a5-ab34-894f7c4edaa3'),
@@ -577,9 +621,64 @@ INSERT INTO `elements` (`id`, `canonicalId`, `draftId`, `revisionId`, `fieldLayo
 (153, 42, NULL, 35, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:36:15', '2021-09-07 14:36:15', NULL, NULL, '18b3560c-7d04-4b2e-a6f2-ddd9391bd5f6'),
 (154, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:36:15', '2021-09-07 14:36:15', NULL, NULL, '1e469287-68e7-4cf4-9938-bdf26b3e3d9c'),
 (155, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:36:15', '2021-09-07 14:36:15', NULL, NULL, 'a9265138-8cbe-441b-b6f2-000297bdd2dc'),
-(156, 42, 14, NULL, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:36:39', '2021-09-07 14:36:54', NULL, NULL, '98a5b654-b933-4ebe-a2b6-a9ad95931260'),
-(157, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:36:39', '2021-09-07 14:36:54', NULL, NULL, '75d60474-729a-4251-b7ce-f53db7fb5724'),
-(158, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:36:39', '2021-09-07 14:36:39', NULL, NULL, '9cc41ebe-7082-45c1-9e6a-fcf4a6a0e9c0');
+(159, 42, NULL, 36, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:53:45', '2021-09-07 14:53:46', NULL, NULL, '1b0db21b-b6e9-445b-b630-18e68e6a85cc'),
+(160, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:53:46', '2021-09-07 14:53:46', NULL, NULL, '20f483a5-56f4-4d13-af9f-350b876b5d13'),
+(161, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:53:46', '2021-09-07 14:53:46', NULL, NULL, 'c8b79806-7253-415f-a0b9-04cbffc78278'),
+(165, 42, NULL, 37, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-07 14:57:30', '2021-09-07 14:57:31', NULL, NULL, '7d5b37cc-c4fc-48f5-ae92-bea9d1a72db9'),
+(166, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:57:31', '2021-09-07 14:57:31', NULL, NULL, 'f9aa19c7-685c-4b30-b498-4e50620a931c'),
+(167, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-07 14:57:31', '2021-09-07 14:57:31', NULL, NULL, '81ab1579-f4c8-48a0-8ea8-9d631f1a22d4'),
+(168, 10, NULL, 38, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-08 07:16:03', '2021-09-08 07:16:03', NULL, NULL, '99262dba-832d-49ab-b344-7c3f79bb2c01'),
+(169, 10, NULL, 39, 4, 'craft\\elements\\Entry', 1, 0, '2021-09-08 07:16:04', '2021-09-08 07:16:04', NULL, NULL, '55e6110d-e5b8-4a0b-898c-50ac028f7b5a'),
+(170, NULL, NULL, NULL, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 09:02:45', '2021-09-08 15:25:14', NULL, NULL, 'fca6377b-7588-48d1-8dd9-071334d8817e'),
+(171, 170, NULL, 40, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 09:02:58', '2021-09-08 09:02:58', NULL, NULL, 'cabe87b7-fa36-450b-9ff0-da0b88ffd067'),
+(172, NULL, NULL, NULL, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 09:03:02', '2021-09-08 09:17:39', NULL, NULL, '560624d3-6ccc-40b7-9807-66c56bea039a'),
+(173, 172, NULL, 41, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 09:17:39', '2021-09-08 09:17:39', NULL, NULL, '3d90c31b-42c6-4761-a7f8-06de3de9a6c7'),
+(175, 170, NULL, 42, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 09:23:36', '2021-09-08 09:23:36', NULL, NULL, 'c2f04ff4-e46a-4c87-989a-0f23b4331024'),
+(177, 170, NULL, 43, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 10:00:44', '2021-09-08 10:00:44', NULL, NULL, 'a757967c-159e-458f-a6b9-7c0a2404ad15'),
+(179, 170, NULL, 44, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 10:02:20', '2021-09-08 10:02:20', NULL, NULL, 'f4392e71-e26a-44d5-9599-b294c4bd6d6f'),
+(181, 170, NULL, 45, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 10:02:49', '2021-09-08 10:02:49', NULL, NULL, 'dc66a10e-49fb-4846-b07f-dbebe93b0777'),
+(182, 22, NULL, 46, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-08 10:06:21', '2021-09-08 10:06:21', NULL, NULL, '902801d0-5f66-4861-bfb1-7c947ed35563'),
+(183, 22, NULL, 47, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-08 10:06:50', '2021-09-08 10:06:50', NULL, NULL, 'cc1ca6a1-27a7-4b37-a4d0-fedc640d2aa9'),
+(184, 22, NULL, 48, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-08 10:06:51', '2021-09-08 10:06:51', NULL, NULL, '42117d1c-27e4-4a42-82ff-04657117cac6'),
+(186, 22, NULL, 49, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-08 10:07:03', '2021-09-08 10:07:03', NULL, NULL, 'bb5883f4-35e4-4ecf-9c06-ae1c742cc489'),
+(187, 22, NULL, 50, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-08 10:12:10', '2021-09-08 10:12:10', NULL, NULL, '8903919d-b4af-4488-b4b7-4603df956cb0'),
+(188, 22, NULL, 51, 5, 'craft\\elements\\Entry', 1, 0, '2021-09-08 10:14:18', '2021-09-08 10:14:18', NULL, NULL, '08297155-79f5-44a2-b82b-2716ae67708a'),
+(190, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:52:37', '2021-09-08 14:52:37', NULL, '2021-09-08 14:52:38', '6430074b-d410-4fc4-9472-c216722ed83d'),
+(191, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:52:38', '2021-09-08 14:52:38', NULL, '2021-09-08 14:52:50', '70fc3c1f-a1b1-4d5e-b17e-652d4cd97eaa'),
+(192, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:52:38', '2021-09-08 14:52:38', NULL, '2021-09-08 14:52:50', '3c752f6d-1b59-4141-b811-542cd41cddab'),
+(193, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:52:50', '2021-09-08 14:52:50', NULL, '2021-09-08 14:53:05', '97c9f311-82b0-428b-b568-0ad455648bc7'),
+(194, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:52:50', '2021-09-08 14:52:50', NULL, '2021-09-08 14:53:05', '3c8a4c7e-c45b-4394-b9cf-61766dc90696'),
+(195, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:05', '2021-09-08 14:53:05', NULL, '2021-09-08 14:53:13', 'fd5790bb-1f68-4d94-a818-e78feea07b21'),
+(196, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:05', '2021-09-08 14:53:05', NULL, '2021-09-08 14:53:13', '8e0500bd-71e1-404d-a461-b2bb4831712b'),
+(197, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:13', '2021-09-08 14:53:13', NULL, '2021-09-08 14:53:17', '649a0394-877e-46b8-8326-fa59739af135'),
+(198, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:13', '2021-09-08 14:53:13', NULL, '2021-09-08 14:53:17', 'a3db887d-9bd4-4a15-8e42-57404975e384'),
+(199, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:16', '2021-09-08 14:53:16', NULL, '2021-09-08 14:53:18', '79020c72-af09-4d71-94a4-a59c1e429b88'),
+(200, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:17', '2021-09-08 14:53:17', NULL, '2021-09-08 14:53:18', '3c1beb1f-f489-4cf1-bb16-2c230ef7ee08'),
+(201, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:18', '2021-09-08 14:53:18', NULL, '2021-09-08 14:53:20', 'fb3e49a2-e218-4bdf-ba4d-e6afb5b25fa0'),
+(202, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:18', '2021-09-08 14:53:18', NULL, '2021-09-08 14:53:20', '480ab9d5-46ff-4c69-aa96-5e215e8c64a5'),
+(203, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:20', '2021-09-08 14:53:20', NULL, '2021-09-08 14:53:25', 'dd2b77b0-9ca4-4031-bce7-ade162a51d02'),
+(204, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:20', '2021-09-08 14:53:20', NULL, '2021-09-08 14:53:25', '8720fa04-29b1-43cd-9931-ef719600471e'),
+(205, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:25', '2021-09-08 14:53:25', NULL, '2021-09-08 14:53:29', '6858f6f6-3ace-43d5-80a9-3a7e38f3372c'),
+(206, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:25', '2021-09-08 14:53:25', NULL, '2021-09-08 14:53:29', '0cffb5ad-64e5-44ea-8709-89daba8e7f42'),
+(207, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:29', '2021-09-08 14:53:29', NULL, '2021-09-08 14:53:30', '2662e062-1300-4a75-ac85-63f12955eb3e'),
+(208, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:29', '2021-09-08 14:53:29', NULL, '2021-09-08 14:53:30', '7e4b3ced-aba3-4548-8d48-b710e88ce727'),
+(211, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:58:53', NULL, NULL, '7daeff9c-b4a3-4a7b-8c06-481d1e99d10c'),
+(212, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:58:53', NULL, NULL, '6a4bae4b-e27b-48d4-aaff-4e7635534f62'),
+(213, 170, NULL, 52, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:53:31', NULL, NULL, '2c989bf9-8aca-4da7-bf99-60a30b043bca'),
+(214, 211, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:53:31', NULL, NULL, 'd97ee879-c1a4-4824-a26c-456a54adb087'),
+(215, 212, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:53:31', NULL, NULL, '634ec5dd-dceb-4863-89f1-bbed196c0348'),
+(219, 170, NULL, 53, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 14:54:55', '2021-09-08 14:54:55', NULL, NULL, '3b659acb-be62-4c61-b01f-bf9db299d682'),
+(220, 212, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:54:55', '2021-09-08 14:54:55', NULL, NULL, '69a191c1-70c9-4d8a-9d4a-84e0296306f7'),
+(221, 211, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:54:55', '2021-09-08 14:54:55', NULL, NULL, 'e8ce36d0-3f6e-4bc0-828a-43b1be26c731'),
+(222, 42, 5, NULL, 2, 'craft\\elements\\Entry', 1, 0, '2021-09-08 14:56:25', '2021-09-08 14:56:26', NULL, NULL, 'cfa28cb4-1bb6-4326-b8bd-328a44c6440b'),
+(223, 87, NULL, NULL, 7, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:56:26', '2021-09-08 14:56:26', NULL, NULL, '2b11b9e9-03f3-4e8f-96d0-8b27c92674b0'),
+(224, 88, NULL, NULL, 6, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:56:26', '2021-09-08 14:56:26', NULL, NULL, 'ffe019bf-2f58-4ce9-abc2-7abf40765c6f'),
+(228, 170, NULL, 54, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 14:58:53', '2021-09-08 14:58:53', NULL, NULL, '0987ee84-e6d2-40e0-8fae-b91da20df767'),
+(229, 212, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:58:53', '2021-09-08 14:58:53', NULL, NULL, '812d1b6d-4cb2-4fcf-80c6-bffcd599b929'),
+(230, 211, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:58:53', '2021-09-08 14:58:53', NULL, NULL, '65151bfe-d6e4-446f-91f9-c5815d71c8a0'),
+(231, 170, NULL, 55, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 15:25:14', '2021-09-08 15:25:14', NULL, NULL, '536da14e-68a5-4406-b44f-3db857366529'),
+(232, 212, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 15:25:14', '2021-09-08 15:25:14', NULL, NULL, 'f2450d4d-bdcb-40b0-a7ac-667adb4a1555'),
+(233, 211, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 15:25:14', '2021-09-08 15:25:14', NULL, NULL, '1791e22f-751c-4f37-b915-e92add424c2f');
 
 -- --------------------------------------------------------
 
@@ -622,7 +721,7 @@ INSERT INTO `elements_sites` (`id`, `elementId`, `siteId`, `slug`, `uri`, `enabl
 (19, 19, 1, 'homepage', '__home__', 1, '2021-09-06 14:36:00', '2021-09-06 14:36:00', '826b7aeb-14d8-4bda-a5c1-6d32e14b6d59'),
 (20, 20, 1, 'homepage', '__home__', 1, '2021-09-06 14:37:12', '2021-09-06 14:37:12', '9403ec60-bb50-4f8d-9d29-f89936206785'),
 (21, 21, 1, 'homepage', '__home__', 1, '2021-09-06 14:38:08', '2021-09-06 14:38:08', '8f05956f-fb83-40ad-acfe-f31c5ad6e93b'),
-(22, 22, 1, 'navbar', '_layouts/main', 1, '2021-09-06 14:39:19', '2021-09-06 14:40:32', '9aa18b3a-c682-4e84-8227-88c0fc736b8a'),
+(22, 22, 1, 'navbar', '_layouts/main', 1, '2021-09-06 14:39:19', '2021-09-08 10:12:10', '9aa18b3a-c682-4e84-8227-88c0fc736b8a'),
 (23, 23, 1, 'navbar', NULL, 1, '2021-09-06 14:39:19', '2021-09-06 14:39:19', '9d1a355a-85e3-4b4f-be86-3861f6e4a3f0'),
 (25, 25, 1, 'navbar', NULL, 1, '2021-09-06 14:39:59', '2021-09-06 14:39:59', '264220d4-14f1-47ff-891c-212dab220054'),
 (26, 26, 1, 'navbar', NULL, 1, '2021-09-06 14:40:13', '2021-09-06 14:40:13', '3af25067-d728-48cf-9974-f43959613d9a'),
@@ -721,9 +820,64 @@ INSERT INTO `elements_sites` (`id`, `elementId`, `siteId`, `slug`, `uri`, `enabl
 (153, 153, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', 'fbc40bef-ae38-4543-8e4a-3e345b179cfe'),
 (154, 154, 1, NULL, NULL, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '784ad7bd-1f80-4fa2-a3f6-d15e31aca8cb'),
 (155, 155, 1, NULL, NULL, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', 'f8597de6-80df-4ce7-9e9e-727e47bcc27d'),
-(156, 156, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '2ec7873a-b47f-47dd-b1c8-b76bbb363029'),
-(157, 157, 1, NULL, NULL, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '68acce2b-5568-4aee-8c98-934e4ad6b660'),
-(158, 158, 1, NULL, NULL, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '25761aed-a410-4353-88c9-57217604db8f');
+(159, 159, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '05691b5b-a799-48b2-9fe7-4fc64f3c96d6'),
+(160, 160, 1, NULL, NULL, 1, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '73df3a63-a259-4ee7-a2f7-93f837b23e3c'),
+(161, 161, 1, NULL, NULL, 1, '2021-09-07 14:53:46', '2021-09-07 14:53:46', 'c63ff074-e3ee-4d4f-8b29-f6765e266654'),
+(165, 165, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-07 14:57:31', '2021-09-07 14:57:31', 'f4c45189-7cd0-4abb-af44-effd89252c34'),
+(166, 166, 1, NULL, NULL, 1, '2021-09-07 14:57:31', '2021-09-07 14:57:31', 'e8c3c7e6-1a08-4b51-8173-75646dd88d49'),
+(167, 167, 1, NULL, NULL, 1, '2021-09-07 14:57:31', '2021-09-07 14:57:31', '2a67ac6d-cfe7-44bf-ab05-287320168dbe'),
+(168, 168, 1, 'homepage', '__home__', 1, '2021-09-08 07:16:03', '2021-09-08 07:16:03', '5526d0a7-5d29-4e26-9f6b-a4733beff0e2'),
+(169, 169, 1, 'homepage', '__home__', 1, '2021-09-08 07:16:04', '2021-09-08 07:16:04', '93e82a6a-598e-4bc7-8375-7fe6b651e949'),
+(170, 170, 1, 'about', 'about', 1, '2021-09-08 09:02:45', '2021-09-08 14:58:54', '5c8ee1d5-0ab0-4b1e-845d-762ce801c2ff'),
+(171, 171, 1, 'about-me', 'about/about-me', 1, '2021-09-08 09:02:58', '2021-09-08 09:02:58', 'd341c248-c74a-44e4-8c3c-a7d7537ed1cf'),
+(172, 172, 1, 'contact', 'about/contact', 1, '2021-09-08 09:03:02', '2021-09-08 15:25:15', '382f7cee-180a-4c44-9775-c6ab53aef759'),
+(173, 173, 1, 'contact', 'about/contact', 1, '2021-09-08 09:17:39', '2021-09-08 09:17:39', '072cf7e7-3466-4a76-9acf-3140187d35e4'),
+(175, 175, 1, 'about-me', 'about/about-me', 1, '2021-09-08 09:23:36', '2021-09-08 09:23:36', 'ca29ea98-8c6c-44f0-a4e1-f4d0ee489363'),
+(177, 177, 1, 'about', 'about', 1, '2021-09-08 10:00:44', '2021-09-08 10:00:44', '606ca54e-1ce7-43eb-baae-a1f04ef9eda4'),
+(179, 179, 1, 'about', 'about', 1, '2021-09-08 10:02:20', '2021-09-08 10:02:20', '2e1036b1-2edb-40ff-8dae-1d54d67ba82a'),
+(181, 181, 1, 'about', 'about', 1, '2021-09-08 10:02:49', '2021-09-08 10:02:49', '5337ad15-7e7e-47bb-ae87-5d76cc03e1fb'),
+(182, 182, 1, 'navbar', '_layouts/main', 1, '2021-09-08 10:06:21', '2021-09-08 10:06:21', '990fba75-5340-4877-9ba4-168f81bc82e9'),
+(183, 183, 1, 'navbar', NULL, 1, '2021-09-08 10:06:50', '2021-09-08 10:06:50', '6d0930e5-33de-4199-8661-29800b82acac'),
+(184, 184, 1, 'navbar', NULL, 1, '2021-09-08 10:06:51', '2021-09-08 10:06:51', '4efae203-000a-42fb-8ec2-a3aa580714f9'),
+(186, 186, 1, 'navbar', NULL, 1, '2021-09-08 10:07:03', '2021-09-08 10:07:03', '9f0d534c-6113-49e6-94fb-135040b1beb0'),
+(187, 187, 1, 'navbar', '_layouts/main', 1, '2021-09-08 10:12:10', '2021-09-08 10:12:10', '74471b2c-2879-463a-85da-c3fcd64bc79b'),
+(188, 188, 1, 'navbar', '_layouts/main', 1, '2021-09-08 10:14:18', '2021-09-08 10:14:18', '2c7cf96b-2fb7-4579-9e16-4133fd2d38c3'),
+(190, 190, 1, NULL, NULL, 1, '2021-09-08 14:52:37', '2021-09-08 14:52:37', '7bd480bd-7afc-4cc3-9b18-1eb3247f6fd9'),
+(191, 191, 1, NULL, NULL, 1, '2021-09-08 14:52:38', '2021-09-08 14:52:38', '412e765c-70bb-4d3a-b949-f5855b376a3e'),
+(192, 192, 1, NULL, NULL, 1, '2021-09-08 14:52:38', '2021-09-08 14:52:38', '3f6b241b-87b4-45c4-bd05-9ead813963c9'),
+(193, 193, 1, NULL, NULL, 1, '2021-09-08 14:52:50', '2021-09-08 14:52:50', 'c62b6f5b-6d9b-4863-bee8-d1cf119a61b5'),
+(194, 194, 1, NULL, NULL, 1, '2021-09-08 14:52:50', '2021-09-08 14:52:50', 'acc4fb8a-32b8-4915-b4ef-39b23b5a0408'),
+(195, 195, 1, NULL, NULL, 1, '2021-09-08 14:53:05', '2021-09-08 14:53:05', 'dc1dc4ec-c56e-4296-8cbe-fdb2ccf5a899'),
+(196, 196, 1, NULL, NULL, 1, '2021-09-08 14:53:05', '2021-09-08 14:53:05', '4bfbefcb-b23c-48b8-b0bc-275a2e2af3ee'),
+(197, 197, 1, NULL, NULL, 1, '2021-09-08 14:53:13', '2021-09-08 14:53:13', '2d1a0636-4b24-4e84-b024-deb3ab28fd37'),
+(198, 198, 1, NULL, NULL, 1, '2021-09-08 14:53:13', '2021-09-08 14:53:13', '06fcc363-3ef6-4e0b-98ac-3fb34b9c22d9'),
+(199, 199, 1, NULL, NULL, 1, '2021-09-08 14:53:16', '2021-09-08 14:53:16', '3649811d-0a78-4887-a4f3-09b7fc315ea4'),
+(200, 200, 1, NULL, NULL, 1, '2021-09-08 14:53:17', '2021-09-08 14:53:17', 'a55887d4-3779-4f0d-81df-dcb0a7698786'),
+(201, 201, 1, NULL, NULL, 1, '2021-09-08 14:53:18', '2021-09-08 14:53:18', 'eaa6ba89-2861-441e-bef2-56038da3d51f'),
+(202, 202, 1, NULL, NULL, 1, '2021-09-08 14:53:18', '2021-09-08 14:53:18', '75c2684d-5469-46e2-8c3b-614bbeebdc92'),
+(203, 203, 1, NULL, NULL, 1, '2021-09-08 14:53:20', '2021-09-08 14:53:20', '93f5e86c-46d6-4e57-b7a6-dc059cecf417'),
+(204, 204, 1, NULL, NULL, 1, '2021-09-08 14:53:20', '2021-09-08 14:53:20', '48ac6ab0-5d09-4b13-81ca-edbfc6eb7e63'),
+(205, 205, 1, NULL, NULL, 1, '2021-09-08 14:53:25', '2021-09-08 14:53:25', '3ae1c21f-cc00-4016-be31-d9899fd77b9a'),
+(206, 206, 1, NULL, NULL, 1, '2021-09-08 14:53:25', '2021-09-08 14:53:25', 'd6ac646c-669d-424f-b684-de2b20ffa193'),
+(207, 207, 1, NULL, NULL, 1, '2021-09-08 14:53:29', '2021-09-08 14:53:29', 'f6c57727-3cd7-4b0a-9cb7-8a010f24b62e'),
+(208, 208, 1, NULL, NULL, 1, '2021-09-08 14:53:29', '2021-09-08 14:53:29', '4339d0bd-2de2-464b-8917-af575931c5e6'),
+(211, 211, 1, NULL, NULL, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', 'b52b1d9e-5ee6-4c03-aaaf-54c035175776'),
+(212, 212, 1, NULL, NULL, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '76a7448e-919f-42a5-95b6-7bd953a2d005'),
+(213, 213, 1, 'about', 'about', 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '6ed6a726-90c5-4bd1-afd9-ba4136c09bad'),
+(214, 214, 1, NULL, NULL, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', 'b2804221-f636-4eee-b4ba-a29adc51aae0'),
+(215, 215, 1, NULL, NULL, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', 'dd52f379-6398-4289-8561-b2914486aa6f'),
+(219, 219, 1, 'about', 'about', 1, '2021-09-08 14:54:55', '2021-09-08 14:54:55', 'be5a63e0-fc12-4d7c-a214-656a1a3f81a6'),
+(220, 220, 1, NULL, NULL, 1, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '894b733f-bb83-459a-98d4-bb0f7b5e8aef'),
+(221, 221, 1, NULL, NULL, 1, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '72ff362a-761f-4b4e-8963-6c1bf18663dd'),
+(222, 222, 1, 'what-is-not-random', 'blogpost/what-is-not-random', 1, '2021-09-08 14:56:25', '2021-09-08 14:56:25', 'c3c37f41-ed3c-48e9-98c2-969c6ad6d74a'),
+(223, 223, 1, NULL, NULL, 1, '2021-09-08 14:56:26', '2021-09-08 14:56:26', 'ebdcd532-2b5a-4e41-82df-397fd2456878'),
+(224, 224, 1, NULL, NULL, 1, '2021-09-08 14:56:26', '2021-09-08 14:56:26', '3d1ecefc-20cc-4650-a02e-99a30b1a7864'),
+(228, 228, 1, 'about', 'about', 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '2a93136d-0060-44e7-adf8-a6b1fec122f4'),
+(229, 229, 1, NULL, NULL, 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', 'd9d39973-c7f9-4010-8e65-091f574ccee4'),
+(230, 230, 1, NULL, NULL, 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', 'fb1cc2a8-0641-4cb4-ae13-b101bb99e183'),
+(231, 231, 1, 'about', 'about', 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '94f99af0-99aa-45f8-b6bf-5eb1744f8b88'),
+(232, 232, 1, NULL, NULL, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '2d86ada7-e5c4-4587-9ebf-12b4a08f0fc1'),
+(233, 233, 1, NULL, NULL, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'b181b08b-1abf-4487-bafe-8ad356c0f500');
 
 -- --------------------------------------------------------
 
@@ -766,7 +920,7 @@ INSERT INTO `entries` (`id`, `sectionId`, `parentId`, `typeId`, `authorId`, `pos
 (19, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:36:00', '2021-09-06 14:36:00', '18571062-b5d3-4c8a-aedb-042dc0c60da0'),
 (20, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:37:12', '2021-09-06 14:37:12', '4ac7b73a-63bc-47bc-a2a5-01c059629e2f'),
 (21, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:38:08', '2021-09-06 14:38:08', '969046a0-433b-48f9-a6a6-8616166a39b6'),
-(22, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:19', '2021-09-06 14:39:19', 'f1755e33-6a2e-4788-b7ab-56d451d81415'),
+(22, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:19', '2021-09-08 10:06:50', 'f1755e33-6a2e-4788-b7ab-56d451d81415'),
 (23, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:19', '2021-09-06 14:39:19', '23112b2f-02a8-4163-811a-125ba338b43b'),
 (25, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:59', '2021-09-06 14:39:59', '639162c0-69b9-48c7-b507-862b0f57fcaa'),
 (26, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:40:13', '2021-09-06 14:40:13', '3e112fac-d13b-42ec-989b-4e714b37b7e6'),
@@ -794,7 +948,29 @@ INSERT INTO `entries` (`id`, `sectionId`, `parentId`, `typeId`, `authorId`, `pos
 (141, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52', 'b17dc3fd-bd88-4dbd-9608-4030cd0e31d4'),
 (147, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36', '83f3e719-10d1-4a0c-92fd-cb3ba9808aaa'),
 (153, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '4b8555c4-25d8-4358-9220-1c74fec7ce7d'),
-(156, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '5d42526a-7c32-4c46-aba7-3416e4ee6451');
+(159, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '84dbc415-4c32-4a69-927f-8c8ef89ef520'),
+(165, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:57:31', '2021-09-07 14:57:31', 'a36b33af-1b28-4068-bd4b-f3f627a193fa'),
+(168, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-08 07:16:03', '2021-09-08 07:16:03', '742a2e22-85f3-4a22-bf13-a6ced5b12dd5'),
+(169, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-08 07:16:04', '2021-09-08 07:16:04', 'fc69c8a3-ba9b-43de-96c5-e5f69ff94adb'),
+(170, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 09:02:45', '2021-09-08 09:02:45', '9f904701-38f0-42e0-98e0-ff6c4761d309'),
+(171, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 09:02:58', '2021-09-08 09:02:58', '12757be9-a393-4cef-b014-cb6885d5c7f2'),
+(172, 4, NULL, 5, 1, '2021-09-08 09:03:00', NULL, NULL, '2021-09-08 09:03:03', '2021-09-08 09:03:03', '9a3755df-7a17-4320-a0d1-b18f139fbb53'),
+(173, 4, NULL, 5, 1, '2021-09-08 09:03:00', NULL, NULL, '2021-09-08 09:17:39', '2021-09-08 09:17:39', '1b9aadb6-00a4-4ff2-87f2-dbb65290fe31'),
+(175, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 09:23:36', '2021-09-08 09:23:36', '0734e3c5-a7c2-422c-aeb4-0ffde7cb7243'),
+(177, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 10:00:44', '2021-09-08 10:00:44', 'a1f253ab-2622-4bcb-b077-a311556670bc'),
+(179, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 10:02:20', '2021-09-08 10:02:20', '700c236b-4f29-4e5b-95c8-173f141b3774'),
+(181, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 10:02:49', '2021-09-08 10:02:49', 'd7d4b9ca-87fc-417d-8468-fe050448cc16'),
+(182, 3, NULL, 4, 1, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:06:21', '2021-09-08 10:06:21', '3e213a37-2e41-454c-89f3-22e6729c1123'),
+(183, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:06:50', '2021-09-08 10:06:50', '2d8407c1-5b78-4490-9704-47301f0783de'),
+(184, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:06:51', '2021-09-08 10:06:51', '93796a4e-f7ef-4a99-bb1b-0c83f9721449'),
+(186, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:07:03', '2021-09-08 10:07:03', '7998dc1f-4fe6-49b4-9876-343f6b6f24e0'),
+(187, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:12:10', '2021-09-08 10:12:10', '232f4230-b1ff-4ee6-a572-3effe806cdfd'),
+(188, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:14:18', '2021-09-08 10:14:18', '77368100-bb76-44ce-8a6e-9e7bd5f22512'),
+(213, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '8d86d84b-0932-4e65-8904-2e41450331e2'),
+(219, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '5f1f047b-58c4-4c39-8f01-d7ee096a4d82'),
+(222, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26', '31af6833-d591-44b9-ada4-b92caad0ea5d'),
+(228, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '7dd298e4-5cfb-4441-aab1-09fdae981e91'),
+(231, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'af6a21cb-ef82-4d2e-a9ad-07e80631b3b4');
 
 -- --------------------------------------------------------
 
@@ -826,8 +1002,9 @@ CREATE TABLE `entrytypes` (
 INSERT INTO `entrytypes` (`id`, `sectionId`, `fieldLayoutId`, `name`, `handle`, `hasTitleField`, `titleTranslationMethod`, `titleTranslationKeyFormat`, `titleFormat`, `sortOrder`, `dateCreated`, `dateUpdated`, `dateDeleted`, `uid`) VALUES
 (1, 1, 2, 'Standaard', 'default', 1, 'site', NULL, NULL, 1, '2021-09-06 11:24:27', '2021-09-06 11:33:12', NULL, '4c7c41bd-271d-4790-aecd-3eafe71ca7c6'),
 (2, 1, 3, 'post', 'blogpost', 1, 'site', NULL, NULL, 2, '2021-09-06 11:32:49', '2021-09-06 11:32:49', '2021-09-06 11:33:02', '2899acf3-4276-43de-a608-6429d4255961'),
-(3, 2, 4, 'homepage', 'homepage', 0, 'site', NULL, '{section.name|raw}', 1, '2021-09-06 13:11:08', '2021-09-06 13:11:08', NULL, 'bb77b1f3-1ccf-4257-af21-bb0d3e88362d'),
-(4, 3, 5, 'navbar', 'navbar', 1, 'site', NULL, NULL, 1, '2021-09-06 14:38:41', '2021-09-06 14:39:19', NULL, 'b8b01c62-e65a-45ab-a41a-2880f6839689');
+(3, 2, 4, 'Homepage', 'homepage', 0, 'site', NULL, '{section.name|raw}', 1, '2021-09-06 13:11:08', '2021-09-08 07:16:04', NULL, 'bb77b1f3-1ccf-4257-af21-bb0d3e88362d'),
+(4, 3, 5, 'navbar', 'navbar', 1, 'site', NULL, NULL, 1, '2021-09-06 14:38:41', '2021-09-06 14:39:19', NULL, 'b8b01c62-e65a-45ab-a41a-2880f6839689'),
+(5, 4, 8, 'Standaard', 'default', 1, 'site', NULL, NULL, 1, '2021-09-08 08:06:35', '2021-09-08 08:06:35', NULL, '845194a4-5a85-4e81-8d73-c11be1057caa');
 
 -- --------------------------------------------------------
 
@@ -853,7 +1030,9 @@ INSERT INTO `fieldgroups` (`id`, `name`, `dateCreated`, `dateUpdated`, `dateDele
 (2, 'blogpost', '2021-09-06 11:34:51', '2021-09-06 11:34:51', NULL, '417ad68e-f480-4c58-bc24-a31574f1c928'),
 (3, 'General', '2021-09-06 11:39:39', '2021-09-06 11:39:39', NULL, '518e5c2e-1341-4b80-a65a-8512d938f820'),
 (4, 'inhoud', '2021-09-07 11:39:10', '2021-09-07 11:39:10', '2021-09-07 11:39:21', '956c41e6-4c30-42f2-8584-077b63f6a4f0'),
-(5, 'inhoud', '2021-09-07 11:41:31', '2021-09-07 11:41:31', NULL, '34ad3c2c-7a70-4054-91bb-90ada9475662');
+(5, 'inhoud', '2021-09-07 11:41:31', '2021-09-07 11:41:31', NULL, '34ad3c2c-7a70-4054-91bb-90ada9475662'),
+(6, 'about', '2021-09-08 13:26:57', '2021-09-08 13:26:57', '2021-09-08 13:27:15', 'a1cd5f9c-2403-4e91-af47-68ddc8a72fbd'),
+(7, 'about', '2021-09-08 13:29:00', '2021-09-08 13:29:00', NULL, '8886d58d-cb48-4775-9092-f5615f900343');
 
 -- --------------------------------------------------------
 
@@ -884,8 +1063,12 @@ INSERT INTO `fieldlayoutfields` (`id`, `layoutId`, `tabId`, `fieldId`, `required
 (32, 2, 24, 4, 0, 3, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '28b41f65-abf7-44f4-8de4-53d1cb7ea398'),
 (33, 2, 24, 2, 0, 4, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '87986b27-3b01-41df-8f40-33cb9d980fdc'),
 (34, 2, 25, 9, 0, 0, '2021-09-07 13:38:51', '2021-09-07 13:38:51', 'aab305e5-f6af-478f-b4ed-9c683b816f36'),
-(37, 6, 28, 10, 0, 0, '2021-09-07 14:23:03', '2021-09-07 14:23:03', '85980429-f2d5-4ea3-8e8d-b1cfcb0a80d8'),
-(38, 7, 29, 11, 0, 0, '2021-09-07 14:23:03', '2021-09-07 14:23:03', 'd9007d6e-bed2-4a0e-941c-b2362e31ea95');
+(39, 6, 30, 10, 0, 0, '2021-09-07 14:56:34', '2021-09-07 14:56:34', 'c7be63b1-eeda-4880-80fb-a05abd5968d5'),
+(40, 7, 31, 11, 0, 0, '2021-09-07 14:56:35', '2021-09-07 14:56:35', '66da2176-bc8b-43a1-9591-5bec92f0e07a'),
+(43, 8, 36, 12, 0, 1, '2021-09-08 14:20:11', '2021-09-08 14:20:11', '8acc8f49-8265-48c1-96a1-f94d9da64ff8'),
+(47, 9, 39, 13, 0, 0, '2021-09-08 14:58:15', '2021-09-08 14:58:15', '30c678ae-32ab-4e43-8d4d-14f075d9ec73'),
+(48, 10, 40, 14, 0, 0, '2021-09-08 14:58:16', '2021-09-08 14:58:16', '1f0a60bc-ea05-4d40-a5d3-98a349aacf00'),
+(49, 10, 40, 15, 0, 1, '2021-09-08 14:58:16', '2021-09-08 14:58:16', '178a121f-5711-4e6d-b5dc-a4b5fd32c8fd');
 
 -- --------------------------------------------------------
 
@@ -913,7 +1096,10 @@ INSERT INTO `fieldlayouts` (`id`, `type`, `dateCreated`, `dateUpdated`, `dateDel
 (4, 'craft\\elements\\Entry', '2021-09-06 13:11:08', '2021-09-06 13:11:08', NULL, '410aa703-ed96-4586-a0be-75ced0eb977d'),
 (5, 'craft\\elements\\Entry', '2021-09-06 14:38:41', '2021-09-06 14:38:41', NULL, 'e16888a4-4dec-450f-a6c2-71c209fbc766'),
 (6, 'craft\\elements\\MatrixBlock', '2021-09-07 12:58:22', '2021-09-07 12:58:22', NULL, 'dd0fb9ac-e4fe-4014-ad10-0887926eaf73'),
-(7, 'craft\\elements\\MatrixBlock', '2021-09-07 12:58:22', '2021-09-07 12:58:22', NULL, '1b01a206-5352-47d0-9da1-6a221026d0a6');
+(7, 'craft\\elements\\MatrixBlock', '2021-09-07 12:58:22', '2021-09-07 12:58:22', NULL, '1b01a206-5352-47d0-9da1-6a221026d0a6'),
+(8, 'craft\\elements\\Entry', '2021-09-08 08:06:35', '2021-09-08 08:06:35', NULL, 'cb868842-614c-461c-9243-6605614c4c98'),
+(9, 'craft\\elements\\MatrixBlock', '2021-09-08 14:19:20', '2021-09-08 14:19:20', NULL, '90fe6753-a117-4edb-8913-42224d16173d'),
+(10, 'craft\\elements\\MatrixBlock', '2021-09-08 14:19:21', '2021-09-08 14:19:21', NULL, '035a1325-057f-4ada-8084-74d2a5676623');
 
 -- --------------------------------------------------------
 
@@ -939,12 +1125,15 @@ CREATE TABLE `fieldlayouttabs` (
 INSERT INTO `fieldlayouttabs` (`id`, `layoutId`, `name`, `elements`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`) VALUES
 (4, 3, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-06 11:32:49', '2021-09-06 11:32:49', '6a5f4f3c-d390-4690-955c-d942292f59fc'),
 (8, 1, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\AssetTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-06 12:05:03', '2021-09-06 12:05:03', '3085166e-072d-4523-ad4b-b7045bfb8e55'),
-(11, 4, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-06 14:38:08', '2021-09-06 14:38:08', '165c35ac-6ce1-4608-a430-5092646d1de8'),
 (14, 5, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"eac5e9e9-55ae-47bd-8d5c-4b674f1ff355\"}]', 1, '2021-09-06 14:39:19', '2021-09-06 14:39:19', 'e32dc685-f7f2-4f19-8758-2bdee6dd406e'),
 (24, 2, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":\"\",\"instructions\":\"\",\"tip\":null,\"warning\":null,\"required\":\"1\",\"width\":100,\"fieldUid\":\"e6e40127-efc5-4abd-b5ec-455c1a80fa0c\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":\"\",\"instructions\":\"\",\"tip\":null,\"warning\":null,\"required\":\"1\",\"width\":100,\"fieldUid\":\"fdd41422-2f3c-4581-af2d-b4d3a271e183\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"7382616d-769d-4f84-8b59-7245cd08ef20\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e3a74156-6e99-4310-8b92-cc9c1d33e616\"}]', 1, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '54febf38-756f-463e-97f1-ba81e990f243'),
 (25, 2, 'matrixinhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e3c14bdc-b578-4588-bce9-7dc0f8553072\"}]', 2, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '31c398d9-1a81-4f36-a732-4a92a201a5df'),
-(28, 6, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"3b175535-87ad-4cb7-90d4-5e06d63658d6\"}]', 1, '2021-09-07 14:23:03', '2021-09-07 14:23:03', 'bc34962e-0fa3-4f86-ba4c-8e64b6d000c1'),
-(29, 7, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"f45f3568-3d9c-4779-b17c-26458592de2f\"}]', 1, '2021-09-07 14:23:03', '2021-09-07 14:23:03', 'a4eab44a-347b-458a-a53c-b0b7004275ea');
+(30, 6, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"3b175535-87ad-4cb7-90d4-5e06d63658d6\"}]', 1, '2021-09-07 14:56:34', '2021-09-07 14:56:34', 'fdd8bb6b-62df-489f-b173-37a4f6d85102'),
+(31, 7, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"f45f3568-3d9c-4779-b17c-26458592de2f\"}]', 1, '2021-09-07 14:56:35', '2021-09-07 14:56:35', '3de67fab-dac3-4252-9ad3-a4f4cd7205ed'),
+(32, 4, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-08 07:16:03', '2021-09-08 07:16:03', '277eb95c-c203-466a-bfa1-40508c333bbc'),
+(36, 8, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"639db3fc-cfd4-4523-a2e8-2ac5effb3522\"}]', 1, '2021-09-08 14:20:11', '2021-09-08 14:20:11', 'be053905-ec62-446b-8a9c-466b32b3f7bd'),
+(39, 9, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"6fb6a84c-ac77-4355-b483-06f78d791539\"}]', 1, '2021-09-08 14:58:15', '2021-09-08 14:58:15', 'ef504c69-4cfc-49e7-b400-3553f3c8d747'),
+(40, 10, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"185857a1-7047-4adc-84d0-a8d679523c2d\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"1bedf931-c16d-4606-a377-f778e799f5c0\"}]', 1, '2021-09-08 14:58:16', '2021-09-08 14:58:16', 'fd276aba-ca9e-44bc-b56c-cb441e37b4d1');
 
 -- --------------------------------------------------------
 
@@ -981,8 +1170,12 @@ INSERT INTO `fields` (`id`, `groupId`, `name`, `handle`, `context`, `columnSuffi
 (4, 2, 'videolink', 'videolink', 'global', 'ehemhfzb', 'Doe hier een Youtube video in, via een embed link. Die kun je halen van de youtube video bij delen.', 0, 'none', NULL, 'craft\\fields\\Url', '{\"maxLength\":\"255\",\"placeholder\":null,\"types\":[\"url\"]}', '2021-09-06 11:50:08', '2021-09-07 09:10:53', '7382616d-769d-4f84-8b59-7245cd08ef20'),
 (8, 3, 'introduction', 'introduction', 'global', 'itoqovjy', '', 0, 'none', NULL, 'craft\\fields\\PlainText', '{\"byteLimit\":null,\"charLimit\":null,\"code\":\"\",\"columnType\":\"text\",\"initialRows\":\"4\",\"multiline\":\"\",\"placeholder\":null,\"uiMode\":\"normal\"}', '2021-09-06 14:08:11', '2021-09-06 14:08:11', 'eac5e9e9-55ae-47bd-8d5c-4b674f1ff355'),
 (9, 5, 'inhoudzelf', 'inhoudzelf', 'global', NULL, '', 0, 'site', NULL, 'craft\\fields\\Matrix', '{\"contentTable\":\"{{%matrixcontent_inhoudzelf}}\",\"maxBlocks\":\"\",\"minBlocks\":\"\",\"propagationKeyFormat\":null,\"propagationMethod\":\"all\"}', '2021-09-07 12:58:21', '2021-09-07 12:58:21', 'e3c14bdc-b578-4588-bce9-7dc0f8553072'),
-(10, NULL, 'bodytext', 'bodytext', 'matrixBlockType:d6287000-aeb5-4ddf-aeeb-da48f9ed904f', NULL, '', 0, 'none', NULL, 'craft\\ckeditor\\Field', '{\"columnType\":\"mediumtext\",\"initJs\":null,\"purifierConfig\":\"\",\"purifyHtml\":\"1\"}', '2021-09-07 12:58:22', '2021-09-07 13:05:21', '3b175535-87ad-4cb7-90d4-5e06d63658d6'),
-(11, NULL, 'videolink', 'videolink', 'matrixBlockType:5d359804-dc3e-4485-8e71-f6d29868806e', NULL, 'Zet hier een video link in.', 0, 'none', NULL, 'craft\\fields\\Url', '{\"maxLength\":\"255\",\"placeholder\":null,\"types\":[\"url\"]}', '2021-09-07 12:58:22', '2021-09-07 14:23:03', 'f45f3568-3d9c-4779-b17c-26458592de2f');
+(10, NULL, 'bodytext', 'bodytext', 'matrixBlockType:d6287000-aeb5-4ddf-aeeb-da48f9ed904f', NULL, '', 0, 'none', NULL, 'craft\\redactor\\Field', '{\"availableTransforms\":\"*\",\"availableVolumes\":\"*\",\"cleanupHtml\":true,\"columnType\":\"text\",\"configSelectionMode\":\"choose\",\"defaultTransform\":\"\",\"manualConfig\":\"\",\"purifierConfig\":\"\",\"purifyHtml\":\"1\",\"redactorConfig\":\"\",\"removeEmptyTags\":\"1\",\"removeInlineStyles\":\"1\",\"removeNbsp\":\"1\",\"showHtmlButtonForNonAdmins\":\"\",\"showUnpermittedFiles\":false,\"showUnpermittedVolumes\":false,\"uiMode\":\"enlarged\"}', '2021-09-07 12:58:22', '2021-09-07 14:56:34', '3b175535-87ad-4cb7-90d4-5e06d63658d6'),
+(11, NULL, 'videolink', 'videolink', 'matrixBlockType:5d359804-dc3e-4485-8e71-f6d29868806e', NULL, 'Zet hier een video link in.', 0, 'none', NULL, 'craft\\fields\\Url', '{\"maxLength\":\"255\",\"placeholder\":null,\"types\":[\"url\"]}', '2021-09-07 12:58:22', '2021-09-07 14:23:03', 'f45f3568-3d9c-4779-b17c-26458592de2f'),
+(12, 7, 'about', 'about', 'global', NULL, '', 0, 'site', NULL, 'craft\\fields\\Matrix', '{\"contentTable\":\"{{%matrixcontent_about}}\",\"maxBlocks\":\"\",\"minBlocks\":\"\",\"propagationKeyFormat\":null,\"propagationMethod\":\"all\"}', '2021-09-08 14:19:19', '2021-09-08 14:19:19', '639db3fc-cfd4-4523-a2e8-2ac5effb3522'),
+(13, NULL, 'body', 'body', 'matrixBlockType:95710e39-bdda-4a20-bfe7-9f8f96a9eb1f', NULL, '', 0, 'none', NULL, 'craft\\redactor\\Field', '{\"availableTransforms\":\"*\",\"availableVolumes\":\"*\",\"cleanupHtml\":true,\"columnType\":\"mediumtext\",\"configSelectionMode\":\"choose\",\"defaultTransform\":\"\",\"manualConfig\":\"\",\"purifierConfig\":\"\",\"purifyHtml\":\"1\",\"redactorConfig\":\"\",\"removeEmptyTags\":\"1\",\"removeInlineStyles\":\"1\",\"removeNbsp\":\"1\",\"showHtmlButtonForNonAdmins\":\"\",\"showUnpermittedFiles\":false,\"showUnpermittedVolumes\":false,\"uiMode\":\"enlarged\"}', '2021-09-08 14:19:20', '2021-09-08 14:57:41', '6fb6a84c-ac77-4355-b483-06f78d791539'),
+(14, NULL, 'videolink', 'videolink', 'matrixBlockType:e27425f4-7074-4765-8f15-839e26004962', NULL, '', 0, 'none', NULL, 'craft\\fields\\Url', '{\"maxLength\":\"255\",\"placeholder\":null,\"types\":[\"url\"]}', '2021-09-08 14:19:20', '2021-09-08 14:57:41', '185857a1-7047-4adc-84d0-a8d679523c2d'),
+(15, NULL, 'videonaam', 'videonaam', 'matrixBlockType:e27425f4-7074-4765-8f15-839e26004962', NULL, '', 0, 'none', NULL, 'craft\\fields\\PlainText', '{\"byteLimit\":null,\"charLimit\":null,\"code\":\"\",\"columnType\":\"text\",\"initialRows\":\"4\",\"multiline\":\"\",\"placeholder\":null,\"uiMode\":\"normal\"}', '2021-09-08 14:57:41', '2021-09-08 14:58:15', '1bedf931-c16d-4606-a377-f778e799f5c0');
 
 -- --------------------------------------------------------
 
@@ -1073,7 +1266,7 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `version`, `schemaVersion`, `maintenance`, `configVersion`, `fieldVersion`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, '3.7.11', '3.7.8', 0, 'twjygablrfsw', 'zccypqfubumn', '2021-09-06 10:09:22', '2021-09-07 14:41:03', 'bd374219-4f30-4743-b1dc-06c299bde1de');
+(1, '3.7.11', '3.7.8', 0, 'iyrgyibyowpb', 'xxurnfygvlfw', '2021-09-06 10:09:22', '2021-09-08 14:58:16', 'bd374219-4f30-4743-b1dc-06c299bde1de');
 
 -- --------------------------------------------------------
 
@@ -1142,8 +1335,8 @@ INSERT INTO `matrixblocks` (`id`, `ownerId`, `fieldId`, `typeId`, `sortOrder`, `
 (84, 42, 9, 2, 2, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36', '98d6e848-db17-4494-868c-03db201d6038'),
 (85, 42, 9, 2, 1, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', 'db28867f-d98e-4553-8146-183d96465684'),
 (86, 42, 9, 1, 2, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', '02f45d29-af16-4574-a302-5eb2dd488d50'),
-(87, 42, 9, 2, 2, NULL, '2021-09-07 13:14:55', '2021-09-07 14:35:36', '76d613eb-d903-42b0-8ca7-f1cf3d0997a4'),
-(88, 42, 9, 1, 1, NULL, '2021-09-07 13:14:55', '2021-09-07 14:35:35', '225c71ef-97e8-44c9-b62e-15634815275c'),
+(87, 42, 9, 2, 1, NULL, '2021-09-07 13:14:55', '2021-09-07 14:53:45', '76d613eb-d903-42b0-8ca7-f1cf3d0997a4'),
+(88, 42, 9, 1, 2, NULL, '2021-09-07 13:14:55', '2021-09-07 14:53:46', '225c71ef-97e8-44c9-b62e-15634815275c'),
 (91, 90, 9, 2, 1, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19', 'f1f3a64f-f359-4bce-8716-ec0375b69217'),
 (92, 90, 9, 1, 2, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19', '71f2ceea-c822-4eda-9aef-1ebeedd40612'),
 (97, 96, 9, 2, 1, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '8b9fe901-c270-41d6-897a-73453a3a7f0b'),
@@ -1168,8 +1361,22 @@ INSERT INTO `matrixblocks` (`id`, `ownerId`, `fieldId`, `typeId`, `sortOrder`, `
 (149, 147, 9, 2, 2, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'a778f9de-43b7-473f-8f15-875f4a3f97ad'),
 (154, 153, 9, 1, 1, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '815c0e98-defb-48a0-bb65-843e4c45ebf1'),
 (155, 153, 9, 2, 2, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '060689f2-c1e7-44ae-8ff7-3d552e4ea049'),
-(157, 156, 9, 1, 1, NULL, '2021-09-07 14:36:39', '2021-09-07 14:36:39', 'be23a36b-98f7-401a-9505-8971510a631e'),
-(158, 156, 9, 2, 2, NULL, '2021-09-07 14:36:39', '2021-09-07 14:36:39', '726f4e3e-0887-4b40-9ec0-b0dede6d4e9c');
+(160, 159, 9, 2, 1, NULL, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '8dd9f312-be37-4bb4-b633-dbb888fd44a6'),
+(161, 159, 9, 1, 2, NULL, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '3c14c00c-b13e-48d0-a932-628c10e3075c'),
+(166, 165, 9, 2, 1, NULL, '2021-09-07 14:57:31', '2021-09-07 14:57:31', '2dab0e8e-5fcf-485e-b38b-3269f48171b2'),
+(167, 165, 9, 1, 2, NULL, '2021-09-07 14:57:31', '2021-09-07 14:57:31', '93587885-5792-4927-b3b7-32accc1fb4d0'),
+(211, 170, 12, 3, 2, NULL, '2021-09-08 14:53:31', '2021-09-08 14:54:55', 'b5df6e02-015f-4148-849f-c55aca5e4e59'),
+(212, 170, 12, 4, 1, NULL, '2021-09-08 14:53:31', '2021-09-08 14:54:55', 'd5b94cfe-1017-457f-9d6c-b9c0d870cc4f'),
+(214, 213, 12, 3, 1, NULL, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '82aaf785-f3ac-4063-8791-081c191a5c29'),
+(215, 213, 12, 4, 2, NULL, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '9fb221c4-962e-4938-8dfd-650c185bd54c'),
+(220, 219, 12, 4, 1, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '27756f4b-17b9-49b0-ace8-ad93a15e0488'),
+(221, 219, 12, 3, 2, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '29223bdc-06ec-43da-ae3b-6d721d0f61ae'),
+(223, 222, 9, 2, 1, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26', '52865a4e-7d86-4f9e-b051-0f3c471de5f4'),
+(224, 222, 9, 1, 2, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26', 'f7e4391a-889f-4f54-aae4-74020fc43ad1'),
+(229, 228, 12, 4, 1, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '76e44195-9480-4990-b80c-73be23fa8e1f'),
+(230, 228, 12, 3, 2, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '7b8b9593-8b53-4240-9322-0c575470afc1'),
+(232, 231, 12, 4, 1, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'ce5ba35d-929d-477b-8361-086a56af19a0'),
+(233, 231, 12, 3, 2, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '575c2bc1-0c58-48dd-8789-5a030e2fa266');
 
 -- --------------------------------------------------------
 
@@ -1195,7 +1402,62 @@ CREATE TABLE `matrixblocktypes` (
 
 INSERT INTO `matrixblocktypes` (`id`, `fieldId`, `fieldLayoutId`, `name`, `handle`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`) VALUES
 (1, 9, 6, 'bodycopy', 'bodycopy', 1, '2021-09-07 12:58:22', '2021-09-07 12:58:22', 'd6287000-aeb5-4ddf-aeeb-da48f9ed904f'),
-(2, 9, 7, 'videolink', 'videolink', 2, '2021-09-07 12:58:22', '2021-09-07 12:58:22', '5d359804-dc3e-4485-8e71-f6d29868806e');
+(2, 9, 7, 'videolink', 'videolink', 2, '2021-09-07 12:58:22', '2021-09-07 12:58:22', '5d359804-dc3e-4485-8e71-f6d29868806e'),
+(3, 12, 9, 'aboutcontent', 'body', 1, '2021-09-08 14:19:20', '2021-09-08 14:19:20', '95710e39-bdda-4a20-bfe7-9f8f96a9eb1f'),
+(4, 12, 10, 'video', 'video', 2, '2021-09-08 14:19:21', '2021-09-08 14:19:21', 'e27425f4-7074-4765-8f15-839e26004962');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `matrixcontent_about`
+--
+
+CREATE TABLE `matrixcontent_about` (
+  `id` int(11) NOT NULL,
+  `elementId` int(11) NOT NULL,
+  `siteId` int(11) NOT NULL,
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL,
+  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `field_body_body` mediumtext COLLATE utf8_unicode_ci,
+  `field_video_videolink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `field_video_videonaam` text COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `matrixcontent_about`
+--
+
+INSERT INTO `matrixcontent_about` (`id`, `elementId`, `siteId`, `dateCreated`, `dateUpdated`, `uid`, `field_body_body`, `field_video_videolink`, `field_video_videonaam`) VALUES
+(1, 190, 1, '2021-09-08 14:52:37', '2021-09-08 14:52:37', 'e6494a94-2354-4953-a9ea-5c43d42bfd02', NULL, NULL, NULL),
+(2, 191, 1, '2021-09-08 14:52:38', '2021-09-08 14:52:38', '6c1b70a0-266f-468c-b0e1-73277157d8d4', NULL, NULL, NULL),
+(3, 192, 1, '2021-09-08 14:52:38', '2021-09-08 14:52:38', '4792639a-4300-427e-ab68-a76d57c5b2e5', NULL, NULL, NULL),
+(4, 193, 1, '2021-09-08 14:52:50', '2021-09-08 14:52:50', 'c4a1edf0-b326-4234-8649-50a75692b582', '<p>Het enige wat ons nog kan weerstaan is </p>', NULL, NULL),
+(5, 194, 1, '2021-09-08 14:52:50', '2021-09-08 14:52:50', '84546f0d-237b-495b-a631-7a7d794c13cb', NULL, NULL, NULL),
+(6, 195, 1, '2021-09-08 14:53:05', '2021-09-08 14:53:05', '4eb94dbf-1926-4087-b7f0-53008d18f75a', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik will</p>', NULL, NULL),
+(7, 196, 1, '2021-09-08 14:53:05', '2021-09-08 14:53:05', '6bf4292e-f3a6-4dc7-bb5a-2cb648ae98eb', NULL, NULL, NULL),
+(8, 197, 1, '2021-09-08 14:53:13', '2021-09-08 14:53:13', 'd4f6c6d4-1424-448f-aa4a-76d7e9ddbfc3', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal een </p>', NULL, NULL),
+(9, 198, 1, '2021-09-08 14:53:13', '2021-09-08 14:53:13', 'cf8d9e0d-7463-4489-a334-4a4f0918075e', NULL, NULL, NULL),
+(10, 199, 1, '2021-09-08 14:53:16', '2021-09-08 14:53:16', 'd6348d01-d664-4769-96c8-0c184677ff97', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met min</p>', NULL, NULL),
+(11, 200, 1, '2021-09-08 14:53:17', '2021-09-08 14:53:17', '8415e66f-ed28-480b-86f6-f34d6bea0d08', NULL, NULL, NULL),
+(12, 201, 1, '2021-09-08 14:53:18', '2021-09-08 14:53:18', 'e8377f61-ca8b-43fd-a8f2-a6a451453a35', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn </p>', NULL, NULL),
+(13, 202, 1, '2021-09-08 14:53:18', '2021-09-08 14:53:18', 'c3d8ae2f-4b9f-4a29-a2f5-c1e77b34449a', NULL, NULL, NULL),
+(14, 203, 1, '2021-09-08 14:53:20', '2021-09-08 14:53:20', 'd5ec23d6-510b-45f1-a1f4-ea7a2589551c', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn lage </p>', NULL, NULL),
+(15, 204, 1, '2021-09-08 14:53:20', '2021-09-08 14:53:20', '9abc000e-ce43-4e29-aeff-317c77f06b12', NULL, NULL, NULL),
+(16, 205, 1, '2021-09-08 14:53:25', '2021-09-08 14:53:25', '55abaa42-ba34-428f-9fb2-9c81c62df98d', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn </p>', NULL, NULL),
+(17, 206, 1, '2021-09-08 14:53:25', '2021-09-08 14:53:25', '06d24245-8ed8-4bd3-9942-adea87942d4f', NULL, NULL, NULL),
+(18, 207, 1, '2021-09-08 14:53:29', '2021-09-08 14:53:29', '329dedd8-4a9f-4d26-872a-4e935f574836', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers</p>', NULL, NULL),
+(19, 208, 1, '2021-09-08 14:53:29', '2021-09-08 14:53:29', '6ac5685c-bd1e-4a65-ad93-369473fc4cc9', NULL, NULL, NULL),
+(22, 211, 1, '2021-09-08 14:53:31', '2021-09-08 14:58:53', 'c4a9f34e-0c86-4035-9345-4ab532a45e86', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL),
+(23, 212, 1, '2021-09-08 14:53:31', '2021-09-08 14:58:53', 'fa1ed7d8-ec1a-4946-9971-95f6a2650f2f', NULL, 'https://www.youtube.com/embed/UEYBML1eJ-w', 'Over mijn bedrijf.'),
+(24, 214, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '41f3c01c-7839-4c62-8c73-6bbadba0295e', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL),
+(25, 215, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '97f60cd7-c5a3-4713-9013-f40d539fec01', NULL, NULL, NULL),
+(28, 220, 1, '2021-09-08 14:54:55', '2021-09-08 14:54:55', 'cf6d8dba-e151-4b64-9174-7b41b82c7106', NULL, 'https://www.youtube.com/embed/UEYBML1eJ-w', NULL),
+(29, 221, 1, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '1fc17077-d331-4ffa-9f5e-548f26844d56', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL),
+(32, 229, 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '1a755802-d0aa-4a5d-94b2-049e55bd26b1', NULL, 'https://www.youtube.com/embed/UEYBML1eJ-w', 'Over mijn bedrijf.'),
+(33, 230, 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '06a86b65-17ee-4523-b4a2-e48d4e07d0d7', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL),
+(34, 232, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'fca7d52d-8d69-4d67-ba7f-8ebb7c25f7a0', NULL, 'https://www.youtube.com/embed/UEYBML1eJ-w', 'Over mijn bedrijf.'),
+(35, 233, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '5c791d83-2918-46b5-bcc3-55992715d0ac', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1210,7 +1472,7 @@ CREATE TABLE `matrixcontent_inhoudzelf` (
   `dateCreated` datetime NOT NULL,
   `dateUpdated` datetime NOT NULL,
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  `field_bodycopy_bodytext` mediumtext COLLATE utf8_unicode_ci,
+  `field_bodycopy_bodytext` text COLLATE utf8_unicode_ci,
   `field_videolink_videolink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -1263,8 +1525,8 @@ INSERT INTO `matrixcontent_inhoudzelf` (`id`, `elementId`, `siteId`, `dateCreate
 (42, 84, 1, '2021-09-07 13:14:36', '2021-09-07 13:14:36', '44d1c4b3-ab45-4ab8-830a-1b0e174a1ba9', NULL, NULL),
 (43, 85, 1, '2021-09-07 13:14:41', '2021-09-07 13:14:41', '9d75bf99-abc4-4bca-9018-3d93c6e5b740', NULL, NULL),
 (44, 86, 1, '2021-09-07 13:14:41', '2021-09-07 13:14:41', 'e35ad3ce-d7ec-4f1e-aec0-1f80fb648365', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
-(45, 87, 1, '2021-09-07 13:14:55', '2021-09-07 14:36:15', '0f244adb-a7e6-4b4f-80fb-ce0614b9abb1', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
-(46, 88, 1, '2021-09-07 13:14:55', '2021-09-07 14:36:15', 'dbfc8970-6032-47f1-a2a6-3f298b4026e2', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(45, 87, 1, '2021-09-07 13:14:55', '2021-09-07 14:57:31', '0f244adb-a7e6-4b4f-80fb-ce0614b9abb1', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(46, 88, 1, '2021-09-07 13:14:55', '2021-09-07 14:57:31', 'dbfc8970-6032-47f1-a2a6-3f298b4026e2', '<figure class=\"image text-center\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
 (47, 91, 1, '2021-09-07 13:20:19', '2021-09-07 13:20:19', '5f07873f-1842-4fdf-85cb-24e409d65f43', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
 (48, 92, 1, '2021-09-07 13:20:19', '2021-09-07 13:20:19', 'c5332dee-f6af-4435-8488-0493b91fa1c1', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
 (51, 97, 1, '2021-09-07 13:22:45', '2021-09-07 13:22:45', 'b4a8e2f5-c6e5-4188-8c63-6faacb314355', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
@@ -1289,8 +1551,12 @@ INSERT INTO `matrixcontent_inhoudzelf` (`id`, `elementId`, `siteId`, `dateCreate
 (86, 149, 1, '2021-09-07 14:35:36', '2021-09-07 14:35:36', '5499a190-403e-4a34-a47d-08c27662cde3', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
 (89, 154, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '704ec09d-d399-4d21-b0d7-ea5142ce64cf', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
 (90, 155, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '824c62e7-ef30-463d-95ff-fb7bdaa04e54', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
-(91, 157, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:54', '4ca08b20-a4e6-492c-acef-75918a45921a', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
-(92, 158, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', 'acc1d5dd-50b9-4a8c-ac52-e743bba7d4d1', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE');
+(93, 160, 1, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '6c724826-f6cb-4f06-9ba4-5b7a8c2ffddb', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(94, 161, 1, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '44d70f74-ad6d-42d8-ae1b-6f6a4eb9c1c6', '<figure class=\"image\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(97, 166, 1, '2021-09-07 14:57:31', '2021-09-07 14:57:31', '484fe109-351e-4d5b-a84b-1f9f20dc1c91', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(98, 167, 1, '2021-09-07 14:57:31', '2021-09-07 14:57:31', '781b728c-e879-4304-8e6c-75681b31b355', '<figure class=\"image text-center\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL),
+(99, 223, 1, '2021-09-08 14:56:26', '2021-09-08 14:56:26', 'd3f406de-dcb0-45aa-8d55-3aab6ed11d3a', NULL, 'https://www.youtube.com/embed/sMb00lz-IfE'),
+(100, 224, 1, '2021-09-08 14:56:26', '2021-09-08 14:56:26', '1b7f84a8-d2df-4e82-b7d2-64f90144f3a4', '<figure class=\"image text-center\"><img src=\"https://media-exp1.licdn.com/dms/image/C4D03AQGtpFpvwH2AkA/profile-displayphoto-shrink_200_200/0/1516302766195?e=1636588800&amp;v=beta&amp;t=SsB6tFEzwhQKzX5QVYovsw6HmIIGQ-MY1Vw60YjywFs\" alt=\"Martijn Le Feber\" /><figcaption>Martijn Le Feber</figcaption></figure><p>Dit is Martijn, hij is de eigenaar van PixelDeluxe.</p>', NULL);
 
 -- --------------------------------------------------------
 
@@ -1506,7 +1772,12 @@ INSERT INTO `migrations` (`id`, `track`, `name`, `applyTime`, `dateCreated`, `da
 (191, 'craft', 'm210829_000000_element_index_tweak', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '2021-09-06 10:09:25', '66524cda-ae66-43f2-843f-e68b533cc9aa'),
 (192, 'plugin:redactor', 'm180430_204710_remove_old_plugins', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '553dabb1-d96c-4483-899e-e7b3642f8ba9'),
 (193, 'plugin:redactor', 'Install', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-07 14:38:20', 'c5b56d77-e2c5-4cb9-b781-841df4e00895'),
-(194, 'plugin:redactor', 'm190225_003922_split_cleanup_html_settings', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '89bd6a39-c29d-4197-bb8c-6bbf21c0e60f');
+(194, 'plugin:redactor', 'm190225_003922_split_cleanup_html_settings', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-07 14:38:20', '89bd6a39-c29d-4197-bb8c-6bbf21c0e60f'),
+(195, 'plugin:seo', 'Install', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '0a94d630-5927-4e13-b5d6-eb9140b75bed'),
+(196, 'plugin:seo', 'm180906_152947_add_site_id_to_redirects', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '3b5b67ca-135b-4e23-836e-0b86400c5fd9'),
+(197, 'plugin:seo', 'm190114_152300_upgrade_to_new_data_format', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2ba40ce5-2811-4dc1-b580-8899c38bc749'),
+(198, 'plugin:seo', 'm200518_110721_add_order_to_redirects', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '6f19329d-091e-4c6c-a086-2db9d707c604'),
+(199, 'plugin:seo', 'm201207_124200_add_product_types_to_sitemap', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2021-09-08 11:53:27', '1d296b04-8488-48d8-b167-737be07b30d2');
 
 -- --------------------------------------------------------
 
@@ -1532,8 +1803,10 @@ CREATE TABLE `plugins` (
 --
 
 INSERT INTO `plugins` (`id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `licensedEdition`, `installDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'ckeditor', '1.1.2', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2021-09-07 14:38:26', '032a7d64-0762-4824-8f4b-0c7d4ea9143b'),
-(2, 'redactor', '2.8.8', '2.3.0', 'unknown', NULL, '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-07 14:38:26', 'd08ef1d0-3480-4156-a250-5bda6017a5fe');
+(1, 'ckeditor', '1.1.2', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2021-09-08 11:53:32', '032a7d64-0762-4824-8f4b-0c7d4ea9143b'),
+(2, 'redactor', '2.8.8', '2.3.0', 'unknown', NULL, '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-08 11:53:32', 'd08ef1d0-3480-4156-a250-5bda6017a5fe'),
+(3, 'contact-form', '2.2.7', '1.0.0', 'unknown', NULL, '2021-09-08 10:27:24', '2021-09-08 10:27:24', '2021-09-08 11:53:32', '8f683cb0-4fee-4f47-8838-508c3c9d232a'),
+(4, 'seo', '3.7.4', '3.2.0', 'unknown', NULL, '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2021-09-08 11:53:32', 'a20c0255-b6da-4747-be0d-24f0c2d76d2b');
 
 -- --------------------------------------------------------
 
@@ -1551,7 +1824,7 @@ CREATE TABLE `projectconfig` (
 --
 
 INSERT INTO `projectconfig` (`path`, `value`) VALUES
-('dateModified', '1631025663'),
+('dateModified', '1631113095'),
 ('email.fromEmail', '\"pjotr@pixeldeluxe.nl\"'),
 ('email.fromName', '\"Blogsite\"'),
 ('email.transportType', '\"craft\\\\mail\\\\transportadapters\\\\Sendmail\"'),
@@ -1629,6 +1902,46 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.titleFormat', 'null'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.titleTranslationKeyFormat', 'null'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.titleTranslationMethod', '\"site\"'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.autocapitalize', 'true'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.autocomplete', 'false'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.autocorrect', 'true'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.class', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.disabled', 'false'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.id', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.instructions', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.label', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.max', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.min', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.name', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.orientation', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.placeholder', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.readonly', 'false'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.requirable', 'false'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.size', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.step', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.tip', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.title', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\EntryTitleField\"'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.warning', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.width', '100'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.1.fieldUid', '\"639db3fc-cfd4-4523-a2e8-2ac5effb3522\"'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.1.instructions', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.1.label', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.1.required', 'false'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.1.tip', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.1.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.1.warning', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.1.width', '100'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.name', '\"Inhoud\"'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.sortOrder', '1'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.handle', '\"default\"'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.hasTitleField', 'true'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.name', '\"Standaard\"'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.section', '\"73bb7483-e2a7-45c4-abcf-4df7bb6c3d20\"'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.sortOrder', '1'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.titleFormat', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.titleTranslationKeyFormat', 'null'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.titleTranslationMethod', '\"site\"'),
 ('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.autocapitalize', 'true'),
 ('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.autocomplete', 'false'),
 ('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.autocorrect', 'true'),
@@ -1695,7 +2008,7 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.fieldLayouts.410aa703-ed96-4586-a0be-75ced0eb977d.tabs.0.sortOrder', '1'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.handle', '\"homepage\"'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.hasTitleField', 'false'),
-('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.name', '\"homepage\"'),
+('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.name', '\"Homepage\"'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.section', '\"364d4330-d412-40f3-99b9-8a3dd6a2d954\"'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.sortOrder', '1'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.titleFormat', '\"{section.name|raw}\"'),
@@ -1705,6 +2018,22 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('fieldGroups.3b68da63-81e3-4d75-b78d-63e267cf49d7.name', '\"Common\"'),
 ('fieldGroups.417ad68e-f480-4c58-bc24-a31574f1c928.name', '\"blogpost\"'),
 ('fieldGroups.518e5c2e-1341-4b80-a65a-8512d938f820.name', '\"General\"'),
+('fieldGroups.8886d58d-cb48-4775-9092-f5615f900343.name', '\"about\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.columnSuffix', 'null'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.contentColumnType', '\"string\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.fieldGroup', '\"8886d58d-cb48-4775-9092-f5615f900343\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.handle', '\"about\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.instructions', '\"\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.name', '\"about\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.searchable', 'false'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.settings.contentTable', '\"{{%matrixcontent_about}}\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.settings.maxBlocks', '\"\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.settings.minBlocks', '\"\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.settings.propagationKeyFormat', 'null'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.settings.propagationMethod', '\"all\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.translationKeyFormat', 'null'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.translationMethod', '\"site\"'),
+('fields.639db3fc-cfd4-4523-a2e8-2ac5effb3522.type', '\"craft\\\\fields\\\\Matrix\"'),
 ('fields.7382616d-769d-4f84-8b59-7245cd08ef20.columnSuffix', '\"ehemhfzb\"'),
 ('fields.7382616d-769d-4f84-8b59-7245cd08ef20.contentColumnType', '\"string(255)\"'),
 ('fields.7382616d-769d-4f84-8b59-7245cd08ef20.fieldGroup', '\"417ad68e-f480-4c58-bc24-a31574f1c928\"'),
@@ -1841,6 +2170,47 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.handle', '\"videolink\"'),
 ('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.name', '\"videolink\"'),
 ('matrixBlockTypes.5d359804-dc3e-4485-8e71-f6d29868806e.sortOrder', '2'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.field', '\"639db3fc-cfd4-4523-a2e8-2ac5effb3522\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.elements.0.fieldUid', '\"6fb6a84c-ac77-4355-b483-06f78d791539\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.elements.0.instructions', 'null'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.elements.0.label', 'null'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.elements.0.required', 'false'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.elements.0.tip', 'null'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.elements.0.warning', 'null'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.elements.0.width', '100'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.name', '\"Content\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fieldLayouts.90fe6753-a117-4edb-8913-42224d16173d.tabs.0.sortOrder', '1'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.columnSuffix', 'null'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.contentColumnType', '\"mediumtext\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.fieldGroup', 'null'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.handle', '\"body\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.instructions', '\"\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.name', '\"body\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.searchable', 'false'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.availableTransforms', '\"*\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.availableVolumes', '\"*\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.cleanupHtml', 'true'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.columnType', '\"mediumtext\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.configSelectionMode', '\"choose\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.defaultTransform', '\"\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.manualConfig', '\"\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.purifierConfig', '\"\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.purifyHtml', '\"1\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.redactorConfig', '\"\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.removeEmptyTags', '\"1\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.removeInlineStyles', '\"1\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.removeNbsp', '\"1\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.showHtmlButtonForNonAdmins', '\"\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.showUnpermittedFiles', 'false'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.showUnpermittedVolumes', 'false'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.uiMode', '\"enlarged\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.translationKeyFormat', 'null'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.translationMethod', '\"none\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.type', '\"craft\\\\redactor\\\\Field\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.handle', '\"body\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.name', '\"aboutcontent\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.sortOrder', '1'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.field', '\"e3c14bdc-b578-4588-bce9-7dc0f8553072\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.fieldUid', '\"3b175535-87ad-4cb7-90d4-5e06d63658d6\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.elements.0.instructions', 'null'),
@@ -1853,26 +2223,95 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.name', '\"Content\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fieldLayouts.dd0fb9ac-e4fe-4014-ad10-0887926eaf73.tabs.0.sortOrder', '1'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.columnSuffix', 'null'),
-('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.contentColumnType', '\"mediumtext\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.contentColumnType', '\"text\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.fieldGroup', 'null'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.handle', '\"bodytext\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.instructions', '\"\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.name', '\"bodytext\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.searchable', 'false'),
-('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.columnType', '\"mediumtext\"'),
-('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.initJs', 'null'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.availableTransforms', '\"*\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.availableVolumes', '\"*\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.cleanupHtml', 'true'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.columnType', '\"text\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.configSelectionMode', '\"choose\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.defaultTransform', '\"\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.manualConfig', '\"\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.purifierConfig', '\"\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.purifyHtml', '\"1\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.redactorConfig', '\"\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.removeEmptyTags', '\"1\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.removeInlineStyles', '\"1\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.removeNbsp', '\"1\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.showHtmlButtonForNonAdmins', '\"\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.showUnpermittedFiles', 'false'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.showUnpermittedVolumes', 'false'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.uiMode', '\"enlarged\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.translationKeyFormat', 'null'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.translationMethod', '\"none\"'),
-('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.type', '\"craft\\\\ckeditor\\\\Field\"'),
+('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.type', '\"craft\\\\redactor\\\\Field\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.handle', '\"bodycopy\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.name', '\"bodycopy\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.sortOrder', '1'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.field', '\"639db3fc-cfd4-4523-a2e8-2ac5effb3522\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.0.fieldUid', '\"185857a1-7047-4adc-84d0-a8d679523c2d\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.0.instructions', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.0.label', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.0.required', 'false'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.0.tip', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.0.warning', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.0.width', '100');
+INSERT INTO `projectconfig` (`path`, `value`) VALUES
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.1.fieldUid', '\"1bedf931-c16d-4606-a377-f778e799f5c0\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.1.instructions', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.1.label', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.1.required', 'false'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.1.tip', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.1.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.1.warning', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.elements.1.width', '100'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.name', '\"Content\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fieldLayouts.035a1325-057f-4ada-8084-74d2a5676623.tabs.0.sortOrder', '1'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.columnSuffix', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.contentColumnType', '\"string(255)\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.fieldGroup', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.handle', '\"videolink\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.instructions', '\"\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.name', '\"videolink\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.searchable', 'false'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.settings.maxLength', '\"255\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.settings.placeholder', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.settings.types.0', '\"url\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.translationKeyFormat', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.translationMethod', '\"none\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.185857a1-7047-4adc-84d0-a8d679523c2d.type', '\"craft\\\\fields\\\\Url\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.columnSuffix', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.contentColumnType', '\"text\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.fieldGroup', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.handle', '\"videonaam\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.instructions', '\"\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.name', '\"videonaam\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.searchable', 'false'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.settings.byteLimit', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.settings.charLimit', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.settings.code', '\"\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.settings.columnType', '\"text\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.settings.initialRows', '\"4\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.settings.multiline', '\"\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.settings.placeholder', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.settings.uiMode', '\"normal\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.translationKeyFormat', 'null'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.translationMethod', '\"none\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.fields.1bedf931-c16d-4606-a377-f778e799f5c0.type', '\"craft\\\\fields\\\\PlainText\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.handle', '\"video\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.name', '\"video\"'),
+('matrixBlockTypes.e27425f4-7074-4765-8f15-839e26004962.sortOrder', '2'),
+('meta.__names__.185857a1-7047-4adc-84d0-a8d679523c2d', '\"videolink\"'),
 ('meta.__names__.1a7ded85-cd10-4685-8696-21042404ec46', '\"Blogsite\"'),
+('meta.__names__.1bedf931-c16d-4606-a377-f778e799f5c0', '\"videonaam\"'),
 ('meta.__names__.2650fd56-94c1-4d62-929b-998b54588b6d', '\"Public Schema\"'),
 ('meta.__names__.34ad3c2c-7a70-4054-91bb-90ada9475662', '\"inhoud\"'),
-('meta.__names__.364d4330-d412-40f3-99b9-8a3dd6a2d954', '\"homepage\"'),
+('meta.__names__.364d4330-d412-40f3-99b9-8a3dd6a2d954', '\"Homepage\"'),
 ('meta.__names__.3b175535-87ad-4cb7-90d4-5e06d63658d6', '\"bodytext\"'),
 ('meta.__names__.3b49d805-1ae4-41ab-ad93-00de8e3a56c3', '\"images\"'),
 ('meta.__names__.3b68da63-81e3-4d75-b78d-63e267cf49d7', '\"Common\"'),
@@ -1880,12 +2319,19 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('meta.__names__.4c7c41bd-271d-4790-aecd-3eafe71ca7c6', '\"Standaard\"'),
 ('meta.__names__.518e5c2e-1341-4b80-a65a-8512d938f820', '\"General\"'),
 ('meta.__names__.5d359804-dc3e-4485-8e71-f6d29868806e', '\"videolink\"'),
+('meta.__names__.639db3fc-cfd4-4523-a2e8-2ac5effb3522', '\"about\"'),
+('meta.__names__.6fb6a84c-ac77-4355-b483-06f78d791539', '\"body\"'),
 ('meta.__names__.7382616d-769d-4f84-8b59-7245cd08ef20', '\"videolink\"'),
+('meta.__names__.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20', '\"About\"'),
 ('meta.__names__.7ce16e90-1108-4637-ae34-135db25fef4e', '\"Blogsite\"'),
+('meta.__names__.845194a4-5a85-4e81-8d73-c11be1057caa', '\"Standaard\"'),
+('meta.__names__.8886d58d-cb48-4775-9092-f5615f900343', '\"about\"'),
+('meta.__names__.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f', '\"aboutcontent\"'),
 ('meta.__names__.b8b01c62-e65a-45ab-a41a-2880f6839689', '\"navbar\"'),
 ('meta.__names__.b94e9ccf-1f7c-4952-87b0-2514213a3b78', '\"navbar\"'),
-('meta.__names__.bb77b1f3-1ccf-4257-af21-bb0d3e88362d', '\"homepage\"'),
+('meta.__names__.bb77b1f3-1ccf-4257-af21-bb0d3e88362d', '\"Homepage\"'),
 ('meta.__names__.d6287000-aeb5-4ddf-aeeb-da48f9ed904f', '\"bodycopy\"'),
+('meta.__names__.e27425f4-7074-4765-8f15-839e26004962', '\"video\"'),
 ('meta.__names__.e3a74156-6e99-4310-8b92-cc9c1d33e616', '\"PageCopy\"'),
 ('meta.__names__.e3c14bdc-b578-4588-bce9-7dc0f8553072', '\"inhoudzelf\"'),
 ('meta.__names__.e6e40127-efc5-4abd-b5ec-455c1a80fa0c', '\"headimage\"'),
@@ -1896,13 +2342,47 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('plugins.ckeditor.edition', '\"standard\"'),
 ('plugins.ckeditor.enabled', 'true'),
 ('plugins.ckeditor.schemaVersion', '\"1.0.0\"'),
+('plugins.contact-form.edition', '\"standard\"'),
+('plugins.contact-form.enabled', 'true'),
+('plugins.contact-form.schemaVersion', '\"1.0.0\"'),
 ('plugins.redactor.edition', '\"standard\"'),
 ('plugins.redactor.enabled', 'true'),
 ('plugins.redactor.schemaVersion', '\"2.3.0\"'),
+('plugins.seo.edition', '\"standard\"'),
+('plugins.seo.enabled', 'true'),
+('plugins.seo.schemaVersion', '\"3.2.0\"'),
+('plugins.seo.settings.description', '\"\"'),
+('plugins.seo.settings.facebookAppId', '\"\"'),
+('plugins.seo.settings.metaTemplate', '\"\"'),
+('plugins.seo.settings.removeAlternateUrls', '\"\"'),
+('plugins.seo.settings.robots.0', '\"\"'),
+('plugins.seo.settings.robots.1', '\"\"'),
+('plugins.seo.settings.robots.2', '\"noarchive\"'),
+('plugins.seo.settings.robots.3', '\"\"'),
+('plugins.seo.settings.robots.4', '\"notranslate\"'),
+('plugins.seo.settings.robots.5', '\"\"'),
+('plugins.seo.settings.robotsTxt', '\"{# Sitemap URL #}\\r\\nSitemap: {{ url(seo.sitemapName ~ \'.xml\') }}\\r\\n\\r\\n{# Disallows #}\\r\\n{% if craft.app.config.env != \'production\' %}\\r\\n\\r\\n{# Disallow access to everything when NOT in production #}\\r\\nUser-agent: *\\r\\nDisallow: /\\r\\n\\r\\n{% else %}\\r\\n\\r\\n{# Disallow access to cpresources/ when live #}\\r\\nUser-agent: *\\r\\nDisallow: /cpresources/\\r\\n\\r\\n{% endif %}\"'),
+('plugins.seo.settings.sitemapLimit', '\"1000\"'),
+('plugins.seo.settings.sitemapName', '\"sitemap\"'),
+('plugins.seo.settings.socialImage', '\"\"'),
+('plugins.seo.settings.title.0.__assoc__.0.0', '\"key\"'),
+('plugins.seo.settings.title.0.__assoc__.0.1', '\"1\"'),
+('plugins.seo.settings.title.0.__assoc__.1.0', '\"locked\"'),
+('plugins.seo.settings.title.0.__assoc__.1.1', '\"0\"'),
+('plugins.seo.settings.title.0.__assoc__.2.0', '\"template\"'),
+('plugins.seo.settings.title.0.__assoc__.2.1', '\"{title}\"'),
+('plugins.seo.settings.title.1.__assoc__.0.0', '\"key\"'),
+('plugins.seo.settings.title.1.__assoc__.0.1', '\"2\"'),
+('plugins.seo.settings.title.1.__assoc__.1.0', '\"locked\"'),
+('plugins.seo.settings.title.1.__assoc__.1.1', '\"1\"'),
+('plugins.seo.settings.title.1.__assoc__.2.0', '\"template\"'),
+('plugins.seo.settings.title.1.__assoc__.2.1', '\" - {{ siteName }}\"'),
+('plugins.seo.settings.titleSuffix', 'null'),
+('plugins.seo.settings.twitterHandle', '\"\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.defaultPlacement', '\"end\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.enableVersioning', 'true'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.handle', '\"homepage\"'),
-('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.name', '\"homepage\"'),
+('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.name', '\"Homepage\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.previewTargets.0.__assoc__.0.0', '\"label\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.previewTargets.0.__assoc__.0.1', '\"Primaire invoer-pagina\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.previewTargets.0.__assoc__.1.0', '\"urlFormat\"'),
@@ -1915,6 +2395,24 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.siteSettings.1a7ded85-cd10-4685-8696-21042404ec46.template', '\"index\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.siteSettings.1a7ded85-cd10-4685-8696-21042404ec46.uriFormat', '\"__home__\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.type', '\"single\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.defaultPlacement', '\"end\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.enableVersioning', 'true'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.handle', '\"about\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.name', '\"About\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.previewTargets.0.__assoc__.0.0', '\"label\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.previewTargets.0.__assoc__.0.1', '\"Primaire invoer-pagina\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.previewTargets.0.__assoc__.1.0', '\"urlFormat\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.previewTargets.0.__assoc__.1.1', '\"{url}\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.previewTargets.0.__assoc__.2.0', '\"refresh\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.previewTargets.0.__assoc__.2.1', '\"1\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.propagationMethod', '\"all\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.siteSettings.1a7ded85-cd10-4685-8696-21042404ec46.enabledByDefault', 'true'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.siteSettings.1a7ded85-cd10-4685-8696-21042404ec46.hasUrls', 'true'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.siteSettings.1a7ded85-cd10-4685-8696-21042404ec46.template', '\"about/_entry\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.siteSettings.1a7ded85-cd10-4685-8696-21042404ec46.uriFormat', '\"{parent.uri}/{slug}\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.structure.maxLevels', 'null'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.structure.uid', '\"80d3d7ea-cc89-4dfe-a7dc-8a136b2a668b\"'),
+('sections.73bb7483-e2a7-45c4-abcf-4df7bb6c3d20.type', '\"structure\"'),
 ('sections.b94e9ccf-1f7c-4952-87b0-2514213a3b78.defaultPlacement', '\"end\"'),
 ('sections.b94e9ccf-1f7c-4952-87b0-2514213a3b78.enableVersioning', 'true'),
 ('sections.b94e9ccf-1f7c-4952-87b0-2514213a3b78.handle', '\"navbar\"'),
@@ -2069,7 +2567,9 @@ INSERT INTO `relations` (`id`, `fieldId`, `sourceId`, `sourceSiteId`, `targetId`
 (37, 3, 141, NULL, 89, 1, '2021-09-07 14:33:52', '2021-09-07 14:33:52', '2da243aa-daca-4658-ac09-8e393009c4ec'),
 (39, 3, 147, NULL, 89, 1, '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'eb566a34-99f8-4a85-8a3a-595e910d973a'),
 (41, 3, 153, NULL, 89, 1, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '1076a11d-f8d0-4020-98a8-c237b3ee9dbe'),
-(42, 3, 156, NULL, 89, 1, '2021-09-07 14:36:39', '2021-09-07 14:36:39', 'c3695462-7ae9-4438-b296-7f724a3312bc');
+(43, 3, 159, NULL, 89, 1, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '9ff730d3-35b2-475e-89af-852a85c3781c'),
+(45, 3, 165, NULL, 89, 1, '2021-09-07 14:57:31', '2021-09-07 14:57:31', '588c805c-90f9-40fe-aaba-39dc9451aeda'),
+(46, 3, 222, NULL, 89, 1, '2021-09-08 14:56:26', '2021-09-08 14:56:26', '0cad2856-300f-42ea-8eaa-c6229bc72296');
 
 -- --------------------------------------------------------
 
@@ -2089,48 +2589,66 @@ CREATE TABLE `resourcepaths` (
 INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('12de6e6b', '@app/web/assets/cp/dist'),
 ('157cbf5e', '@craft/web/assets/craftsupport/dist'),
+('16e07b15', '@app/web/assets/login/dist'),
 ('1d7a0893', '@craft/web/assets/login/dist'),
+('217c59b7', '@app/web/assets/updater/dist'),
 ('23a4881d', '@lib/axios'),
 ('258d6799', '@app/web/assets/generalsettings/dist'),
 ('2973c854', '@lib/jquery-ui'),
 ('2a69821a', '@craft/web/assets/feed/dist'),
+('2df4912f', '@craft/web/assets/systemmessages/dist'),
 ('311425f7', '@craft/web/assets/editsection/dist'),
 ('31290b88', '@app/web/assets/updateswidget/dist'),
 ('37cd79e5', '@craft/web/assets/plugins/dist'),
+('3c6a28d1', '@app/web/assets/fieldsettings/dist'),
 ('3fbba749', '@app/web/assets/craftsupport/dist'),
+('4b2c2d3', '@craft/redactor/assets/redactor-plugins/dist/video'),
 ('4ce047bd', '@craft/web/assets/matrixsettings/dist'),
+('51da0361', '@lib/iframe-resizer-cw'),
 ('532aa4d1', '@craft/web/assets/dashboard/dist'),
 ('59c50f79', '@lib/element-resize-detector'),
+('5a0f71ba', '@app/web/assets/matrixsettings/dist'),
 ('67da53f1', '@lib/velocity'),
+('6afbfb87', '@craft/web/assets/updates/dist'),
+('6bc525d5', '@app/web/assets/feed/dist'),
 ('6ca94a2d', '@craft/web/assets/deprecationerrors/dist'),
+('6e7d170', '@craft/redactor/assets/redactor/dist'),
 ('70a52cfa', '@app/web/assets/utilities/dist'),
 ('738c66d1', '@craft/web/assets/editentry/dist'),
 ('7655a48c', '@bower/jquery/dist'),
+('798f42a5', '@app/web/assets/tablesettings/dist'),
 ('7bfdfc19', '@lib/jquery.payment'),
 ('85a94d66', '@craft/web/assets/updater/dist'),
 ('8c6a0b39', '@craft/web/assets/recententries/dist'),
+('8f16e477', '@app/web/assets/admintable/dist'),
+('93ebfae9', '@craft/redactor/assets/field/dist'),
+('9927a60c', '@app/web/assets/editsection/dist'),
 ('9b12a970', '@lib/timepicker'),
 ('9e62340', '@app/web/assets/pluginstore/dist'),
 ('a1d5a0bb', '@craft/web/assets/pluginstore/dist'),
 ('a4edf105', '@lib/xregexp'),
 ('a5d2cb10', '@craft/web/assets/installer/dist'),
 ('a8ae90c6', '@craft/web/assets/cp/dist'),
+('ab639d3a', '@craft/redactor/assets/redactor-plugins/dist/fullscreen'),
 ('ae81b58f', '@lib/selectize'),
 ('b2d04957', '@craft/web/assets/updateswidget/dist'),
 ('b7221293', '@lib/datepicker-i18n'),
 ('bbff1d0c', '@craft/web/assets/generalsettings/dist'),
 ('bf936a0e', '@craft/web/assets/fieldsettings/dist'),
 ('c7e7afdc', '@lib/garnishjs'),
+('cb60887d', '@ether/seo/web/assets'),
 ('d04f3222', '@app/web/assets/deprecationerrors/dist'),
 ('d1d32027', '@app/web/assets/dashboard/dist'),
 ('d264b20f', '@craft/web/assets/fields/dist'),
 ('d2a17be2', '@lib/fabric'),
+('d6b40e69', '@app/web/assets/fields/dist'),
 ('d9ff6a97', '@craft/ckeditor/assets/field/dist'),
 ('db4a4ada', '@craft/web/assets/admintable/dist'),
 ('e21799f5', '@lib/fileupload'),
 ('e4f2b68', '@lib/vue'),
 ('ec843a2f', '@craft/web/assets/sites/dist'),
 ('eeb4a6e2', '@lib/iframe-resizer'),
+('f175e227', '@app/web/assets/editentry/dist'),
 ('f25ca80c', '@craft/web/assets/utilities/dist'),
 ('f45ab85a', '@lib/d3'),
 ('f5bf522c', '@craft/web/assets/queuemanager/dist'),
@@ -2139,6 +2657,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('fa877c75', '@craft/web/assets/matrix/dist'),
 ('faff980b', '@lib/picturefill'),
 ('fd5ba4c9', '@lib/jquery-touch-events'),
+('fe57c013', '@app/web/assets/matrix/dist'),
 ('ffddae40', '@lib/prismjs');
 
 -- --------------------------------------------------------
@@ -2194,7 +2713,27 @@ INSERT INTO `revisions` (`id`, `sourceId`, `creatorId`, `num`, `notes`) VALUES
 (32, 42, 1, 9, '“Concept 1” toegepast'),
 (33, 42, 1, 10, '“Concept 1” toegepast'),
 (34, 42, 1, 11, '“Concept 1” toegepast'),
-(35, 42, 1, 12, '“Concept 1” toegepast');
+(35, 42, 1, 12, '“Concept 1” toegepast'),
+(36, 42, 1, 13, '“Concept 1” toegepast'),
+(37, 42, 1, 14, '“Concept 1” toegepast'),
+(38, 10, 1, 10, NULL),
+(39, 10, 1, 11, NULL),
+(40, 170, 1, 1, ''),
+(41, 172, 1, 1, ''),
+(42, 170, 1, 2, '“Concept 1” toegepast'),
+(43, 170, 1, 3, '“Concept 1” toegepast'),
+(44, 170, 1, 4, '“Concept 1” toegepast'),
+(45, 170, 1, 5, '“Concept 1” toegepast'),
+(46, 22, 1, 5, ''),
+(47, 22, 1, 6, NULL),
+(48, 22, 1, 7, NULL),
+(49, 22, 1, 8, '“Concept 1” toegepast'),
+(50, 22, 1, 9, NULL),
+(51, 22, 1, 10, ''),
+(52, 170, 1, 6, '“Concept 1” toegepast'),
+(53, 170, 1, 7, '“Concept 1” toegepast'),
+(54, 170, 1, 8, '“Concept 1” toegepast'),
+(55, 170, 1, 9, '');
 
 -- --------------------------------------------------------
 
@@ -2232,10 +2771,10 @@ INSERT INTO `searchindex` (`elementId`, `attribute`, `fieldId`, `siteId`, `keywo
 (6, 'kind', 0, 1, ' image '),
 (6, 'slug', 0, 1, ''),
 (6, 'title', 0, 1, ' thumnail '),
-(10, 'title', 0, 1, ' homepage '),
 (10, 'slug', 0, 1, ' homepage '),
-(22, 'title', 0, 1, ' navbar '),
+(10, 'title', 0, 1, ' homepage '),
 (22, 'slug', 0, 1, ' navbar '),
+(22, 'title', 0, 1, ' navbar '),
 (30, 'title', 0, 1, ' the simplest math problem no one can solve collatz conjecture '),
 (30, 'slug', 0, 1, ' the simplest math problem no one can solve collatz conjecture 2 '),
 (32, 'title', 0, 1, ' the simplest math problem no one can solve collatz conjecture '),
@@ -2275,10 +2814,28 @@ INSERT INTO `searchindex` (`elementId`, `attribute`, `fieldId`, `siteId`, `keywo
 (149, 'slug', 0, 1, ''),
 (154, 'slug', 0, 1, ''),
 (155, 'slug', 0, 1, ''),
-(156, 'slug', 0, 1, ' what is not random '),
-(157, 'slug', 0, 1, ''),
-(158, 'slug', 0, 1, ''),
-(156, 'title', 0, 1, ' what is not random ');
+(161, 'slug', 0, 1, ''),
+(166, 'slug', 0, 1, ''),
+(167, 'slug', 0, 1, ''),
+(160, 'slug', 0, 1, ''),
+(170, 'title', 0, 1, ' about '),
+(170, 'slug', 0, 1, ' about '),
+(172, 'title', 0, 1, ' contact '),
+(172, 'slug', 0, 1, ' contact '),
+(211, 'slug', 0, 1, ''),
+(212, 'slug', 0, 1, ''),
+(214, 'slug', 0, 1, ''),
+(215, 'slug', 0, 1, ''),
+(220, 'slug', 0, 1, ''),
+(221, 'slug', 0, 1, ''),
+(222, 'title', 0, 1, ' what is not random '),
+(222, 'slug', 0, 1, ' what is not random '),
+(223, 'slug', 0, 1, ''),
+(224, 'slug', 0, 1, ''),
+(229, 'slug', 0, 1, ''),
+(230, 'slug', 0, 1, ''),
+(232, 'slug', 0, 1, ''),
+(233, 'slug', 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -2308,8 +2865,9 @@ CREATE TABLE `sections` (
 
 INSERT INTO `sections` (`id`, `structureId`, `name`, `handle`, `type`, `enableVersioning`, `propagationMethod`, `defaultPlacement`, `previewTargets`, `dateCreated`, `dateUpdated`, `dateDeleted`, `uid`) VALUES
 (1, NULL, 'blogpost', 'blogpost', 'channel', 1, 'all', 'end', NULL, '2021-09-06 11:24:27', '2021-09-06 11:24:27', NULL, 'ec1302f0-657a-4e1d-a46c-9918baf86e4e'),
-(2, NULL, 'homepage', 'homepage', 'single', 1, 'all', 'end', '[{\"label\":\"Primaire invoer-pagina\",\"urlFormat\":\"{url}\",\"refresh\":\"1\"}]', '2021-09-06 13:11:08', '2021-09-06 13:11:08', NULL, '364d4330-d412-40f3-99b9-8a3dd6a2d954'),
-(3, NULL, 'navbar', 'navbar', 'single', 1, 'all', 'end', '[{\"label\":\"Primaire invoer-pagina\",\"urlFormat\":\"{url}\",\"refresh\":\"1\"}]', '2021-09-06 14:38:41', '2021-09-06 14:39:19', NULL, 'b94e9ccf-1f7c-4952-87b0-2514213a3b78');
+(2, NULL, 'Homepage', 'homepage', 'single', 1, 'all', 'end', '[{\"label\":\"Primaire invoer-pagina\",\"urlFormat\":\"{url}\",\"refresh\":\"1\"}]', '2021-09-06 13:11:08', '2021-09-08 07:16:03', NULL, '364d4330-d412-40f3-99b9-8a3dd6a2d954'),
+(3, NULL, 'navbar', 'navbar', 'single', 1, 'all', 'end', '[{\"label\":\"Primaire invoer-pagina\",\"urlFormat\":\"{url}\",\"refresh\":\"1\"}]', '2021-09-06 14:38:41', '2021-09-08 10:06:50', NULL, 'b94e9ccf-1f7c-4952-87b0-2514213a3b78'),
+(4, 1, 'About', 'about', 'structure', 1, 'all', 'end', '[{\"label\":\"Primaire invoer-pagina\",\"urlFormat\":\"{url}\",\"refresh\":\"1\"}]', '2021-09-08 08:06:35', '2021-09-08 08:06:35', NULL, '73bb7483-e2a7-45c4-abcf-4df7bb6c3d20');
 
 -- --------------------------------------------------------
 
@@ -2337,7 +2895,44 @@ CREATE TABLE `sections_sites` (
 INSERT INTO `sections_sites` (`id`, `sectionId`, `siteId`, `hasUrls`, `uriFormat`, `template`, `enabledByDefault`, `dateCreated`, `dateUpdated`, `uid`) VALUES
 (1, 1, 1, 1, 'blogpost/{slug}', 'blogpost/_entry', 1, '2021-09-06 11:24:27', '2021-09-06 11:24:27', 'fc120a27-baf4-4f19-98fe-764ee3ca474e'),
 (2, 2, 1, 1, '__home__', 'index', 1, '2021-09-06 13:11:08', '2021-09-06 14:37:12', '78706ecf-0f0f-49d6-99b6-4ee7b2777858'),
-(3, 3, 1, 1, '_layouts/main', '_layouts/main', 1, '2021-09-06 14:38:41', '2021-09-06 14:40:32', '9f9b8655-4e66-4366-bea9-6165a68c3c5a');
+(3, 3, 1, 1, '_layouts/main', '_layouts/main', 1, '2021-09-06 14:38:41', '2021-09-08 10:12:10', '9f9b8655-4e66-4366-bea9-6165a68c3c5a'),
+(4, 4, 1, 1, '{parent.uri}/{slug}', 'about/_entry', 1, '2021-09-08 08:06:35', '2021-09-08 09:25:51', '84f3de1c-283b-4c21-8eb4-fef74d29bfbd');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `seo_redirects`
+--
+
+CREATE TABLE `seo_redirects` (
+  `id` int(11) NOT NULL,
+  `uri` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `to` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `type` enum('301','302') COLLATE utf8_unicode_ci NOT NULL,
+  `siteId` int(11) DEFAULT NULL,
+  `order` int(11) DEFAULT NULL,
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL,
+  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `seo_sitemap`
+--
+
+CREATE TABLE `seo_sitemap` (
+  `id` int(11) NOT NULL,
+  `group` enum('sections','categories','productTypes','customUrls') COLLATE utf8_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `frequency` enum('always','hourly','daily','weekly','monthly','yearly','never') COLLATE utf8_unicode_ci NOT NULL,
+  `priority` float NOT NULL,
+  `enabled` tinyint(1) NOT NULL DEFAULT '0',
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL,
+  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2371,7 +2966,8 @@ CREATE TABLE `sessions` (
 
 INSERT INTO `sessions` (`id`, `userId`, `token`, `dateCreated`, `dateUpdated`, `uid`) VALUES
 (1, 1, 'a5KmNJk4V0lXKv3fTaLc0Ew8fanOjmv7rv4jKX8FI66dOd7vlrF7tEe1NXEzpADN4tGmDjq7QjcwoD2gZc2xwd_evddMWgHeBHuk', '2021-09-06 10:09:24', '2021-09-06 15:24:16', 'd7ea78a3-fd13-4b5f-ad8a-1019e9a8bb82'),
-(2, 1, '-3bCwt9yyW04JYRv2y_8j6gSUxSuhi9dG_U0w8pJXcNKGExndk3bx-Ksz_y85Ri_7G8qygFduiyFtEgCYzOhDQCfb1bznUSRiQju', '2021-09-07 08:15:07', '2021-09-07 14:41:08', '2719a066-6821-4163-9d7b-41ac786c7544');
+(2, 1, '-3bCwt9yyW04JYRv2y_8j6gSUxSuhi9dG_U0w8pJXcNKGExndk3bx-Ksz_y85Ri_7G8qygFduiyFtEgCYzOhDQCfb1bznUSRiQju', '2021-09-07 08:15:07', '2021-09-07 15:31:39', '2719a066-6821-4163-9d7b-41ac786c7544'),
+(3, 1, 'HHDDbI7FbdBQnzKvsAuwe_lAlF3pl_j6u-bUAduZ70ZEiOIUtNDaO9vIzJxKE3TZx5Z1KM6y-2-hHGbA8u1KoysXJ6Prh8EFdB1u', '2021-09-08 07:15:34', '2021-09-08 15:25:15', 'abff6055-c2d2-4b8d-ac83-f66ebb6417c1');
 
 -- --------------------------------------------------------
 
@@ -2460,6 +3056,32 @@ CREATE TABLE `structureelements` (
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Gegevens worden geëxporteerd voor tabel `structureelements`
+--
+
+INSERT INTO `structureelements` (`id`, `structureId`, `elementId`, `root`, `lft`, `rgt`, `level`, `dateCreated`, `dateUpdated`, `uid`) VALUES
+(1, 1, NULL, 1, 1, 26, 0, '2021-09-08 09:02:45', '2021-09-08 15:25:14', '26487885-2cb6-4c5f-a469-69e95db56822'),
+(2, 1, 170, 1, 16, 19, 1, '2021-09-08 09:02:45', '2021-09-08 14:58:53', 'bfb9b33a-0568-421a-9b32-1cb8be9c36af'),
+(3, 1, 171, 1, 22, 23, 1, '2021-09-08 09:02:58', '2021-09-08 15:25:14', '3da547f7-fd78-44bc-b2ab-faae3527ecd6'),
+(4, 1, 172, 1, 17, 18, 2, '2021-09-08 09:03:03', '2021-09-08 14:58:53', '17cfbc81-4704-4e0a-81dd-235c89fbd7e1'),
+(5, 1, 173, 1, 24, 25, 1, '2021-09-08 09:17:39', '2021-09-08 15:25:14', 'bec147e7-33a6-41cf-931b-8007de784d1e'),
+(7, 1, 175, 1, 2, 3, 1, '2021-09-08 09:23:36', '2021-09-08 09:23:36', '914f736e-8c6a-4081-b714-07d87ecddd0f'),
+(9, 1, 177, 1, 4, 5, 1, '2021-09-08 10:00:44', '2021-09-08 10:00:44', '37827458-49f5-4c0d-8ac4-40554da52bc2'),
+(11, 1, 179, 1, 6, 7, 1, '2021-09-08 10:02:20', '2021-09-08 10:02:20', '51e0a2f9-24c5-4ed0-9054-76f08169b08a'),
+(13, 1, 181, 1, 8, 9, 1, '2021-09-08 10:02:49', '2021-09-08 10:02:49', '24e848a2-62a1-4574-9f07-7f17af9cb498'),
+(14, 2, NULL, 14, 1, 14, 0, '2021-09-08 10:06:45', '2021-09-08 10:14:18', 'd8b97337-698d-4734-8299-904751b4096d'),
+(15, 2, 22, 14, 4, 5, 1, '2021-09-08 10:06:45', '2021-09-08 10:07:03', '52eee94d-7a29-4a97-b3d9-10dee5ddd6be'),
+(16, 2, 183, 14, 12, 13, 1, '2021-09-08 10:06:50', '2021-09-08 10:14:18', '53159270-3757-46fe-b792-fd7126ddd1ec'),
+(17, 2, 184, 14, 10, 11, 1, '2021-09-08 10:06:51', '2021-09-08 10:14:18', '7f5e9f92-0d02-4daa-8eed-e8ccbc32611a'),
+(19, 2, 186, 14, 2, 3, 1, '2021-09-08 10:07:03', '2021-09-08 10:07:03', '93ca5576-d4df-4f5c-8125-f7b6c2e60e6d'),
+(20, 2, 187, 14, 8, 9, 1, '2021-09-08 10:12:10', '2021-09-08 10:14:18', '34e24cc4-90fa-401d-a473-1d6a4aaf4bae'),
+(21, 2, 188, 14, 6, 7, 1, '2021-09-08 10:14:18', '2021-09-08 10:14:18', '9b41d039-98c2-409c-ac9e-22f6d17e49aa'),
+(23, 1, 213, 1, 10, 11, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '34fb6998-d0ea-401d-8474-6477535144e3'),
+(25, 1, 219, 1, 12, 13, 1, '2021-09-08 14:54:55', '2021-09-08 14:54:55', 'a5bb6d84-940b-4dd9-86d0-162d0dc08cff'),
+(27, 1, 228, 1, 14, 15, 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', 'cbd11d84-b076-46a2-9d1a-c5810caaff6e'),
+(28, 1, 231, 1, 20, 21, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '68ab0363-f4a3-439d-a69d-14e91a21c4b6');
+
 -- --------------------------------------------------------
 
 --
@@ -2474,6 +3096,14 @@ CREATE TABLE `structures` (
   `dateDeleted` datetime DEFAULT NULL,
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `structures`
+--
+
+INSERT INTO `structures` (`id`, `maxLevels`, `dateCreated`, `dateUpdated`, `dateDeleted`, `uid`) VALUES
+(1, NULL, '2021-09-08 08:06:35', '2021-09-08 08:07:07', NULL, '80d3d7ea-cc89-4dfe-a7dc-8a136b2a668b'),
+(2, NULL, '2021-09-08 10:06:45', '2021-09-08 10:06:45', NULL, 'c69b6e3b-881d-442a-8efc-cc71edba0ac2');
 
 -- --------------------------------------------------------
 
@@ -2715,7 +3345,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `photoId`, `firstName`, `lastName`, `email`, `password`, `admin`, `locked`, `suspended`, `pending`, `lastLoginDate`, `lastLoginAttemptIp`, `invalidLoginWindowStart`, `invalidLoginCount`, `lastInvalidLoginDate`, `lockoutDate`, `hasDashboard`, `verificationCode`, `verificationCodeIssuedDate`, `unverifiedEmail`, `passwordResetRequired`, `lastPasswordChangeDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'Paniek', NULL, NULL, NULL, 'pjotr@pixeldeluxe.nl', '$2y$13$SpanFiy1cnaZO3svx/lUqevsBsN4uK4BAo69pT1mXo0CK.yMfLnYO', 1, 0, 0, 0, '2021-09-07 08:15:07', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, '2021-09-06 10:09:24', '2021-09-06 10:09:24', '2021-09-07 08:15:07', 'e3aecde8-a6e4-4fd1-b509-3ae4771c72f1');
+(1, 'Paniek', NULL, NULL, NULL, 'pjotr@pixeldeluxe.nl', '$2y$13$SpanFiy1cnaZO3svx/lUqevsBsN4uK4BAo69pT1mXo0CK.yMfLnYO', 1, 0, 0, 0, '2021-09-08 07:15:34', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, '2021-09-06 10:09:24', '2021-09-06 10:09:24', '2021-09-08 07:15:34', 'e3aecde8-a6e4-4fd1-b509-3ae4771c72f1');
 
 -- --------------------------------------------------------
 
@@ -3078,6 +3708,14 @@ ALTER TABLE `matrixblocktypes`
   ADD KEY `idx_owlkfqkzcusyjzvcwyppeurmiybzfqpwqmly` (`fieldLayoutId`);
 
 --
+-- Indexen voor tabel `matrixcontent_about`
+--
+ALTER TABLE `matrixcontent_about`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `idx_hewpjfsrgfctjhekjajdpwegfqiabbacesie` (`elementId`,`siteId`),
+  ADD KEY `fk_jbhlnrgddukzxxpijbtpiaykbpmbbanrhmrw` (`siteId`);
+
+--
 -- Indexen voor tabel `matrixcontent_inhoudzelf`
 --
 ALTER TABLE `matrixcontent_inhoudzelf`
@@ -3161,6 +3799,18 @@ ALTER TABLE `sections_sites`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_vgsomkesurufkkhkvdwggsjptlstxdawniyi` (`sectionId`,`siteId`),
   ADD KEY `idx_ivzyrwzxooljwqvpbuoytlyrmdubpedsppwb` (`siteId`);
+
+--
+-- Indexen voor tabel `seo_redirects`
+--
+ALTER TABLE `seo_redirects`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `seo_sitemap`
+--
+ALTER TABLE `seo_sitemap`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexen voor tabel `sequences`
@@ -3405,7 +4055,7 @@ ALTER TABLE `categorygroups_sites`
 -- AUTO_INCREMENT voor een tabel `content`
 --
 ALTER TABLE `content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT voor een tabel `craftidtokens`
@@ -3417,67 +4067,67 @@ ALTER TABLE `craftidtokens`
 -- AUTO_INCREMENT voor een tabel `deprecationerrors`
 --
 ALTER TABLE `deprecationerrors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `drafts`
 --
 ALTER TABLE `drafts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `elementindexsettings`
 --
 ALTER TABLE `elementindexsettings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `elements`
 --
 ALTER TABLE `elements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 
 --
 -- AUTO_INCREMENT voor een tabel `elements_sites`
 --
 ALTER TABLE `elements_sites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 
 --
 -- AUTO_INCREMENT voor een tabel `entrytypes`
 --
 ALTER TABLE `entrytypes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `fieldgroups`
 --
 ALTER TABLE `fieldgroups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT voor een tabel `fieldlayoutfields`
 --
 ALTER TABLE `fieldlayoutfields`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT voor een tabel `fieldlayouts`
 --
 ALTER TABLE `fieldlayouts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT voor een tabel `fieldlayouttabs`
 --
 ALTER TABLE `fieldlayouttabs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT voor een tabel `fields`
 --
 ALTER TABLE `fields`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT voor een tabel `globalsets`
@@ -3507,61 +4157,79 @@ ALTER TABLE `info`
 -- AUTO_INCREMENT voor een tabel `matrixblocktypes`
 --
 ALTER TABLE `matrixblocktypes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT voor een tabel `matrixcontent_about`
+--
+ALTER TABLE `matrixcontent_about`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT voor een tabel `matrixcontent_inhoudzelf`
 --
 ALTER TABLE `matrixcontent_inhoudzelf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT voor een tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
 
 --
 -- AUTO_INCREMENT voor een tabel `plugins`
 --
 ALTER TABLE `plugins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `queue`
 --
 ALTER TABLE `queue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=338;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT voor een tabel `relations`
 --
 ALTER TABLE `relations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT voor een tabel `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT voor een tabel `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `sections_sites`
 --
 ALTER TABLE `sections_sites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT voor een tabel `seo_redirects`
+--
+ALTER TABLE `seo_redirects`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `seo_sitemap`
+--
+ALTER TABLE `seo_sitemap`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `shunnedmessages`
@@ -3585,13 +4253,13 @@ ALTER TABLE `sites`
 -- AUTO_INCREMENT voor een tabel `structureelements`
 --
 ALTER TABLE `structureelements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT voor een tabel `structures`
 --
 ALTER TABLE `structures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `systemmessages`
@@ -3849,6 +4517,13 @@ ALTER TABLE `matrixblocks`
 ALTER TABLE `matrixblocktypes`
   ADD CONSTRAINT `fk_dyktadpnhoczrwzvergcftvvtdiqgmgbycwb` FOREIGN KEY (`fieldLayoutId`) REFERENCES `fieldlayouts` (`id`) ON DELETE SET NULL,
   ADD CONSTRAINT `fk_tdocjqnrymewtgmetscvqsotxjuxdfcogbjn` FOREIGN KEY (`fieldId`) REFERENCES `fields` (`id`) ON DELETE CASCADE;
+
+--
+-- Beperkingen voor tabel `matrixcontent_about`
+--
+ALTER TABLE `matrixcontent_about`
+  ADD CONSTRAINT `fk_iwzfwpadbbolxlkioytfwcerenvgekckeaio` FOREIGN KEY (`elementId`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_jbhlnrgddukzxxpijbtpiaykbpmbbanrhmrw` FOREIGN KEY (`siteId`) REFERENCES `sites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Beperkingen voor tabel `matrixcontent_inhoudzelf`
