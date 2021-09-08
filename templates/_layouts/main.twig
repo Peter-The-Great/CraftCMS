@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="alternate" href="https://blogsite.local" hreflang="nl-nl">
+    <link rel="alternate" href="http://blogsite.local" hreflang="nl-nl">
     <meta content="Pjotr" property="og:site_name">
     <!-- Bootstrap CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link href="https://blogsite.local" rel="home">
+    <link href="http://blogsite.local" rel="home">
     <link rel="stylesheet" type="text/css" href="/css/all.min.css">
-    <meta name="robots" content="index, nofollow">
+    <meta name="robots" content="index, follow">
     <meta name="AdsBot-Google" content="index">
     <style>
       .bd-placeholder-img {
@@ -27,6 +27,10 @@
           font-size: 3.5rem;
         }
       }
+
+      /*a{
+        color: #60b5ff;
+      }*/
       #imgsection{
         background-color: black;
         background-size: cover;
@@ -37,7 +41,7 @@
     </style>
     <meta content="Pjotr Wisse Blog Website" property="og:title">
     <meta name="description" property="og:description" content="Pjotr Wisse is de naam en ik post videos hier over verschillende onderwerpen die ik leuk vind.">
-    <title>Pjotr</title>
+    <title>{{entry.title}}</title>
   </head>
   <body class="bg-dark d-flex flex-column h-100">
     <header>
@@ -59,10 +63,10 @@
           </div>
         </div>
       </div>
-      <div class="navbar navbar-dark bg-dark shadow-sm fixed-top border-bottom">
+      <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
           <a href="http://blogsite.local" class="navbar-brand d-flex align-items-center">
-            <i class="fab fa-blogger"></i><strong style="margin-left: 0.5rem;">Pjotr</strong>
+            <img class="img-fluid"  width="100" src="/images/simg/logo.png">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -70,18 +74,18 @@
         </div>
       </div>
 </header>
-<main class="bg-dark pt-4 pb-4">
+<main class="bg-dark pt-4 pb-4 border-top">
     {% block main %}
 
     {% endblock %}
 </main>
 <footer class="footer mt-auto py-3 bg-dark border-top">
   <div class="container">
-    <p class="text-muted"> <mm id="copy"></mm> Pjotr Wisse</p>
+    <p class="text-white"> <mm id="copy"></mm> Pjotr Wisse</p>
   </div>
 </footer>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="/js/all.min.js"></script>
     <script>
     //get a new date

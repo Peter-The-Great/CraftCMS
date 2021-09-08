@@ -1,5 +1,5 @@
 fieldLayouts:
-  410aa703-ed96-4586-a0be-75ced0eb977d:
+  cb868842-614c-461c-9243-6605614c4c98:
     tabs:
       -
         elements:
@@ -28,11 +28,11 @@ fieldLayouts:
             width: 100
         name: Inhoud
         sortOrder: 1
-handle: homepage
-hasTitleField: false
-name: Homepage
-section: 364d4330-d412-40f3-99b9-8a3dd6a2d954 # Homepage
+handle: default
+hasTitleField: true
+name: Standaard
+section: 73bb7483-e2a7-45c4-abcf-4df7bb6c3d20 # About
 sortOrder: 1
-titleFormat: '{section.name|raw}'
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

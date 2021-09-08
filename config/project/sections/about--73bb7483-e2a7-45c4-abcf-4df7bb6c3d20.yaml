@@ -1,7 +1,7 @@
 defaultPlacement: end
 enableVersioning: true
-handle: homepage
-name: Homepage
+handle: about
+name: About
 previewTargets:
   -
     __assoc__:
@@ -19,6 +19,9 @@ siteSettings:
   1a7ded85-cd10-4685-8696-21042404ec46: # Blogsite
     enabledByDefault: true
     hasUrls: true
-    template: index
-    uriFormat: __home__
-type: single
+    template: about/_entry
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 80d3d7ea-cc89-4dfe-a7dc-8a136b2a668b
+type: structure
