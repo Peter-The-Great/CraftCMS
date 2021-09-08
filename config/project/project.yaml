@@ -1,4 +1,4 @@
-dateModified: 1631093151
+dateModified: 1631102107
 email:
   fromEmail: pjotr@pixeldeluxe.nl
   fromName: Blogsite
@@ -36,10 +36,59 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   redactor:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.2.0
+    settings:
+      description: ''
+      facebookAppId: ''
+      metaTemplate: ''
+      removeAlternateUrls: ''
+      robots:
+        - ''
+        - ''
+        - noarchive
+        - ''
+        - notranslate
+        - ''
+      robotsTxt: "{# Sitemap URL #}\r\nSitemap: {{ url(seo.sitemapName ~ '.xml') }}\r\n\r\n{# Disallows #}\r\n{% if craft.app.config.env != 'production' %}\r\n\r\n{# Disallow access to everything when NOT in production #}\r\nUser-agent: *\r\nDisallow: /\r\n\r\n{% else %}\r\n\r\n{# Disallow access to cpresources/ when live #}\r\nUser-agent: *\r\nDisallow: /cpresources/\r\n\r\n{% endif %}"
+      sitemapLimit: '1000'
+      sitemapName: sitemap
+      socialImage: ''
+      title:
+        -
+          __assoc__:
+            -
+              - key
+              - '1'
+            -
+              - locked
+              - '0'
+            -
+              - template
+              - '{title}'
+        -
+          __assoc__:
+            -
+              - key
+              - '2'
+            -
+              - locked
+              - '1'
+            -
+              - template
+              - ' - {{ siteName }}'
+      titleSuffix: null
+      twitterHandle: ''
 system:
   edition: pro
   live: true

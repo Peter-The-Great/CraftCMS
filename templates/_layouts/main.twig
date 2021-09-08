@@ -31,6 +31,7 @@
       /*a{
         color: #60b5ff;
       }*/
+
       #imgsection{
         background-color: black;
         background-size: cover;
@@ -50,7 +51,8 @@
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">About</h4>
-              <div class="text-white">{{ entry.introduction }}</div>
+              {% set about = craft.entries.section("navbar").one() %}
+              <div class="text-white">{{ about.introduction }}</div>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Contact</h4>

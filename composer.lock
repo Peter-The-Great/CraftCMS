@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97ea9f9428260bbe4bb19071377a6e09",
+    "content-hash": "039803b31d184eb1f232caa8c81dd064",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -489,6 +489,58 @@
             "time": "2021-08-31T17:01:50+00:00"
         },
         {
+            "name": "craftcms/contact-form",
+            "version": "2.2.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/eea67de8fad2507770fdc25fe76bba32924e9e87",
+                "reference": "eea67de8fad2507770fdc25fe76bba32924e9e87",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Contact Form",
+                "handle": "contact-form",
+                "documentationUrl": "https://github.com/craftcms/contact-form/blob/v2/README.md",
+                "components": {
+                    "mailer": "craft\\contactform\\Mailer"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\contactform\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Add a simple contact form to your Craft CMS site",
+            "keywords": [
+                "cms",
+                "contact",
+                "craftcms",
+                "form",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/contact-form/issues?state=open",
+                "source": "https://github.com/craftcms/contact-form",
+                "docs": "https://github.com/craftcms/contact-form/blob/v2/README.md",
+                "rss": "https://github.com/craftcms/contact-form/commits/v2.atom"
+            },
+            "time": "2020-08-12T12:54:10+00:00"
+        },
+        {
             "name": "craftcms/oauth2-craftid",
             "version": "1.0.0.1",
             "dist": {
@@ -885,6 +937,41 @@
             ],
             "description": "An SVG sanitizer for PHP",
             "time": "2021-08-09T23:46:54+00:00"
+        },
+        {
+            "name": "ether/seo",
+            "version": "3.7.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ethercreative/seo/zipball/67ce1f13d5bf33e9bf7453b3fa2cbe5c8d79a6f4",
+                "reference": "67ce1f13d5bf33e9bf7453b3fa2cbe5c8d79a6f4",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.5.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "seo",
+                "name": "SEO",
+                "developer": "Ether Creative",
+                "developerUrl": "https://ethercreative.co.uk",
+                "class": "ether\\seo\\Seo"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ether\\seo\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "SEO utilities including a unique field type, sitemap, & redirect manager",
+            "support": {
+                "issues": "https://github.com/ethercreative/seo",
+                "docs": "https://github.com/ethercreative/seo/blob/v3/README.md"
+            },
+            "time": "2021-06-14T11:07:59+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
