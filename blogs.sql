@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Gegenereerd op: 08 sep 2021 om 17:25
+-- Gegenereerd op: 09 sep 2021 om 16:13
 -- Serverversie: 5.7.34
 -- PHP-versie: 7.4.21
 
@@ -241,10 +241,10 @@ INSERT INTO `changedattributes` (`elementId`, `siteId`, `attribute`, `dateUpdate
 (42, 1, 'uri', '2021-09-07 13:15:35', 0, 1),
 (170, 1, 'slug', '2021-09-08 10:00:44', 0, 1),
 (170, 1, 'title', '2021-09-08 10:02:49', 0, 1),
-(170, 1, 'uri', '2021-09-08 09:24:14', 0, 1),
+(170, 1, 'uri', '2021-09-09 10:03:18', 0, 1),
 (172, 1, 'slug', '2021-09-08 09:03:14', 0, 1),
 (172, 1, 'title', '2021-09-08 09:03:14', 0, 1),
-(172, 1, 'uri', '2021-09-08 09:25:52', 0, 1);
+(172, 1, 'uri', '2021-09-09 10:03:18', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -284,7 +284,8 @@ INSERT INTO `changedfields` (`elementId`, `siteId`, `fieldId`, `dateUpdated`, `p
 (42, 1, 9, '2021-09-07 14:57:30', 0, 1),
 (87, 1, 11, '2021-09-07 14:53:45', 0, 1),
 (88, 1, 10, '2021-09-07 14:57:31', 0, 1),
-(170, 1, 12, '2021-09-08 14:58:53', 0, 1),
+(170, 1, 12, '2021-09-09 10:03:18', 0, 1),
+(172, 1, 12, '2021-09-09 10:03:18', 0, 1),
 (211, 1, 13, '2021-09-08 14:58:53', 0, 1),
 (212, 1, 14, '2021-09-08 14:58:53', 0, 1),
 (212, 1, 15, '2021-09-08 14:58:53', 0, 1),
@@ -293,7 +294,8 @@ INSERT INTO `changedfields` (`elementId`, `siteId`, `fieldId`, `dateUpdated`, `p
 (222, 1, 4, '2021-09-08 14:56:26', 0, 1),
 (222, 1, 9, '2021-09-08 14:56:26', 0, 1),
 (223, 1, 11, '2021-09-08 14:56:26', 0, 1),
-(224, 1, 10, '2021-09-08 14:56:26', 0, 1);
+(224, 1, 10, '2021-09-08 14:56:26', 0, 1),
+(234, 1, 12, '2021-09-09 11:45:11', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -372,9 +374,9 @@ INSERT INTO `content` (`id`, `elementId`, `siteId`, `title`, `dateCreated`, `dat
 (69, 165, 1, 'What is not Random', '2021-09-07 14:57:31', '2021-09-07 14:57:31', '21700a2e-7900-47e5-9d33-7c99275e1db1', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
 (70, 168, 1, 'Homepage', '2021-09-08 07:16:03', '2021-09-08 07:16:03', 'd9a14d5d-1046-4fa6-86e6-88d7c3fc718f', NULL, NULL, NULL, NULL),
 (71, 169, 1, 'Homepage', '2021-09-08 07:16:04', '2021-09-08 07:16:04', 'ed38e2c2-e68a-460d-abce-cd33eafc9a42', NULL, NULL, NULL, NULL),
-(72, 170, 1, 'About', '2021-09-08 09:02:45', '2021-09-08 15:25:14', '8e216746-abfe-43b6-8a3e-8e1e80277d3d', NULL, NULL, NULL, NULL),
+(72, 170, 1, 'About', '2021-09-08 09:02:45', '2021-09-09 10:03:18', '8e216746-abfe-43b6-8a3e-8e1e80277d3d', NULL, NULL, NULL, NULL),
 (73, 171, 1, 'About Me', '2021-09-08 09:02:58', '2021-09-08 09:02:58', '362afc23-fbf1-49ab-9b9c-d64d87ab83cb', NULL, NULL, NULL, NULL),
-(74, 172, 1, 'Contact', '2021-09-08 09:03:03', '2021-09-08 09:25:52', 'a23b2345-9f7e-4779-af02-183794700c06', NULL, NULL, NULL, NULL),
+(74, 172, 1, 'Contact', '2021-09-08 09:03:03', '2021-09-09 10:03:18', 'a23b2345-9f7e-4779-af02-183794700c06', NULL, NULL, NULL, NULL),
 (75, 173, 1, 'Contact', '2021-09-08 09:17:39', '2021-09-08 09:17:39', 'c63afe81-33e2-4670-b3a8-d1b0bdc80503', NULL, NULL, NULL, NULL),
 (77, 175, 1, 'About', '2021-09-08 09:23:36', '2021-09-08 09:23:36', '48fd4c1a-1714-4eb3-8767-f5f44f80711c', NULL, NULL, NULL, NULL),
 (79, 177, 1, 'About', '2021-09-08 10:00:44', '2021-09-08 10:00:44', '0dccb2c0-ad0d-42d3-bc66-3211cf417a9c', NULL, NULL, NULL, NULL),
@@ -390,7 +392,8 @@ INSERT INTO `content` (`id`, `elementId`, `siteId`, `title`, `dateCreated`, `dat
 (94, 219, 1, 'About', '2021-09-08 14:54:55', '2021-09-08 14:54:55', '5dfe96ca-0cca-4468-853a-a143f3dfda8d', NULL, NULL, NULL, NULL),
 (95, 222, 1, 'What is not Random', '2021-09-08 14:56:26', '2021-09-08 14:56:26', 'da6af90a-3e93-4587-b288-f6a3539bbb00', '<p>Is the future of the universe already determined? Vsauce tackles the question \"What Is Random?\": <a href=\"https://www.youtube.com/watch?v=9rIy0xY99a0&amp;t=0s\">https://youtu.be/9rIy0xY99a0</a></p>', NULL, NULL, NULL),
 (97, 228, 1, 'About', '2021-09-08 14:58:53', '2021-09-08 14:58:53', 'c156503d-e80e-47d9-b468-c0ed83f3be44', NULL, NULL, NULL, NULL),
-(98, 231, 1, 'About', '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'a1e117f8-6a19-494b-a27b-992283c826ac', NULL, NULL, NULL, NULL);
+(98, 231, 1, 'About', '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'a1e117f8-6a19-494b-a27b-992283c826ac', NULL, NULL, NULL, NULL),
+(99, 234, 1, 'Contact', '2021-09-09 11:45:10', '2021-09-09 11:45:10', 'f16f20bd-880b-4646-83f0-a36f62a1637b', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -453,7 +456,8 @@ CREATE TABLE `drafts` (
 INSERT INTO `drafts` (`id`, `sourceId`, `creatorId`, `provisional`, `name`, `notes`, `trackChanges`, `dateLastMerged`, `saved`) VALUES
 (1, NULL, 1, 0, 'Eerste concept', NULL, 0, NULL, 0),
 (2, NULL, 1, 0, 'Eerste concept', NULL, 0, NULL, 0),
-(5, 42, 1, 1, 'Concept 1', '', 1, NULL, 1);
+(5, 42, 1, 1, 'Concept 1', '', 1, NULL, 1),
+(6, 172, 1, 1, 'Concept 1', '', 1, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -662,8 +666,8 @@ INSERT INTO `elements` (`id`, `canonicalId`, `draftId`, `revisionId`, `fieldLayo
 (206, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:25', '2021-09-08 14:53:25', NULL, '2021-09-08 14:53:29', '0cffb5ad-64e5-44ea-8709-89daba8e7f42'),
 (207, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:29', '2021-09-08 14:53:29', NULL, '2021-09-08 14:53:30', '2662e062-1300-4a75-ac85-63f12955eb3e'),
 (208, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:29', '2021-09-08 14:53:29', NULL, '2021-09-08 14:53:30', '7e4b3ced-aba3-4548-8d48-b710e88ce727'),
-(211, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:58:53', NULL, NULL, '7daeff9c-b4a3-4a7b-8c06-481d1e99d10c'),
-(212, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:58:53', NULL, NULL, '6a4bae4b-e27b-48d4-aaff-4e7635534f62'),
+(211, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-09 10:03:18', NULL, NULL, '7daeff9c-b4a3-4a7b-8c06-481d1e99d10c'),
+(212, NULL, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-09 10:03:18', NULL, NULL, '6a4bae4b-e27b-48d4-aaff-4e7635534f62'),
 (213, 170, NULL, 52, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:53:31', NULL, NULL, '2c989bf9-8aca-4da7-bf99-60a30b043bca'),
 (214, 211, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:53:31', NULL, NULL, 'd97ee879-c1a4-4824-a26c-456a54adb087'),
 (215, 212, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:53:31', '2021-09-08 14:53:31', NULL, NULL, '634ec5dd-dceb-4863-89f1-bbed196c0348'),
@@ -678,7 +682,9 @@ INSERT INTO `elements` (`id`, `canonicalId`, `draftId`, `revisionId`, `fieldLayo
 (230, 211, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 14:58:53', '2021-09-08 14:58:53', NULL, NULL, '65151bfe-d6e4-446f-91f9-c5815d71c8a0'),
 (231, 170, NULL, 55, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-08 15:25:14', '2021-09-08 15:25:14', NULL, NULL, '536da14e-68a5-4406-b44f-3db857366529'),
 (232, 212, NULL, NULL, 10, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 15:25:14', '2021-09-08 15:25:14', NULL, NULL, 'f2450d4d-bdcb-40b0-a7ac-667adb4a1555'),
-(233, 211, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 15:25:14', '2021-09-08 15:25:14', NULL, NULL, '1791e22f-751c-4f37-b915-e92add424c2f');
+(233, 211, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-08 15:25:14', '2021-09-08 15:25:14', NULL, NULL, '1791e22f-751c-4f37-b915-e92add424c2f'),
+(234, 172, 6, NULL, 8, 'craft\\elements\\Entry', 1, 0, '2021-09-09 11:45:10', '2021-09-09 11:45:10', NULL, NULL, 'c049c629-83da-4844-b232-e2682f8d1dec'),
+(235, NULL, NULL, NULL, 9, 'craft\\elements\\MatrixBlock', 1, 0, '2021-09-09 11:45:10', '2021-09-09 11:45:10', NULL, NULL, '80f7d7a0-6adf-4c96-8e57-591c95127e96');
 
 -- --------------------------------------------------------
 
@@ -828,9 +834,9 @@ INSERT INTO `elements_sites` (`id`, `elementId`, `siteId`, `slug`, `uri`, `enabl
 (167, 167, 1, NULL, NULL, 1, '2021-09-07 14:57:31', '2021-09-07 14:57:31', '2a67ac6d-cfe7-44bf-ab05-287320168dbe'),
 (168, 168, 1, 'homepage', '__home__', 1, '2021-09-08 07:16:03', '2021-09-08 07:16:03', '5526d0a7-5d29-4e26-9f6b-a4733beff0e2'),
 (169, 169, 1, 'homepage', '__home__', 1, '2021-09-08 07:16:04', '2021-09-08 07:16:04', '93e82a6a-598e-4bc7-8375-7fe6b651e949'),
-(170, 170, 1, 'about', 'about', 1, '2021-09-08 09:02:45', '2021-09-08 14:58:54', '5c8ee1d5-0ab0-4b1e-845d-762ce801c2ff'),
+(170, 170, 1, 'about', 'about', 1, '2021-09-08 09:02:45', '2021-09-09 10:03:18', '5c8ee1d5-0ab0-4b1e-845d-762ce801c2ff'),
 (171, 171, 1, 'about-me', 'about/about-me', 1, '2021-09-08 09:02:58', '2021-09-08 09:02:58', 'd341c248-c74a-44e4-8c3c-a7d7537ed1cf'),
-(172, 172, 1, 'contact', 'about/contact', 1, '2021-09-08 09:03:02', '2021-09-08 15:25:15', '382f7cee-180a-4c44-9775-c6ab53aef759'),
+(172, 172, 1, 'contact', 'about/contact', 1, '2021-09-08 09:03:02', '2021-09-09 10:03:18', '382f7cee-180a-4c44-9775-c6ab53aef759'),
 (173, 173, 1, 'contact', 'about/contact', 1, '2021-09-08 09:17:39', '2021-09-08 09:17:39', '072cf7e7-3466-4a76-9acf-3140187d35e4'),
 (175, 175, 1, 'about-me', 'about/about-me', 1, '2021-09-08 09:23:36', '2021-09-08 09:23:36', 'ca29ea98-8c6c-44f0-a4e1-f4d0ee489363'),
 (177, 177, 1, 'about', 'about', 1, '2021-09-08 10:00:44', '2021-09-08 10:00:44', '606ca54e-1ce7-43eb-baae-a1f04ef9eda4'),
@@ -877,7 +883,9 @@ INSERT INTO `elements_sites` (`id`, `elementId`, `siteId`, `slug`, `uri`, `enabl
 (230, 230, 1, NULL, NULL, 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', 'fb1cc2a8-0641-4cb4-ae13-b101bb99e183'),
 (231, 231, 1, 'about', 'about', 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '94f99af0-99aa-45f8-b6bf-5eb1744f8b88'),
 (232, 232, 1, NULL, NULL, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '2d86ada7-e5c4-4587-9ebf-12b4a08f0fc1'),
-(233, 233, 1, NULL, NULL, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'b181b08b-1abf-4487-bafe-8ad356c0f500');
+(233, 233, 1, NULL, NULL, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'b181b08b-1abf-4487-bafe-8ad356c0f500'),
+(234, 234, 1, 'contact', 'about/contact', 1, '2021-09-09 11:45:10', '2021-09-09 11:45:10', '177cea6d-b0da-4a88-a5c7-77382ccaeb2a'),
+(235, 235, 1, NULL, NULL, 1, '2021-09-09 11:45:10', '2021-09-09 11:45:10', '1dc85749-1299-43d0-ac5e-c65e6721c1ae');
 
 -- --------------------------------------------------------
 
@@ -970,7 +978,8 @@ INSERT INTO `entries` (`id`, `sectionId`, `parentId`, `typeId`, `authorId`, `pos
 (219, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '5f1f047b-58c4-4c39-8f01-d7ee096a4d82'),
 (222, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26', '31af6833-d591-44b9-ada4-b92caad0ea5d'),
 (228, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '7dd298e4-5cfb-4441-aab1-09fdae981e91'),
-(231, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'af6a21cb-ef82-4d2e-a9ad-07e80631b3b4');
+(231, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'af6a21cb-ef82-4d2e-a9ad-07e80631b3b4'),
+(234, 4, NULL, 5, 1, '2021-09-08 09:03:00', NULL, NULL, '2021-09-09 11:45:10', '2021-09-09 11:45:10', '99e56d62-8c55-4394-bc13-c5224b34b317');
 
 -- --------------------------------------------------------
 
@@ -1266,7 +1275,7 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `version`, `schemaVersion`, `maintenance`, `configVersion`, `fieldVersion`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, '3.7.11', '3.7.8', 0, 'iyrgyibyowpb', 'xxurnfygvlfw', '2021-09-06 10:09:22', '2021-09-08 14:58:16', 'bd374219-4f30-4743-b1dc-06c299bde1de');
+(1, '3.7.12', '3.7.8', 0, 'rltseriyehrm', 'xxurnfygvlfw', '2021-09-06 10:09:22', '2021-09-09 11:41:35', 'bd374219-4f30-4743-b1dc-06c299bde1de');
 
 -- --------------------------------------------------------
 
@@ -1376,7 +1385,8 @@ INSERT INTO `matrixblocks` (`id`, `ownerId`, `fieldId`, `typeId`, `sortOrder`, `
 (229, 228, 12, 4, 1, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '76e44195-9480-4990-b80c-73be23fa8e1f'),
 (230, 228, 12, 3, 2, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '7b8b9593-8b53-4240-9322-0c575470afc1'),
 (232, 231, 12, 4, 1, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'ce5ba35d-929d-477b-8361-086a56af19a0'),
-(233, 231, 12, 3, 2, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '575c2bc1-0c58-48dd-8789-5a030e2fa266');
+(233, 231, 12, 3, 2, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '575c2bc1-0c58-48dd-8789-5a030e2fa266'),
+(235, 234, 12, 3, 1, NULL, '2021-09-09 11:45:10', '2021-09-09 11:45:10', 'ea17e2be-69d3-4d14-9db3-ece73a72472a');
 
 -- --------------------------------------------------------
 
@@ -1448,8 +1458,8 @@ INSERT INTO `matrixcontent_about` (`id`, `elementId`, `siteId`, `dateCreated`, `
 (17, 206, 1, '2021-09-08 14:53:25', '2021-09-08 14:53:25', '06d24245-8ed8-4bd3-9942-adea87942d4f', NULL, NULL, NULL),
 (18, 207, 1, '2021-09-08 14:53:29', '2021-09-08 14:53:29', '329dedd8-4a9f-4d26-872a-4e935f574836', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers</p>', NULL, NULL),
 (19, 208, 1, '2021-09-08 14:53:29', '2021-09-08 14:53:29', '6ac5685c-bd1e-4a65-ad93-369473fc4cc9', NULL, NULL, NULL),
-(22, 211, 1, '2021-09-08 14:53:31', '2021-09-08 14:58:53', 'c4a9f34e-0c86-4035-9345-4ab532a45e86', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL),
-(23, 212, 1, '2021-09-08 14:53:31', '2021-09-08 14:58:53', 'fa1ed7d8-ec1a-4946-9971-95f6a2650f2f', NULL, 'https://www.youtube.com/embed/UEYBML1eJ-w', 'Over mijn bedrijf.'),
+(22, 211, 1, '2021-09-08 14:53:31', '2021-09-09 10:03:18', 'c4a9f34e-0c86-4035-9345-4ab532a45e86', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL),
+(23, 212, 1, '2021-09-08 14:53:31', '2021-09-09 10:03:18', 'fa1ed7d8-ec1a-4946-9971-95f6a2650f2f', NULL, 'https://www.youtube.com/embed/UEYBML1eJ-w', 'Over mijn bedrijf.'),
 (24, 214, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '41f3c01c-7839-4c62-8c73-6bbadba0295e', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL),
 (25, 215, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '97f60cd7-c5a3-4713-9013-f40d539fec01', NULL, NULL, NULL),
 (28, 220, 1, '2021-09-08 14:54:55', '2021-09-08 14:54:55', 'cf6d8dba-e151-4b64-9174-7b41b82c7106', NULL, 'https://www.youtube.com/embed/UEYBML1eJ-w', NULL),
@@ -1457,7 +1467,8 @@ INSERT INTO `matrixcontent_about` (`id`, `elementId`, `siteId`, `dateCreated`, `
 (32, 229, 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '1a755802-d0aa-4a5d-94b2-049e55bd26b1', NULL, 'https://www.youtube.com/embed/UEYBML1eJ-w', 'Over mijn bedrijf.'),
 (33, 230, 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '06a86b65-17ee-4523-b4a2-e48d4e07d0d7', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL),
 (34, 232, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'fca7d52d-8d69-4d67-ba7f-8ebb7c25f7a0', NULL, 'https://www.youtube.com/embed/UEYBML1eJ-w', 'Over mijn bedrijf.'),
-(35, 233, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '5c791d83-2918-46b5-bcc3-55992715d0ac', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL);
+(35, 233, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '5c791d83-2918-46b5-bcc3-55992715d0ac', '<p>Het enige wat ons nog kan weerstaan is de angst die in ons allemaal zit. Welkom bij mijn blog waar ik willekeurige videos van youtube afhaal en deel met mijn domme kijkers.</p>', NULL, NULL),
+(36, 235, 1, '2021-09-09 11:45:10', '2021-09-09 11:45:10', 'ba0a5e10-5a24-43a1-b938-0ea442b91cf7', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1803,10 +1814,10 @@ CREATE TABLE `plugins` (
 --
 
 INSERT INTO `plugins` (`id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `licensedEdition`, `installDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'ckeditor', '1.1.2', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2021-09-08 11:53:32', '032a7d64-0762-4824-8f4b-0c7d4ea9143b'),
-(2, 'redactor', '2.8.8', '2.3.0', 'unknown', NULL, '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-08 11:53:32', 'd08ef1d0-3480-4156-a250-5bda6017a5fe'),
-(3, 'contact-form', '2.2.7', '1.0.0', 'unknown', NULL, '2021-09-08 10:27:24', '2021-09-08 10:27:24', '2021-09-08 11:53:32', '8f683cb0-4fee-4f47-8838-508c3c9d232a'),
-(4, 'seo', '3.7.4', '3.2.0', 'unknown', NULL, '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2021-09-08 11:53:32', 'a20c0255-b6da-4747-be0d-24f0c2d76d2b');
+(1, 'ckeditor', '1.1.2', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2021-09-09 11:41:40', '032a7d64-0762-4824-8f4b-0c7d4ea9143b'),
+(2, 'redactor', '2.8.8', '2.3.0', 'unknown', NULL, '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2021-09-09 11:41:40', 'd08ef1d0-3480-4156-a250-5bda6017a5fe'),
+(3, 'contact-form', '2.2.7', '1.0.0', 'unknown', NULL, '2021-09-08 10:27:24', '2021-09-08 10:27:24', '2021-09-09 11:41:40', '8f683cb0-4fee-4f47-8838-508c3c9d232a'),
+(4, 'seo', '3.7.4', '3.2.0', 'unknown', NULL, '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2021-09-09 11:41:40', 'a20c0255-b6da-4747-be0d-24f0c2d76d2b');
 
 -- --------------------------------------------------------
 
@@ -1824,7 +1835,7 @@ CREATE TABLE `projectconfig` (
 --
 
 INSERT INTO `projectconfig` (`path`, `value`) VALUES
-('dateModified', '1631113095'),
+('dateModified', '1631181797'),
 ('email.fromEmail', '\"pjotr@pixeldeluxe.nl\"'),
 ('email.fromName', '\"Blogsite\"'),
 ('email.transportType', '\"craft\\\\mail\\\\transportadapters\\\\Sendmail\"'),
@@ -2591,52 +2602,80 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('157cbf5e', '@craft/web/assets/craftsupport/dist'),
 ('16e07b15', '@app/web/assets/login/dist'),
 ('1d7a0893', '@craft/web/assets/login/dist'),
+('1ec970e9', '@app/web/assets/admintable/dist'),
 ('217c59b7', '@app/web/assets/updater/dist'),
 ('23a4881d', '@lib/axios'),
 ('258d6799', '@app/web/assets/generalsettings/dist'),
+('26fd860d', '@lib/datepicker-i18n'),
 ('2973c854', '@lib/jquery-ui'),
 ('2a69821a', '@craft/web/assets/feed/dist'),
 ('2df4912f', '@craft/web/assets/systemmessages/dist'),
 ('311425f7', '@craft/web/assets/editsection/dist'),
 ('31290b88', '@app/web/assets/updateswidget/dist'),
+('3532659b', '@lib/xregexp'),
 ('37cd79e5', '@craft/web/assets/plugins/dist'),
 ('3c6a28d1', '@app/web/assets/fieldsettings/dist'),
+('3f5e2111', '@lib/selectize'),
 ('3fbba749', '@app/web/assets/craftsupport/dist'),
+('400cb4b9', '@app/web/assets/dashboard/dist'),
+('437eef7c', '@lib/fabric'),
+('476b9af7', '@app/web/assets/fields/dist'),
 ('4b2c2d3', '@craft/redactor/assets/redactor-plugins/dist/video'),
 ('4ce047bd', '@craft/web/assets/matrixsettings/dist'),
 ('51da0361', '@lib/iframe-resizer-cw'),
 ('532aa4d1', '@craft/web/assets/dashboard/dist'),
+('56383b42', '@lib/garnishjs'),
 ('59c50f79', '@lib/element-resize-detector'),
 ('5a0f71ba', '@app/web/assets/matrixsettings/dist'),
+('5ff17bc8', '@app/web/assets/updates/dist'),
+('60aa76b9', '@app/web/assets/editentry/dist'),
+('65852cc4', '@lib/d3'),
 ('67da53f1', '@lib/velocity'),
 ('6afbfb87', '@craft/web/assets/updates/dist'),
+('6b200c95', '@lib/picturefill'),
 ('6bc525d5', '@app/web/assets/feed/dist'),
+('6c843057', '@lib/jquery-touch-events'),
 ('6ca94a2d', '@craft/web/assets/deprecationerrors/dist'),
+('6e023ade', '@lib/prismjs'),
 ('6e7d170', '@craft/redactor/assets/redactor/dist'),
+('6f88548d', '@app/web/assets/matrix/dist'),
 ('70a52cfa', '@app/web/assets/utilities/dist'),
 ('738c66d1', '@craft/web/assets/editentry/dist'),
+('73c80d6b', '@lib/fileupload'),
 ('7655a48c', '@bower/jquery/dist'),
 ('798f42a5', '@app/web/assets/tablesettings/dist'),
 ('7bfdfc19', '@lib/jquery.payment'),
+('7f6b327c', '@lib/iframe-resizer'),
+('8301faf5', '@app/web/assets/cp/dist'),
 ('85a94d66', '@craft/web/assets/updater/dist'),
 ('8c6a0b39', '@craft/web/assets/recententries/dist'),
 ('8f16e477', '@app/web/assets/admintable/dist'),
+('8f83292', '@app/web/assets/editsection/dist'),
 ('93ebfae9', '@craft/redactor/assets/field/dist'),
 ('9927a60c', '@app/web/assets/editsection/dist'),
 ('9b12a970', '@lib/timepicker'),
+('9e4cdd78', '@app/web/assets/recententries/dist'),
 ('9e62340', '@app/web/assets/pluginstore/dist'),
+('9f90bff6', '@lib/vue'),
+('a0f69f16', '@app/web/assets/updateswidget/dist'),
 ('a1d5a0bb', '@craft/web/assets/pluginstore/dist'),
 ('a4edf105', '@lib/xregexp'),
 ('a5d2cb10', '@craft/web/assets/installer/dist'),
 ('a8ae90c6', '@craft/web/assets/cp/dist'),
 ('ab639d3a', '@craft/redactor/assets/redactor-plugins/dist/fullscreen'),
+('acd3dee', '@lib/timepicker'),
+('ae6433d7', '@app/web/assets/craftsupport/dist'),
 ('ae81b58f', '@lib/selectize'),
+('b27b1c83', '@lib/axios'),
 ('b2d04957', '@craft/web/assets/updateswidget/dist'),
 ('b7221293', '@lib/datepicker-i18n'),
+('b8ac5cca', '@lib/jquery-ui'),
 ('bbff1d0c', '@craft/web/assets/generalsettings/dist'),
 ('bf936a0e', '@craft/web/assets/fieldsettings/dist'),
 ('c7e7afdc', '@lib/garnishjs'),
+('c81a9be7', '@lib/element-resize-detector'),
 ('cb60887d', '@ether/seo/web/assets'),
+('ce2eef56', '@app/web/assets/updates/dist'),
 ('d04f3222', '@app/web/assets/deprecationerrors/dist'),
 ('d1d32027', '@app/web/assets/dashboard/dist'),
 ('d264b20f', '@craft/web/assets/fields/dist'),
@@ -2644,14 +2683,18 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('d6b40e69', '@app/web/assets/fields/dist'),
 ('d9ff6a97', '@craft/ckeditor/assets/field/dist'),
 ('db4a4ada', '@craft/web/assets/admintable/dist'),
+('e17ab864', '@app/web/assets/utilities/dist'),
 ('e21799f5', '@lib/fileupload'),
 ('e4f2b68', '@lib/vue'),
+('e78a3012', '@bower/jquery/dist'),
+('ea226887', '@lib/jquery.payment'),
 ('ec843a2f', '@craft/web/assets/sites/dist'),
 ('eeb4a6e2', '@lib/iframe-resizer'),
 ('f175e227', '@app/web/assets/editentry/dist'),
 ('f25ca80c', '@craft/web/assets/utilities/dist'),
 ('f45ab85a', '@lib/d3'),
 ('f5bf522c', '@craft/web/assets/queuemanager/dist'),
+('f605c76f', '@lib/velocity'),
 ('f9349e6', '@app/web/assets/recententries/dist'),
 ('fa76007a', '@craft/web/assets/tablesettings/dist'),
 ('fa877c75', '@craft/web/assets/matrix/dist'),
@@ -2835,7 +2878,10 @@ INSERT INTO `searchindex` (`elementId`, `attribute`, `fieldId`, `siteId`, `keywo
 (229, 'slug', 0, 1, ''),
 (230, 'slug', 0, 1, ''),
 (232, 'slug', 0, 1, ''),
-(233, 'slug', 0, 1, '');
+(233, 'slug', 0, 1, ''),
+(234, 'title', 0, 1, ' contact '),
+(234, 'slug', 0, 1, ' contact '),
+(235, 'slug', 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -2896,7 +2942,7 @@ INSERT INTO `sections_sites` (`id`, `sectionId`, `siteId`, `hasUrls`, `uriFormat
 (1, 1, 1, 1, 'blogpost/{slug}', 'blogpost/_entry', 1, '2021-09-06 11:24:27', '2021-09-06 11:24:27', 'fc120a27-baf4-4f19-98fe-764ee3ca474e'),
 (2, 2, 1, 1, '__home__', 'index', 1, '2021-09-06 13:11:08', '2021-09-06 14:37:12', '78706ecf-0f0f-49d6-99b6-4ee7b2777858'),
 (3, 3, 1, 1, '_layouts/main', '_layouts/main', 1, '2021-09-06 14:38:41', '2021-09-08 10:12:10', '9f9b8655-4e66-4366-bea9-6165a68c3c5a'),
-(4, 4, 1, 1, '{parent.uri}/{slug}', 'about/_entry', 1, '2021-09-08 08:06:35', '2021-09-08 09:25:51', '84f3de1c-283b-4c21-8eb4-fef74d29bfbd');
+(4, 4, 1, 1, '{parent.uri}/{slug}', 'about/_entry', 1, '2021-09-08 08:06:35', '2021-09-09 10:03:17', '84f3de1c-283b-4c21-8eb4-fef74d29bfbd');
 
 -- --------------------------------------------------------
 
@@ -2967,7 +3013,8 @@ CREATE TABLE `sessions` (
 INSERT INTO `sessions` (`id`, `userId`, `token`, `dateCreated`, `dateUpdated`, `uid`) VALUES
 (1, 1, 'a5KmNJk4V0lXKv3fTaLc0Ew8fanOjmv7rv4jKX8FI66dOd7vlrF7tEe1NXEzpADN4tGmDjq7QjcwoD2gZc2xwd_evddMWgHeBHuk', '2021-09-06 10:09:24', '2021-09-06 15:24:16', 'd7ea78a3-fd13-4b5f-ad8a-1019e9a8bb82'),
 (2, 1, '-3bCwt9yyW04JYRv2y_8j6gSUxSuhi9dG_U0w8pJXcNKGExndk3bx-Ksz_y85Ri_7G8qygFduiyFtEgCYzOhDQCfb1bznUSRiQju', '2021-09-07 08:15:07', '2021-09-07 15:31:39', '2719a066-6821-4163-9d7b-41ac786c7544'),
-(3, 1, 'HHDDbI7FbdBQnzKvsAuwe_lAlF3pl_j6u-bUAduZ70ZEiOIUtNDaO9vIzJxKE3TZx5Z1KM6y-2-hHGbA8u1KoysXJ6Prh8EFdB1u', '2021-09-08 07:15:34', '2021-09-08 15:25:15', 'abff6055-c2d2-4b8d-ac83-f66ebb6417c1');
+(3, 1, 'HHDDbI7FbdBQnzKvsAuwe_lAlF3pl_j6u-bUAduZ70ZEiOIUtNDaO9vIzJxKE3TZx5Z1KM6y-2-hHGbA8u1KoysXJ6Prh8EFdB1u', '2021-09-08 07:15:34', '2021-09-08 15:25:15', 'abff6055-c2d2-4b8d-ac83-f66ebb6417c1'),
+(5, 1, 'eciALTz9kTMDDcCeFJc8MvC-vukObXGMOKQFgBuV5czhYIm0Hpr4-VvqeiQE3oknQwLVs8Zb4sUmUgkEwfaet7BsThF7IgM12D0c', '2021-09-09 09:35:36', '2021-09-09 12:11:53', 'e9a5bd4b-e2ef-46dc-a250-33df060235b7');
 
 -- --------------------------------------------------------
 
@@ -3061,11 +3108,11 @@ CREATE TABLE `structureelements` (
 --
 
 INSERT INTO `structureelements` (`id`, `structureId`, `elementId`, `root`, `lft`, `rgt`, `level`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 1, NULL, 1, 1, 26, 0, '2021-09-08 09:02:45', '2021-09-08 15:25:14', '26487885-2cb6-4c5f-a469-69e95db56822'),
-(2, 1, 170, 1, 16, 19, 1, '2021-09-08 09:02:45', '2021-09-08 14:58:53', 'bfb9b33a-0568-421a-9b32-1cb8be9c36af'),
-(3, 1, 171, 1, 22, 23, 1, '2021-09-08 09:02:58', '2021-09-08 15:25:14', '3da547f7-fd78-44bc-b2ab-faae3527ecd6'),
+(1, 1, NULL, 1, 1, 28, 0, '2021-09-08 09:02:45', '2021-09-09 11:45:10', '26487885-2cb6-4c5f-a469-69e95db56822'),
+(2, 1, 170, 1, 16, 21, 1, '2021-09-08 09:02:45', '2021-09-09 11:45:10', 'bfb9b33a-0568-421a-9b32-1cb8be9c36af'),
+(3, 1, 171, 1, 24, 25, 1, '2021-09-08 09:02:58', '2021-09-09 11:45:10', '3da547f7-fd78-44bc-b2ab-faae3527ecd6'),
 (4, 1, 172, 1, 17, 18, 2, '2021-09-08 09:03:03', '2021-09-08 14:58:53', '17cfbc81-4704-4e0a-81dd-235c89fbd7e1'),
-(5, 1, 173, 1, 24, 25, 1, '2021-09-08 09:17:39', '2021-09-08 15:25:14', 'bec147e7-33a6-41cf-931b-8007de784d1e'),
+(5, 1, 173, 1, 26, 27, 1, '2021-09-08 09:17:39', '2021-09-09 11:45:10', 'bec147e7-33a6-41cf-931b-8007de784d1e'),
 (7, 1, 175, 1, 2, 3, 1, '2021-09-08 09:23:36', '2021-09-08 09:23:36', '914f736e-8c6a-4081-b714-07d87ecddd0f'),
 (9, 1, 177, 1, 4, 5, 1, '2021-09-08 10:00:44', '2021-09-08 10:00:44', '37827458-49f5-4c0d-8ac4-40554da52bc2'),
 (11, 1, 179, 1, 6, 7, 1, '2021-09-08 10:02:20', '2021-09-08 10:02:20', '51e0a2f9-24c5-4ed0-9054-76f08169b08a'),
@@ -3080,7 +3127,8 @@ INSERT INTO `structureelements` (`id`, `structureId`, `elementId`, `root`, `lft`
 (23, 1, 213, 1, 10, 11, 1, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '34fb6998-d0ea-401d-8474-6477535144e3'),
 (25, 1, 219, 1, 12, 13, 1, '2021-09-08 14:54:55', '2021-09-08 14:54:55', 'a5bb6d84-940b-4dd9-86d0-162d0dc08cff'),
 (27, 1, 228, 1, 14, 15, 1, '2021-09-08 14:58:53', '2021-09-08 14:58:53', 'cbd11d84-b076-46a2-9d1a-c5810caaff6e'),
-(28, 1, 231, 1, 20, 21, 1, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '68ab0363-f4a3-439d-a69d-14e91a21c4b6');
+(28, 1, 231, 1, 22, 23, 1, '2021-09-08 15:25:14', '2021-09-09 11:45:10', '68ab0363-f4a3-439d-a69d-14e91a21c4b6'),
+(29, 1, 234, 1, 19, 20, 2, '2021-09-09 11:45:10', '2021-09-09 11:45:10', 'fe37e35e-30e6-4e4d-a437-b20e0b48541f');
 
 -- --------------------------------------------------------
 
@@ -3345,7 +3393,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `photoId`, `firstName`, `lastName`, `email`, `password`, `admin`, `locked`, `suspended`, `pending`, `lastLoginDate`, `lastLoginAttemptIp`, `invalidLoginWindowStart`, `invalidLoginCount`, `lastInvalidLoginDate`, `lockoutDate`, `hasDashboard`, `verificationCode`, `verificationCodeIssuedDate`, `unverifiedEmail`, `passwordResetRequired`, `lastPasswordChangeDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'Paniek', NULL, NULL, NULL, 'pjotr@pixeldeluxe.nl', '$2y$13$SpanFiy1cnaZO3svx/lUqevsBsN4uK4BAo69pT1mXo0CK.yMfLnYO', 1, 0, 0, 0, '2021-09-08 07:15:34', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, '2021-09-06 10:09:24', '2021-09-06 10:09:24', '2021-09-08 07:15:34', 'e3aecde8-a6e4-4fd1-b509-3ae4771c72f1');
+(1, 'Paniek', NULL, NULL, NULL, 'pjotr@pixeldeluxe.nl', '$2y$13$SpanFiy1cnaZO3svx/lUqevsBsN4uK4BAo69pT1mXo0CK.yMfLnYO', 1, 0, 0, 0, '2021-09-09 09:35:36', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, '2021-09-06 10:09:24', '2021-09-06 10:09:24', '2021-09-09 09:35:36', 'e3aecde8-a6e4-4fd1-b509-3ae4771c72f1');
 
 -- --------------------------------------------------------
 
@@ -4055,7 +4103,7 @@ ALTER TABLE `categorygroups_sites`
 -- AUTO_INCREMENT voor een tabel `content`
 --
 ALTER TABLE `content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT voor een tabel `craftidtokens`
@@ -4085,13 +4133,13 @@ ALTER TABLE `elementindexsettings`
 -- AUTO_INCREMENT voor een tabel `elements`
 --
 ALTER TABLE `elements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
 
 --
 -- AUTO_INCREMENT voor een tabel `elements_sites`
 --
 ALTER TABLE `elements_sites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
 
 --
 -- AUTO_INCREMENT voor een tabel `entrytypes`
@@ -4163,7 +4211,7 @@ ALTER TABLE `matrixblocktypes`
 -- AUTO_INCREMENT voor een tabel `matrixcontent_about`
 --
 ALTER TABLE `matrixcontent_about`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT voor een tabel `matrixcontent_inhoudzelf`
@@ -4187,7 +4235,7 @@ ALTER TABLE `plugins`
 -- AUTO_INCREMENT voor een tabel `queue`
 --
 ALTER TABLE `queue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `relations`
@@ -4229,7 +4277,7 @@ ALTER TABLE `seo_sitemap`
 -- AUTO_INCREMENT voor een tabel `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `shunnedmessages`
@@ -4253,7 +4301,7 @@ ALTER TABLE `sites`
 -- AUTO_INCREMENT voor een tabel `structureelements`
 --
 ALTER TABLE `structureelements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT voor een tabel `structures`
