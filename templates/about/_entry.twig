@@ -2,18 +2,16 @@
 {% block main %}
 <section class="container">
   <div class="row">
-    <span class="maxw text-white">
-    {% if entry.about|length %}
-      {% for block in entry.about.all() %}
-        {% switch block.type %}
-        {% case 'aboutcontent' %}
-        {{ block.body }}
-        {% case 'videolink' %}
-        <iframe class="mb-3" src="{{ block.videolink }}" title="{{ entry.videonaam }}" width="560" height="315" allowfullscreen></iframe>
-        {% endswitch %}
+    {% set entries = entry.about.all() %}
+    {% if entries|length %}
+      {% for block in entries %}
+        {% if block.type == "body" %}
+        <span class="text-white">{{ block.body }}</span>
+        {% elseif block.type == "video" %}
+        <iframe class="mb-3" src="{{ block.videolink }}" title="{{ block.videonaam }}" width="560" height="315" allowfullscreen></iframe>
+        {% endif %}
       {% endfor %}
     {% endif %}
-    </span>
   </div>
 </section>
 {% endblock %}

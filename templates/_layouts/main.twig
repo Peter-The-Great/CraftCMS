@@ -52,7 +52,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
+              <a href="/about"><h4 class="text-white">About</h4></a>
               {% set about = craft.entries.section("navbar").one() %}
               <div class="text-white">{{ about.introduction }}</div>
             </div>
@@ -84,8 +84,8 @@
     {% endblock %}
 </main>
 <footer class="footer mt-auto py-3 bg-dark border-top">
-  <div class="container">
-    <p class="text-white"> <mm id="copy"></mm> Pjotr Wisse</p>
+  <div class="container d-flex text-white justify-content-around">
+    <p><mm id="copy"></mm> Pjotr Wisse</p><a href="/about" style="text-decoration:none; color:white;">About</a><a style="text-decoration:none; color:white;" href="/about/contact">Contact</a>
   </div>
 </footer>
     <!-- Bootstrap JS -->
