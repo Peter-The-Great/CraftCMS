@@ -1,0 +1,38 @@
+field: 09d31fa1-984a-400f-85b2-8845a04ac918 # navbarfield
+fieldLayouts:
+  8d22d29a-419b-42ec-b76f-beb474632640:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 03e5d8de-eb19-4fee-be03-5b2baf5a22bc # mailto
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  03e5d8de-eb19-4fee-be03-5b2baf5a22bc: # mailto
+    columnSuffix: cuvkidtn
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: mailto
+    instructions: ''
+    name: mailto
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - url
+        - email
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: mail
+name: mail
+sortOrder: 3

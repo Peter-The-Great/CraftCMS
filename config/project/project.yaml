@@ -1,4 +1,4 @@
-dateModified: 1631181797
+dateModified: 1631285517
 email:
   fromEmail: pjotr@pixeldeluxe.nl
   fromName: Blogsite
@@ -10,11 +10,15 @@ meta:
     3b49d805-1ae4-41ab-ad93-00de8e3a56c3: images # images
     3b68da63-81e3-4d75-b78d-63e267cf49d7: Common # Common
     3b175535-87ad-4cb7-90d4-5e06d63658d6: bodytext # bodytext
+    03e5d8de-eb19-4fee-be03-5b2baf5a22bc: mailto # mailto
     4c7c41bd-271d-4790-aecd-3eafe71ca7c6: Standaard # Standaard
     5d359804-dc3e-4485-8e71-f6d29868806e: videolink # videolink
     6fb6a84c-ac77-4355-b483-06f78d791539: body # body
     7ce16e90-1108-4637-ae34-135db25fef4e: Blogsite # Blogsite
+    09d31fa1-984a-400f-85b2-8845a04ac918: navbarfield # navbarfield
+    17db215b-91d6-4e8a-8b09-e0865c10c523: facebook # facebook
     34ad3c2c-7a70-4054-91bb-90ada9475662: inhoud # inhoud
+    48e223bd-f8d0-41fb-acf1-338cc6ebfcae: facebooklink # facebooklink
     73bb7483-e2a7-45c4-abcf-4df7bb6c3d20: About # About
     364d4330-d412-40f3-99b9-8a3dd6a2d954: Homepage # Homepage
     417ad68e-f480-4c58-bc24-a31574f1c928: blogpost # blogpost
@@ -22,13 +26,16 @@ meta:
     639db3fc-cfd4-4523-a2e8-2ac5effb3522: about # about
     2650fd56-94c1-4d62-929b-998b54588b6d: 'Public Schema' # Public Schema
     8886d58d-cb48-4775-9092-f5615f900343: about # about
+    88431a62-ee0e-4589-8f9b-79e34f647e72: twitterlink # twitterlink
     95710e39-bdda-4a20-bfe7-9f8f96a9eb1f: aboutcontent # aboutcontent
     185857a1-7047-4adc-84d0-a8d679523c2d: videolink # videolink
     845194a4-5a85-4e81-8d73-c11be1057caa: Standaard # Standaard
     7382616d-769d-4f84-8b59-7245cd08ef20: videolink # videolink
+    b3f35fce-f0a9-496d-9f25-8dd0595f6eef: mail # mail
     b8b01c62-e65a-45ab-a41a-2880f6839689: navbar # navbar
     b94e9ccf-1f7c-4952-87b0-2514213a3b78: navbar # navbar
     bb77b1f3-1ccf-4257-af21-bb0d3e88362d: Homepage # Homepage
+    cb9e90a1-3919-450b-98f5-629110cc72ed: twitter # twitter
     d6287000-aeb5-4ddf-aeeb-da48f9ed904f: bodycopy # bodycopy
     e3a74156-6e99-4310-8b92-cc9c1d33e616: PageCopy # PageCopy
     e3c14bdc-b578-4588-bce9-7dc0f8553072: inhoudzelf # inhoudzelf

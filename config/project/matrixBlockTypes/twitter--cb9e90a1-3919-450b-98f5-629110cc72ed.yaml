@@ -1,0 +1,37 @@
+field: 09d31fa1-984a-400f-85b2-8845a04ac918 # navbarfield
+fieldLayouts:
+  c5ecdb7e-36aa-4809-9e26-8356a60bf706:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 88431a62-ee0e-4589-8f9b-79e34f647e72 # twitterlink
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  88431a62-ee0e-4589-8f9b-79e34f647e72: # twitterlink
+    columnSuffix: null
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: twitterlink
+    instructions: ''
+    name: twitterlink
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: twitter
+name: twitter
+sortOrder: 2

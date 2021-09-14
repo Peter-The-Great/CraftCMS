@@ -58,6 +58,16 @@
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Contact</h4>
+              {% if craft.entries.section("navbar").navbarfield|length %}
+                {% for block in craft.entries.section("navbar").navbarfield %}
+		              {% switch block.type %}
+		              {% case 'bodycopy' %}
+		                {{ block.bodytext }}
+		              {% case 'videolink' %}
+		                <iframe class="mb-3" src="{{ block.videolink }}" title="{{ entry.title }}" width="560" height="315" allowfullscreen></iframe>
+		              {% endswitch %}
+		            {% endfor %}
+              {% endif %}
               <ul class="list-unstyled">
                 <li><a href="https://twitter.com" class="text-white">Follow on Twitter</a></li>
                 <li><a href="https://facebook.com" class="text-white">Like on Facebook</a></li>

@@ -1,0 +1,37 @@
+field: 09d31fa1-984a-400f-85b2-8845a04ac918 # navbarfield
+fieldLayouts:
+  e24fffcc-7297-4129-91a0-f53afaf30b67:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 48e223bd-f8d0-41fb-acf1-338cc6ebfcae # facebooklink
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  48e223bd-f8d0-41fb-acf1-338cc6ebfcae: # facebooklink
+    columnSuffix: null
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: facebooklink
+    instructions: ''
+    name: facebooklink
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: facebookquota
+name: facebook
+sortOrder: 1
