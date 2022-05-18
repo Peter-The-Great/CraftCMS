@@ -34,4 +34,7 @@ return [
 
     // Whether crawlers should be allowed to index pages and following links
     'disallowRobots' => !$isProd,
+
+    // Disable GraphQL
+    'enableGql' => false,
 ];

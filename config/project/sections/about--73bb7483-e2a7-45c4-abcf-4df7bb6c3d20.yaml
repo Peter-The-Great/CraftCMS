@@ -16,7 +16,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  1a7ded85-cd10-4685-8696-21042404ec46: # Blogsite
+  1a7ded85-cd10-4685-8696-21042404ec46: # Blog
     enabledByDefault: true
     hasUrls: true
     template: about/_entry

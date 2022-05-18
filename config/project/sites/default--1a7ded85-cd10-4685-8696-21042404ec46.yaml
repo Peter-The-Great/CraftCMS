@@ -1,8 +1,9 @@
 baseUrl: $PRIMARY_SITE_URL
+enabled: true
 handle: default
 hasUrls: true
 language: nl
-name: Blogsite
+name: Blog
 primary: true
-siteGroup: 7ce16e90-1108-4637-ae34-135db25fef4e # Blogsite
+siteGroup: 7ce16e90-1108-4637-ae34-135db25fef4e # Blog
 sortOrder: 1
