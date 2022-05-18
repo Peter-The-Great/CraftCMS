@@ -1,11 +1,15 @@
-dateModified: 1632736560
+dateModified: 1650556358
 email:
-  fromEmail: pjotr@pixeldeluxe.nl
-  fromName: Blogsite
+  fromEmail: $SYSTEM_EMAIL
+  fromName: Blog
+  replyToEmail: $SYSTEM_EMAIL
+  template: ''
+  transportSettings:
+    command: '/usr/sbin/sendmail -bs'
   transportType: craft\mail\transportadapters\Sendmail
 meta:
   __names__:
-    1a7ded85-cd10-4685-8696-21042404ec46: Blogsite # Blogsite
+    1a7ded85-cd10-4685-8696-21042404ec46: Blog # Blog
     1bedf931-c16d-4606-a377-f778e799f5c0: videonaam # videonaam
     3b49d805-1ae4-41ab-ad93-00de8e3a56c3: images # images
     3b68da63-81e3-4d75-b78d-63e267cf49d7: Common # Common
@@ -14,7 +18,7 @@ meta:
     4c7c41bd-271d-4790-aecd-3eafe71ca7c6: Standaard # Standaard
     5d359804-dc3e-4485-8e71-f6d29868806e: videolink # videolink
     6fb6a84c-ac77-4355-b483-06f78d791539: body # body
-    7ce16e90-1108-4637-ae34-135db25fef4e: Blogsite # Blogsite
+    7ce16e90-1108-4637-ae34-135db25fef4e: Blog # Blog
     09d31fa1-984a-400f-85b2-8845a04ac918: navbarfield # navbarfield
     17db215b-91d6-4e8a-8b09-e0865c10c523: facebook # facebook
     34ad3c2c-7a70-4054-91bb-90ada9475662: inhoud # inhoud
@@ -110,9 +114,9 @@ plugins:
 system:
   edition: pro
   live: true
-  name: Blogsite
+  name: Blog
   retryDuration: null
-  schemaVersion: 3.7.8
+  schemaVersion: 3.7.33
   timeZone: Europe/Amsterdam
 users:
   allowPublicRegistration: false
