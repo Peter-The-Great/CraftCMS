@@ -1,4 +1,4 @@
-dateModified: 1650556358
+dateModified: 1666101753
 email:
   fromEmail: $SYSTEM_EMAIL
   fromName: Blog
@@ -7,6 +7,14 @@ email:
   transportSettings:
     command: '/usr/sbin/sendmail -bs'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  images:
+    hasUrls: true
+    name: images
+    settings:
+      path: /Users/pjotr/Sites/blogsite/craft/web/images
+    type: craft\fs\Local
+    url: //blogsite.local/images/
 meta:
   __names__:
     1a7ded85-cd10-4685-8696-21042404ec46: Blog # Blog
@@ -110,19 +118,19 @@ plugins:
   super-table:
     edition: standard
     enabled: true
-    schemaVersion: 2.2.1
+    schemaVersion: 3.0.0
 system:
   edition: pro
   live: true
   name: Blog
   retryDuration: null
-  schemaVersion: 3.7.33
+  schemaVersion: 4.0.0.9
   timeZone: Europe/Amsterdam
 users:
   allowPublicRegistration: false
+  deactivateByDefault: false
   defaultGroup: ''
   photoSubpath: null
   photoVolumeUid: 3b49d805-1ae4-41ab-ad93-00de8e3a56c3 # images
   requireEmailVerification: true
-  suspendByDefault: false
   validateOnPublicRegistration: false

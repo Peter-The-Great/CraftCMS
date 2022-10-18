@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 18 mei 2022 om 22:33
--- Serverversie: 10.4.21-MariaDB
--- PHP-versie: 7.4.21
+-- Gegenereerd op: 18 okt 2022 om 14:47
+-- Serverversie: 10.4.25-MariaDB
+-- PHP-versie: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -1403,7 +1403,7 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `version`, `schemaVersion`, `maintenance`, `configVersion`, `fieldVersion`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, '3.7.38', '3.7.33', 0, 'dtqhrkfxydgg', '3@tonftphyve', '2021-09-06 10:09:22', '2022-04-21 15:52:38', 'bd374219-4f30-4743-b1dc-06c299bde1de');
+(1, '3.7.56', '3.7.33', 0, 'gzorseqrksof', '3@tonftphyve', '2021-09-06 10:09:22', '2022-10-18 12:46:52', 'bd374219-4f30-4743-b1dc-06c299bde1de');
 
 -- --------------------------------------------------------
 
@@ -2039,11 +2039,11 @@ CREATE TABLE `plugins` (
 --
 
 INSERT INTO `plugins` (`id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `licensedEdition`, `installDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'ckeditor', '1.3.0', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2022-04-21 15:44:51', '032a7d64-0762-4824-8f4b-0c7d4ea9143b'),
-(2, 'redactor', '2.10.6', '2.3.0', 'unknown', NULL, '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2022-04-21 15:44:51', 'd08ef1d0-3480-4156-a250-5bda6017a5fe'),
-(3, 'contact-form', '2.5.0', '1.0.0', 'unknown', NULL, '2021-09-08 10:27:24', '2021-09-08 10:27:24', '2022-04-21 15:44:51', '8f683cb0-4fee-4f47-8838-508c3c9d232a'),
-(4, 'seo', '3.7.4', '3.2.0', 'unknown', NULL, '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2022-04-21 15:44:51', 'a20c0255-b6da-4747-be0d-24f0c2d76d2b'),
-(5, 'super-table', '2.7.1', '2.2.1', 'unknown', NULL, '2021-09-24 07:40:57', '2021-09-24 07:40:57', '2022-04-21 15:44:51', '8f2cf728-f4fa-4346-8642-9d106f9838f6');
+(1, 'ckeditor', '1.3.0', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2022-10-18 12:39:55', '032a7d64-0762-4824-8f4b-0c7d4ea9143b'),
+(2, 'redactor', '2.10.10', '2.3.0', 'unknown', NULL, '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2022-10-18 12:39:55', 'd08ef1d0-3480-4156-a250-5bda6017a5fe'),
+(3, 'contact-form', '2.5.1', '1.0.0', 'unknown', NULL, '2021-09-08 10:27:24', '2021-09-08 10:27:24', '2022-10-18 12:39:55', '8f683cb0-4fee-4f47-8838-508c3c9d232a'),
+(4, 'seo', '3.7.4', '3.2.0', 'unknown', NULL, '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2022-10-18 12:39:55', 'a20c0255-b6da-4747-be0d-24f0c2d76d2b'),
+(5, 'super-table', '2.7.3', '2.2.1', 'unknown', NULL, '2021-09-24 07:40:57', '2021-09-24 07:40:57', '2022-10-18 12:39:55', '8f2cf728-f4fa-4346-8642-9d106f9838f6');
 
 -- --------------------------------------------------------
 
@@ -2061,7 +2061,7 @@ CREATE TABLE `projectconfig` (
 --
 
 INSERT INTO `projectconfig` (`path`, `value`) VALUES
-('dateModified', '1650556358'),
+('dateModified', '1666097210'),
 ('email.fromEmail', '\"$SYSTEM_EMAIL\"'),
 ('email.fromName', '\"Blog\"'),
 ('email.replyToEmail', '\"$SYSTEM_EMAIL\"'),
@@ -2317,10 +2317,18 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.instructions', '\"\"'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.name', '\"PageCopy\"'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.searchable', 'false'),
+('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.availableTransforms', '\"*\"'),
+('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.availableVolumes', '\"*\"'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.columnType', '\"mediumtext\"'),
+('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.defaultTransform', 'null'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.initJs', 'null'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.purifierConfig', '\"\"'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.purifyHtml', '\"1\"'),
+('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.removeEmptyTags', 'false'),
+('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.removeInlineStyles', 'false'),
+('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.removeNbsp', 'false'),
+('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.showUnpermittedFiles', 'false'),
+('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.settings.showUnpermittedVolumes', 'false'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.translationKeyFormat', 'null'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.translationMethod', '\"none\"'),
 ('fields.e3a74156-6e99-4310-8b92-cc9c1d33e616.type', '\"craft\\\\ckeditor\\\\Field\"'),
@@ -2395,10 +2403,18 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.instructions', '\"Een korte introductie voor de tekst die u wilt schrijven.\"'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.name', '\"subtext\"'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.searchable', 'false'),
+('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.availableTransforms', '\"*\"'),
+('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.availableVolumes', '\"*\"'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.columnType', '\"text\"'),
+('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.defaultTransform', 'null'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.initJs', 'null'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.purifierConfig', '\"\"'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.purifyHtml', '\"1\"'),
+('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.removeEmptyTags', 'false'),
+('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.removeInlineStyles', 'false'),
+('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.removeNbsp', 'false'),
+('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.showUnpermittedFiles', 'false'),
+('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.settings.showUnpermittedVolumes', 'false'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.translationKeyFormat', 'null'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.translationMethod', '\"none\"'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.type', '\"craft\\\\ckeditor\\\\Field\"'),
@@ -2480,7 +2496,6 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.searchable', 'false'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.availableTransforms', '\"*\"'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.availableVolumes', '\"*\"'),
-('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.cleanupHtml', 'true'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.columnType', '\"mediumtext\"'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.configSelectionMode', '\"choose\"'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.defaultTransform', '\"\"'),
@@ -2495,7 +2510,8 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.showUnpermittedFiles', 'false'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.showUnpermittedVolumes', 'false'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.uiMode', '\"enlarged\"'),
-('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.translationKeyFormat', 'null'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.translationKeyFormat', 'null');
+INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.translationMethod', '\"none\"'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.type', '\"craft\\\\redactor\\\\Field\"'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.handle', '\"body\"'),
@@ -2505,8 +2521,7 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('matrixBlockTypes.b3f35fce-f0a9-496d-9f25-8dd0595f6eef.fieldLayouts.8d22d29a-419b-42ec-b76f-beb474632640.tabs.0.elements.0.fieldUid', '\"03e5d8de-eb19-4fee-be03-5b2baf5a22bc\"'),
 ('matrixBlockTypes.b3f35fce-f0a9-496d-9f25-8dd0595f6eef.fieldLayouts.8d22d29a-419b-42ec-b76f-beb474632640.tabs.0.elements.0.instructions', 'null'),
 ('matrixBlockTypes.b3f35fce-f0a9-496d-9f25-8dd0595f6eef.fieldLayouts.8d22d29a-419b-42ec-b76f-beb474632640.tabs.0.elements.0.label', 'null'),
-('matrixBlockTypes.b3f35fce-f0a9-496d-9f25-8dd0595f6eef.fieldLayouts.8d22d29a-419b-42ec-b76f-beb474632640.tabs.0.elements.0.required', 'false');
-INSERT INTO `projectconfig` (`path`, `value`) VALUES
+('matrixBlockTypes.b3f35fce-f0a9-496d-9f25-8dd0595f6eef.fieldLayouts.8d22d29a-419b-42ec-b76f-beb474632640.tabs.0.elements.0.required', 'false'),
 ('matrixBlockTypes.b3f35fce-f0a9-496d-9f25-8dd0595f6eef.fieldLayouts.8d22d29a-419b-42ec-b76f-beb474632640.tabs.0.elements.0.tip', 'null'),
 ('matrixBlockTypes.b3f35fce-f0a9-496d-9f25-8dd0595f6eef.fieldLayouts.8d22d29a-419b-42ec-b76f-beb474632640.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\CustomField\"'),
 ('matrixBlockTypes.b3f35fce-f0a9-496d-9f25-8dd0595f6eef.fieldLayouts.8d22d29a-419b-42ec-b76f-beb474632640.tabs.0.elements.0.warning', 'null'),
@@ -2577,7 +2592,6 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.searchable', 'false'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.availableTransforms', '\"*\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.availableVolumes', '\"*\"'),
-('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.cleanupHtml', 'true'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.columnType', '\"text\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.configSelectionMode', '\"choose\"'),
 ('matrixBlockTypes.d6287000-aeb5-4ddf-aeeb-da48f9ed904f.fields.3b175535-87ad-4cb7-90d4-5e06d63658d6.settings.defaultTransform', '\"\"'),
@@ -2847,7 +2861,7 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.settings.path', '\"/Users/pjotr/Sites/blogsite/craft/web/images\"'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.sortOrder', '1'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.titleTranslationKeyFormat', 'null'),
-('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.titleTranslationMethod', 'null'),
+('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.titleTranslationMethod', '\"site\"'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.type', '\"craft\\\\volumes\\\\Local\"'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.url', '\"//blogsite.local/images/\"');
 
@@ -2946,6 +2960,7 @@ CREATE TABLE `resourcepaths` (
 
 INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('1117150c', '@bower/jquery/dist'),
+('115ea9a9', '@craft/web/assets/selectize/dist'),
 ('12de6e6b', '@app/web/assets/cp/dist'),
 ('1357825', '@craft/web/assets/cp/dist'),
 ('1476d9f8', '@craft/web/assets/updater/dist'),
@@ -2955,10 +2970,12 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('189eee99', '@lib/jquery.payment'),
 ('18ba43aa', '@lib/element-resize-detector'),
 ('1b4ba1b4', '@craft/web/assets/updateswidget/dist'),
+('1d160be1', '@craft/web/assets/cp/dist'),
 ('1d7a0893', '@craft/web/assets/login/dist'),
 ('1db59fa7', '@craft/web/assets/recententries/dist'),
 ('1eb9fa70', '@lib/datepicker-i18n'),
 ('1ec970e9', '@app/web/assets/admintable/dist'),
+('21270547', '@craft/web/assets/axios/dist'),
 ('217c59b7', '@app/web/assets/updater/dist'),
 ('230fddc9', '@craft/web/assets/updateswidget/dist'),
 ('23a4881d', '@lib/axios'),
@@ -2983,6 +3000,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('372ae85f', '@bower/jquery/dist'),
 ('37cd79e5', '@craft/web/assets/plugins/dist'),
 ('39710458', '@craft/web/assets/cp/dist'),
+('39d2901e', '@craft/web/assets/recententries/dist'),
 ('3a82b0ca', '@lib/jquery.payment'),
 ('3aa61df9', '@lib/element-resize-detector'),
 ('3c6a28d1', '@app/web/assets/fieldsettings/dist'),
@@ -2997,6 +3015,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('463ee837', '@app/web/assets/updater/dist'),
 ('472f4e01', '@lib/iframe-resizer'),
 ('476b9af7', '@app/web/assets/fields/dist'),
+('47e4332b', '@craft/web/assets/utilities/dist'),
 ('48996f93', '@app/web/assets/pluginstore/dist'),
 ('4a10dad4', '@lib/jquery-ui'),
 ('4b2c2d3', '@craft/redactor/assets/redactor-plugins/dist/video'),
@@ -3016,6 +3035,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('564646a3', '@lib/prismjs'),
 ('566bba08', '@app/web/assets/updateswidget/dist'),
 ('579f37c6', '@app/web/assets/login/dist'),
+('57cea515', '@craft/web/assets/fabric/dist'),
 ('58f916c9', '@app/web/assets/craftsupport/dist'),
 ('59c50f79', '@lib/element-resize-detector'),
 ('5a0f71ba', '@app/web/assets/matrixsettings/dist'),
@@ -3048,11 +3068,13 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('70a52cfa', '@app/web/assets/utilities/dist'),
 ('71a2ca95', '@app/web/assets/login/dist'),
 ('71a5d6c', '@lib/selectize'),
+('7232da8', '@craft/web/assets/d3/dist'),
 ('72d1a239', '@craft/web/assets/admintable/dist'),
 ('738c66d1', '@craft/web/assets/editentry/dist'),
 ('73c80d6b', '@lib/fileupload'),
 ('759cdfeb', '@app/web/assets/cp/dist'),
 ('7655a48c', '@bower/jquery/dist'),
+('768d270', '@craft/web/assets/updateswidget/dist'),
 ('7848c8c4', '@app/web/assets/dashboard/dist'),
 ('798f42a5', '@app/web/assets/tablesettings/dist'),
 ('7b3a9301', '@lib/fabric'),
@@ -3061,6 +3083,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('7ec4eb9a', '@app/web/assets/craftsupport/dist'),
 ('7f2fe68a', '@app/web/assets/fields/dist'),
 ('7f6b327c', '@lib/iframe-resizer'),
+('7f7c9202', '@craft/web/assets/garnish/dist'),
 ('805cf829', '@app/web/assets/sites/dist'),
 ('80e820b7', '@lib/jquery-ui'),
 ('81748b75', '@lib/fileupload'),
@@ -3082,11 +3105,14 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('8f83292', '@app/web/assets/editsection/dist'),
 ('903b553', '@app/web/assets/userpermissions/dist'),
 ('90ac6cf4', '@app/web/assets/dashboard/dist'),
+('90d496d4', '@craft/web/assets/velocity/dist'),
 ('913fba8c', '@craft/web/assets/utilities/dist'),
 ('93506cc6', '@craft/web/assets/userpermissions/dist'),
 ('93de3731', '@lib/fabric'),
 ('93ebfae9', '@craft/redactor/assets/field/dist'),
+('95104b01', '@craft/web/assets/jquerytouchevents/dist'),
 ('953ac74', '@app/web/assets/garnish/dist'),
+('95439463', '@craft/web/assets/jquerypayment/dist'),
 ('95f1c032', '@app/web/assets/fieldsettings/dist'),
 ('96204faa', '@app/web/assets/craftsupport/dist'),
 ('9739aada', '@lib/d3'),
@@ -3095,14 +3121,18 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('998e907', '@craft/web/assets/updates/dist'),
 ('999c8a8b', '@lib/picturefill'),
 ('9b12a970', '@lib/timepicker'),
+('9b481da4', '@craft/web/assets/datepickeri18n/dist'),
 ('9e38b649', '@lib/jquery-touch-events'),
 ('9e4cdd78', '@app/web/assets/recententries/dist'),
 ('9e569106', '@craft/web/assets/plugins/dist'),
 ('9e62340', '@app/web/assets/pluginstore/dist'),
 ('9f90bff6', '@lib/vue'),
+('9fd1193d', '@craft/web/assets/feed/dist'),
 ('a07dcba3', '@app/web/assets/pluginstore/dist'),
+('a0c42479', '@craft/web/assets/craftsupport/dist'),
 ('a0f69f16', '@app/web/assets/updateswidget/dist'),
 ('a1d5a0bb', '@craft/web/assets/pluginstore/dist'),
+('a2a0f3bd', '@craft/web/assets/xregexp/dist'),
 ('a368d526', '@lib/fileupload'),
 ('a484bd5c', '@lib/garnishjs'),
 ('a4edf105', '@lib/xregexp'),
@@ -3110,6 +3140,8 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('a608a105', '@app/web/assets/recententries/dist'),
 ('a7d4c38b', '@lib/vue'),
 ('a8ae90c6', '@craft/web/assets/cp/dist'),
+('a8c293b4', '@craft/web/assets/login/dist'),
+('a9184ebd', '@craft/web/assets/picturefill/dist'),
 ('ab639d3a', '@craft/redactor/assets/redactor-plugins/dist/fullscreen'),
 ('acd3dee', '@lib/timepicker'),
 ('adb5bc4f', '@app/web/assets/fieldsettings/dist'),
@@ -3137,12 +3169,16 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('c25ecd36', '@app/web/assets/feed/dist'),
 ('c2f5304f', '@craft/web/assets/dashboard/dist'),
 ('c3601364', '@craft/web/assets/updates/dist'),
+('c3ed3fab', '@bower/jquery/dist'),
+('c42241f', '@craft/web/assets/iframeresizer/dist'),
 ('c440fc1b', '@app/web/assets/jquerypayment/dist'),
+('c60d2043', '@craft/web/assets/elementresizedetector/dist'),
 ('c78ee385', '@lib/xregexp'),
 ('c7daec30', '@app/web/assets/userpermissions/dist'),
 ('c7e7afdc', '@lib/garnishjs'),
 ('c81a9be7', '@lib/element-resize-detector'),
 ('c879455', '@app/web/assets/feed/dist'),
+('c90aafbd', '@craft/web/assets/jqueryui/dist'),
 ('cb60887d', '@ether/seo/web/assets'),
 ('cbcd8246', '@craft/web/assets/cp/dist'),
 ('cbd0e524', '@app/web/assets/matrixsettings/dist'),
@@ -3159,23 +3195,27 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('d48fcdcb', '@app/web/assets/xregexp/dist'),
 ('d6b40e69', '@app/web/assets/fields/dist'),
 ('d7619e6', '@lib/xregexp'),
+('d7717916', '@craft/web/assets/fileupload/dist'),
 ('d93ec419', '@app/web/assets/utilities/dist'),
 ('d9ff6a97', '@craft/ckeditor/assets/field/dist'),
 ('da178e32', '@craft/web/assets/editentry/dist'),
 ('db4a4ada', '@craft/web/assets/admintable/dist'),
 ('dc858897', '@app/web/assets/elementresizedetector/dist'),
 ('de1f2174', '@app/web/assets/edituser/dist'),
+('df4360a0', '@craft/web/assets/updates/dist'),
 ('dfce4c6f', '@bower/jquery/dist'),
 ('e17ab864', '@app/web/assets/utilities/dist'),
 ('e21799f5', '@lib/fileupload'),
 ('e4f2b68', '@lib/vue'),
 ('e592bdd6', '@lib/xregexp'),
+('e6923ff6', '@craft/web/assets/dashboard/dist'),
 ('e78a3012', '@bower/jquery/dist'),
 ('e7d08aca', '@app/web/assets/focusvisible/dist'),
 ('e85455f7', '@app/web/assets/admintable/dist'),
 ('e9d1dc15', '@craft/web/assets/cp/dist'),
 ('ea226887', '@lib/jquery.payment'),
 ('ea80b24c', '@app/web/assets/jqueryui/dist'),
+('eab04610', '@craft/web/assets/upgrade/dist'),
 ('ec843a2f', '@craft/web/assets/sites/dist'),
 ('eeb4a6e2', '@lib/iframe-resizer'),
 ('effef95c', '@lib/selectize'),
@@ -3520,7 +3560,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `userId`, `token`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 1, 'jWg928cl0qeQJq5cnfKiNkTFfoFk-nWi_auZ6tsC9xN5aIIUORMp4QwN-5MvKZ1c5-_YJZHmqpCLz5cOvscTekx03k2HRvgRxHdF', '2022-04-21 15:41:50', '2022-04-21 15:54:47', 'f21dea26-9d14-412a-bc5b-381a61af1359');
+(1, 1, 'jWg928cl0qeQJq5cnfKiNkTFfoFk-nWi_auZ6tsC9xN5aIIUORMp4QwN-5MvKZ1c5-_YJZHmqpCLz5cOvscTekx03k2HRvgRxHdF', '2022-04-21 15:41:50', '2022-04-21 15:54:47', 'f21dea26-9d14-412a-bc5b-381a61af1359'),
+(2, 1, 'DyszqbbCHI29eZrmPT5L2uesjkuLX8zdbp8z6jUYsS16kdqOHrMPog5b2s6ULQFi1hBt70I6y5NUGoJRY-kf6f91oNyP8xFfpceG', '2022-10-18 12:35:42', '2022-10-18 12:47:01', 'd9820839-f007-4fbf-b085-525b24bb4628');
 
 -- --------------------------------------------------------
 
@@ -3943,7 +3984,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `photoId`, `firstName`, `lastName`, `email`, `password`, `admin`, `locked`, `suspended`, `pending`, `lastLoginDate`, `lastLoginAttemptIp`, `invalidLoginWindowStart`, `invalidLoginCount`, `lastInvalidLoginDate`, `lockoutDate`, `hasDashboard`, `verificationCode`, `verificationCodeIssuedDate`, `unverifiedEmail`, `passwordResetRequired`, `lastPasswordChangeDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'Paniek', NULL, '', '', 'pjotrw15@gmail.com', '$2y$13$YIYswYd8mFKEoE/Yj7D2Yu4Y9kf6FWg26iMuwZKe09WBd0q3Hi516', 1, 0, 0, 0, '2022-04-21 15:41:50', NULL, NULL, NULL, '2022-04-21 15:38:41', NULL, 1, NULL, NULL, NULL, 0, '2022-04-21 15:42:48', '2021-09-06 10:09:24', '2022-04-21 15:42:48', 'e3aecde8-a6e4-4fd1-b509-3ae4771c72f1');
+(1, 'Paniek', NULL, '', '', 'pjotrw15@gmail.com', '$2y$13$YIYswYd8mFKEoE/Yj7D2Yu4Y9kf6FWg26iMuwZKe09WBd0q3Hi516', 1, 0, 0, 0, '2022-10-18 12:35:42', NULL, NULL, NULL, '2022-10-18 12:30:15', NULL, 1, NULL, NULL, NULL, 0, '2022-04-21 15:42:48', '2021-09-06 10:09:24', '2022-10-18 12:35:42', 'e3aecde8-a6e4-4fd1-b509-3ae4771c72f1');
 
 -- --------------------------------------------------------
 
@@ -4819,7 +4860,7 @@ ALTER TABLE `plugins`
 -- AUTO_INCREMENT voor een tabel `queue`
 --
 ALTER TABLE `queue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT voor een tabel `relations`
@@ -4861,7 +4902,7 @@ ALTER TABLE `seo_sitemap`
 -- AUTO_INCREMENT voor een tabel `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `shunnedmessages`
