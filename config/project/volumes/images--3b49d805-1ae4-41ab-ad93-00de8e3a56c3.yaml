@@ -35,6 +35,6 @@ settings:
   path: /Users/pjotr/Sites/blogsite/craft/web/images
 sortOrder: 1
 titleTranslationKeyFormat: null
-titleTranslationMethod: null
+titleTranslationMethod: site
 type: craft\volumes\Local
 url: //blogsite.local/images/

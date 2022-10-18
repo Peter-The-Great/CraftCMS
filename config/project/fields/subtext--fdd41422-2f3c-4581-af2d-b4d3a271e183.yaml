@@ -6,10 +6,18 @@ instructions: 'Een korte introductie voor de tekst die u wilt schrijven.'
 name: subtext
 searchable: false
 settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
   columnType: text
+  defaultTransform: null
   initJs: null
   purifierConfig: ''
   purifyHtml: '1'
+  removeEmptyTags: false
+  removeInlineStyles: false
+  removeNbsp: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
 translationKeyFormat: null
 translationMethod: none
 type: craft\ckeditor\Field
