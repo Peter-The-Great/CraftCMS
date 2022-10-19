@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 18 okt 2022 om 14:47
+-- Gegenereerd op: 19 okt 2022 om 21:38
 -- Serverversie: 10.4.25-MariaDB
 -- PHP-versie: 8.1.10
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `blogs`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `addresses`
+--
+
+CREATE TABLE `addresses` (
+  `id` int(11) NOT NULL,
+  `ownerId` int(11) DEFAULT NULL,
+  `countryCode` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `administrativeArea` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `locality` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dependentLocality` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `postalCode` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sortingCode` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `addressLine1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `addressLine2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `organization` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `organizationTaxId` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fullName` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `firstName` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lastName` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `latitude` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `longitude` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -46,14 +74,35 @@ CREATE TABLE `announcements` (
 
 CREATE TABLE `assetindexdata` (
   `id` int(11) NOT NULL,
-  `sessionId` varchar(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `sessionId` int(11) NOT NULL,
   `volumeId` int(11) NOT NULL,
   `uri` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `size` bigint(20) UNSIGNED DEFAULT NULL,
   `timestamp` datetime DEFAULT NULL,
+  `isDir` tinyint(1) DEFAULT 0,
   `recordId` int(11) DEFAULT NULL,
+  `isSkipped` tinyint(1) DEFAULT 0,
   `inProgress` tinyint(1) DEFAULT 0,
   `completed` tinyint(1) DEFAULT 0,
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL,
+  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `assetindexingsessions`
+--
+
+CREATE TABLE `assetindexingsessions` (
+  `id` int(11) NOT NULL,
+  `indexedVolumes` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `totalEntries` int(11) DEFAULT NULL,
+  `processedEntries` int(11) NOT NULL DEFAULT 0,
+  `cacheRemoteImages` tinyint(1) DEFAULT NULL,
+  `isCli` tinyint(1) DEFAULT 0,
+  `actionRequired` tinyint(1) DEFAULT 0,
   `dateCreated` datetime NOT NULL,
   `dateUpdated` datetime NOT NULL,
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
@@ -72,6 +121,7 @@ CREATE TABLE `assets` (
   `uploaderId` int(11) DEFAULT NULL,
   `filename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `kind` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'unknown',
+  `alt` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `width` int(11) UNSIGNED DEFAULT NULL,
   `height` int(11) UNSIGNED DEFAULT NULL,
   `size` bigint(20) UNSIGNED DEFAULT NULL,
@@ -80,76 +130,16 @@ CREATE TABLE `assets` (
   `keptFile` tinyint(1) DEFAULT NULL,
   `dateModified` datetime DEFAULT NULL,
   `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+  `dateUpdated` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `assets`
 --
 
-INSERT INTO `assets` (`id`, `volumeId`, `folderId`, `uploaderId`, `filename`, `kind`, `width`, `height`, `size`, `focalPoint`, `deletedWithVolume`, `keptFile`, `dateModified`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(6, 1, 1, 1, 'thumnail.jpeg', 'image', 1280, 720, 106060, NULL, NULL, NULL, '2021-09-06 12:05:19', '2021-09-06 12:05:19', '2021-09-06 12:05:19', 'e0642e9c-dd28-42e3-8b44-7592675cb1c1'),
-(89, 1, 1, 1, 'sddefault.jpeg', 'image', 640, 480, 71060, NULL, NULL, NULL, '2021-09-07 13:18:58', '2021-09-07 13:18:58', '2021-09-07 13:18:58', '84029411-a4f6-4d41-81e7-3f089e7bf9d3');
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `assettransformindex`
---
-
-CREATE TABLE `assettransformindex` (
-  `id` int(11) NOT NULL,
-  `assetId` int(11) NOT NULL,
-  `filename` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `format` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `location` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `volumeId` int(11) DEFAULT NULL,
-  `fileExists` tinyint(1) NOT NULL DEFAULT 0,
-  `inProgress` tinyint(1) NOT NULL DEFAULT 0,
-  `error` tinyint(1) NOT NULL DEFAULT 0,
-  `dateIndexed` datetime DEFAULT NULL,
-  `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `assettransformindex`
---
-
-INSERT INTO `assettransformindex` (`id`, `assetId`, `filename`, `format`, `location`, `volumeId`, `fileExists`, `inProgress`, `error`, `dateIndexed`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 6, 'thumnail.jpeg', NULL, '_100x100_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 12:59:32', '2021-09-06 12:59:32', '2021-09-06 12:59:32', '81e8f01c-df0a-4c9d-8fab-41c4b04246c7'),
-(2, 6, 'thumnail.jpeg', NULL, '_50x50_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 12:59:51', '2021-09-06 12:59:51', '2021-09-06 12:59:51', '13aaa406-9ac9-44c4-bcb9-6f6e118a2c51'),
-(3, 6, 'thumnail.jpeg', NULL, '_400x300_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:01:08', '2021-09-06 13:01:08', '2021-09-06 13:01:08', '282b0de3-c03b-4780-86b6-0715ca5c765d'),
-(4, 6, 'thumnail.jpeg', NULL, '_200x100_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:03:18', '2021-09-06 13:03:18', '2021-09-06 13:03:18', 'fbed757a-6a35-4779-9573-67999bca09f6'),
-(5, 6, 'thumnail.jpeg', NULL, '_200x200_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:03:23', '2021-09-06 13:03:23', '2021-09-06 13:03:24', '3e086016-8943-48e0-9680-28ea0211c3bf'),
-(6, 6, 'thumnail.jpeg', NULL, '_300x200_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:03:28', '2021-09-06 13:03:28', '2021-09-06 13:03:29', '47ee692b-2e4b-46a3-a4df-d577ddbc79c8'),
-(7, 6, 'thumnail.jpeg', NULL, '_400x400_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-06 13:03:35', '2021-09-06 13:03:35', '2021-09-06 13:03:36', '4dc4126c-7ed6-42a2-beb4-a28dde8eab57'),
-(8, 89, 'sddefault.jpeg', NULL, '_400x300_crop_center-center_75_none', 1, 1, 0, 0, '2021-09-07 13:22:04', '2021-09-07 13:22:04', '2021-09-07 13:22:04', '2ace41b9-1f6d-4497-8d28-7ff3fd7827b1');
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `assettransforms`
---
-
-CREATE TABLE `assettransforms` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `handle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `mode` enum('stretch','fit','crop') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'crop',
-  `position` enum('top-left','top-center','top-right','center-left','center-center','center-right','bottom-left','bottom-center','bottom-right') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'center-center',
-  `width` int(11) UNSIGNED DEFAULT NULL,
-  `height` int(11) UNSIGNED DEFAULT NULL,
-  `format` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `quality` int(11) DEFAULT NULL,
-  `interlace` enum('none','line','plane','partition') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
-  `dimensionChangeTime` datetime DEFAULT NULL,
-  `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `assets` (`id`, `volumeId`, `folderId`, `uploaderId`, `filename`, `kind`, `alt`, `width`, `height`, `size`, `focalPoint`, `deletedWithVolume`, `keptFile`, `dateModified`, `dateCreated`, `dateUpdated`) VALUES
+(6, 1, 1, 1, 'thumnail.jpeg', 'image', NULL, 1280, 720, 106060, NULL, NULL, NULL, '2021-09-06 12:05:19', '2021-09-06 12:05:19', '2021-09-06 12:05:19'),
+(89, 1, 1, 1, 'sddefault.jpeg', 'image', NULL, 640, 480, 71060, NULL, NULL, NULL, '2021-09-07 13:18:58', '2021-09-07 13:18:58', '2021-09-07 13:18:58');
 
 -- --------------------------------------------------------
 
@@ -163,8 +153,7 @@ CREATE TABLE `categories` (
   `parentId` int(11) DEFAULT NULL,
   `deletedWithGroup` tinyint(1) DEFAULT NULL,
   `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+  `dateUpdated` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -450,7 +439,7 @@ CREATE TABLE `deprecationerrors` (
 
 CREATE TABLE `drafts` (
   `id` int(11) NOT NULL,
-  `sourceId` int(11) DEFAULT NULL,
+  `canonicalId` int(11) DEFAULT NULL,
   `creatorId` int(11) DEFAULT NULL,
   `provisional` tinyint(1) NOT NULL DEFAULT 0,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -464,34 +453,12 @@ CREATE TABLE `drafts` (
 -- Gegevens worden geëxporteerd voor tabel `drafts`
 --
 
-INSERT INTO `drafts` (`id`, `sourceId`, `creatorId`, `provisional`, `name`, `notes`, `trackChanges`, `dateLastMerged`, `saved`) VALUES
+INSERT INTO `drafts` (`id`, `canonicalId`, `creatorId`, `provisional`, `name`, `notes`, `trackChanges`, `dateLastMerged`, `saved`) VALUES
 (1, NULL, 1, 0, 'Eerste concept', NULL, 0, NULL, 0),
 (2, NULL, 1, 0, 'Eerste concept', NULL, 0, NULL, 0),
 (5, 42, 1, 1, 'Concept 1', '', 1, NULL, 1),
 (6, 172, 1, 1, 'Concept 1', '', 1, NULL, 1),
 (7, NULL, 1, 0, 'Eerste concept', '', 0, NULL, 1);
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `elementindexsettings`
---
-
-CREATE TABLE `elementindexsettings` (
-  `id` int(11) NOT NULL,
-  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `settings` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `elementindexsettings`
---
-
-INSERT INTO `elementindexsettings` (`id`, `type`, `settings`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'craft\\elements\\Entry', '{\"sources\":{\"section:ec1302f0-657a-4e1d-a46c-9918baf86e4e\":{\"tableAttributes\":{\"1\":\"postDate\",\"2\":\"author\",\"3\":\"link\",\"4\":\"dateCreated\",\"5\":\"field:3\"}}}}', '2021-09-08 10:08:20', '2021-09-08 10:08:20', '2ea2102b-d96c-4821-94a5-0218fd136583');
 
 -- --------------------------------------------------------
 
@@ -1013,87 +980,86 @@ CREATE TABLE `entries` (
   `expiryDate` datetime DEFAULT NULL,
   `deletedWithEntryType` tinyint(1) DEFAULT NULL,
   `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+  `dateUpdated` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `entries`
 --
 
-INSERT INTO `entries` (`id`, `sectionId`, `parentId`, `typeId`, `authorId`, `postDate`, `expiryDate`, `deletedWithEntryType`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(2, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 11:59:23', '2021-09-06 11:59:23', '1f59be65-bcdc-4851-b5f5-eae78aec3fe3'),
-(3, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 11:59:24', '2021-09-06 11:59:24', '57085ee3-7790-41de-92ef-689bc50a3ebd'),
-(4, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 11:59:52', '2021-09-06 11:59:52', 'fa7ba3d4-6be5-4cb9-87f2-fa6a9c8389d0'),
-(5, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 12:04:53', '2021-09-06 12:04:53', '26cfee8e-f253-4488-9575-767e51e29c5b'),
-(8, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 12:07:09', '2021-09-06 12:07:09', '8c721754-99b3-4aba-870e-80b1f424cbb6'),
-(9, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 12:07:16', '2021-09-06 12:07:16', '6ace761e-0822-46d6-ac74-7aaffd417ec2'),
-(10, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 13:11:08', '2021-09-06 13:11:08', '1fbb25f1-0ca8-4c8e-8a99-4aec6988242b'),
-(11, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 13:11:08', '2021-09-06 13:11:08', '92cb4f5b-48f0-4d7d-b24a-fb0df8b4494a'),
-(12, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:08:35', '2021-09-06 14:08:35', 'b420db3a-d945-491c-95f6-61b61af594a7'),
-(14, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:12:45', '2021-09-06 14:12:45', 'f5a77e34-8ad9-430c-9147-e45e9ce50461'),
-(16, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:12:51', '2021-09-06 14:12:51', '2aeecd10-38fa-4212-95c7-276e995d48b4'),
-(17, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:23:35', '2021-09-06 14:23:35', 'b0890ebf-e284-4305-8977-e3694be5c18d'),
-(18, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:35:54', '2021-09-06 14:35:54', '27e2ffb3-5f02-4903-aab1-81e951beb0db'),
-(19, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:36:00', '2021-09-06 14:36:00', '18571062-b5d3-4c8a-aedb-042dc0c60da0'),
-(20, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:37:12', '2021-09-06 14:37:12', '4ac7b73a-63bc-47bc-a2a5-01c059629e2f'),
-(21, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:38:08', '2021-09-06 14:38:08', '969046a0-433b-48f9-a6a6-8616166a39b6'),
-(22, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:19', '2021-09-08 10:06:50', 'f1755e33-6a2e-4788-b7ab-56d451d81415'),
-(23, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:19', '2021-09-06 14:39:19', '23112b2f-02a8-4163-811a-125ba338b43b'),
-(25, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:59', '2021-09-06 14:39:59', '639162c0-69b9-48c7-b507-862b0f57fcaa'),
-(26, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:40:13', '2021-09-06 14:40:13', '3e112fac-d13b-42ec-989b-4e714b37b7e6'),
-(27, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:40:32', '2021-09-06 14:40:32', '3f89b75f-05de-48cc-a88a-ec0dd9cc5d99'),
-(29, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 09:02:46', '2021-09-07 09:02:46', '94fbc613-366a-431a-9f76-fb145d1e0433'),
-(30, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:35', '2021-09-07 10:07:35', '8d8c5975-a63d-40c7-9a45-a41877a077d7'),
-(31, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:36', '2021-09-07 10:07:36', '7e82a7cc-e53c-4dc5-bd3a-79b3b502b522'),
-(32, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:40', '2021-09-07 10:07:40', '998d7955-a6d6-480d-a1c5-3dcad2f9c91e'),
-(33, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:40', '2021-09-07 10:07:40', 'cf68a94e-420d-42ba-a0c5-940510431c78'),
-(34, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:41', '2021-09-07 10:07:41', 'ddd18bb4-c115-4fc3-b7f1-d2b7a6029267'),
-(35, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:41', '2021-09-07 10:07:41', 'f9ed50c2-30d2-487a-95c4-a9bca4a0f766'),
-(37, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:08:51', '2021-09-07 10:08:51', '289e3431-e23a-4977-be18-b49105b1ac93'),
-(39, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:09:00', '2021-09-07 10:09:00', '74f2fc21-ca59-477f-a178-c805a102a935'),
-(41, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:09:06', '2021-09-07 10:09:06', '97eac275-29a6-40a7-9b32-13ce30444668'),
-(42, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:09:13', '2021-09-07 13:09:13', '8c3cce41-3623-4c57-8f45-41c9949f4818'),
-(90, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19', '82bacb03-8630-482a-919f-08ce53d54bef'),
-(96, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '177b8230-f454-4401-a055-6bea8b67df42'),
-(102, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:23:47', '2021-09-07 13:23:47', '3131140d-3279-4e84-8702-b165266ab7d7'),
-(105, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:42:02', '2021-09-07 13:42:02', '7fa2cfd8-767f-4c67-b441-8ae5065ba63e'),
-(111, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:44:37', '2021-09-07 13:44:37', '4e219f39-4f84-4887-b022-e016aa7a2da7'),
-(117, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:10:50', '2021-09-07 14:10:50', '201ff78e-fe20-4d9c-9b8c-e8382a6e8b7e'),
-(123, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:11:22', '2021-09-07 14:11:22', '7bc9c691-8996-4af0-a954-b31cfaea5648'),
-(129, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '823d4d64-f1eb-4bbf-bcf7-7d0be1f91802'),
-(135, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:32:34', '2021-09-07 14:32:34', 'f355afea-b10a-46dc-b9dd-31026ad6bfb1'),
-(141, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52', 'b17dc3fd-bd88-4dbd-9608-4030cd0e31d4'),
-(147, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36', '83f3e719-10d1-4a0c-92fd-cb3ba9808aaa'),
-(153, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '4b8555c4-25d8-4358-9220-1c74fec7ce7d'),
-(159, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '84dbc415-4c32-4a69-927f-8c8ef89ef520'),
-(165, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:57:31', '2021-09-07 14:57:31', 'a36b33af-1b28-4068-bd4b-f3f627a193fa'),
-(168, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-08 07:16:03', '2021-09-08 07:16:03', '742a2e22-85f3-4a22-bf13-a6ced5b12dd5'),
-(169, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-08 07:16:04', '2021-09-08 07:16:04', 'fc69c8a3-ba9b-43de-96c5-e5f69ff94adb'),
-(170, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 09:02:45', '2021-09-08 09:02:45', '9f904701-38f0-42e0-98e0-ff6c4761d309'),
-(171, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 09:02:58', '2021-09-08 09:02:58', '12757be9-a393-4cef-b014-cb6885d5c7f2'),
-(172, 4, NULL, 5, 1, '2021-09-08 09:03:00', NULL, NULL, '2021-09-08 09:03:03', '2021-09-08 09:03:03', '9a3755df-7a17-4320-a0d1-b18f139fbb53'),
-(173, 4, NULL, 5, 1, '2021-09-08 09:03:00', NULL, NULL, '2021-09-08 09:17:39', '2021-09-08 09:17:39', '1b9aadb6-00a4-4ff2-87f2-dbb65290fe31'),
-(175, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 09:23:36', '2021-09-08 09:23:36', '0734e3c5-a7c2-422c-aeb4-0ffde7cb7243'),
-(177, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 10:00:44', '2021-09-08 10:00:44', 'a1f253ab-2622-4bcb-b077-a311556670bc'),
-(179, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 10:02:20', '2021-09-08 10:02:20', '700c236b-4f29-4e5b-95c8-173f141b3774'),
-(181, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 10:02:49', '2021-09-08 10:02:49', 'd7d4b9ca-87fc-417d-8468-fe050448cc16'),
-(182, 3, NULL, 4, 1, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:06:21', '2021-09-08 10:06:21', '3e213a37-2e41-454c-89f3-22e6729c1123'),
-(183, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:06:50', '2021-09-08 10:06:50', '2d8407c1-5b78-4490-9704-47301f0783de'),
-(184, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:06:51', '2021-09-08 10:06:51', '93796a4e-f7ef-4a99-bb1b-0c83f9721449'),
-(186, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:07:03', '2021-09-08 10:07:03', '7998dc1f-4fe6-49b4-9876-343f6b6f24e0'),
-(187, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:12:10', '2021-09-08 10:12:10', '232f4230-b1ff-4ee6-a572-3effe806cdfd'),
-(188, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:14:18', '2021-09-08 10:14:18', '77368100-bb76-44ce-8a6e-9e7bd5f22512'),
-(213, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '8d86d84b-0932-4e65-8904-2e41450331e2'),
-(219, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '5f1f047b-58c4-4c39-8f01-d7ee096a4d82'),
-(222, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26', '31af6833-d591-44b9-ada4-b92caad0ea5d'),
-(228, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '7dd298e4-5cfb-4441-aab1-09fdae981e91'),
-(231, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'af6a21cb-ef82-4d2e-a9ad-07e80631b3b4'),
-(234, 4, NULL, 5, 1, '2021-09-08 09:03:00', NULL, NULL, '2021-09-09 11:45:10', '2021-09-09 11:45:10', '99e56d62-8c55-4394-bc13-c5224b34b317'),
-(236, 1, NULL, 1, 1, '2021-09-10 14:48:00', NULL, 0, '2021-09-10 14:48:48', '2021-09-10 14:48:48', '0093711d-f185-4910-9b75-fb9ee0b322e8'),
-(240, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-10 14:49:17', '2021-09-10 14:49:17', 'aa4402ab-c097-444e-b4bc-49251bdd5be1'),
-(241, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-10 14:49:24', '2021-09-10 14:49:24', '0ca5acf8-301c-4aad-809f-c9fdfd1cd397'),
-(285, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13', '85b900ea-3e49-4b30-88cb-07494267ef3b');
+INSERT INTO `entries` (`id`, `sectionId`, `parentId`, `typeId`, `authorId`, `postDate`, `expiryDate`, `deletedWithEntryType`, `dateCreated`, `dateUpdated`) VALUES
+(2, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 11:59:23', '2021-09-06 11:59:23'),
+(3, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 11:59:24', '2021-09-06 11:59:24'),
+(4, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 11:59:52', '2021-09-06 11:59:52'),
+(5, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 12:04:53', '2021-09-06 12:04:53'),
+(8, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 12:07:09', '2021-09-06 12:07:09'),
+(9, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-06 12:07:16', '2021-09-06 12:07:16'),
+(10, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 13:11:08', '2021-09-06 13:11:08'),
+(11, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 13:11:08', '2021-09-06 13:11:08'),
+(12, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:08:35', '2021-09-06 14:08:35'),
+(14, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:12:45', '2021-09-06 14:12:45'),
+(16, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:12:51', '2021-09-06 14:12:51'),
+(17, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:23:35', '2021-09-06 14:23:35'),
+(18, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:35:54', '2021-09-06 14:35:54'),
+(19, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:36:00', '2021-09-06 14:36:00'),
+(20, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:37:12', '2021-09-06 14:37:12'),
+(21, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-06 14:38:08', '2021-09-06 14:38:08'),
+(22, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:19', '2021-09-08 10:06:50'),
+(23, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:19', '2021-09-06 14:39:19'),
+(25, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:39:59', '2021-09-06 14:39:59'),
+(26, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:40:13', '2021-09-06 14:40:13'),
+(27, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-06 14:40:32', '2021-09-06 14:40:32'),
+(29, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 09:02:46', '2021-09-07 09:02:46'),
+(30, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:35', '2021-09-07 10:07:35'),
+(31, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:36', '2021-09-07 10:07:36'),
+(32, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:40', '2021-09-07 10:07:40'),
+(33, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:40', '2021-09-07 10:07:40'),
+(34, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:41', '2021-09-07 10:07:41'),
+(35, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:07:41', '2021-09-07 10:07:41'),
+(37, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:08:51', '2021-09-07 10:08:51'),
+(39, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:09:00', '2021-09-07 10:09:00'),
+(41, 1, NULL, 1, 1, '2021-09-06 11:59:00', NULL, NULL, '2021-09-07 10:09:06', '2021-09-07 10:09:06'),
+(42, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:09:13', '2021-09-07 13:09:13'),
+(90, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19'),
+(96, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45'),
+(102, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:23:47', '2021-09-07 13:23:47'),
+(105, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:42:02', '2021-09-07 13:42:02'),
+(111, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 13:44:37', '2021-09-07 13:44:37'),
+(117, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:10:50', '2021-09-07 14:10:50'),
+(123, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:11:22', '2021-09-07 14:11:22'),
+(129, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:32:19', '2021-09-07 14:32:19'),
+(135, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:32:34', '2021-09-07 14:32:34'),
+(141, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52'),
+(147, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36'),
+(153, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15'),
+(159, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:53:46', '2021-09-07 14:53:46'),
+(165, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-07 14:57:31', '2021-09-07 14:57:31'),
+(168, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-08 07:16:03', '2021-09-08 07:16:03'),
+(169, 2, NULL, 3, NULL, '2021-09-06 13:11:00', NULL, NULL, '2021-09-08 07:16:04', '2021-09-08 07:16:04'),
+(170, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 09:02:45', '2021-09-08 09:02:45'),
+(171, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 09:02:58', '2021-09-08 09:02:58'),
+(172, 4, NULL, 5, 1, '2021-09-08 09:03:00', NULL, NULL, '2021-09-08 09:03:03', '2021-09-08 09:03:03'),
+(173, 4, NULL, 5, 1, '2021-09-08 09:03:00', NULL, NULL, '2021-09-08 09:17:39', '2021-09-08 09:17:39'),
+(175, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 09:23:36', '2021-09-08 09:23:36'),
+(177, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 10:00:44', '2021-09-08 10:00:44'),
+(179, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 10:02:20', '2021-09-08 10:02:20'),
+(181, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 10:02:49', '2021-09-08 10:02:49'),
+(182, 3, NULL, 4, 1, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:06:21', '2021-09-08 10:06:21'),
+(183, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:06:50', '2021-09-08 10:06:50'),
+(184, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:06:51', '2021-09-08 10:06:51'),
+(186, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:07:03', '2021-09-08 10:07:03'),
+(187, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:12:10', '2021-09-08 10:12:10'),
+(188, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-08 10:14:18', '2021-09-08 10:14:18'),
+(213, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:53:31', '2021-09-08 14:53:31'),
+(219, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55'),
+(222, 1, NULL, 1, 1, '2021-09-07 13:09:00', NULL, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26'),
+(228, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53'),
+(231, 4, NULL, 5, 1, '2021-09-08 09:02:00', NULL, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14'),
+(234, 4, NULL, 5, 1, '2021-09-08 09:03:00', NULL, NULL, '2021-09-09 11:45:10', '2021-09-09 11:45:10'),
+(236, 1, NULL, 1, 1, '2021-09-10 14:48:00', NULL, 0, '2021-09-10 14:48:48', '2021-09-10 14:48:48'),
+(240, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-10 14:49:17', '2021-09-10 14:49:17'),
+(241, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-10 14:49:24', '2021-09-10 14:49:24'),
+(285, 3, NULL, 4, NULL, '2021-09-06 14:39:00', NULL, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13');
 
 -- --------------------------------------------------------
 
@@ -1180,19 +1146,11 @@ CREATE TABLE `fieldlayoutfields` (
 --
 
 INSERT INTO `fieldlayoutfields` (`id`, `layoutId`, `tabId`, `fieldId`, `required`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(30, 2, 24, 3, 1, 0, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '0b936414-fc9a-4ebe-8855-14baa1255240'),
-(31, 2, 24, 1, 1, 2, '2021-09-07 13:38:51', '2021-09-07 13:38:51', 'fcadbf85-100a-4dd2-8a26-8a53cbb97e25'),
-(32, 2, 24, 4, 0, 3, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '28b41f65-abf7-44f4-8de4-53d1cb7ea398'),
-(33, 2, 24, 2, 0, 4, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '87986b27-3b01-41df-8f40-33cb9d980fdc'),
-(34, 2, 25, 9, 0, 0, '2021-09-07 13:38:51', '2021-09-07 13:38:51', 'aab305e5-f6af-478f-b4ed-9c683b816f36'),
 (39, 6, 30, 10, 0, 0, '2021-09-07 14:56:34', '2021-09-07 14:56:34', 'c7be63b1-eeda-4880-80fb-a05abd5968d5'),
 (40, 7, 31, 11, 0, 0, '2021-09-07 14:56:35', '2021-09-07 14:56:35', '66da2176-bc8b-43a1-9591-5bec92f0e07a'),
-(43, 8, 36, 12, 0, 1, '2021-09-08 14:20:11', '2021-09-08 14:20:11', '8acc8f49-8265-48c1-96a1-f94d9da64ff8'),
 (47, 9, 39, 13, 0, 0, '2021-09-08 14:58:15', '2021-09-08 14:58:15', '30c678ae-32ab-4e43-8d4d-14f075d9ec73'),
 (48, 10, 40, 14, 0, 0, '2021-09-08 14:58:16', '2021-09-08 14:58:16', '1f0a60bc-ea05-4d40-a5d3-98a349aacf00'),
 (49, 10, 40, 15, 0, 1, '2021-09-08 14:58:16', '2021-09-08 14:58:16', '178a121f-5711-4e6d-b5dc-a4b5fd32c8fd'),
-(53, 5, 43, 8, 0, 1, '2021-09-10 14:49:24', '2021-09-10 14:49:24', '35a507f9-10a4-4ded-9445-8bec04374f82'),
-(54, 5, 43, 16, 0, 2, '2021-09-10 14:49:24', '2021-09-10 14:49:24', 'c0f9a1d7-2bff-4745-a8db-429d972dae2a'),
 (57, 11, 46, 17, 0, 0, '2021-09-10 14:51:57', '2021-09-10 14:51:57', '2a66e665-b567-4c16-a0ae-c5cd3018f401'),
 (58, 12, 47, 18, 0, 0, '2021-09-10 14:51:57', '2021-09-10 14:51:57', 'ab040c62-c316-467b-8592-30ad7090124e'),
 (59, 13, 48, 19, 0, 0, '2021-09-10 14:51:57', '2021-09-10 14:51:57', '251f28d5-0b33-45dd-ad5b-830288010740');
@@ -1241,6 +1199,7 @@ CREATE TABLE `fieldlayouttabs` (
   `id` int(11) NOT NULL,
   `layoutId` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `settings` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `elements` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `sortOrder` smallint(6) UNSIGNED DEFAULT NULL,
   `dateCreated` datetime NOT NULL,
@@ -1252,21 +1211,21 @@ CREATE TABLE `fieldlayouttabs` (
 -- Gegevens worden geëxporteerd voor tabel `fieldlayouttabs`
 --
 
-INSERT INTO `fieldlayouttabs` (`id`, `layoutId`, `name`, `elements`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(4, 3, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-06 11:32:49', '2021-09-06 11:32:49', '6a5f4f3c-d390-4690-955c-d942292f59fc'),
-(8, 1, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\AssetTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-06 12:05:03', '2021-09-06 12:05:03', '3085166e-072d-4523-ad4b-b7045bfb8e55'),
-(24, 2, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":\"\",\"instructions\":\"\",\"tip\":null,\"warning\":null,\"required\":\"1\",\"width\":100,\"fieldUid\":\"e6e40127-efc5-4abd-b5ec-455c1a80fa0c\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":\"\",\"instructions\":\"\",\"tip\":null,\"warning\":null,\"required\":\"1\",\"width\":100,\"fieldUid\":\"fdd41422-2f3c-4581-af2d-b4d3a271e183\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"7382616d-769d-4f84-8b59-7245cd08ef20\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e3a74156-6e99-4310-8b92-cc9c1d33e616\"}]', 1, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '54febf38-756f-463e-97f1-ba81e990f243'),
-(25, 2, 'matrixinhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"e3c14bdc-b578-4588-bce9-7dc0f8553072\"}]', 2, '2021-09-07 13:38:51', '2021-09-07 13:38:51', '31c398d9-1a81-4f36-a732-4a92a201a5df'),
-(30, 6, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"3b175535-87ad-4cb7-90d4-5e06d63658d6\"}]', 1, '2021-09-07 14:56:34', '2021-09-07 14:56:34', 'fdd8bb6b-62df-489f-b173-37a4f6d85102'),
-(31, 7, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"f45f3568-3d9c-4779-b17c-26458592de2f\"}]', 1, '2021-09-07 14:56:35', '2021-09-07 14:56:35', '3de67fab-dac3-4252-9ad3-a4f4cd7205ed'),
-(32, 4, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100}]', 1, '2021-09-08 07:16:03', '2021-09-08 07:16:03', '277eb95c-c203-466a-bfa1-40508c333bbc'),
-(36, 8, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"639db3fc-cfd4-4523-a2e8-2ac5effb3522\"}]', 1, '2021-09-08 14:20:11', '2021-09-08 14:20:11', 'be053905-ec62-446b-8a9c-466b32b3f7bd'),
-(39, 9, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"6fb6a84c-ac77-4355-b483-06f78d791539\"}]', 1, '2021-09-08 14:58:15', '2021-09-08 14:58:15', 'ef504c69-4cfc-49e7-b400-3553f3c8d747'),
-(40, 10, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"185857a1-7047-4adc-84d0-a8d679523c2d\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"1bedf931-c16d-4606-a377-f778e799f5c0\"}]', 1, '2021-09-08 14:58:16', '2021-09-08 14:58:16', 'fd276aba-ca9e-44bc-b56c-cb441e37b4d1'),
-(43, 5, 'Inhoud', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"eac5e9e9-55ae-47bd-8d5c-4b674f1ff355\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"09d31fa1-984a-400f-85b2-8845a04ac918\"}]', 1, '2021-09-10 14:49:24', '2021-09-10 14:49:24', 'b1120397-22f9-4b92-ad9c-978f75baaa4b'),
-(46, 11, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"48e223bd-f8d0-41fb-acf1-338cc6ebfcae\"}]', 1, '2021-09-10 14:51:57', '2021-09-10 14:51:57', '56d2b3ef-005f-4d48-80ec-b9c7a6d250d5'),
-(47, 12, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"88431a62-ee0e-4589-8f9b-79e34f647e72\"}]', 1, '2021-09-10 14:51:57', '2021-09-10 14:51:57', 'a302c1ac-0fcf-4daa-93bc-616c9425f4c3'),
-(48, 13, 'Content', '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"03e5d8de-eb19-4fee-be03-5b2baf5a22bc\"}]', 1, '2021-09-10 14:51:57', '2021-09-10 14:51:57', '0bce8044-0e07-4465-89ca-fd671e9f77ab');
+INSERT INTO `fieldlayouttabs` (`id`, `layoutId`, `name`, `settings`, `elements`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`) VALUES
+(4, 3, 'Inhoud', NULL, '[{\"type\":\"craft\\\\fieldlayoutelements\\\\EntryTitleField\",\"autocomplete\":false,\"class\":null,\"size\":null,\"name\":null,\"autocorrect\":true,\"autocapitalize\":true,\"disabled\":false,\"readonly\":false,\"title\":null,\"placeholder\":null,\"step\":null,\"min\":null,\"max\":null,\"requirable\":false,\"id\":null,\"containerAttributes\":[],\"inputContainerAttributes\":[],\"labelAttributes\":[],\"orientation\":null,\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"width\":100,\"uid\":\"802389b9-7eea-4e8b-b707-9c35adcb230a\"}]', 1, '2021-09-06 11:32:49', '2022-10-18 14:02:35', '6a5f4f3c-d390-4690-955c-d942292f59fc'),
+(30, 6, 'Content', NULL, '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"3b175535-87ad-4cb7-90d4-5e06d63658d6\",\"uid\":\"db879237-88cb-45c1-890c-d01cb9adf0dc\"}]', 1, '2021-09-07 14:56:34', '2022-10-18 14:02:35', 'fdd8bb6b-62df-489f-b173-37a4f6d85102'),
+(31, 7, 'Content', NULL, '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"f45f3568-3d9c-4779-b17c-26458592de2f\",\"uid\":\"0bdaedb9-32db-4009-967d-ada11ef6174f\"}]', 1, '2021-09-07 14:56:35', '2022-10-18 14:02:35', '3de67fab-dac3-4252-9ad3-a4f4cd7205ed'),
+(39, 9, 'Content', NULL, '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"6fb6a84c-ac77-4355-b483-06f78d791539\",\"uid\":\"ddfcb557-8a58-4f41-9d87-738c34e3f087\"}]', 1, '2021-09-08 14:58:15', '2022-10-18 14:02:35', 'ef504c69-4cfc-49e7-b400-3553f3c8d747'),
+(40, 10, 'Content', NULL, '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"185857a1-7047-4adc-84d0-a8d679523c2d\",\"uid\":\"606ba723-3f44-4b00-a70d-65b95944afe7\"},{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"1bedf931-c16d-4606-a377-f778e799f5c0\",\"uid\":\"70201960-12a5-403b-b1a2-3d67b80214a0\"}]', 1, '2021-09-08 14:58:16', '2022-10-18 14:02:35', 'fd276aba-ca9e-44bc-b56c-cb441e37b4d1'),
+(46, 11, 'Content', NULL, '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"48e223bd-f8d0-41fb-acf1-338cc6ebfcae\",\"uid\":\"c465bde4-153d-4b17-bb3d-ca2edacbeb32\"}]', 1, '2021-09-10 14:51:57', '2022-10-18 14:02:35', '56d2b3ef-005f-4d48-80ec-b9c7a6d250d5'),
+(47, 12, 'Content', NULL, '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"88431a62-ee0e-4589-8f9b-79e34f647e72\",\"uid\":\"ef704033-2968-4403-ae6d-35afccdb055c\"}]', 1, '2021-09-10 14:51:57', '2022-10-18 14:02:35', 'a302c1ac-0fcf-4daa-93bc-616c9425f4c3'),
+(48, 13, 'Content', NULL, '[{\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"label\":null,\"instructions\":null,\"tip\":null,\"warning\":null,\"required\":false,\"width\":100,\"fieldUid\":\"03e5d8de-eb19-4fee-be03-5b2baf5a22bc\",\"uid\":\"2a54282d-116c-406a-95a9-0b327ed0c5a9\"}]', 1, '2021-09-10 14:51:57', '2022-10-18 14:02:35', '0bce8044-0e07-4465-89ca-fd671e9f77ab'),
+(49, 1, 'Inhoud', '{\"userCondition\":null,\"elementCondition\":null}', '[{\"autocapitalize\":true,\"autocomplete\":false,\"autocorrect\":true,\"class\":null,\"disabled\":false,\"id\":null,\"instructions\":null,\"label\":null,\"max\":null,\"min\":null,\"name\":null,\"orientation\":null,\"placeholder\":null,\"readonly\":false,\"requirable\":false,\"size\":null,\"step\":null,\"tip\":null,\"title\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\assets\\\\AssetTitleField\",\"warning\":null,\"width\":100,\"uid\":\"16ecd92d-3fb4-4c23-bd0e-b29540033c75\"}]', 1, '2022-10-18 14:02:35', '2022-10-18 14:02:35', 'f3ff415e-97e7-493e-96ac-8f00b9d65fb6'),
+(50, 2, 'Inhoud', '{\"userCondition\":null,\"elementCondition\":null}', '[{\"fieldUid\":\"e6e40127-efc5-4abd-b5ec-455c1a80fa0c\",\"instructions\":\"\",\"label\":\"\",\"required\":\"1\",\"tip\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"warning\":null,\"width\":100,\"uid\":\"8f2d33d0-60b4-4fcb-a5de-7e869ad68c01\"},{\"autocapitalize\":true,\"autocomplete\":false,\"autocorrect\":true,\"class\":null,\"disabled\":false,\"id\":null,\"instructions\":null,\"label\":null,\"max\":null,\"min\":null,\"name\":null,\"orientation\":null,\"placeholder\":null,\"readonly\":false,\"requirable\":false,\"size\":null,\"step\":null,\"tip\":null,\"title\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\entries\\\\EntryTitleField\",\"warning\":null,\"width\":100,\"uid\":\"50fab910-69ae-4b17-b620-71b4ad24e608\"},{\"fieldUid\":\"fdd41422-2f3c-4581-af2d-b4d3a271e183\",\"instructions\":\"\",\"label\":\"\",\"required\":\"1\",\"tip\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"warning\":null,\"width\":100,\"uid\":\"0506b970-b05e-4e90-9572-d9b0feacf6ca\"},{\"fieldUid\":\"7382616d-769d-4f84-8b59-7245cd08ef20\",\"instructions\":null,\"label\":null,\"required\":false,\"tip\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"warning\":null,\"width\":100,\"uid\":\"15a1a3dd-9171-43d7-9d75-aa3611a5ce51\"},{\"fieldUid\":\"e3a74156-6e99-4310-8b92-cc9c1d33e616\",\"instructions\":null,\"label\":null,\"required\":false,\"tip\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"warning\":null,\"width\":100,\"uid\":\"d4275f4b-fcd4-44dd-96f7-50a0ed14a2ef\"}]', 1, '2022-10-18 14:02:35', '2022-10-18 14:02:35', '3c29cf20-77fc-43e6-a344-38a1b40ff7b0'),
+(51, 2, 'matrixinhoud', '{\"userCondition\":null,\"elementCondition\":null}', '[{\"fieldUid\":\"e3c14bdc-b578-4588-bce9-7dc0f8553072\",\"instructions\":null,\"label\":null,\"required\":false,\"tip\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"warning\":null,\"width\":100,\"uid\":\"ecdfd31c-bf24-4336-9ce5-2f86f1e6b859\"}]', 2, '2022-10-18 14:02:35', '2022-10-18 14:02:35', 'e83d8f85-9d04-403b-a3b5-7d5376ba7725'),
+(52, 8, 'Inhoud', '{\"userCondition\":null,\"elementCondition\":null}', '[{\"autocapitalize\":true,\"autocomplete\":false,\"autocorrect\":true,\"class\":null,\"disabled\":false,\"id\":null,\"instructions\":null,\"label\":null,\"max\":null,\"min\":null,\"name\":null,\"orientation\":null,\"placeholder\":null,\"readonly\":false,\"requirable\":false,\"size\":null,\"step\":null,\"tip\":null,\"title\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\entries\\\\EntryTitleField\",\"warning\":null,\"width\":100,\"uid\":\"1eb384f3-f351-46bd-b251-d319a812d52f\"},{\"fieldUid\":\"639db3fc-cfd4-4523-a2e8-2ac5effb3522\",\"instructions\":null,\"label\":null,\"required\":false,\"tip\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"warning\":null,\"width\":100,\"uid\":\"5948825d-a87e-4b27-a796-8dc5483b9897\"}]', 1, '2022-10-18 14:02:35', '2022-10-18 14:02:35', '275e042a-d15b-40fc-9fd0-ced3c883c5cd'),
+(53, 5, 'Inhoud', '{\"userCondition\":null,\"elementCondition\":null}', '[{\"autocapitalize\":true,\"autocomplete\":false,\"autocorrect\":true,\"class\":null,\"disabled\":false,\"id\":null,\"instructions\":null,\"label\":null,\"max\":null,\"min\":null,\"name\":null,\"orientation\":null,\"placeholder\":null,\"readonly\":false,\"requirable\":false,\"size\":null,\"step\":null,\"tip\":null,\"title\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\entries\\\\EntryTitleField\",\"warning\":null,\"width\":100,\"uid\":\"ccb0fcb9-4efe-4449-ad64-ea8bd9ef6507\"},{\"fieldUid\":\"eac5e9e9-55ae-47bd-8d5c-4b674f1ff355\",\"instructions\":null,\"label\":null,\"required\":false,\"tip\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"warning\":null,\"width\":100,\"uid\":\"9bf58e6e-fdac-4da2-93b4-61c5c80ca5d5\"},{\"fieldUid\":\"09d31fa1-984a-400f-85b2-8845a04ac918\",\"instructions\":null,\"label\":null,\"required\":false,\"tip\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\CustomField\",\"warning\":null,\"width\":100,\"uid\":\"b4e9fe8f-d926-4923-b8f8-611dd251922a\"}]', 1, '2022-10-18 14:02:35', '2022-10-18 14:02:35', '52036dfb-686a-4e2d-bb39-00b6601472e5'),
+(54, 4, 'Inhoud', '{\"userCondition\":null,\"elementCondition\":null}', '[{\"autocapitalize\":true,\"autocomplete\":false,\"autocorrect\":true,\"class\":null,\"disabled\":false,\"id\":null,\"instructions\":null,\"label\":null,\"max\":null,\"min\":null,\"name\":null,\"orientation\":null,\"placeholder\":null,\"readonly\":false,\"requirable\":false,\"size\":null,\"step\":null,\"tip\":null,\"title\":null,\"type\":\"craft\\\\fieldlayoutelements\\\\entries\\\\EntryTitleField\",\"warning\":null,\"width\":100,\"uid\":\"23062f4a-e57c-47ff-9fd5-5c70b429a526\"}]', 1, '2022-10-18 14:02:35', '2022-10-18 14:02:35', '8b65a388-f86d-466b-9e5d-53fb15591c38');
 
 -- --------------------------------------------------------
 
@@ -1383,6 +1342,65 @@ INSERT INTO `gqltokens` (`id`, `name`, `accessToken`, `enabled`, `expiryDate`, `
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `imagetransformindex`
+--
+
+CREATE TABLE `imagetransformindex` (
+  `id` int(11) NOT NULL,
+  `assetId` int(11) NOT NULL,
+  `transformer` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `filename` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `format` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `transformString` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `fileExists` tinyint(1) NOT NULL DEFAULT 0,
+  `inProgress` tinyint(1) NOT NULL DEFAULT 0,
+  `error` tinyint(1) NOT NULL DEFAULT 0,
+  `dateIndexed` datetime DEFAULT NULL,
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL,
+  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `imagetransformindex`
+--
+
+INSERT INTO `imagetransformindex` (`id`, `assetId`, `transformer`, `filename`, `format`, `transformString`, `fileExists`, `inProgress`, `error`, `dateIndexed`, `dateCreated`, `dateUpdated`, `uid`) VALUES
+(1, 6, NULL, 'thumnail.jpeg', NULL, '_100x100_crop_center-center_75_none', 1, 0, 0, '2021-09-06 12:59:32', '2021-09-06 12:59:32', '2021-09-06 12:59:32', '81e8f01c-df0a-4c9d-8fab-41c4b04246c7'),
+(2, 6, NULL, 'thumnail.jpeg', NULL, '_50x50_crop_center-center_75_none', 1, 0, 0, '2021-09-06 12:59:51', '2021-09-06 12:59:51', '2021-09-06 12:59:51', '13aaa406-9ac9-44c4-bcb9-6f6e118a2c51'),
+(3, 6, 'craft\\imagetransforms\\ImageTransformer', 'thumnail.jpeg', NULL, '_400x300_crop_center-center_75_none', 0, 0, 1, '2021-09-06 13:01:08', '2021-09-06 13:01:08', '2022-10-19 18:46:50', '282b0de3-c03b-4780-86b6-0715ca5c765d'),
+(4, 6, NULL, 'thumnail.jpeg', NULL, '_200x100_crop_center-center_75_none', 1, 0, 0, '2021-09-06 13:03:18', '2021-09-06 13:03:18', '2021-09-06 13:03:18', 'fbed757a-6a35-4779-9573-67999bca09f6'),
+(5, 6, NULL, 'thumnail.jpeg', NULL, '_200x200_crop_center-center_75_none', 1, 0, 0, '2021-09-06 13:03:23', '2021-09-06 13:03:23', '2021-09-06 13:03:24', '3e086016-8943-48e0-9680-28ea0211c3bf'),
+(6, 6, NULL, 'thumnail.jpeg', NULL, '_300x200_crop_center-center_75_none', 1, 0, 0, '2021-09-06 13:03:28', '2021-09-06 13:03:28', '2021-09-06 13:03:29', '47ee692b-2e4b-46a3-a4df-d577ddbc79c8'),
+(7, 6, NULL, 'thumnail.jpeg', NULL, '_400x400_crop_center-center_75_none', 1, 0, 0, '2021-09-06 13:03:35', '2021-09-06 13:03:35', '2021-09-06 13:03:36', '4dc4126c-7ed6-42a2-beb4-a28dde8eab57'),
+(8, 89, 'craft\\imagetransforms\\ImageTransformer', 'sddefault.jpeg', NULL, '_400x300_crop_center-center_75_none', 0, 0, 1, '2021-09-07 13:22:04', '2021-09-07 13:22:04', '2022-10-19 18:46:50', '2ace41b9-1f6d-4497-8d28-7ff3fd7827b1');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `imagetransforms`
+--
+
+CREATE TABLE `imagetransforms` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `handle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `mode` enum('stretch','fit','crop') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'crop',
+  `position` enum('top-left','top-center','top-right','center-left','center-center','center-right','bottom-left','bottom-center','bottom-right') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'center-center',
+  `width` int(11) UNSIGNED DEFAULT NULL,
+  `height` int(11) UNSIGNED DEFAULT NULL,
+  `format` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `quality` int(11) DEFAULT NULL,
+  `interlace` enum('none','line','plane','partition') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
+  `parameterChangeTime` datetime DEFAULT NULL,
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL,
+  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `info`
 --
 
@@ -1403,7 +1421,7 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `version`, `schemaVersion`, `maintenance`, `configVersion`, `fieldVersion`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, '3.7.56', '3.7.33', 0, 'gzorseqrksof', '3@tonftphyve', '2021-09-06 10:09:22', '2022-10-18 12:46:52', 'bd374219-4f30-4743-b1dc-06c299bde1de');
+(1, '4.2.7', '4.0.0.9', 0, 'saugfvygfowi', '3@tonftphyve', '2021-09-06 10:09:22', '2022-10-18 14:02:36', 'bd374219-4f30-4743-b1dc-06c299bde1de');
 
 -- --------------------------------------------------------
 
@@ -1413,117 +1431,229 @@ INSERT INTO `info` (`id`, `version`, `schemaVersion`, `maintenance`, `configVers
 
 CREATE TABLE `matrixblocks` (
   `id` int(11) NOT NULL,
-  `ownerId` int(11) NOT NULL,
+  `primaryOwnerId` int(11) NOT NULL,
   `fieldId` int(11) NOT NULL,
   `typeId` int(11) NOT NULL,
-  `sortOrder` smallint(6) UNSIGNED DEFAULT NULL,
   `deletedWithOwner` tinyint(1) DEFAULT NULL,
   `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+  `dateUpdated` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `matrixblocks`
 --
 
-INSERT INTO `matrixblocks` (`id`, `ownerId`, `fieldId`, `typeId`, `sortOrder`, `deletedWithOwner`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(43, 42, 9, 1, 1, 0, '2021-09-07 13:09:16', '2021-09-07 13:09:16', '6f5447ca-3f5e-46bc-ba01-0967b43f4df2'),
-(44, 42, 9, 1, 1, 0, '2021-09-07 13:09:43', '2021-09-07 13:09:43', '27e3580c-071e-4d9f-a5e4-54220f08e70f'),
-(45, 42, 9, 1, 1, 0, '2021-09-07 13:09:45', '2021-09-07 13:09:45', 'c4b50a34-6d78-4132-b68e-ebddfb477ce4'),
-(46, 42, 9, 1, 1, 0, '2021-09-07 13:09:49', '2021-09-07 13:09:49', '7a39d788-ba34-4409-81cc-0b6b7f906400'),
-(47, 42, 9, 1, 1, 0, '2021-09-07 13:09:55', '2021-09-07 13:09:55', '860ca5e4-9bf2-45cc-874d-80bf50b254d2'),
-(48, 42, 9, 1, 1, 0, '2021-09-07 13:09:59', '2021-09-07 13:09:59', 'e6f3d8e1-9d94-4f17-8a8e-4be98f163f58'),
-(49, 42, 9, 1, 1, 0, '2021-09-07 13:10:10', '2021-09-07 13:10:10', '78bf5db8-9f36-4fad-b596-1d6c4d74be28'),
-(50, 42, 9, 1, 1, 0, '2021-09-07 13:10:13', '2021-09-07 13:10:13', '602c6a09-900a-4709-9cb5-c13d55cc382b'),
-(51, 42, 9, 1, 1, 0, '2021-09-07 13:10:14', '2021-09-07 13:10:14', 'e62ebeb6-1b69-4640-83cf-c841d2dfbf70'),
-(52, 42, 9, 1, 1, 0, '2021-09-07 13:10:16', '2021-09-07 13:10:16', 'bbf458a0-2d24-4b8d-88e7-c82afda36ea7'),
-(53, 42, 9, 1, 1, 0, '2021-09-07 13:10:44', '2021-09-07 13:10:44', 'cda6d634-2f73-4d1c-9442-6266b63d8c42'),
-(54, 42, 9, 1, 1, 0, '2021-09-07 13:11:31', '2021-09-07 13:11:31', '509b87fd-3ca2-44b8-b10f-53644fd08f7b'),
-(55, 42, 9, 1, 1, 0, '2021-09-07 13:11:41', '2021-09-07 13:11:41', 'e970c1c6-dbef-4d9b-a003-40e4fc2b6935'),
-(56, 42, 9, 1, 1, 0, '2021-09-07 13:11:44', '2021-09-07 13:11:44', 'c37a90d3-a6c2-4d3d-94e4-e41894b83c37'),
-(57, 42, 9, 1, 1, 0, '2021-09-07 13:11:59', '2021-09-07 13:11:59', 'e48b07a1-945e-47a7-af94-994e1a7e32e4'),
-(58, 42, 9, 1, 1, 0, '2021-09-07 13:12:11', '2021-09-07 13:12:11', '5e769cca-dfc1-477f-b134-317416e13581'),
-(59, 42, 9, 1, 1, 0, '2021-09-07 13:12:11', '2021-09-07 13:12:11', '3d9d7a44-c935-4f8b-b996-e27c9427b6d1'),
-(60, 42, 9, 1, 1, 0, '2021-09-07 13:12:12', '2021-09-07 13:12:12', 'e9886cbc-a0ae-44f3-91a1-18e21b28c8b1'),
-(61, 42, 9, 1, 1, 0, '2021-09-07 13:12:12', '2021-09-07 13:12:12', '750d18db-959a-462e-ae1b-33d1528a8988'),
-(62, 42, 9, 1, 1, 0, '2021-09-07 13:12:16', '2021-09-07 13:12:16', 'afc017c9-3e24-4d34-91b3-8778fa32d6a6'),
-(63, 42, 9, 1, 1, 0, '2021-09-07 13:12:26', '2021-09-07 13:12:26', '92815c8f-51e6-457e-8ad9-9f90279ef344'),
-(64, 42, 9, 1, 1, 0, '2021-09-07 13:12:27', '2021-09-07 13:12:27', '19a4d385-ad20-4be4-8198-d8cc33c5a6ba'),
-(65, 42, 9, 1, 1, 0, '2021-09-07 13:12:34', '2021-09-07 13:12:34', '371842e0-6d1f-4f12-ac6e-cec2730b5671'),
-(66, 42, 9, 1, 1, 0, '2021-09-07 13:12:36', '2021-09-07 13:12:36', 'aed725af-3e1f-4a2b-a4f6-26f09c0f62ec'),
-(67, 42, 9, 1, 1, 0, '2021-09-07 13:12:39', '2021-09-07 13:12:39', 'e8c845f0-80ec-41f3-9c13-942ccd3e5313'),
-(68, 42, 9, 1, 1, 0, '2021-09-07 13:12:43', '2021-09-07 13:12:43', 'fe21c5bd-c1ad-41bf-bb39-f4cdb93ac5cb'),
-(69, 42, 9, 1, 1, 0, '2021-09-07 13:12:43', '2021-09-07 13:12:43', 'e8eb2a2e-9f89-4f3b-9a72-09f3734a61ba'),
-(70, 42, 9, 1, 1, 0, '2021-09-07 13:13:00', '2021-09-07 13:13:00', '9bc8a3fa-00c2-451f-b966-5215ffd89292'),
-(71, 42, 9, 1, 1, 0, '2021-09-07 13:13:07', '2021-09-07 13:13:07', '836f363b-7cca-4c37-8069-49021f6237e0'),
-(72, 42, 9, 1, 1, 0, '2021-09-07 13:13:09', '2021-09-07 13:13:09', 'aef3d724-84a4-4e17-b16c-aeeabb13b8cc'),
-(73, 42, 9, 1, 1, 0, '2021-09-07 13:13:20', '2021-09-07 13:13:20', 'b33a22b8-edec-4b83-9ccc-4da3e28900eb'),
-(74, 42, 9, 1, 1, 0, '2021-09-07 13:13:21', '2021-09-07 13:13:21', '50942270-50d6-427e-89cc-d289120da3ce'),
-(75, 42, 9, 1, 1, 0, '2021-09-07 13:13:23', '2021-09-07 13:13:23', 'ae8d395f-afb1-4f95-b611-b4c4542bf335'),
-(76, 42, 9, 1, 1, 0, '2021-09-07 13:13:24', '2021-09-07 13:13:24', 'a12832cb-6c87-42b4-b6ee-e3a1466eaf79'),
-(77, 42, 9, 1, 1, 0, '2021-09-07 13:13:35', '2021-09-07 13:13:35', '3996248a-99cc-41cd-bd95-09eb165dce91'),
-(78, 42, 9, 1, 1, 0, '2021-09-07 13:13:40', '2021-09-07 13:13:40', '2018dfcb-b446-43b6-afde-23312a71ba1a'),
-(79, 42, 9, 1, 1, 0, '2021-09-07 13:13:41', '2021-09-07 13:13:41', '64613038-a78e-4f75-b98b-39b8f9f04398'),
-(80, 42, 9, 1, 1, 0, '2021-09-07 13:14:02', '2021-09-07 13:14:02', '147b558b-e195-49f1-85bc-0ee1a984b68a'),
-(81, 42, 9, 1, 1, 0, '2021-09-07 13:14:04', '2021-09-07 13:14:04', 'a1aa71f3-955b-45a3-b2b2-d12476f2aae5'),
-(82, 42, 9, 1, 1, 0, '2021-09-07 13:14:15', '2021-09-07 13:14:15', '2d49ccd3-795c-4f27-af14-87bedcf42b38'),
-(83, 42, 9, 1, 1, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36', 'e5982866-8770-4f28-88c4-1ac653d4625e'),
-(84, 42, 9, 2, 2, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36', '98d6e848-db17-4494-868c-03db201d6038'),
-(85, 42, 9, 2, 1, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', 'db28867f-d98e-4553-8146-183d96465684'),
-(86, 42, 9, 1, 2, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41', '02f45d29-af16-4574-a302-5eb2dd488d50'),
-(87, 42, 9, 2, 1, NULL, '2021-09-07 13:14:55', '2021-09-07 14:53:45', '76d613eb-d903-42b0-8ca7-f1cf3d0997a4'),
-(88, 42, 9, 1, 2, NULL, '2021-09-07 13:14:55', '2021-09-07 14:53:46', '225c71ef-97e8-44c9-b62e-15634815275c'),
-(91, 90, 9, 2, 1, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19', 'f1f3a64f-f359-4bce-8716-ec0375b69217'),
-(92, 90, 9, 1, 2, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19', '71f2ceea-c822-4eda-9aef-1ebeedd40612'),
-(97, 96, 9, 2, 1, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '8b9fe901-c270-41d6-897a-73453a3a7f0b'),
-(98, 96, 9, 1, 2, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45', '4797d98d-3ce8-4c6b-bea3-36a04a00bccd'),
-(103, 102, 9, 2, 1, NULL, '2021-09-07 13:23:47', '2021-09-07 13:23:47', '696a379e-dafa-4391-8f5e-e660fd17694b'),
-(104, 102, 9, 1, 2, NULL, '2021-09-07 13:23:47', '2021-09-07 13:23:47', 'ff6a9b6f-e3e0-45ff-8df1-5d55bba9e04d'),
-(106, 105, 9, 2, 1, NULL, '2021-09-07 13:42:02', '2021-09-07 13:42:02', '41763083-842d-41de-ac6e-c7e0244f99c3'),
-(107, 105, 9, 1, 2, NULL, '2021-09-07 13:42:02', '2021-09-07 13:42:02', '0cd3fd41-46d6-4492-b0bf-10c69c92b8c2'),
-(112, 111, 9, 2, 1, NULL, '2021-09-07 13:44:37', '2021-09-07 13:44:37', 'a88f8019-bc4a-4633-bcf9-e5afd3cdeeaf'),
-(113, 111, 9, 1, 2, NULL, '2021-09-07 13:44:37', '2021-09-07 13:44:37', 'f2e78bdc-144b-48c1-a607-cdc87eef84ac'),
-(118, 117, 9, 2, 1, NULL, '2021-09-07 14:10:50', '2021-09-07 14:10:50', '8f63f226-e0f5-406e-84b9-6eb7d094bff2'),
-(119, 117, 9, 1, 2, NULL, '2021-09-07 14:10:50', '2021-09-07 14:10:50', '5a4c6535-c15c-4ef5-9170-a707b7cd87db'),
-(124, 123, 9, 2, 1, NULL, '2021-09-07 14:11:23', '2021-09-07 14:11:23', 'a0763c45-6e18-4392-a284-4cdeb661bb7b'),
-(125, 123, 9, 1, 2, NULL, '2021-09-07 14:11:23', '2021-09-07 14:11:23', '0156c63f-b06a-4c90-bafa-b06ff39eb99f'),
-(130, 129, 9, 2, 1, NULL, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '63773748-7c50-4992-855e-1f47470fe73b'),
-(131, 129, 9, 1, 2, NULL, '2021-09-07 14:32:19', '2021-09-07 14:32:19', '1055848b-54fb-433e-bff5-284aa862cd44'),
-(136, 135, 9, 2, 1, NULL, '2021-09-07 14:32:34', '2021-09-07 14:32:34', '8cd77dd1-241f-447c-a39c-e63d221f0ef4'),
-(137, 135, 9, 1, 2, NULL, '2021-09-07 14:32:34', '2021-09-07 14:32:34', 'fcddd167-e4b2-4f68-8980-80c11ab8c1c6'),
-(142, 141, 9, 2, 1, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52', 'd997591a-7de5-4757-8069-4ab73d09d2a0'),
-(143, 141, 9, 1, 2, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52', 'bf593c80-c8fe-4054-a2af-c97b15a26ecb'),
-(148, 147, 9, 1, 1, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'd69caba3-b35d-4322-a416-49e0c0a01384'),
-(149, 147, 9, 2, 2, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36', 'a778f9de-43b7-473f-8f15-875f4a3f97ad'),
-(154, 153, 9, 1, 1, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '815c0e98-defb-48a0-bb65-843e4c45ebf1'),
-(155, 153, 9, 2, 2, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15', '060689f2-c1e7-44ae-8ff7-3d552e4ea049'),
-(160, 159, 9, 2, 1, NULL, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '8dd9f312-be37-4bb4-b633-dbb888fd44a6'),
-(161, 159, 9, 1, 2, NULL, '2021-09-07 14:53:46', '2021-09-07 14:53:46', '3c14c00c-b13e-48d0-a932-628c10e3075c'),
-(166, 165, 9, 2, 1, NULL, '2021-09-07 14:57:31', '2021-09-07 14:57:31', '2dab0e8e-5fcf-485e-b38b-3269f48171b2'),
-(167, 165, 9, 1, 2, NULL, '2021-09-07 14:57:31', '2021-09-07 14:57:31', '93587885-5792-4927-b3b7-32accc1fb4d0'),
-(211, 170, 12, 3, 2, NULL, '2021-09-08 14:53:31', '2021-09-08 14:54:55', 'b5df6e02-015f-4148-849f-c55aca5e4e59'),
-(212, 170, 12, 4, 1, NULL, '2021-09-08 14:53:31', '2021-09-08 14:54:55', 'd5b94cfe-1017-457f-9d6c-b9c0d870cc4f'),
-(214, 213, 12, 3, 1, NULL, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '82aaf785-f3ac-4063-8791-081c191a5c29'),
-(215, 213, 12, 4, 2, NULL, '2021-09-08 14:53:31', '2021-09-08 14:53:31', '9fb221c4-962e-4938-8dfd-650c185bd54c'),
-(220, 219, 12, 4, 1, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '27756f4b-17b9-49b0-ace8-ad93a15e0488'),
-(221, 219, 12, 3, 2, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55', '29223bdc-06ec-43da-ae3b-6d721d0f61ae'),
-(223, 222, 9, 2, 1, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26', '52865a4e-7d86-4f9e-b051-0f3c471de5f4'),
-(224, 222, 9, 1, 2, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26', 'f7e4391a-889f-4f54-aae4-74020fc43ad1'),
-(229, 228, 12, 4, 1, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '76e44195-9480-4990-b80c-73be23fa8e1f'),
-(230, 228, 12, 3, 2, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53', '7b8b9593-8b53-4240-9322-0c575470afc1'),
-(232, 231, 12, 4, 1, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', 'ce5ba35d-929d-477b-8361-086a56af19a0'),
-(233, 231, 12, 3, 2, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14', '575c2bc1-0c58-48dd-8789-5a030e2fa266'),
-(235, 234, 12, 3, 1, NULL, '2021-09-09 11:45:10', '2021-09-09 11:45:10', 'ea17e2be-69d3-4d14-9db3-ece73a72472a'),
-(237, 236, 9, 1, 1, 0, '2021-09-10 14:48:54', '2021-09-10 14:48:54', '332a0b56-f43f-4b58-9a01-bfc3fc797c1f'),
-(238, 236, 9, 1, 1, 1, '2021-09-10 14:48:55', '2021-09-10 14:48:55', '428f095b-60cf-411c-b660-96eceab37e4f'),
-(239, 236, 9, 2, 2, 1, '2021-09-10 14:48:55', '2021-09-10 14:48:55', '5a4f34bd-6ec8-49b4-9dec-202a092d1528'),
-(282, 22, 16, 5, 1, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13', '8ef06c7b-7418-4033-9bd7-25fa37888257'),
-(283, 22, 16, 6, 2, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13', 'b2cc38b1-ce25-40a7-806d-9e4669a051d9'),
-(284, 22, 16, 7, 3, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13', '3adf9c66-4a99-4209-b8af-df104f6406d0'),
-(286, 285, 16, 5, 1, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13', '3d813f9a-dfb6-4ce4-88c4-dbacbab7cf02'),
-(287, 285, 16, 6, 2, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13', '96cc2c8a-b564-42fe-aa69-c2651e893777'),
-(288, 285, 16, 7, 3, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13', '8ebd9501-9fc1-4f69-85a0-590d5a7f8903');
+INSERT INTO `matrixblocks` (`id`, `primaryOwnerId`, `fieldId`, `typeId`, `deletedWithOwner`, `dateCreated`, `dateUpdated`) VALUES
+(43, 42, 9, 1, 0, '2021-09-07 13:09:16', '2021-09-07 13:09:16'),
+(44, 42, 9, 1, 0, '2021-09-07 13:09:43', '2021-09-07 13:09:43'),
+(45, 42, 9, 1, 0, '2021-09-07 13:09:45', '2021-09-07 13:09:45'),
+(46, 42, 9, 1, 0, '2021-09-07 13:09:49', '2021-09-07 13:09:49'),
+(47, 42, 9, 1, 0, '2021-09-07 13:09:55', '2021-09-07 13:09:55'),
+(48, 42, 9, 1, 0, '2021-09-07 13:09:59', '2021-09-07 13:09:59'),
+(49, 42, 9, 1, 0, '2021-09-07 13:10:10', '2021-09-07 13:10:10'),
+(50, 42, 9, 1, 0, '2021-09-07 13:10:13', '2021-09-07 13:10:13'),
+(51, 42, 9, 1, 0, '2021-09-07 13:10:14', '2021-09-07 13:10:14'),
+(52, 42, 9, 1, 0, '2021-09-07 13:10:16', '2021-09-07 13:10:16'),
+(53, 42, 9, 1, 0, '2021-09-07 13:10:44', '2021-09-07 13:10:44'),
+(54, 42, 9, 1, 0, '2021-09-07 13:11:31', '2021-09-07 13:11:31'),
+(55, 42, 9, 1, 0, '2021-09-07 13:11:41', '2021-09-07 13:11:41'),
+(56, 42, 9, 1, 0, '2021-09-07 13:11:44', '2021-09-07 13:11:44'),
+(57, 42, 9, 1, 0, '2021-09-07 13:11:59', '2021-09-07 13:11:59'),
+(58, 42, 9, 1, 0, '2021-09-07 13:12:11', '2021-09-07 13:12:11'),
+(59, 42, 9, 1, 0, '2021-09-07 13:12:11', '2021-09-07 13:12:11'),
+(60, 42, 9, 1, 0, '2021-09-07 13:12:12', '2021-09-07 13:12:12'),
+(61, 42, 9, 1, 0, '2021-09-07 13:12:12', '2021-09-07 13:12:12'),
+(62, 42, 9, 1, 0, '2021-09-07 13:12:16', '2021-09-07 13:12:16'),
+(63, 42, 9, 1, 0, '2021-09-07 13:12:26', '2021-09-07 13:12:26'),
+(64, 42, 9, 1, 0, '2021-09-07 13:12:27', '2021-09-07 13:12:27'),
+(65, 42, 9, 1, 0, '2021-09-07 13:12:34', '2021-09-07 13:12:34'),
+(66, 42, 9, 1, 0, '2021-09-07 13:12:36', '2021-09-07 13:12:36'),
+(67, 42, 9, 1, 0, '2021-09-07 13:12:39', '2021-09-07 13:12:39'),
+(68, 42, 9, 1, 0, '2021-09-07 13:12:43', '2021-09-07 13:12:43'),
+(69, 42, 9, 1, 0, '2021-09-07 13:12:43', '2021-09-07 13:12:43'),
+(70, 42, 9, 1, 0, '2021-09-07 13:13:00', '2021-09-07 13:13:00'),
+(71, 42, 9, 1, 0, '2021-09-07 13:13:07', '2021-09-07 13:13:07'),
+(72, 42, 9, 1, 0, '2021-09-07 13:13:09', '2021-09-07 13:13:09'),
+(73, 42, 9, 1, 0, '2021-09-07 13:13:20', '2021-09-07 13:13:20'),
+(74, 42, 9, 1, 0, '2021-09-07 13:13:21', '2021-09-07 13:13:21'),
+(75, 42, 9, 1, 0, '2021-09-07 13:13:23', '2021-09-07 13:13:23'),
+(76, 42, 9, 1, 0, '2021-09-07 13:13:24', '2021-09-07 13:13:24'),
+(77, 42, 9, 1, 0, '2021-09-07 13:13:35', '2021-09-07 13:13:35'),
+(78, 42, 9, 1, 0, '2021-09-07 13:13:40', '2021-09-07 13:13:40'),
+(79, 42, 9, 1, 0, '2021-09-07 13:13:41', '2021-09-07 13:13:41'),
+(80, 42, 9, 1, 0, '2021-09-07 13:14:02', '2021-09-07 13:14:02'),
+(81, 42, 9, 1, 0, '2021-09-07 13:14:04', '2021-09-07 13:14:04'),
+(82, 42, 9, 1, 0, '2021-09-07 13:14:15', '2021-09-07 13:14:15'),
+(83, 42, 9, 1, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36'),
+(84, 42, 9, 2, 0, '2021-09-07 13:14:36', '2021-09-07 13:14:36'),
+(85, 42, 9, 2, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41'),
+(86, 42, 9, 1, 0, '2021-09-07 13:14:41', '2021-09-07 13:14:41'),
+(87, 42, 9, 2, NULL, '2021-09-07 13:14:55', '2021-09-07 14:53:45'),
+(88, 42, 9, 1, NULL, '2021-09-07 13:14:55', '2021-09-07 14:53:46'),
+(91, 90, 9, 2, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19'),
+(92, 90, 9, 1, NULL, '2021-09-07 13:20:19', '2021-09-07 13:20:19'),
+(97, 96, 9, 2, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45'),
+(98, 96, 9, 1, NULL, '2021-09-07 13:22:45', '2021-09-07 13:22:45'),
+(103, 102, 9, 2, NULL, '2021-09-07 13:23:47', '2021-09-07 13:23:47'),
+(104, 102, 9, 1, NULL, '2021-09-07 13:23:47', '2021-09-07 13:23:47'),
+(106, 105, 9, 2, NULL, '2021-09-07 13:42:02', '2021-09-07 13:42:02'),
+(107, 105, 9, 1, NULL, '2021-09-07 13:42:02', '2021-09-07 13:42:02'),
+(112, 111, 9, 2, NULL, '2021-09-07 13:44:37', '2021-09-07 13:44:37'),
+(113, 111, 9, 1, NULL, '2021-09-07 13:44:37', '2021-09-07 13:44:37'),
+(118, 117, 9, 2, NULL, '2021-09-07 14:10:50', '2021-09-07 14:10:50'),
+(119, 117, 9, 1, NULL, '2021-09-07 14:10:50', '2021-09-07 14:10:50'),
+(124, 123, 9, 2, NULL, '2021-09-07 14:11:23', '2021-09-07 14:11:23'),
+(125, 123, 9, 1, NULL, '2021-09-07 14:11:23', '2021-09-07 14:11:23'),
+(130, 129, 9, 2, NULL, '2021-09-07 14:32:19', '2021-09-07 14:32:19'),
+(131, 129, 9, 1, NULL, '2021-09-07 14:32:19', '2021-09-07 14:32:19'),
+(136, 135, 9, 2, NULL, '2021-09-07 14:32:34', '2021-09-07 14:32:34'),
+(137, 135, 9, 1, NULL, '2021-09-07 14:32:34', '2021-09-07 14:32:34'),
+(142, 141, 9, 2, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52'),
+(143, 141, 9, 1, NULL, '2021-09-07 14:33:52', '2021-09-07 14:33:52'),
+(148, 147, 9, 1, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36'),
+(149, 147, 9, 2, NULL, '2021-09-07 14:35:36', '2021-09-07 14:35:36'),
+(154, 153, 9, 1, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15'),
+(155, 153, 9, 2, NULL, '2021-09-07 14:36:15', '2021-09-07 14:36:15'),
+(160, 159, 9, 2, NULL, '2021-09-07 14:53:46', '2021-09-07 14:53:46'),
+(161, 159, 9, 1, NULL, '2021-09-07 14:53:46', '2021-09-07 14:53:46'),
+(166, 165, 9, 2, NULL, '2021-09-07 14:57:31', '2021-09-07 14:57:31'),
+(167, 165, 9, 1, NULL, '2021-09-07 14:57:31', '2021-09-07 14:57:31'),
+(211, 170, 12, 3, NULL, '2021-09-08 14:53:31', '2021-09-08 14:54:55'),
+(212, 170, 12, 4, NULL, '2021-09-08 14:53:31', '2021-09-08 14:54:55'),
+(214, 213, 12, 3, NULL, '2021-09-08 14:53:31', '2021-09-08 14:53:31'),
+(215, 213, 12, 4, NULL, '2021-09-08 14:53:31', '2021-09-08 14:53:31'),
+(220, 219, 12, 4, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55'),
+(221, 219, 12, 3, NULL, '2021-09-08 14:54:55', '2021-09-08 14:54:55'),
+(223, 222, 9, 2, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26'),
+(224, 222, 9, 1, NULL, '2021-09-08 14:56:26', '2021-09-08 14:56:26'),
+(229, 228, 12, 4, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53'),
+(230, 228, 12, 3, NULL, '2021-09-08 14:58:53', '2021-09-08 14:58:53'),
+(232, 231, 12, 4, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14'),
+(233, 231, 12, 3, NULL, '2021-09-08 15:25:14', '2021-09-08 15:25:14'),
+(235, 234, 12, 3, NULL, '2021-09-09 11:45:10', '2021-09-09 11:45:10'),
+(237, 236, 9, 1, 0, '2021-09-10 14:48:54', '2021-09-10 14:48:54'),
+(238, 236, 9, 1, 1, '2021-09-10 14:48:55', '2021-09-10 14:48:55'),
+(239, 236, 9, 2, 1, '2021-09-10 14:48:55', '2021-09-10 14:48:55'),
+(282, 22, 16, 5, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13'),
+(283, 22, 16, 6, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13'),
+(284, 22, 16, 7, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13'),
+(286, 285, 16, 5, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13'),
+(287, 285, 16, 6, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13'),
+(288, 285, 16, 7, NULL, '2021-09-10 14:53:13', '2021-09-10 14:53:13');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `matrixblocks_owners`
+--
+
+CREATE TABLE `matrixblocks_owners` (
+  `blockId` int(11) NOT NULL,
+  `ownerId` int(11) NOT NULL,
+  `sortOrder` smallint(6) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `matrixblocks_owners`
+--
+
+INSERT INTO `matrixblocks_owners` (`blockId`, `ownerId`, `sortOrder`) VALUES
+(43, 42, 1),
+(44, 42, 1),
+(45, 42, 1),
+(46, 42, 1),
+(47, 42, 1),
+(48, 42, 1),
+(49, 42, 1),
+(50, 42, 1),
+(51, 42, 1),
+(52, 42, 1),
+(53, 42, 1),
+(54, 42, 1),
+(55, 42, 1),
+(56, 42, 1),
+(57, 42, 1),
+(58, 42, 1),
+(59, 42, 1),
+(60, 42, 1),
+(61, 42, 1),
+(62, 42, 1),
+(63, 42, 1),
+(64, 42, 1),
+(65, 42, 1),
+(66, 42, 1),
+(67, 42, 1),
+(68, 42, 1),
+(69, 42, 1),
+(70, 42, 1),
+(71, 42, 1),
+(72, 42, 1),
+(73, 42, 1),
+(74, 42, 1),
+(75, 42, 1),
+(76, 42, 1),
+(77, 42, 1),
+(78, 42, 1),
+(79, 42, 1),
+(80, 42, 1),
+(81, 42, 1),
+(82, 42, 1),
+(83, 42, 1),
+(84, 42, 2),
+(85, 42, 1),
+(86, 42, 2),
+(87, 42, 1),
+(88, 42, 2),
+(91, 90, 1),
+(92, 90, 2),
+(97, 96, 1),
+(98, 96, 2),
+(103, 102, 1),
+(104, 102, 2),
+(106, 105, 1),
+(107, 105, 2),
+(112, 111, 1),
+(113, 111, 2),
+(118, 117, 1),
+(119, 117, 2),
+(124, 123, 1),
+(125, 123, 2),
+(130, 129, 1),
+(131, 129, 2),
+(136, 135, 1),
+(137, 135, 2),
+(142, 141, 1),
+(143, 141, 2),
+(148, 147, 1),
+(149, 147, 2),
+(154, 153, 1),
+(155, 153, 2),
+(160, 159, 1),
+(161, 159, 2),
+(166, 165, 1),
+(167, 165, 2),
+(211, 170, 2),
+(212, 170, 1),
+(214, 213, 1),
+(215, 213, 2),
+(220, 219, 1),
+(221, 219, 2),
+(223, 222, 1),
+(224, 222, 2),
+(229, 228, 1),
+(230, 228, 2),
+(232, 231, 1),
+(233, 231, 2),
+(235, 234, 1),
+(237, 236, 1),
+(238, 236, 1),
+(239, 236, 2),
+(282, 22, 1),
+(283, 22, 2),
+(284, 22, 3),
+(286, 285, 1),
+(287, 285, 2),
+(288, 285, 3);
 
 -- --------------------------------------------------------
 
@@ -2013,7 +2143,31 @@ INSERT INTO `migrations` (`id`, `track`, `name`, `applyTime`, `dateCreated`, `da
 (212, 'plugin:super-table', 'm190714_000000_propagation_method', '2021-09-24 07:40:59', '2021-09-24 07:40:59', '2021-09-24 07:40:59', '53ea6ef4-3bec-4fe1-ae4b-74b51cac1207'),
 (213, 'plugin:super-table', 'm191127_000000_fix_width', '2021-09-24 07:40:59', '2021-09-24 07:40:59', '2021-09-24 07:40:59', '111959ff-2efc-44e9-8f20-250db8f8dfe4'),
 (214, 'craft', 'm220209_095604_add_indexes', '2022-04-21 14:47:02', '2022-04-21 14:47:02', '2022-04-21 14:47:02', '5b1cc58d-17ad-4fa5-94aa-294e05492d72'),
-(215, 'craft', 'm220214_000000_truncate_sessions', '2022-04-21 14:47:02', '2022-04-21 14:47:02', '2022-04-21 14:47:02', 'd47f59c9-9c9c-46b3-946e-a2b71976388d');
+(215, 'craft', 'm220214_000000_truncate_sessions', '2022-04-21 14:47:02', '2022-04-21 14:47:02', '2022-04-21 14:47:02', 'd47f59c9-9c9c-46b3-946e-a2b71976388d'),
+(216, 'craft', 'm210121_145800_asset_indexing_changes', '2022-10-18 14:02:32', '2022-10-18 14:02:32', '2022-10-18 14:02:32', '8b4008f6-8ade-47f2-8e63-0ad73a6fd74b'),
+(217, 'craft', 'm210624_222934_drop_deprecated_tables', '2022-10-18 14:02:32', '2022-10-18 14:02:32', '2022-10-18 14:02:32', '888dc1a0-ff65-42c5-94a4-6742ae68fb25'),
+(218, 'craft', 'm210724_180756_rename_source_cols', '2022-10-18 14:02:32', '2022-10-18 14:02:32', '2022-10-18 14:02:32', '35f31a06-a87e-454d-8708-f3d8dbe0544e'),
+(219, 'craft', 'm210809_124211_remove_superfluous_uids', '2022-10-18 14:02:32', '2022-10-18 14:02:32', '2022-10-18 14:02:32', 'c1469671-b36c-4e80-92e1-7e7d7605110f'),
+(220, 'craft', 'm210817_014201_universal_users', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '2022-10-18 14:02:33', 'f59f852a-7b1f-452c-b370-354549aee908'),
+(221, 'craft', 'm210904_132612_store_element_source_settings_in_project_config', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '93a4f1c3-8526-4cac-9fe1-f1cea1aae14f'),
+(222, 'craft', 'm211115_135500_image_transformers', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '3062a02f-3574-4b33-b17b-674fafb2fbf6'),
+(223, 'craft', 'm211201_131000_filesystems', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '2022-10-18 14:02:33', 'da2bbfed-4e1f-4f11-b763-29c71d45cc00'),
+(224, 'craft', 'm220103_043103_tab_conditions', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '38c6e92e-8719-4553-9193-0700214563cf'),
+(225, 'craft', 'm220104_003433_asset_alt_text', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '2022-10-18 14:02:33', '95006501-99ab-4860-bcca-30da113dd201'),
+(226, 'craft', 'm220123_213619_update_permissions', '2022-10-18 14:02:34', '2022-10-18 14:02:34', '2022-10-18 14:02:34', '716994f2-3741-477c-8137-549b96f77b2f'),
+(227, 'craft', 'm220126_003432_addresses', '2022-10-18 14:02:34', '2022-10-18 14:02:34', '2022-10-18 14:02:34', '2bd1caf2-2b83-44cb-9b7c-5ecb5a3f1f7b'),
+(228, 'craft', 'm220213_015220_matrixblocks_owners_table', '2022-10-18 14:02:34', '2022-10-18 14:02:34', '2022-10-18 14:02:34', '089ca17a-c1d7-40d1-936b-d7e519954d00'),
+(229, 'craft', 'm220222_122159_full_names', '2022-10-18 14:02:34', '2022-10-18 14:02:34', '2022-10-18 14:02:34', '94ab6b7c-226c-409c-a3eb-c9ac8d47ddef'),
+(230, 'craft', 'm220223_180559_nullable_address_owner', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '1c233607-f603-4367-a6bd-2af147b96d22'),
+(231, 'craft', 'm220225_165000_transform_filesystems', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '2022-10-18 14:02:35', 'b39e0816-d18c-4231-99ce-feb8a8689226'),
+(232, 'craft', 'm220309_152006_rename_field_layout_elements', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '2022-10-18 14:02:35', 'ec3be1dd-42e3-43ea-b9b4-4e63253f1371'),
+(233, 'craft', 'm220314_211928_field_layout_element_uids', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '2022-10-18 14:02:35', 'dae7a348-eb01-4cc1-8c44-9a3520ef3db9'),
+(234, 'craft', 'm220316_123800_transform_fs_subpath', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '2022-10-18 14:02:35', 'f8ed15f2-527a-4f10-bd98-852a0361d530'),
+(235, 'craft', 'm220317_174250_release_all_jobs', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '2022-10-18 14:02:35', 'efd158fb-6c06-4b18-bd70-249f55ac9108'),
+(236, 'craft', 'm220330_150000_add_site_gql_schema_components', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '558c28d2-2c17-45a9-8009-8eff968b42bf'),
+(237, 'craft', 'm220413_024536_site_enabled_string', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '2022-10-18 14:02:35', 'be4eb12d-7222-47a1-a1cb-c106a6c5d584'),
+(238, 'plugin:super-table', 'm220308_000000_remove_superfluous_uids', '2022-10-18 14:02:35', '2022-10-18 14:02:35', '2022-10-18 14:02:35', 'd76583bb-1c68-4bb0-b980-5bcc13178f33'),
+(239, 'plugin:super-table', 'm220308_100000_owners_table', '2022-10-18 14:02:36', '2022-10-18 14:02:36', '2022-10-18 14:02:36', 'e89b5d59-bcb5-455a-821e-67ed2e2aee59');
 
 -- --------------------------------------------------------
 
@@ -2039,11 +2193,11 @@ CREATE TABLE `plugins` (
 --
 
 INSERT INTO `plugins` (`id`, `handle`, `version`, `schemaVersion`, `licenseKeyStatus`, `licensedEdition`, `installDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'ckeditor', '1.3.0', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2022-10-18 12:39:55', '032a7d64-0762-4824-8f4b-0c7d4ea9143b'),
-(2, 'redactor', '2.10.10', '2.3.0', 'unknown', NULL, '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2022-10-18 12:39:55', 'd08ef1d0-3480-4156-a250-5bda6017a5fe'),
-(3, 'contact-form', '2.5.1', '1.0.0', 'unknown', NULL, '2021-09-08 10:27:24', '2021-09-08 10:27:24', '2022-10-18 12:39:55', '8f683cb0-4fee-4f47-8838-508c3c9d232a'),
-(4, 'seo', '3.7.4', '3.2.0', 'unknown', NULL, '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2022-10-18 12:39:55', 'a20c0255-b6da-4747-be0d-24f0c2d76d2b'),
-(5, 'super-table', '2.7.3', '2.2.1', 'unknown', NULL, '2021-09-24 07:40:57', '2021-09-24 07:40:57', '2022-10-18 12:39:55', '8f2cf728-f4fa-4346-8642-9d106f9838f6');
+(1, 'ckeditor', '2.0.0', '1.0.0', 'unknown', NULL, '2021-09-06 11:40:24', '2021-09-06 11:40:24', '2022-10-18 13:12:53', '032a7d64-0762-4824-8f4b-0c7d4ea9143b'),
+(2, 'redactor', '3.0.2', '2.3.0', 'unknown', NULL, '2021-09-07 14:38:20', '2021-09-07 14:38:20', '2022-10-18 13:12:53', 'd08ef1d0-3480-4156-a250-5bda6017a5fe'),
+(3, 'contact-form', '3.0.0', '1.0.0', 'unknown', NULL, '2021-09-08 10:27:24', '2021-09-08 10:27:24', '2022-10-18 13:12:53', '8f683cb0-4fee-4f47-8838-508c3c9d232a'),
+(4, 'seo', 'v4.0.3', '3.2.0', 'unknown', NULL, '2021-09-08 11:53:27', '2021-09-08 11:53:27', '2022-10-18 13:12:53', 'a20c0255-b6da-4747-be0d-24f0c2d76d2b'),
+(5, 'super-table', '3.0.3', '3.0.0', 'unknown', NULL, '2021-09-24 07:40:57', '2021-09-24 07:40:57', '2022-10-18 14:02:36', '8f2cf728-f4fa-4346-8642-9d106f9838f6');
 
 -- --------------------------------------------------------
 
@@ -2061,7 +2215,7 @@ CREATE TABLE `projectconfig` (
 --
 
 INSERT INTO `projectconfig` (`path`, `value`) VALUES
-('dateModified', '1666097210'),
+('dateModified', '1666101753'),
 ('email.fromEmail', '\"$SYSTEM_EMAIL\"'),
 ('email.fromName', '\"Blog\"'),
 ('email.replyToEmail', '\"$SYSTEM_EMAIL\"'),
@@ -2095,7 +2249,7 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.1.step', 'null'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.1.tip', 'null'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.1.title', 'null'),
-('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.1.type', '\"craft\\\\fieldlayoutelements\\\\EntryTitleField\"'),
+('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.1.type', '\"craft\\\\fieldlayoutelements\\\\entries\\\\EntryTitleField\"'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.1.warning', 'null'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.1.width', '100'),
 ('entryTypes.4c7c41bd-271d-4790-aecd-3eafe71ca7c6.fieldLayouts.4bc63b8b-865d-427e-bedd-15c7f945691d.tabs.0.elements.2.fieldUid', '\"fdd41422-2f3c-4581-af2d-b4d3a271e183\"'),
@@ -2161,7 +2315,7 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.step', 'null'),
 ('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.tip', 'null'),
 ('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.title', 'null'),
-('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\EntryTitleField\"'),
+('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\entries\\\\EntryTitleField\"'),
 ('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.warning', 'null'),
 ('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.0.width', '100'),
 ('entryTypes.845194a4-5a85-4e81-8d73-c11be1057caa.fieldLayouts.cb868842-614c-461c-9243-6605614c4c98.tabs.0.elements.1.fieldUid', '\"639db3fc-cfd4-4523-a2e8-2ac5effb3522\"'),
@@ -2201,7 +2355,7 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.step', 'null'),
 ('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.tip', 'null'),
 ('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.title', 'null'),
-('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\EntryTitleField\"'),
+('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\entries\\\\EntryTitleField\"'),
 ('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.warning', 'null'),
 ('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.0.width', '100'),
 ('entryTypes.b8b01c62-e65a-45ab-a41a-2880f6839689.fieldLayouts.e16888a4-4dec-450f-a6c2-71c209fbc766.tabs.0.elements.1.fieldUid', '\"eac5e9e9-55ae-47bd-8d5c-4b674f1ff355\"'),
@@ -2249,7 +2403,7 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.fieldLayouts.410aa703-ed96-4586-a0be-75ced0eb977d.tabs.0.elements.0.step', 'null'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.fieldLayouts.410aa703-ed96-4586-a0be-75ced0eb977d.tabs.0.elements.0.tip', 'null'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.fieldLayouts.410aa703-ed96-4586-a0be-75ced0eb977d.tabs.0.elements.0.title', 'null'),
-('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.fieldLayouts.410aa703-ed96-4586-a0be-75ced0eb977d.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\EntryTitleField\"'),
+('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.fieldLayouts.410aa703-ed96-4586-a0be-75ced0eb977d.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\entries\\\\EntryTitleField\"'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.fieldLayouts.410aa703-ed96-4586-a0be-75ced0eb977d.tabs.0.elements.0.warning', 'null'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.fieldLayouts.410aa703-ed96-4586-a0be-75ced0eb977d.tabs.0.elements.0.width', '100'),
 ('entryTypes.bb77b1f3-1ccf-4257-af21-bb0d3e88362d.fieldLayouts.410aa703-ed96-4586-a0be-75ced0eb977d.tabs.0.name', '\"Inhoud\"'),
@@ -2418,6 +2572,11 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.translationKeyFormat', 'null'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.translationMethod', '\"none\"'),
 ('fields.fdd41422-2f3c-4581-af2d-b4d3a271e183.type', '\"craft\\\\ckeditor\\\\Field\"'),
+('fs.images.hasUrls', 'true'),
+('fs.images.name', '\"images\"'),
+('fs.images.settings.path', '\"/Users/pjotr/Sites/blogsite/craft/web/images\"'),
+('fs.images.type', '\"craft\\\\fs\\\\Local\"'),
+('fs.images.url', '\"//blogsite.local/images/\"'),
 ('graphql.publicToken.enabled', 'true'),
 ('graphql.publicToken.expiryDate', 'null'),
 ('graphql.schemas.2650fd56-94c1-4d62-929b-998b54588b6d.isPublic', 'true'),
@@ -2508,10 +2667,10 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.removeNbsp', '\"1\"'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.showHtmlButtonForNonAdmins', '\"\"'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.showUnpermittedFiles', 'false'),
-('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.showUnpermittedVolumes', 'false'),
-('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.uiMode', '\"enlarged\"'),
-('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.translationKeyFormat', 'null');
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.showUnpermittedVolumes', 'false');
 INSERT INTO `projectconfig` (`path`, `value`) VALUES
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.settings.uiMode', '\"enlarged\"'),
+('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.translationKeyFormat', 'null'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.translationMethod', '\"none\"'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.fields.6fb6a84c-ac77-4355-b483-06f78d791539.type', '\"craft\\\\redactor\\\\Field\"'),
 ('matrixBlockTypes.95710e39-bdda-4a20-bfe7-9f8f96a9eb1f.handle', '\"body\"'),
@@ -2747,7 +2906,7 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('plugins.seo.settings.twitterHandle', '\"\"'),
 ('plugins.super-table.edition', '\"standard\"'),
 ('plugins.super-table.enabled', 'true'),
-('plugins.super-table.schemaVersion', '\"2.2.1\"'),
+('plugins.super-table.schemaVersion', '\"3.0.0\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.defaultPlacement', '\"end\"'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.enableVersioning', 'true'),
 ('sections.364d4330-d412-40f3-99b9-8a3dd6a2d954.handle', '\"homepage\"'),
@@ -2822,14 +2981,14 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('system.live', 'true'),
 ('system.name', '\"Blog\"'),
 ('system.retryDuration', 'null'),
-('system.schemaVersion', '\"3.7.33\"'),
+('system.schemaVersion', '\"4.0.0.9\"'),
 ('system.timeZone', '\"Europe/Amsterdam\"'),
 ('users.allowPublicRegistration', 'false'),
+('users.deactivateByDefault', 'false'),
 ('users.defaultGroup', '\"\"'),
 ('users.photoSubpath', 'null'),
 ('users.photoVolumeUid', '\"3b49d805-1ae4-41ab-ad93-00de8e3a56c3\"'),
 ('users.requireEmailVerification', 'true'),
-('users.suspendByDefault', 'false'),
 ('users.validateOnPublicRegistration', 'false'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.elements.0.autocapitalize', 'true'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.elements.0.autocomplete', 'false'),
@@ -2850,19 +3009,18 @@ INSERT INTO `projectconfig` (`path`, `value`) VALUES
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.elements.0.step', 'null'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.elements.0.tip', 'null'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.elements.0.title', 'null'),
-('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\AssetTitleField\"'),
+('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.elements.0.type', '\"craft\\\\fieldlayoutelements\\\\assets\\\\AssetTitleField\"'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.elements.0.warning', 'null'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.elements.0.width', '100'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.name', '\"Inhoud\"'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fieldLayouts.a64138f5-f419-494f-863a-6c4f896792de.tabs.0.sortOrder', '1'),
+('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.fs', '\"images\"'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.handle', '\"images\"'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.hasUrls', 'true'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.name', '\"images\"'),
-('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.settings.path', '\"/Users/pjotr/Sites/blogsite/craft/web/images\"'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.sortOrder', '1'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.titleTranslationKeyFormat', 'null'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.titleTranslationMethod', '\"site\"'),
-('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.type', '\"craft\\\\volumes\\\\Local\"'),
 ('volumes.3b49d805-1ae4-41ab-ad93-00de8e3a56c3.url', '\"//blogsite.local/images/\"');
 
 -- --------------------------------------------------------
@@ -2889,6 +3047,13 @@ CREATE TABLE `queue` (
   `dateFailed` datetime DEFAULT NULL,
   `error` text COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `queue`
+--
+
+INSERT INTO `queue` (`id`, `channel`, `job`, `description`, `timePushed`, `ttr`, `delay`, `priority`, `dateReserved`, `timeUpdated`, `progress`, `progressLabel`, `attempt`, `fail`, `dateFailed`, `error`) VALUES
+(22, 'queue', 0x4f3a34323a2263726166745c71756575655c6a6f62735c47656e657261746550656e64696e675472616e73666f726d73223a333a7b733a31313a226465736372697074696f6e223b4e3b733a33303a220063726166745c71756575655c426173654a6f62005f70726f6772657373223b693a303b733a33353a220063726166745c71756575655c426173654a6f62005f70726f67726573734c6162656c223b4e3b7d, 't9n:[\"app\",\"Generating pending image transforms\"]', 1666205212, 300, 0, 2048, NULL, NULL, 0, NULL, NULL, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2973,10 +3138,12 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('1d160be1', '@craft/web/assets/cp/dist'),
 ('1d7a0893', '@craft/web/assets/login/dist'),
 ('1db59fa7', '@craft/web/assets/recententries/dist'),
+('1dcd2391', '@craft/web/assets/updater/dist'),
 ('1eb9fa70', '@lib/datepicker-i18n'),
 ('1ec970e9', '@app/web/assets/admintable/dist'),
 ('21270547', '@craft/web/assets/axios/dist'),
 ('217c59b7', '@app/web/assets/updater/dist'),
+('219ed1cf', '@craft/web/assets/iframeresizer/dist'),
 ('230fddc9', '@craft/web/assets/updateswidget/dist'),
 ('23a4881d', '@lib/axios'),
 ('258d6799', '@app/web/assets/generalsettings/dist'),
@@ -2987,11 +3154,13 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('2973c854', '@lib/jquery-ui'),
 ('2a69821a', '@craft/web/assets/feed/dist'),
 ('2aba6906', '@app/web/assets/feed/dist'),
+('2affd878', '@craft/web/assets/d3/dist'),
 ('2b4eb522', '@craft/web/assets/edituser/dist'),
 ('2b84b754', '@craft/web/assets/updates/dist'),
 ('2c32a585', '@craft/web/assets/updater/dist'),
 ('2df4912f', '@craft/web/assets/systemmessages/dist'),
 ('30bc4eef', '@app/web/assets/editsection/dist'),
+('30cafe31', '@craft/web/assets/cp/dist'),
 ('311425f7', '@craft/web/assets/editsection/dist'),
 ('31290b88', '@app/web/assets/updateswidget/dist'),
 ('31da6029', '@app/web/assets/utilities/dist'),
@@ -3003,7 +3172,9 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('39d2901e', '@craft/web/assets/recententries/dist'),
 ('3a82b0ca', '@lib/jquery.payment'),
 ('3aa61df9', '@lib/element-resize-detector'),
+('3b97e65b', '@craft/web/assets/tailwindreset/dist'),
 ('3c6a28d1', '@app/web/assets/fieldsettings/dist'),
+('3c825c79', '@craft/web/assets/selectize/dist'),
 ('3f5e2111', '@lib/selectize'),
 ('3fbba749', '@app/web/assets/craftsupport/dist'),
 ('400cb4b9', '@app/web/assets/dashboard/dist'),
@@ -3026,6 +3197,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('4f3067bb', '@lib/vue'),
 ('51d7fd1c', '@app/web/assets/fileupload/dist'),
 ('51da0361', '@lib/iframe-resizer-cw'),
+('52a067d2', '@craft/web/assets/garnish/dist'),
 ('531c9496', '@craft/web/assets/matrix/dist'),
 ('532aa4d1', '@craft/web/assets/dashboard/dist'),
 ('536470e8', '@lib/picturefill'),
@@ -3077,6 +3249,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('768d270', '@craft/web/assets/updateswidget/dist'),
 ('7848c8c4', '@app/web/assets/dashboard/dist'),
 ('798f42a5', '@app/web/assets/tablesettings/dist'),
+('7a1250c5', '@craft/web/assets/fabric/dist'),
 ('7b3a9301', '@lib/fabric'),
 ('7bfdfc19', '@lib/jquery.payment'),
 ('7e191a13', '@craft/web/assets/login/dist'),
@@ -3091,6 +3264,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('8301faf5', '@app/web/assets/cp/dist'),
 ('83f26af9', '@craft/web/assets/feed/dist'),
 ('84a32bc0', '@craft/web/assets/craftsupport/dist'),
+('84c4bb6d', '@craft/web/assets/picturefill/dist'),
 ('84e4858', '@craft/web/assets/pluginstore/dist'),
 ('85a94d66', '@craft/web/assets/updater/dist'),
 ('8698e30f', '@lib/garnishjs'),
@@ -3102,6 +3276,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('8dd7b462', '@lib/iframe-resizer'),
 ('8f16e477', '@app/web/assets/admintable/dist'),
 ('8f51a385', '@app/web/assets/updates/dist'),
+('8f7c066d', '@craft/web/assets/xregexp/dist'),
 ('8f83292', '@app/web/assets/editsection/dist'),
 ('903b553', '@app/web/assets/userpermissions/dist'),
 ('90ac6cf4', '@app/web/assets/dashboard/dist'),
@@ -3156,14 +3331,18 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('b4e1e070', '@craft/web/assets/login/dist'),
 ('b525f489', '@lib/d3'),
 ('b69191a7', '@app/web/assets/dashboard/dist'),
+('b694e874', '@craft/web/assets/datepickeri18n/dist'),
 ('b7221293', '@lib/datepicker-i18n'),
+('b89f61b3', '@craft/web/assets/jquerypayment/dist'),
 ('b8ac5cca', '@lib/jquery-ui'),
+('b8ccbed1', '@craft/web/assets/jquerytouchevents/dist'),
 ('bb458688', '@app/web/assets/cp/dist'),
 ('bb80d4d8', '@lib/picturefill'),
 ('bbb61684', '@craft/web/assets/feed/dist'),
 ('bbff1d0c', '@craft/web/assets/generalsettings/dist'),
 ('bc24e81a', '@lib/jquery-touch-events'),
 ('bce757bd', '@craft/web/assets/craftsupport/dist'),
+('bd086304', '@craft/web/assets/velocity/dist'),
 ('bf7b93f6', '@app/web/assets/login/dist'),
 ('bf936a0e', '@craft/web/assets/fieldsettings/dist'),
 ('c25ecd36', '@app/web/assets/feed/dist'),
@@ -3185,6 +3364,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('cde2a70f', '@lib/selectize'),
 ('ce2eef56', '@app/web/assets/updates/dist'),
 ('ce41bb12', '@lib/velocity'),
+('cfbf097', '@craft/web/assets/axios/dist'),
 ('d04f3222', '@app/web/assets/deprecationerrors/dist'),
 ('d1d32027', '@app/web/assets/dashboard/dist'),
 ('d264b20f', '@craft/web/assets/fields/dist'),
@@ -3206,6 +3386,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('dfce4c6f', '@bower/jquery/dist'),
 ('e17ab864', '@app/web/assets/utilities/dist'),
 ('e21799f5', '@lib/fileupload'),
+('e4d65a6d', '@craft/web/assets/jqueryui/dist'),
 ('e4f2b68', '@lib/vue'),
 ('e592bdd6', '@lib/xregexp'),
 ('e6923ff6', '@craft/web/assets/dashboard/dist'),
@@ -3216,7 +3397,9 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('ea226887', '@lib/jquery.payment'),
 ('ea80b24c', '@app/web/assets/jqueryui/dist'),
 ('eab04610', '@craft/web/assets/upgrade/dist'),
+('ebd1d593', '@craft/web/assets/elementresizedetector/dist'),
 ('ec843a2f', '@craft/web/assets/sites/dist'),
+('ee31ca7b', '@bower/jquery/dist'),
 ('eeb4a6e2', '@lib/iframe-resizer'),
 ('effef95c', '@lib/selectize'),
 ('f05ee79a', '@lib/element-resize-detector'),
@@ -3233,6 +3416,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 ('fa1ab14b', '@app/web/assets/feed/dist'),
 ('fa76007a', '@craft/web/assets/tablesettings/dist'),
 ('fa877c75', '@craft/web/assets/matrix/dist'),
+('faad8cc6', '@craft/web/assets/fileupload/dist'),
 ('fab14c32', '@craft/web/assets/dashboard/dist'),
 ('faff980b', '@lib/picturefill'),
 ('fb0c19a9', '@app/web/assets/jquerytouchevents/dist'),
@@ -3250,7 +3434,7 @@ INSERT INTO `resourcepaths` (`hash`, `path`) VALUES
 
 CREATE TABLE `revisions` (
   `id` int(11) NOT NULL,
-  `sourceId` int(11) NOT NULL,
+  `canonicalId` int(11) NOT NULL,
   `creatorId` int(11) DEFAULT NULL,
   `num` int(11) NOT NULL,
   `notes` text COLLATE utf8_unicode_ci DEFAULT NULL
@@ -3260,7 +3444,7 @@ CREATE TABLE `revisions` (
 -- Gegevens worden geëxporteerd voor tabel `revisions`
 --
 
-INSERT INTO `revisions` (`id`, `sourceId`, `creatorId`, `num`, `notes`) VALUES
+INSERT INTO `revisions` (`id`, `canonicalId`, `creatorId`, `num`, `notes`) VALUES
 (1, 4, 1, 1, ''),
 (2, 4, 1, 2, '“Concept 1” toegepast'),
 (3, 4, 1, 3, ''),
@@ -3561,7 +3745,7 @@ CREATE TABLE `sessions` (
 
 INSERT INTO `sessions` (`id`, `userId`, `token`, `dateCreated`, `dateUpdated`, `uid`) VALUES
 (1, 1, 'jWg928cl0qeQJq5cnfKiNkTFfoFk-nWi_auZ6tsC9xN5aIIUORMp4QwN-5MvKZ1c5-_YJZHmqpCLz5cOvscTekx03k2HRvgRxHdF', '2022-04-21 15:41:50', '2022-04-21 15:54:47', 'f21dea26-9d14-412a-bc5b-381a61af1359'),
-(2, 1, 'DyszqbbCHI29eZrmPT5L2uesjkuLX8zdbp8z6jUYsS16kdqOHrMPog5b2s6ULQFi1hBt70I6y5NUGoJRY-kf6f91oNyP8xFfpceG', '2022-10-18 12:35:42', '2022-10-18 12:47:01', 'd9820839-f007-4fbf-b085-525b24bb4628');
+(3, 1, '0B42lnO_QuWBW56i1pueaoTf87yeNOc-evwKX_haBtnoStHnNW5aYeclY2u4J_qbSAB7WwwXmpzvodzvzyR27jQQphziamK0yT-O', '2022-10-18 12:55:42', '2022-10-18 13:02:10', '1e1403f2-91d7-465f-b935-5cafae0f8d20');
 
 -- --------------------------------------------------------
 
@@ -3611,7 +3795,7 @@ CREATE TABLE `sites` (
   `id` int(11) NOT NULL,
   `groupId` int(11) NOT NULL,
   `primary` tinyint(1) NOT NULL,
-  `enabled` tinyint(1) NOT NULL DEFAULT 1,
+  `enabled` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'true',
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `handle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `language` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
@@ -3629,7 +3813,7 @@ CREATE TABLE `sites` (
 --
 
 INSERT INTO `sites` (`id`, `groupId`, `primary`, `enabled`, `name`, `handle`, `language`, `hasUrls`, `baseUrl`, `sortOrder`, `dateCreated`, `dateUpdated`, `dateDeleted`, `uid`) VALUES
-(1, 1, 1, 1, 'Blog', 'default', 'nl', 1, '$PRIMARY_SITE_URL', 1, '2021-09-06 10:09:22', '2022-04-21 15:51:35', NULL, '1a7ded85-cd10-4685-8696-21042404ec46');
+(1, 1, 1, '1', 'Blog', 'default', 'nl', 1, '$PRIMARY_SITE_URL', 1, '2021-09-06 10:09:22', '2022-04-21 15:51:35', NULL, '1a7ded85-cd10-4685-8696-21042404ec46');
 
 -- --------------------------------------------------------
 
@@ -3711,14 +3895,24 @@ INSERT INTO `structures` (`id`, `maxLevels`, `dateCreated`, `dateUpdated`, `date
 
 CREATE TABLE `supertableblocks` (
   `id` int(11) NOT NULL,
-  `ownerId` int(11) NOT NULL,
+  `primaryOwnerId` int(11) NOT NULL,
   `fieldId` int(11) NOT NULL,
   `typeId` int(11) NOT NULL,
-  `sortOrder` smallint(6) UNSIGNED DEFAULT NULL,
   `deletedWithOwner` tinyint(1) DEFAULT NULL,
   `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+  `dateUpdated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `supertableblocks_owners`
+--
+
+CREATE TABLE `supertableblocks_owners` (
+  `blockId` int(11) NOT NULL,
+  `ownerId` int(11) NOT NULL,
+  `sortOrder` smallint(6) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -3781,48 +3975,7 @@ CREATE TABLE `tags` (
   `groupId` int(11) NOT NULL,
   `deletedWithGroup` tinyint(1) DEFAULT NULL,
   `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `templatecacheelements`
---
-
-CREATE TABLE `templatecacheelements` (
-  `id` int(11) NOT NULL,
-  `cacheId` int(11) NOT NULL,
-  `elementId` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `templatecachequeries`
---
-
-CREATE TABLE `templatecachequeries` (
-  `id` int(11) NOT NULL,
-  `cacheId` int(11) NOT NULL,
-  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `query` longtext COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `templatecaches`
---
-
-CREATE TABLE `templatecaches` (
-  `id` int(11) NOT NULL,
-  `siteId` int(11) NOT NULL,
-  `cacheKey` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `expiryDate` datetime NOT NULL,
-  `body` mediumtext COLLATE utf8_unicode_ci NOT NULL
+  `dateUpdated` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -3888,14 +4041,6 @@ CREATE TABLE `userpermissions` (
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Gegevens worden geëxporteerd voor tabel `userpermissions`
---
-
-INSERT INTO `userpermissions` (`id`, `name`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'saveassetinvolume:3b49d805-1ae4-41ab-ad93-00de8e3a56c3', '2021-09-17 15:13:34', '2021-09-17 15:13:34', '649b71e8-4d4e-4699-af14-400e6e018c01'),
-(2, 'viewvolume:3b49d805-1ae4-41ab-ad93-00de8e3a56c3', '2021-09-17 15:13:34', '2021-09-17 15:13:34', '2e1b5833-80f0-494f-b794-6c16eeb0786a');
-
 -- --------------------------------------------------------
 
 --
@@ -3952,13 +4097,15 @@ INSERT INTO `userpreferences` (`userId`, `preferences`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fullName` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `photoId` int(11) DEFAULT NULL,
-  `firstName` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lastName` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `firstName` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lastName` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT 0,
+  `active` tinyint(1) NOT NULL DEFAULT 0,
   `locked` tinyint(1) NOT NULL DEFAULT 0,
   `suspended` tinyint(1) NOT NULL DEFAULT 0,
   `pending` tinyint(1) NOT NULL DEFAULT 0,
@@ -3975,16 +4122,15 @@ CREATE TABLE `users` (
   `passwordResetRequired` tinyint(1) NOT NULL DEFAULT 0,
   `lastPasswordChangeDate` datetime DEFAULT NULL,
   `dateCreated` datetime NOT NULL,
-  `dateUpdated` datetime NOT NULL,
-  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0'
+  `dateUpdated` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `photoId`, `firstName`, `lastName`, `email`, `password`, `admin`, `locked`, `suspended`, `pending`, `lastLoginDate`, `lastLoginAttemptIp`, `invalidLoginWindowStart`, `invalidLoginCount`, `lastInvalidLoginDate`, `lockoutDate`, `hasDashboard`, `verificationCode`, `verificationCodeIssuedDate`, `unverifiedEmail`, `passwordResetRequired`, `lastPasswordChangeDate`, `dateCreated`, `dateUpdated`, `uid`) VALUES
-(1, 'Paniek', NULL, '', '', 'pjotrw15@gmail.com', '$2y$13$YIYswYd8mFKEoE/Yj7D2Yu4Y9kf6FWg26iMuwZKe09WBd0q3Hi516', 1, 0, 0, 0, '2022-10-18 12:35:42', NULL, NULL, NULL, '2022-10-18 12:30:15', NULL, 1, NULL, NULL, NULL, 0, '2022-04-21 15:42:48', '2021-09-06 10:09:24', '2022-10-18 12:35:42', 'e3aecde8-a6e4-4fd1-b509-3ae4771c72f1');
+INSERT INTO `users` (`id`, `username`, `fullName`, `photoId`, `firstName`, `lastName`, `email`, `password`, `admin`, `active`, `locked`, `suspended`, `pending`, `lastLoginDate`, `lastLoginAttemptIp`, `invalidLoginWindowStart`, `invalidLoginCount`, `lastInvalidLoginDate`, `lockoutDate`, `hasDashboard`, `verificationCode`, `verificationCodeIssuedDate`, `unverifiedEmail`, `passwordResetRequired`, `lastPasswordChangeDate`, `dateCreated`, `dateUpdated`) VALUES
+(1, 'Paniek', NULL, NULL, '', '', 'pjotrw15@gmail.com', '$2y$13$YIYswYd8mFKEoE/Yj7D2Yu4Y9kf6FWg26iMuwZKe09WBd0q3Hi516', 1, 1, 0, 0, 0, '2022-10-18 14:02:50', NULL, NULL, NULL, '2022-10-18 12:30:15', NULL, 1, NULL, NULL, NULL, 0, '2022-04-21 15:42:48', '2021-09-06 10:09:24', '2022-10-18 14:02:50');
 
 -- --------------------------------------------------------
 
@@ -4023,12 +4169,11 @@ CREATE TABLE `volumes` (
   `fieldLayoutId` int(11) DEFAULT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `handle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `hasUrls` tinyint(1) NOT NULL DEFAULT 1,
-  `url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fs` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `transformFs` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `transformSubpath` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `titleTranslationMethod` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'site',
   `titleTranslationKeyFormat` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `settings` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `sortOrder` smallint(6) UNSIGNED DEFAULT NULL,
   `dateCreated` datetime NOT NULL,
   `dateUpdated` datetime NOT NULL,
@@ -4040,8 +4185,8 @@ CREATE TABLE `volumes` (
 -- Gegevens worden geëxporteerd voor tabel `volumes`
 --
 
-INSERT INTO `volumes` (`id`, `fieldLayoutId`, `name`, `handle`, `type`, `hasUrls`, `url`, `titleTranslationMethod`, `titleTranslationKeyFormat`, `settings`, `sortOrder`, `dateCreated`, `dateUpdated`, `dateDeleted`, `uid`) VALUES
-(1, 1, 'images', 'images', 'craft\\volumes\\Local', 1, '//blogsite.local/images/', 'site', NULL, '{\"path\":\"/Users/pjotr/Sites/blogsite/craft/web/images\"}', 1, '2021-09-06 10:38:56', '2021-09-06 10:38:56', NULL, '3b49d805-1ae4-41ab-ad93-00de8e3a56c3');
+INSERT INTO `volumes` (`id`, `fieldLayoutId`, `name`, `handle`, `fs`, `transformFs`, `transformSubpath`, `titleTranslationMethod`, `titleTranslationKeyFormat`, `sortOrder`, `dateCreated`, `dateUpdated`, `dateDeleted`, `uid`) VALUES
+(1, 1, 'images', 'images', 'images', NULL, NULL, 'site', NULL, 1, '2021-09-06 10:38:56', '2021-09-06 10:38:56', NULL, '3b49d805-1ae4-41ab-ad93-00de8e3a56c3');
 
 -- --------------------------------------------------------
 
@@ -4077,6 +4222,13 @@ INSERT INTO `widgets` (`id`, `userId`, `type`, `sortOrder`, `colspan`, `settings
 --
 
 --
+-- Indexen voor tabel `addresses`
+--
+ALTER TABLE `addresses`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_mcjadktqujrixwyrtpkakmgdqkmtukteyrdp` (`ownerId`);
+
+--
 -- Indexen voor tabel `announcements`
 --
 ALTER TABLE `announcements`
@@ -4090,8 +4242,15 @@ ALTER TABLE `announcements`
 --
 ALTER TABLE `assetindexdata`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_rlikypmorxpyaijszuuspniptfbavdashrxa` (`sessionId`,`volumeId`),
-  ADD KEY `idx_ncpntsksxibmmtqanulzuryzamozaaitazud` (`volumeId`);
+  ADD KEY `idx_rlikypmorxpyaijszuuspniptfbavdashrxa` (`volumeId`),
+  ADD KEY `idx_ncpntsksxibmmtqanulzuryzamozaaitazud` (`volumeId`),
+  ADD KEY `fk_ugsfsywbcttkcgwyvpdeedddrxulckwmaxjf` (`sessionId`);
+
+--
+-- Indexen voor tabel `assetindexingsessions`
+--
+ALTER TABLE `assetindexingsessions`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexen voor tabel `assets`
@@ -4102,22 +4261,6 @@ ALTER TABLE `assets`
   ADD KEY `idx_dncdffohngqfsiqavtsmrefcudttpefbupvk` (`folderId`),
   ADD KEY `idx_bzgzxljwtevopsoubopgwoqqhapfribmfzis` (`volumeId`),
   ADD KEY `fk_eyeqmwxhxfpdpthlvrrousxhlgrdrgvvxptj` (`uploaderId`);
-
---
--- Indexen voor tabel `assettransformindex`
---
-ALTER TABLE `assettransformindex`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_ljjhmkcbcfphvjdhbuokmwgxkgixzbkvmjwq` (`volumeId`,`assetId`,`location`),
-  ADD KEY `idx_hxlzzsogjhuljmrlixndsdquuatbtrdjqkle` (`assetId`,`format`,`location`);
-
---
--- Indexen voor tabel `assettransforms`
---
-ALTER TABLE `assettransforms`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_gmumynqanlnbgnmixwjwajfvmoumzabdfofc` (`name`),
-  ADD KEY `idx_lnogouczdxgrtifypptdeunwawsitczxpyku` (`handle`);
 
 --
 -- Indexen voor tabel `categories`
@@ -4195,14 +4338,7 @@ ALTER TABLE `drafts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_uheiapevdhdvyqjnhkngdnosxhdewrxccgoc` (`creatorId`,`provisional`),
   ADD KEY `idx_ukuovtnsdkjtqtlgtcyuizqorhffxxxhhzik` (`saved`),
-  ADD KEY `fk_ivjgjnqiqmqysojqfwznmztocljnlbyhhltb` (`sourceId`);
-
---
--- Indexen voor tabel `elementindexsettings`
---
-ALTER TABLE `elementindexsettings`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `idx_ldaxffvhiowsgyqcqooojybhzpangfdtpvsk` (`type`);
+  ADD KEY `fk_ivjgjnqiqmqysojqfwznmztocljnlbyhhltb` (`canonicalId`);
 
 --
 -- Indexen voor tabel `elements`
@@ -4323,6 +4459,22 @@ ALTER TABLE `gqltokens`
   ADD KEY `fk_estymnsgbnlvzxttoatguwjzlillrvkubuqb` (`schemaId`);
 
 --
+-- Indexen voor tabel `imagetransformindex`
+--
+ALTER TABLE `imagetransformindex`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_hxlzzsogjhuljmrlixndsdquuatbtrdjqkle` (`assetId`,`format`,`transformString`),
+  ADD KEY `idx_rabvpxuehveehvjqpbsnrqrvolsdoztppjlg` (`assetId`,`transformString`);
+
+--
+-- Indexen voor tabel `imagetransforms`
+--
+ALTER TABLE `imagetransforms`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_gmumynqanlnbgnmixwjwajfvmoumzabdfofc` (`name`),
+  ADD KEY `idx_lnogouczdxgrtifypptdeunwawsitczxpyku` (`handle`);
+
+--
 -- Indexen voor tabel `info`
 --
 ALTER TABLE `info`
@@ -4333,10 +4485,16 @@ ALTER TABLE `info`
 --
 ALTER TABLE `matrixblocks`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_sicjngioggirdtubhastttigqbmcxygrprij` (`ownerId`),
+  ADD KEY `idx_sicjngioggirdtubhastttigqbmcxygrprij` (`primaryOwnerId`),
   ADD KEY `idx_foipajrkmsedjlnhubtdoprmewtlslkedlhz` (`fieldId`),
-  ADD KEY `idx_orfhtgxwrgivxulzuxagjseikmtzuwjddgew` (`typeId`),
-  ADD KEY `idx_onvknuljzzpibetwiovaijlsnddcvruwgaja` (`sortOrder`);
+  ADD KEY `idx_orfhtgxwrgivxulzuxagjseikmtzuwjddgew` (`typeId`);
+
+--
+-- Indexen voor tabel `matrixblocks_owners`
+--
+ALTER TABLE `matrixblocks_owners`
+  ADD PRIMARY KEY (`blockId`,`ownerId`),
+  ADD KEY `fk_hrpjzoaxqnaqzxiddzrzvnpqhtvzfynjekoc` (`ownerId`);
 
 --
 -- Indexen voor tabel `matrixblocktypes`
@@ -4421,7 +4579,7 @@ ALTER TABLE `resourcepaths`
 --
 ALTER TABLE `revisions`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `idx_emhnhufhvtjxoikohmdwmvujmcsgaqomsrut` (`sourceId`,`num`),
+  ADD UNIQUE KEY `idx_emhnhufhvtjxoikohmdwmvujmcsgaqomsrut` (`canonicalId`,`num`),
   ADD KEY `fk_vrhjfvdidozbqwwgqbcjolhbnnbrmifkppgj` (`creatorId`);
 
 --
@@ -4525,10 +4683,16 @@ ALTER TABLE `structures`
 --
 ALTER TABLE `supertableblocks`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_iquhbnmvhzzunglnppwpdzxquzniroddvqjj` (`ownerId`),
+  ADD KEY `idx_iquhbnmvhzzunglnppwpdzxquzniroddvqjj` (`primaryOwnerId`),
   ADD KEY `idx_fsftntujxqyjyuoxgijcfugdbterwtoaamow` (`fieldId`),
-  ADD KEY `idx_ueelbaaddeykrujzsiuebbakfkhngcysaafg` (`typeId`),
-  ADD KEY `idx_fxxsdnvexwpgppsckqmwpqoftsxjabaethpn` (`sortOrder`);
+  ADD KEY `idx_ueelbaaddeykrujzsiuebbakfkhngcysaafg` (`typeId`);
+
+--
+-- Indexen voor tabel `supertableblocks_owners`
+--
+ALTER TABLE `supertableblocks_owners`
+  ADD PRIMARY KEY (`blockId`,`ownerId`),
+  ADD KEY `fk_hklppovgchysqhqvqxgulcddgcnfcmugnhfy` (`ownerId`);
 
 --
 -- Indexen voor tabel `supertableblocktypes`
@@ -4562,31 +4726,6 @@ ALTER TABLE `taggroups`
 ALTER TABLE `tags`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idx_pcswduiqqhrqvvgfctvozjdvtheejiwopjzy` (`groupId`);
-
---
--- Indexen voor tabel `templatecacheelements`
---
-ALTER TABLE `templatecacheelements`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_wvycpslbofmbcewgnafmtwfzslkatkzegbuh` (`cacheId`),
-  ADD KEY `idx_ezxecnoikchsogsenkavpzkfahmkikkyvqph` (`elementId`);
-
---
--- Indexen voor tabel `templatecachequeries`
---
-ALTER TABLE `templatecachequeries`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_aktfykzpuxqlrbrmlajrnsgovzrfutymvthr` (`cacheId`),
-  ADD KEY `idx_dnaginziuzcbrrtmlhoqnzikluevbyjrdedq` (`type`);
-
---
--- Indexen voor tabel `templatecaches`
---
-ALTER TABLE `templatecaches`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_bmgggvfkjlvmvrsfqtwhwteokjftqlqrqbek` (`cacheKey`,`siteId`,`expiryDate`,`path`),
-  ADD KEY `idx_mjfogonnvzpyneznrebzgxsytkligejleryo` (`cacheKey`,`siteId`,`expiryDate`),
-  ADD KEY `idx_waknobinrqmdslibwwreigsgotkbdptriuyk` (`siteId`);
 
 --
 -- Indexen voor tabel `tokens`
@@ -4646,11 +4785,14 @@ ALTER TABLE `userpreferences`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idx_iutxmgujoewdwjkzhctxvkdlmlxqpalwejha` (`uid`),
   ADD KEY `idx_sknhxnvfakwvxxukzhiyttpcjzzxwhobeljk` (`verificationCode`),
   ADD KEY `idx_ivtxxhasecekxhaqpgsxyjmxlsmpufidsiil` (`email`),
   ADD KEY `idx_azhtrmusgrcsnyhumyryxcpddtzizmknmgoc` (`username`),
-  ADD KEY `fk_aspxddtdyxmspzqywczaemhnrknyofywmzvh` (`photoId`);
+  ADD KEY `fk_aspxddtdyxmspzqywczaemhnrknyofywmzvh` (`photoId`),
+  ADD KEY `idx_hulnfdcswlfmjkvbmchrjmbclxgnugpzpmga` (`active`),
+  ADD KEY `idx_ijwgprxfexrnbofrvnbotodbsqmygkgibzuc` (`locked`),
+  ADD KEY `idx_urbkrcauxyqwphhujxcncepmcwydsizhwzrx` (`pending`),
+  ADD KEY `idx_iiszfbnshxmnyutjfwhsfmmrdodowstneilb` (`suspended`);
 
 --
 -- Indexen voor tabel `volumefolders`
@@ -4695,15 +4837,9 @@ ALTER TABLE `assetindexdata`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `assettransformindex`
+-- AUTO_INCREMENT voor een tabel `assetindexingsessions`
 --
-ALTER TABLE `assettransformindex`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT voor een tabel `assettransforms`
---
-ALTER TABLE `assettransforms`
+ALTER TABLE `assetindexingsessions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -4741,12 +4877,6 @@ ALTER TABLE `deprecationerrors`
 --
 ALTER TABLE `drafts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT voor een tabel `elementindexsettings`
---
-ALTER TABLE `elementindexsettings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `elements`
@@ -4788,7 +4918,7 @@ ALTER TABLE `fieldlayouts`
 -- AUTO_INCREMENT voor een tabel `fieldlayouttabs`
 --
 ALTER TABLE `fieldlayouttabs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT voor een tabel `fields`
@@ -4813,6 +4943,18 @@ ALTER TABLE `gqlschemas`
 --
 ALTER TABLE `gqltokens`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT voor een tabel `imagetransformindex`
+--
+ALTER TABLE `imagetransformindex`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT voor een tabel `imagetransforms`
+--
+ALTER TABLE `imagetransforms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `info`
@@ -4848,7 +4990,7 @@ ALTER TABLE `matrixcontent_navbarfield`
 -- AUTO_INCREMENT voor een tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
 
 --
 -- AUTO_INCREMENT voor een tabel `plugins`
@@ -4860,7 +5002,7 @@ ALTER TABLE `plugins`
 -- AUTO_INCREMENT voor een tabel `queue`
 --
 ALTER TABLE `queue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT voor een tabel `relations`
@@ -4902,7 +5044,7 @@ ALTER TABLE `seo_sitemap`
 -- AUTO_INCREMENT voor een tabel `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `shunnedmessages`
@@ -4950,24 +5092,6 @@ ALTER TABLE `systemmessages`
 -- AUTO_INCREMENT voor een tabel `taggroups`
 --
 ALTER TABLE `taggroups`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT voor een tabel `templatecacheelements`
---
-ALTER TABLE `templatecacheelements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT voor een tabel `templatecachequeries`
---
-ALTER TABLE `templatecachequeries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT voor een tabel `templatecaches`
---
-ALTER TABLE `templatecaches`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -5035,6 +5159,13 @@ ALTER TABLE `widgets`
 --
 
 --
+-- Beperkingen voor tabel `addresses`
+--
+ALTER TABLE `addresses`
+  ADD CONSTRAINT `fk_gtqgkjpxdkdxkhecmsucsnpbjtbaamoxhqao` FOREIGN KEY (`id`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_mcjadktqujrixwyrtpkakmgdqkmtukteyrdp` FOREIGN KEY (`ownerId`) REFERENCES `elements` (`id`) ON DELETE CASCADE;
+
+--
 -- Beperkingen voor tabel `announcements`
 --
 ALTER TABLE `announcements`
@@ -5045,6 +5176,7 @@ ALTER TABLE `announcements`
 -- Beperkingen voor tabel `assetindexdata`
 --
 ALTER TABLE `assetindexdata`
+  ADD CONSTRAINT `fk_ugsfsywbcttkcgwyvpdeedddrxulckwmaxjf` FOREIGN KEY (`sessionId`) REFERENCES `assetindexingsessions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_uzbhnwpaqcvavdsccmbcifayqvxbhcfgrojm` FOREIGN KEY (`volumeId`) REFERENCES `volumes` (`id`) ON DELETE CASCADE;
 
 --
@@ -5113,7 +5245,7 @@ ALTER TABLE `craftidtokens`
 --
 ALTER TABLE `drafts`
   ADD CONSTRAINT `fk_cftuxscwezkxhcljpivzxwaibigvklowxgng` FOREIGN KEY (`creatorId`) REFERENCES `users` (`id`) ON DELETE SET NULL,
-  ADD CONSTRAINT `fk_ivjgjnqiqmqysojqfwznmztocljnlbyhhltb` FOREIGN KEY (`sourceId`) REFERENCES `elements` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_ivjgjnqiqmqysojqfwznmztocljnlbyhhltb` FOREIGN KEY (`canonicalId`) REFERENCES `elements` (`id`) ON DELETE CASCADE;
 
 --
 -- Beperkingen voor tabel `elements`
@@ -5188,7 +5320,14 @@ ALTER TABLE `matrixblocks`
   ADD CONSTRAINT `fk_ctutfhpvrbzprtfqcbxnoelstkqbraantkve` FOREIGN KEY (`id`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_dkclqcjpgzdsurekanhnvisiorrezupctknv` FOREIGN KEY (`typeId`) REFERENCES `matrixblocktypes` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_ikkffafuprkovwfjenlscisnjjqkmwvvjxyi` FOREIGN KEY (`fieldId`) REFERENCES `fields` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_piyuhozhovkjddqfxuaoosxxbkjgzpbustbk` FOREIGN KEY (`ownerId`) REFERENCES `elements` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_piyuhozhovkjddqfxuaoosxxbkjgzpbustbk` FOREIGN KEY (`primaryOwnerId`) REFERENCES `elements` (`id`) ON DELETE CASCADE;
+
+--
+-- Beperkingen voor tabel `matrixblocks_owners`
+--
+ALTER TABLE `matrixblocks_owners`
+  ADD CONSTRAINT `fk_eenefchgkcgcphxubmbtgiftqnqvkffltwuy` FOREIGN KEY (`blockId`) REFERENCES `matrixblocks` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_hrpjzoaxqnaqzxiddzrzvnpqhtvzfynjekoc` FOREIGN KEY (`ownerId`) REFERENCES `elements` (`id`) ON DELETE CASCADE;
 
 --
 -- Beperkingen voor tabel `matrixblocktypes`
@@ -5231,7 +5370,7 @@ ALTER TABLE `relations`
 -- Beperkingen voor tabel `revisions`
 --
 ALTER TABLE `revisions`
-  ADD CONSTRAINT `fk_pjuqnbwcxyxsxpnxichhhoapqgpdfirgwrgb` FOREIGN KEY (`sourceId`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_pjuqnbwcxyxsxpnxichhhoapqgpdfirgwrgb` FOREIGN KEY (`canonicalId`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_vrhjfvdidozbqwwgqbcjolhbnnbrmifkppgj` FOREIGN KEY (`creatorId`) REFERENCES `users` (`id`) ON DELETE SET NULL;
 
 --
@@ -5278,8 +5417,15 @@ ALTER TABLE `structureelements`
 ALTER TABLE `supertableblocks`
   ADD CONSTRAINT `fk_ecxktyhwammqbekejznrcthssbjqfrbhgoed` FOREIGN KEY (`typeId`) REFERENCES `supertableblocktypes` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_fjrkyxwtytkapqomyrbtdlzxlcuakzkwzhhj` FOREIGN KEY (`fieldId`) REFERENCES `fields` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_pmjhhqcpcqhlfkdcbufkutbectckfhvljvsv` FOREIGN KEY (`ownerId`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_pmjhhqcpcqhlfkdcbufkutbectckfhvljvsv` FOREIGN KEY (`primaryOwnerId`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_yucghuifvwqvzgfcrauugrrkhnlegzrfyoda` FOREIGN KEY (`id`) REFERENCES `elements` (`id`) ON DELETE CASCADE;
+
+--
+-- Beperkingen voor tabel `supertableblocks_owners`
+--
+ALTER TABLE `supertableblocks_owners`
+  ADD CONSTRAINT `fk_hklppovgchysqhqvqxgulcddgcnfcmugnhfy` FOREIGN KEY (`ownerId`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_uoudhilenvhrxsrfatzkyfdjbdvwkstouzbu` FOREIGN KEY (`blockId`) REFERENCES `supertableblocks` (`id`) ON DELETE CASCADE;
 
 --
 -- Beperkingen voor tabel `supertableblocktypes`
@@ -5300,25 +5446,6 @@ ALTER TABLE `taggroups`
 ALTER TABLE `tags`
   ADD CONSTRAINT `fk_dnnqpduxwvoemuchpfhwdzyxvnfcwjaqudzh` FOREIGN KEY (`groupId`) REFERENCES `taggroups` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_pwcrhvpjusarsrdfmtxeabhqizzushyrwzge` FOREIGN KEY (`id`) REFERENCES `elements` (`id`) ON DELETE CASCADE;
-
---
--- Beperkingen voor tabel `templatecacheelements`
---
-ALTER TABLE `templatecacheelements`
-  ADD CONSTRAINT `fk_numaofzzqxqshohcilgcvjyxjuftwytairft` FOREIGN KEY (`cacheId`) REFERENCES `templatecaches` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_uutrswfwdoerswwymnwtkbvvfvabdvojioyh` FOREIGN KEY (`elementId`) REFERENCES `elements` (`id`) ON DELETE CASCADE;
-
---
--- Beperkingen voor tabel `templatecachequeries`
---
-ALTER TABLE `templatecachequeries`
-  ADD CONSTRAINT `fk_vsqqgvyajqblqrkpakdqfkpwrukkwgmtwvns` FOREIGN KEY (`cacheId`) REFERENCES `templatecaches` (`id`) ON DELETE CASCADE;
-
---
--- Beperkingen voor tabel `templatecaches`
---
-ALTER TABLE `templatecaches`
-  ADD CONSTRAINT `fk_xonyugyxetujmxjmqrommuhsyzbrwxsowzih` FOREIGN KEY (`siteId`) REFERENCES `sites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Beperkingen voor tabel `usergroups_users`
